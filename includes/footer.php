@@ -3,8 +3,14 @@
 <footer class="site-footer">
   <div class="footer-inner container">
     <div class="footer-left">
-      <div class="footer-logo">cité<span class="accent">de</span>l'amour</div>
-      <p class="muted">© <?= date('Y'); ?> Cité de l’amour. Tous droits réservés.</p>
+ <a class="brand" href="/">
+  <img
+    src="assets/images/logo.jpeg"
+    alt="Cité de l'amour"
+    class="brand-logo"
+  >
+</a>
+      <p class="muted">© <?= date('Y'); ?> Cité de l’amour. copyright.</p>
     </div>
 
     <div class="footer-cols">

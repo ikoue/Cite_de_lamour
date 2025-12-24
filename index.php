@@ -35,10 +35,12 @@
 
     <div class="events-grid">
       <?php
+
+      /*va falloir creer une boucle ici mais doit s afficher a peu pres comme ca*/
         $events = [
-          ["day"=>"25","time"=>"19h00","title"=>"Nom de l’événement","desc"=>"Description de l’événement..."],
-          ["day"=>"02","time"=>"20h00","title"=>"Nom de l’événement","desc"=>"Description de l’événement..."],
-          ["day"=>"10","time"=>"19h00","title"=>"Nom de l’événement","desc"=>"Description de l’événement..."],
+          ["day"=>"x","time"=>"x","title"=>"Nom de l’événement","desc"=>"Description de l’événement..."],
+          ["day"=>"x","time"=>"x","title"=>"Nom de l’événement","desc"=>"Description de l’événement..."],
+          ["day"=>"x","time"=>"x","title"=>"Nom de l’événement","desc"=>"Description de l’événement..."],
         ];
         foreach ($events as $e):
       ?>
@@ -70,7 +72,7 @@
 
   <div class="programs-grid">
     <div class="program">
-      <div class="program-ico">⛪</div>
+      <div class="program-ico">image de culte</div>
       <div class="program-text">
         <strong>Culte de célébration</strong>
         <span class="muted">Dimanche</span>
@@ -78,7 +80,7 @@
     </div>
 
     <div class="program">
-      <div class="program-ico">📖</div>
+      <div class="program-ico">image jeune ou bible</div>
       <div class="program-text">
         <strong>Étude biblique des jeunes</strong>
         <span class="muted">Mardi</span>
@@ -86,7 +88,7 @@
     </div>
 
     <div class="program">
-      <div class="program-ico">🏠</div>
+      <div class="program-ico">image_maison</div>
       <div class="program-text">
         <strong>Cellule de maison</strong>
         <span class="muted">1x / semaine</span>
@@ -94,7 +96,7 @@
     </div>
 
     <div class="program">
-      <div class="program-ico">👥</div>
+      <div class="program-ico">image-personne</div>
       <div class="program-text">
         <strong>Rencontre Hommes/Femmes</strong>
         <span class="muted">Vendredi</span>

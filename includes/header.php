@@ -12,11 +12,16 @@
 <header class="site-header">
   <div class="topbar">
     <a class="brand" href="/">
-      <span class="brand-mark">cité</span><span class="brand-mark brand-mark--accent">de</span><span class="brand-mark">l'amour</span>
-    </a>
+  <img
+    src="assets/images/logo.jpeg"
+    alt="Cité de l'amour"
+    class="brand-logo"
+  >
+</a>
+
 
     <nav class="nav" aria-label="Navigation principale">
-      <a href="#" class="nav-link">Commencersss ici</a>
+      <a href="#" class="nav-link">Commencer ici</a>
       <a href="#" class="nav-link">Se joindre à nous</a>
       <a href="#" class="nav-link">Menu</a>
     </nav>
