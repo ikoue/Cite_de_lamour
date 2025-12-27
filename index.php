@@ -69,8 +69,8 @@
 
 <section class="container section">
   <h2 class="center-title">Nos programmes</h2>
-
-  <div class="programs-grid">
+  
+<div class="programs-grid">
     <div class="program">
       <div class="program-ico">image de culte</div>
       <div class="program-text">
