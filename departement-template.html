@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{DEPARTMENT_NAME}} - Cité de l'amour</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header department-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-curves">
+                        <svg class="curve-upper" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 50 50 Q 25 25 0 0" stroke="currentColor" stroke-width="3" fill="none"/>
+                        </svg>
+                        <svg class="curve-lower" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 0 50 Q 25 25 50 0" stroke="currentColor" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="logo-main">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-cite">Ci<span class="logo-cross">✝</span>é</span>
+                            <span class="logo-amour">de l'amour</span>
+                        </div>
+                        <div class="logo-book">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                    </div>
+                    <div class="logo-tagline-header">où l'amour, l'espoir et la foi se rencontrent</div>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                    <a href="commencer-ici.html" class="nav-link">Commencer ici</a>
+                    <a href="#menu" class="nav-link menu-toggle" id="menuToggle">
+                        Menu <i class="fas fa-bars"></i>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dropdown Menu -->
+    <div class="dropdown-menu" id="dropdownMenu">
+        <div class="dropdown-menu-content">
+            <h3 class="dropdown-menu-title">= Menu =</h3>
+            <ul class="dropdown-menu-list">
+                <li><a href="departement-jeunes-adultes.html" class="dropdown-menu-link">
+                    Jeunes adultes
+                </a></li>
+                <li><a href="departement-hommes.html" class="dropdown-menu-link">
+                    Hommes
+                </a></li>
+                <li><a href="departement-femmes.html" class="dropdown-menu-link">
+                    Femmes
+                </a></li>
+                <li><a href="departement-ados.html" class="dropdown-menu-link">
+                    Ados
+                </a></li>
+                <li><a href="departement-juniors.html" class="dropdown-menu-link">
+                    Juniors
+                </a></li>
+                <li><a href="departement-chorale.html" class="dropdown-menu-link">
+                    Chorale
+                </a></li>
+                <li><a href="departement-intercession.html" class="dropdown-menu-link">
+                    Intercession
+                </a></li>
+                <li><a href="departement-groupe-pastoral.html" class="dropdown-menu-link">
+                    Groupe pastoral
+                </a></li>
+                <li><a href="departement-evangelisation.html" class="dropdown-menu-link">
+                    Évangélisation
+                </a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="department-hero">
+        <div class="container">
+            <div class="department-hero-content">
+                <div class="department-hero-text">
+                    <h1 class="department-hero-title">{{DEPARTMENT_NAME}}</h1>
+                    <p class="department-hero-description">
+                        {{DEPARTMENT_DESCRIPTION}}
+                    </p>
+                </div>
+                <div class="department-hero-image">
+                    <img src="{{DEPARTMENT_IMAGE}}" alt="{{DEPARTMENT_NAME}}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Les responsables Section -->
+    <section class="department-leaders">
+        <div class="container">
+            <h2 class="department-section-title">Les responsables</h2>
+            <div class="leaders-grid">
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="{{LEADER1_IMAGE}}" alt="{{LEADER1_NAME}}">
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">{{LEADER1_NAME}}</h3>
+                        <p class="leader-role">{{LEADER1_ROLE}}</p>
+                    </div>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="{{LEADER2_IMAGE}}" alt="{{LEADER2_NAME}}">
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">{{LEADER2_NAME}}</h3>
+                        <p class="leader-role">{{LEADER2_ROLE}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre vision Section -->
+    <section class="department-vision">
+        <div class="container">
+            <div class="vision-content">
+                <div class="vision-text-block">
+                    <h2 class="department-section-title">Notre vision</h2>
+                    <p class="vision-text">
+                        {{VISION_TEXT}}
+                    </p>
+                </div>
+                <div class="vision-eligibility">
+                    <div class="eligibility-icon">
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-cross"></i>
+                    </div>
+                    <h3 class="eligibility-title">Qui peut rejoindre ce département ?</h3>
+                    <ul class="eligibility-list">
+                        {{ELIGIBILITY_ITEMS}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos activités Section -->
+    <section class="department-activities">
+        <div class="container">
+            <h2 class="department-section-title">Nos activités</h2>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="{{ACTIVITY1_IMAGE}}" alt="{{ACTIVITY1_TITLE}}">
+                    </div>
+                    <h3 class="activity-title">{{ACTIVITY1_TITLE}}</h3>
+                    <p class="activity-description">{{ACTIVITY1_DESCRIPTION}}</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="{{ACTIVITY2_IMAGE}}" alt="{{ACTIVITY2_TITLE}}">
+                    </div>
+                    <h3 class="activity-title">{{ACTIVITY2_TITLE}}</h3>
+                    <p class="activity-description">{{ACTIVITY2_DESCRIPTION}}</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="{{ACTIVITY3_IMAGE}}" alt="{{ACTIVITY3_TITLE}}">
+                    </div>
+                    <h3 class="activity-title">{{ACTIVITY3_TITLE}}</h3>
+                    <p class="activity-description">{{ACTIVITY3_DESCRIPTION}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rejoindre Section -->
+    <section class="department-join">
+        <div class="container">
+            <h2 class="department-section-title">Rejoindre ce département</h2>
+            <div class="join-buttons">
+                <button class="btn-join btn-contact-dept">
+                    Nous contacter
+                </button>
+                <button class="btn-join btn-register-dept">
+                    S'inscrire / Rejoindre
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <div class="logo footer-logo-content">
+                        <div class="logo-curves">
+                            <svg class="curve-upper" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 50 50 Q 25 25 0 0" stroke="currentColor" stroke-width="3" fill="none"/>
+                            </svg>
+                            <svg class="curve-lower" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 0 50 Q 25 25 50 0" stroke="currentColor" stroke-width="3" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="logo-main">
+                            <div class="logo-text-wrapper">
+                                <span class="logo-cite">Ci<span class="logo-cross">✝</span>é</span>
+                                <span class="logo-amour">de l'amour</span>
+                            </div>
+                            <div class="logo-book">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                        </div>
+                        <div class="logo-tagline footer-tagline">Là où l'amour transforme des vies</div>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Découvrir</h3>
+                        <a href="commencer-ici.html">> Commencer ici</a>
+                        <a href="#vision">> Notre vision</a>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Vivre l'église</h3>
+                        <a href="#evenements">> Nos programmes</a>
+                        <a href="#departements">> Nos départements</a>
+                    </div>
+                    <div class="footer-column">
+                        <h3>S'impliquer</h3>
+                        <a href="se-joindre.html">> Nous soutenir</a>
+                        <a href="#contact">> Nous contacter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-social-section">
+                <p class="social-text">Suivez-nous sur les réseaux sociaux</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-brand">Cité de l'Amour – Là où l'amour transforme des vies</p>
+                <p class="footer-copyright">&copy; 2025 - Cité de l'Amour | Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+

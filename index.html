@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cité de l'amour - Là où l'amour transforme des vies</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-curves">
+                        <svg class="curve-upper" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 50 50 Q 25 25 0 0" stroke="currentColor" stroke-width="3" fill="none"/>
+                        </svg>
+                        <svg class="curve-lower" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 0 50 Q 25 25 50 0" stroke="currentColor" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="logo-main">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-cite">Ci<span class="logo-cross">✝</span>é</span>
+                            <span class="logo-amour">de l'amour</span>
+                        </div>
+                        <div class="logo-book">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                    </div>
+                    <div class="logo-tagline">Le lieu ou l'amour transforme les vies</div>
+                </div>
+                <nav class="nav">
+                    <a href="commencer-ici.html" class="nav-link">Commencer ici</a>
+                    <a href="se-joindre.html" class="nav-link">Se joindre à nous</a>
+                    <a href="#menu" class="nav-link menu-toggle" id="menuToggle">
+                        Menu <i class="fas fa-bars"></i>
+                    </a>
+                </nav>
+                <button class="btn-contact">
+                    <i class="fas fa-phone"></i> Nous contacter
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dropdown Menu -->
+    <div class="dropdown-menu" id="dropdownMenu">
+        <div class="dropdown-menu-content">
+            <h3 class="dropdown-menu-title">= Menu =</h3>
+            <ul class="dropdown-menu-list">
+                <li><a href="departement-jeunes-adultes.html" class="dropdown-menu-link">
+                    Jeunes adultes
+                </a></li>
+                <li><a href="departement-hommes.html" class="dropdown-menu-link">
+                    Hommes <i class="fas fa-check"></i>
+                </a></li>
+                <li><a href="departement-femmes.html" class="dropdown-menu-link">
+                    Femmes
+                </a></li>
+                <li><a href="departement-ados.html" class="dropdown-menu-link">
+                    Ados
+                </a></li>
+                <li><a href="departement-juniors.html" class="dropdown-menu-link">
+                    Juniors
+                </a></li>
+                <li><a href="departement-chorale.html" class="dropdown-menu-link">
+                    Chorale
+                </a></li>
+                <li><a href="departement-intercession.html" class="dropdown-menu-link">
+                    Intercession
+                </a></li>
+                <li><a href="departement-groupe-pastoral.html" class="dropdown-menu-link">
+                    Groupe pastoral
+                </a></li>
+                <li><a href="departement-evangelisation.html" class="dropdown-menu-link">
+                    Évangélisation
+                </a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">LÀ OÙ L'AMOUR TRANSFORME DES VIES</h1>
+            <p class="hero-subtitle">Bienvenu(e) à la cité de l'amour</p>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision" id="vision">
+        <div class="container">
+            <div class="vision-card">
+                <div class="vision-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h2 class="section-title">Notre vision</h2>
+                <p class="vision-text">
+                    Nous aspirons à bâtir et équiper une communauté fondée sur l'amour, 
+                    afin de transformer des vies et impacter le monde.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events" id="evenements">
+        <div class="container">
+            <h2 class="section-title">Nos événements</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev-btn" id="eventsPrev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-container" id="eventsCarousel">
+                    <!-- Events will be dynamically loaded here -->
+                </div>
+                <button class="carousel-btn next-btn" id="eventsNext">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="text-center">
+                <button class="btn-primary" id="viewAllEvents">Voir tous les événements</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs">
+        <div class="container">
+            <h2 class="section-title">Nos programmes</h2>
+            <div class="programs-grid" id="programsGrid">
+                <!-- Programs will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="departments" id="departements">
+        <div class="container">
+            <h2 class="section-title">Nos départements</h2>
+            <div class="departments-grid" id="departmentsGrid">
+                <!-- Departments will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <div class="logo footer-logo-content">
+                        <div class="logo-curves">
+                            <svg class="curve-upper" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 50 50 Q 25 25 0 0" stroke="currentColor" stroke-width="3" fill="none"/>
+                            </svg>
+                            <svg class="curve-lower" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 0 50 Q 25 25 50 0" stroke="currentColor" stroke-width="3" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="logo-main">
+                            <div class="logo-text-wrapper">
+                                <span class="logo-cite">Ci<span class="logo-cross">✝</span>é</span>
+                                <span class="logo-amour">de l'amour</span>
+                            </div>
+                            <div class="logo-book">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                        </div>
+                        <div class="logo-tagline footer-tagline">Le lieu ou l'amour transforme les vies</div>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Découvrir</h3>
+                        <a href="#commencer" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">> Commencer ici</a>
+                        <a href="#vision">> Notre vision</a>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Vivre l'église</h3>
+                        <a href="#evenements">> Nos programmes</a>
+                        <a href="#departements">> Nos départements</a>
+                    </div>
+                    <div class="footer-column">
+                        <h3>S'impliquer</h3>
+                        <a href="#soutenir" onclick="alert('Page de soutien à venir...'); return false;">> Nous soutenir</a>
+                        <a href="#contact" onclick="document.querySelector('.btn-contact').click(); return false;">> Nous contacter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-social-section">
+                <p class="social-text">
+                    Vous pouvez nous suivre et rester connectés à travers nos différents réseaux sociaux 
+                    pour recevoir des messages, des enseignements et les actualités de l'église.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-brand">Cité de l'Amour – Là où l'amour transforme des vies</p>
+                <p class="footer-copyright">&copy; 2025 - Cité de l'Amour | Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
