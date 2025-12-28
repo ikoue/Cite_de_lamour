@@ -13,20 +13,35 @@ document.addEventListener('DOMContentLoaded', () => {
     loadData();
     setupEventListeners();
     setupSmoothScroll();
+    setupTitleAnimation();
 });
+
+// Setup title word-group animation
+function setupTitleAnimation() {
+    // Animation is handled by CSS with data-part attributes
+    // No JavaScript needed for this animation
+}
 
 // Load data from JSON files
 async function loadData() {
     try {
-        const [events, programs, departments] = await Promise.all([
+        const [events, programs, departments, images] = await Promise.all([
             fetch('data/events.json').then(res => res.json()),
             fetch('data/programs.json').then(res => res.json()),
-            fetch('data/departments.json').then(res => res.json())
+            fetch('data/departments.json').then(res => res.json()),
+            fetch('data/images.json').then(res => res.json()).catch(() => null)
         ]);
 
         eventsData = events;
         programsData = programs;
         departmentsData = departments;
+
+        console.log('Programs loaded:', programsData.length, programsData);
+
+        // Load background images
+        if (images) {
+            loadBackgroundImages(images);
+        }
 
         renderEvents();
         renderPrograms();
@@ -35,6 +50,47 @@ async function loadData() {
         console.error('Error loading data:', error);
         // Fallback to default data if files can't be loaded
         loadDefaultData();
+    }
+}
+
+// Load background images from configuration
+function loadBackgroundImages(imagesConfig) {
+    // Hero section background (page d'accueil)
+    const heroSection = document.getElementById('heroSection');
+    if (heroSection && imagesConfig.hero) {
+        heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${imagesConfig.hero.url}')`;
+    }
+
+    // Page hero backgrounds (Commencer ici, etc.)
+    const pageHeroSection = document.getElementById('pageHeroSection');
+    if (pageHeroSection && imagesConfig.pageHero) {
+        pageHeroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${imagesConfig.pageHero.url}')`;
+    }
+
+    // Join page hero image
+    const joinHeroImage = document.getElementById('joinHeroImage');
+    if (joinHeroImage && imagesConfig.joinHero) {
+        joinHeroImage.src = imagesConfig.joinHero.url;
+    }
+
+    // Update event images
+    if (imagesConfig.events && eventsData) {
+        eventsData.forEach((event, index) => {
+            const eventImage = imagesConfig.events.find(img => img.id === event.id);
+            if (eventImage) {
+                event.image = eventImage.url;
+            }
+        });
+    }
+
+    // Update department images
+    if (imagesConfig.departments && departmentsData) {
+        departmentsData.forEach(dept => {
+            const deptImage = imagesConfig.departments.find(img => img.name === dept.name);
+            if (deptImage) {
+                dept.image = deptImage.url;
+            }
+        });
     }
 }
 
@@ -53,10 +109,38 @@ function loadDefaultData() {
     programsData = [
         {
             id: 1,
-            name: "Culte de célébration",
+            name: "Cultes de célébration",
             day: "Dimanche",
             icon: "church",
-            time: "10h00"
+            time: "de 9h30 à 11h45"
+        },
+        {
+            id: 2,
+            name: "Cultes d'enseignement",
+            day: "Vendredi",
+            icon: "church",
+            time: "de 18h30 à 20h30"
+        },
+        {
+            id: 3,
+            name: "École Biblique de l'Amour",
+            day: "Mardi",
+            icon: "users",
+            time: "de 19h à 20h30"
+        },
+        {
+            id: 4,
+            name: "Rencontres Hommes/Femmes",
+            day: "Mercredi (1 sur 2)",
+            icon: "user-friends",
+            time: "de 19h à 20h30"
+        },
+        {
+            id: 5,
+            name: "Cellules de maison",
+            day: "Mercredi (1 sur 2)",
+            icon: "home",
+            time: "de 19h à 20h30"
         }
     ];
     departmentsData = [
@@ -74,23 +158,173 @@ function loadDefaultData() {
     renderDepartments();
 }
 
+// Calculate next Sunday
+function getNextSunday() {
+    const today = new Date();
+    const dayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, etc.
+    const daysUntilSunday = dayOfWeek === 0 ? 7 : 7 - dayOfWeek; // If today is Sunday, get next Sunday (7 days)
+    
+    const nextSunday = new Date(today);
+    nextSunday.setDate(today.getDate() + daysUntilSunday);
+    nextSunday.setHours(19, 0, 0, 0); // Set to 7 PM
+    
+    return nextSunday;
+}
+
+// Format date for event display
+function formatDateForEvent(date) {
+    const months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 
+                   'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+    const days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+    
+    const dayName = days[date.getDay()];
+    const day = date.getDate();
+    const monthName = months[date.getMonth()];
+    const year = date.getFullYear();
+    
+    return `${dayName} ${day} ${monthName} ${year}`;
+}
+
 // Render Events Carousel
 function renderEvents() {
     const carousel = document.getElementById('eventsCarousel');
     if (!carousel) return;
 
-    carousel.innerHTML = eventsData.map(event => `
-        <div class="event-card">
-            <img src="${event.image}" alt="${event.name}" class="event-image" onerror="this.src='https://via.placeholder.com/320x200?text=${encodeURIComponent(event.name)}'">
-            <div class="event-content">
-                <div class="event-date">${event.date}</div>
-                <div class="event-time">${event.time}</div>
-                <h3 class="event-name">${event.name}</h3>
-                <p class="event-description">${event.description}</p>
-                <button class="btn-detail" onclick="showEventDetail(${event.id})">Voir détail</button>
+    // Create default event if no events exist
+    let eventsToRender = eventsData || [];
+    if (eventsToRender.length === 0) {
+        const nextSunday = getNextSunday();
+        eventsToRender = [{
+            id: 'default-culte',
+            name: 'Culte de célébration',
+            date: nextSunday.getDate().toString(),
+            time: '19h00',
+            description: 'Rejoignez-nous pour un temps de louange et d\'adoration en communauté.',
+            image: null,
+            isDefault: true,
+            fullDate: nextSunday
+        }];
+    }
+
+    // Check if we have only one event to center it
+    const carouselWrapper = carousel.closest('.carousel-wrapper');
+    if (eventsToRender.length === 1) {
+        if (carouselWrapper) {
+            carouselWrapper.classList.add('single-event');
+        }
+    } else {
+        if (carouselWrapper) {
+            carouselWrapper.classList.remove('single-event');
+        }
+    }
+
+    // Helper function to format date
+    function formatEventDate(event) {
+        // If event has a fullDate (default event), use it
+        if (event.fullDate) {
+            return formatDateForEvent(event.fullDate);
+        }
+        
+        // Otherwise, parse the date string
+        const day = parseInt(event.date) || new Date().getDate();
+        const months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 
+                       'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+        const days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+        const today = new Date();
+        let eventDate;
+        
+        // If day is less than current day, use next month
+        if (day < today.getDate()) {
+            eventDate = new Date(today.getFullYear(), today.getMonth() + 1, day);
+        } else {
+            eventDate = new Date(today.getFullYear(), today.getMonth(), day);
+        }
+        
+        const dayName = days[eventDate.getDay()];
+        const monthName = months[eventDate.getMonth()];
+        const year = eventDate.getFullYear();
+        
+        return `${dayName} ${day} ${monthName} ${year}`;
+    }
+
+    // Helper function to format time range
+    function formatTimeRange(timeStr) {
+        // If time is like "19h00", convert to "de 19h00 à 20h30" format
+        if (timeStr && timeStr.includes('h')) {
+            const match = timeStr.match(/(\d+)h(\d+)?/);
+            if (match) {
+                const hour = parseInt(match[1]);
+                const minutes = match[2] ? parseInt(match[2]) : 0;
+                
+                // Calculate end time (typically 2 hours later, ending at :45)
+                let endHour = hour + 2;
+                const endMinutes = 45;
+                
+                return `de ${timeStr} à ${endHour}h${endMinutes.toString().padStart(2, '0')}`;
+            }
+        }
+        return timeStr ? `de ${timeStr}` : '';
+    }
+
+    carousel.innerHTML = eventsToRender.map(event => `
+        <div class="event-card-new">
+            <div class="event-image-container">
+                ${event.image ? 
+                    `<img src="${event.image}" alt="${event.name}" class="event-image-bg" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                     <div class="event-image-placeholder" style="display: none;">
+                        <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="20" width="160" height="80" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" rx="4"/>
+                            <path d="M 40 80 L 60 50 L 80 60 L 100 40 L 120 50 L 140 45 L 160 70 L 160 80 L 40 80 Z" 
+                                  fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                            <circle cx="170" cy="30" r="8" fill="rgba(255,255,255,0.3)"/>
+                        </svg>
+                     </div>` :
+                    `<div class="event-image-placeholder">
+                        <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="20" width="160" height="80" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" rx="4"/>
+                            <path d="M 40 80 L 60 50 L 80 60 L 100 40 L 120 50 L 140 45 L 160 70 L 160 80 L 40 80 Z" 
+                                  fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                            <circle cx="170" cy="30" r="8" fill="rgba(255,255,255,0.3)"/>
+                        </svg>
+                     </div>`
+                }
+                <div class="event-overlay-gradient"></div>
+            </div>
+            <div class="event-info-overlay">
+                <div class="event-badge">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Événement</span>
+                </div>
+                <h3 class="event-title">${event.name}</h3>
+                <div class="event-details">
+                    <div class="event-detail-item">
+                        <i class="fas fa-calendar"></i>
+                        <span class="event-date-full">${formatEventDate(event)}</span>
+                    </div>
+                    <div class="event-detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span class="event-time-range">${formatTimeRange(event.time)}</span>
+                    </div>
+                </div>
+                <a href="#" class="event-learn-more" onclick="showEventDetail('${event.id}'); return false;">
+                    <span>En savoir plus</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     `).join('');
+
+    // Show/hide navigation buttons based on number of events
+    const prevBtn = document.getElementById('eventsPrev');
+    const nextBtn = document.getElementById('eventsNext');
+    
+    if (eventsToRender.length >= 4) {
+        if (prevBtn) prevBtn.style.display = 'flex';
+        if (nextBtn) nextBtn.style.display = 'flex';
+    } else {
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+    }
 
     updateCarouselPosition('events');
 }
@@ -98,7 +332,16 @@ function renderEvents() {
 // Render Programs Grid
 function renderPrograms() {
     const grid = document.getElementById('programsGrid');
-    if (!grid) return;
+    if (!grid) {
+        console.error('Programs grid not found');
+        return;
+    }
+
+    if (!programsData || programsData.length === 0) {
+        console.error('No programs data available');
+        grid.innerHTML = '<p style="text-align: center; padding: 2rem; color: #666;">Chargement des programmes...</p>';
+        return;
+    }
 
     const iconMap = {
         'church': 'fas fa-church',
@@ -111,13 +354,32 @@ function renderPrograms() {
 
     grid.innerHTML = programsData.map(program => `
         <div class="program-item">
-            <div class="program-icon">
-                <i class="${iconMap[program.icon] || 'fas fa-calendar'}"></i>
+            <div class="program-icon-wrapper">
+                <div class="program-icon">
+                    <i class="${iconMap[program.icon] || 'fas fa-calendar'}"></i>
+                </div>
             </div>
-            <h3 class="program-name">${program.name}</h3>
-            <p class="program-day">${program.day} - ${program.time}</p>
+            <div class="program-content">
+                <div class="program-badge">
+                    <i class="fas fa-calendar-week"></i>
+                    <span>Programme</span>
+                </div>
+                <h3 class="program-name">${program.name}</h3>
+                <div class="program-details">
+                    <div class="program-detail-item">
+                        <i class="fas fa-calendar-day"></i>
+                        <span class="program-day">${program.day}</span>
+                    </div>
+                    <div class="program-detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span class="program-time">${program.time}</span>
+                    </div>
+                </div>
+            </div>
         </div>
     `).join('');
+
+    console.log(`Rendered ${programsData.length} programs`);
 }
 
 // Render Departments Grid
@@ -220,7 +482,9 @@ function setupEventListeners() {
 // Navigate carousel
 function navigateCarousel(type, direction) {
     if (type === 'events') {
-        const maxIndex = Math.max(0, eventsData.length - itemsPerView);
+        // Get actual events count (including default if needed)
+        const eventsCount = (eventsData && eventsData.length > 0) ? eventsData.length : 1;
+        const maxIndex = Math.max(0, eventsCount - itemsPerView);
         currentEventsIndex = Math.max(0, Math.min(maxIndex, currentEventsIndex + direction));
         updateCarouselPosition('events');
     }
@@ -232,7 +496,7 @@ function updateCarouselPosition(type) {
         const carousel = document.getElementById('eventsCarousel');
         if (!carousel) return;
 
-        const cardWidth = 320;
+        const cardWidth = window.innerWidth < 768 ? 300 : 400;
         const gap = 32; // 2rem = 32px
         const offset = (cardWidth + gap) * currentEventsIndex;
         
@@ -246,19 +510,33 @@ function updateCarouselPosition(type) {
 // Update carousel button states
 function updateCarouselButtons(type) {
     if (type === 'events') {
+        // Get actual events count (including default if needed)
+        const eventsCount = (eventsData && eventsData.length > 0) ? eventsData.length : 1;
+        
+        // Only show buttons if there are 4 or more events
+        if (eventsCount < 4) {
+            const prevBtn = document.getElementById('eventsPrev');
+            const nextBtn = document.getElementById('eventsNext');
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+            return;
+        }
+
         const currentIndex = currentEventsIndex;
-        const dataLength = eventsData.length;
+        const dataLength = eventsCount;
         const maxIndex = Math.max(0, dataLength - itemsPerView);
 
         const prevBtn = document.getElementById('eventsPrev');
         const nextBtn = document.getElementById('eventsNext');
 
         if (prevBtn) {
+            prevBtn.style.display = 'flex';
             prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
             prevBtn.style.cursor = currentIndex === 0 ? 'not-allowed' : 'pointer';
         }
 
         if (nextBtn) {
+            nextBtn.style.display = 'flex';
             nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
             nextBtn.style.cursor = currentIndex >= maxIndex ? 'not-allowed' : 'pointer';
         }
@@ -267,9 +545,25 @@ function updateCarouselButtons(type) {
 
 // Show event detail (can be expanded to modal)
 function showEventDetail(eventId) {
-    const event = eventsData.find(e => e.id === eventId);
+    // Check if it's the default event
+    let event;
+    if (eventId === 'default-culte' && (!eventsData || eventsData.length === 0)) {
+        const nextSunday = getNextSunday();
+        event = {
+            id: 'default-culte',
+            name: 'Culte de célébration',
+            date: nextSunday.getDate().toString(),
+            time: '19h00',
+            description: 'Rejoignez-nous pour un temps de louange et d\'adoration en communauté.',
+            fullDate: nextSunday
+        };
+    } else {
+        event = eventsData.find(e => e.id == eventId);
+    }
+    
     if (event) {
-        alert(`Détails de l'événement: ${event.name}\nDate: ${event.date}\nHeure: ${event.time}\n\n${event.description}`);
+        const dateStr = event.fullDate ? formatDateForEvent(event.fullDate) : formatEventDate(event);
+        alert(`Détails de l'événement: ${event.name}\nDate: ${dateStr}\nHeure: ${event.time}\n\n${event.description || ''}`);
         // You can implement a modal here
     }
 }
@@ -360,6 +654,13 @@ document.addEventListener('DOMContentLoaded', () => {
         section.style.transform = 'translateY(20px)';
         section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(section);
+    });
+
+    // Animate section titles on scroll
+    const sectionTitles = document.querySelectorAll('.section-title');
+    sectionTitles.forEach((title, index) => {
+        title.style.animationDelay = `${index * 0.2}s`;
+        observer.observe(title);
     });
 
     // Department page buttons
