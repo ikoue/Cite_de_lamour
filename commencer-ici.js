@@ -1,64 +1,26 @@
 // Initialize page
 document.addEventListener('DOMContentLoaded', () => {
     setupPasteurButtons();
-    setupScrollAnimations();
-    setupMissionLinks();
 });
 
 // Setup pasteur section buttons
 function setupPasteurButtons() {
-    const pasteurLink = document.querySelector('.pasteur-link');
+    const listenBtn = document.querySelector('.btn-listen');
+    const contactBtn = document.querySelector('.btn-contact-pasteur');
 
-    if (pasteurLink) {
-        pasteurLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Page de détails du pasteur à venir...');
-            // You can implement redirect to pasteur detail page
+    if (listenBtn) {
+        listenBtn.addEventListener('click', () => {
+            alert('Fonctionnalité "Écouter un message" à venir...');
+            // You can implement audio player or redirect to audio page
         });
     }
-}
 
-// Setup scroll animations for histoire items
-function setupScrollAnimations() {
-    const histoireItems = document.querySelectorAll('.histoire-item');
-    
-    if (histoireItems.length === 0) return;
-    
-    // Options for Intersection Observer
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    // Create Intersection Observer
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Optionally stop observing after animation
-                observer.unobserve(entry.target);
-            }
+    if (contactBtn) {
+        contactBtn.addEventListener('click', () => {
+            alert('Formulaire de contact à venir...');
+            // You can implement contact form modal
         });
-    }, observerOptions);
-    
-    // Observe each histoire item
-    histoireItems.forEach(item => {
-        observer.observe(item);
-    });
-}
-
-// Setup mission links
-function setupMissionLinks() {
-    const missionLinks = document.querySelectorAll('.mission-link');
-    
-    missionLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const linkText = link.textContent.trim();
-            alert(`Fonctionnalité "${linkText}" à venir...`);
-            // You can implement redirect to appropriate page
-        });
-    });
+    }
 }
 
 

@@ -62,3 +62,4 @@ Si le serveur fonctionne correctement :
 → Utilisez un autre port : `python -m http.server 8080` (puis http://localhost:8080)
 
 
+
