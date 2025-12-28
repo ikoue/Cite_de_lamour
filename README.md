@@ -1,133 +1,90 @@
-# Site Web - Cité de l'amour
+# Interface d'Administration - Cité de l'amour
 
-Site web dynamique pour l'organisation "Cité de l'amour" avec fonctionnalités interactives.
+Interface sécurisée pour gérer le contenu du site web.
 
-## 🚀 Fonctionnalités
+## 🔐 Accès à l'administration
 
-- **Design moderne et responsive** : Adapté à tous les appareils (desktop, tablette, mobile)
-- **Carousels dynamiques** : Navigation fluide pour les événements et départements
-- **Données dynamiques** : Chargement depuis des fichiers JSON
-- **Animations** : Effets de scroll et transitions fluides
-- **Navigation intuitive** : Menu responsive avec défilement fluide
+1. Ouvrez `admin/index.html` dans votre navigateur
+2. Connectez-vous avec :
+   - **Nom d'utilisateur** : `admin`
+   - **Mot de passe** : `admin123`
 
-## 📁 Structure du projet
+⚠️ **IMPORTANT** : Changez le mot de passe dans `admin/admin.js` avant la mise en production !
+
+## 📋 Fonctionnalités
+
+### 1. Gestion des Images
+- **Images de fond** : Modifier les images hero de toutes les pages
+- **Images des événements** : Ajouter, modifier ou retirer des images
+- **Images des départements** : Gérer les images de chaque département
+- **Prévisualisation** : Voir les images avant de les enregistrer
+
+### 2. Gestion des Événements (À venir)
+- Ajouter, modifier ou supprimer des événements
+- Gérer les dates, heures et descriptions
+
+### 3. Gestion des Départements (À venir)
+- Modifier les informations des départements
+- Gérer les responsables et descriptions
+
+### 4. Gestion des Programmes (À venir)
+- Ajouter ou modifier les programmes
+- Gérer les horaires et jours
+
+## 🎯 Comment Utiliser
+
+### Modifier une Image de Fond
+
+1. Connectez-vous à l'interface admin
+2. Allez dans "Gestion des Images"
+3. Modifiez l'URL dans le champ correspondant
+4. Cliquez sur "Prévisualiser" pour voir l'image
+5. Cliquez sur "Enregistrer toutes les modifications"
+6. Remplacez le fichier `data/images.json` avec le fichier téléchargé
+
+### Ajouter une Image d'Événement
+
+1. Cliquez sur "Ajouter une image" dans la section Événements
+2. Entrez l'ID de l'événement et l'URL de l'image
+3. Cliquez sur "Ajouter"
+4. Enregistrez toutes les modifications
+
+### Retirer une Image
+
+1. Trouvez l'image dans la liste
+2. Cliquez sur "Retirer"
+3. Confirmez la suppression
+4. Enregistrez toutes les modifications
+
+## 🔒 Sécurité
+
+- **Authentification** : L'interface est protégée par un mot de passe
+- **Session** : La session reste active jusqu'à déconnexion
+- **Changement de mot de passe** : Modifiez `ADMIN_CREDENTIALS` dans `admin.js`
+
+## 📝 Structure des Fichiers
 
 ```
-cite-amour/
-├── index.html          # Page principale
-├── styles.css          # Styles CSS
-├── script.js           # JavaScript pour les fonctionnalités dynamiques
-├── data/
-│   ├── events.json     # Données des événements
-│   ├── programs.json   # Données des programmes
-│   └── departments.json # Données des départements
-└── README.md          # Ce fichier
+admin/
+├── index.html          # Interface d'administration
+├── admin-styles.css    # Styles de l'interface admin
+├── admin.js            # Logique de l'interface admin
+└── README.md           # Ce fichier
 ```
 
-## 🛠️ Installation et utilisation
+## ⚠️ Notes Importantes
 
-> **⚠️ IMPORTANT** : Ce site est un site web statique qui **ne nécessite PAS de compilation**. 
-> Les fichiers HTML, CSS et JavaScript sont directement utilisables par le navigateur.
+- Les modifications sont téléchargées en fichier JSON
+- Vous devez remplacer manuellement le fichier `data/images.json`
+- Utilisez un serveur local pour que tout fonctionne correctement
+- Sauvegardez toujours vos fichiers avant de les modifier
 
-### 🚀 Démarrage rapide (Windows)
+## 🚀 Prochaines Améliorations
 
-**Méthode la plus simple :**
-1. Double-cliquez sur `demarrer.bat` (ou `demarrer.ps1` pour PowerShell)
-2. Le script détectera automatiquement Python ou PHP
-3. Ouvrez votre navigateur à l'adresse : **http://localhost:8000**
+- Gestion complète des événements
+- Gestion complète des départements
+- Gestion complète des programmes
+- Upload d'images directement depuis l'interface
+- Historique des modifications
 
-### 📋 Options de démarrage
-
-#### Option 1 : Script automatique (Recommandé)
-- **Windows** : Double-cliquez sur `demarrer.bat`
-- Le script cherchera automatiquement Python ou PHP
-
-#### Option 2 : Ouvrir directement
-Ouvrez simplement le fichier `index.html` dans votre navigateur.
-> ⚠️ **Note** : Certaines fonctionnalités (chargement JSON) peuvent ne pas fonctionner sans serveur local.
-
-#### Option 3 : Serveur local manuel
-
-**Avec Python (si installé) :**
-```bash
-cd cite-amour
-python -m http.server 8000
-```
-Puis ouvrez http://localhost:8000 dans votre navigateur.
-
-**Avec PHP (si installé) :**
-```bash
-cd cite-amour
-php -S localhost:8000
-```
-
-**Avec Node.js (si installé) :**
-```bash
-npm install -g http-server
-cd cite-amour
-http-server
-```
-
-### 🔍 Vérifier si Python/PHP est installé
-
-**Windows (PowerShell) :**
-```powershell
-python --version
-php --version
-```
-
-**Windows (CMD) :**
-```cmd
-python --version
-php --version
-```
-
-Si aucune commande ne fonctionne, installez Python depuis https://www.python.org/downloads/
-
-## 🎨 Personnalisation
-
-### Modifier les événements
-Éditez le fichier `data/events.json` pour ajouter, modifier ou supprimer des événements.
-
-### Modifier les programmes
-Éditez le fichier `data/programs.json` pour personnaliser les programmes.
-
-### Modifier les départements
-Éditez le fichier `data/departments.json` pour gérer les départements.
-
-### Modifier les couleurs
-Les couleurs principales sont définies dans `styles.css` via les variables CSS :
-- `--color-primary` : Rouge (#8B0000)
-- `--color-secondary` : Bleu foncé (#1a237e)
-- `--color-white` : Blanc (#ffffff)
-
-## 📱 Fonctionnalités dynamiques
-
-1. **Carousels** : Navigation avec boutons précédent/suivant et clavier (flèches)
-2. **Chargement dynamique** : Les données sont chargées depuis les fichiers JSON
-3. **Animations au scroll** : Les éléments apparaissent progressivement
-4. **Responsive** : Adaptation automatique selon la taille de l'écran
-
-## 🔧 Technologies utilisées
-
-- HTML5
-- CSS3 (avec variables CSS et Flexbox/Grid)
-- JavaScript (ES6+)
-- Font Awesome (icônes)
-- Images Unsplash (placeholder)
-
-## 📝 Notes
-
-- Les images utilisent des URLs Unsplash comme placeholders. Remplacez-les par vos propres images.
-- Le site est entièrement statique et peut être hébergé sur n'importe quel serveur web.
-- Pour une version avec backend, vous pouvez intégrer une API REST pour gérer les données.
-
-## 🎯 Prochaines améliorations possibles
-
-- Formulaire de contact fonctionnel
-- Modales pour les détails d'événements/départements
-- Système d'authentification pour l'administration
-- Base de données pour les données dynamiques
-- Blog ou actualités
-- Calendrier interactif
 
