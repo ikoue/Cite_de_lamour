@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "Cultes de célébration",
+        "day": "Dimanche",
+        "icon": "church",
+        "time": "de 9h30 à 11h45"
+    },
+    {
+        "id": 2,
+        "name": "Cultes d'enseignement",
+        "day": "Vendredi",
+        "icon": "church",
+        "time": "de 18h30 à 20h30"
+    },
+    {
+        "id": 3,
+        "name": "École Biblique de l'Amour",
+        "day": "Mardi",
+        "icon": "users",
+        "time": "de 19h à 20h30"
+    },
+    {
+        "id": 4,
+        "name": "Rencontres Hommes/Femmes",
+        "day": "Mercredi (1 sur 2)",
+        "icon": "user-friends",
+        "time": "de 19h à 20h30"
+    },
+    {
+        "id": 5,
+        "name": "Cellules de maison",
+        "day": "Mercredi (1 sur 2)",
+        "icon": "home",
+        "time": "de 19h à 20h30"
+    }
+]
