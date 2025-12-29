@@ -396,7 +396,7 @@ body {
     transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 782px) {
     .btn-contact {
         padding: 0.6rem 1.2rem;
         font-size: 0.9rem;
@@ -1602,9 +1602,10 @@ body {
 }
 
 .footer-links .footer-column a {
+    position: relative;
     font-weight: 500;
     font-family: "Montserrat", sans-serif;
-    display: block;
+    display: inline-block;
     color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     margin-bottom: 0.8rem;
@@ -1622,17 +1623,18 @@ body {
 .footer-links .footer-column a::before{
     content: "";
     position: absolute;
-    left: 0;
+    left: 120px;
     bottom: 0px;
     height: 1.5px;
-    width: 35%;
+    width: 50%;
     background-color: rgb(220, 203, 16);
-    transform: translateX(100%);
+    transform: scale(0);
+    transform-origin: left;
     transition: transform 0.5s ease-in-out;
 }
 
 .footer-links .footer-column a:hover::before{
-    transform: translateX(50);
+    transform: scale(1);
 }
 .footer-links .footer-column a:hover {
     color: rgb(220, 203, 16);
