@@ -144,14 +144,16 @@ function loadDefaultData() {
         }
     ];
     departmentsData = [
-        { id: 1, name: "Hommes", image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", description: "Ministère dédié aux hommes" },
-        { id: 2, name: "Femmes", image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", description: "Ministère dédié aux femmes" },
-        { id: 3, name: "Couples/Mariages", image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", description: "Accompagnement pour les couples" },
-        { id: 4, name: "Jeunes adultes", image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", description: "Communauté pour les jeunes adultes" },
-        { id: 5, name: "Soutien Pastoral", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", description: "Soutien et accompagnement pastoral" },
-        { id: 6, name: "Juniors", image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", description: "Programmes pour les enfants" },
-        { id: 7, name: "Chœur", image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", description: "Ministère de la musique" },
-        { id: 8, name: "Évangélisme", image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", description: "Partage de l'Évangile" }
+        { id: 1, name: "Jeunes adultes", url: "departement-jeunes-adultes.html", image: "departementacceuil.jpeg", description: "Communauté pour les jeunes adultes de 18 à 25 ans" },
+        { id: 2, name: "Hommes", url: "departement-hommes.html", image: "departementacceuil.jpeg", description: "Ministère dédié aux hommes" },
+        { id: 3, name: "Femmes", url: "departement-femmes.html", image: "departementacceuil.jpeg", description: "Ministère dédié aux femmes" },
+        { id: 4, name: "Ados", url: "departement-ados.html", image: "departementacceuil.jpeg", description: "Programmes pour les adolescents" },
+        { id: 5, name: "Juniors", url: "departement-juniors.html", image: "departementacceuil.jpeg", description: "Programmes pour les enfants et juniors" },
+        { id: 6, name: "Chorale", url: "departement-chorale.html", image: "departementacceuil.jpeg", description: "Ministère de la musique et de la louange" },
+        { id: 7, name: "Intercession", url: "departement-intercession.html", image: "departementacceuil.jpeg", description: "Ministère de prière et d'intercession" },
+        { id: 8, name: "Groupe pastoral", url: "departement-groupe-pastoral.html", image: "departementacceuil.jpeg", description: "Soutien et accompagnement pastoral" },
+        { id: 9, name: "Évangélisation", url: "departement-evangelisation.html", image: "departementacceuil.jpeg", description: "Partage de l'Évangile dans notre communauté" },
+        { id: 10, name: "Médias", url: "departement-medias.html", image: "departementacceuil.jpeg", description: "Ministère des médias et de la communication" }
     ];
     renderEvents();
     renderPrograms();
@@ -344,7 +346,7 @@ function renderPrograms() {
     }
 
     const iconMap = {
-        'church': 'fas fa-church',
+        'church': 'fas fa-heart',
         'users': 'fas fa-users',
         'home': 'fas fa-home',
         'user-friends': 'fas fa-user-friends',
@@ -393,14 +395,31 @@ function renderDepartments() {
         return;
     }
 
-    grid.innerHTML = departmentsData.map(dept => `
-        <div class="dept-card" onclick="showDepartmentDetail(${dept.id})">
-            <img src="${dept.image}" alt="${dept.name}" class="dept-image" onerror="this.src='https://via.placeholder.com/300x200?text=${encodeURIComponent(dept.name)}'">
-            <div class="dept-name">${dept.name}</div>
-        </div>
-    `).join('');
+    grid.innerHTML = departmentsData.map(dept => {
+        // Si le département a une URL, créer un lien, sinon utiliser l'ancienne méthode
+        const url = dept.url || '#';
+        
+        if (url && url !== '#') {
+            return `
+                <a href="${url}" class="dept-card-link">
+                    <div class="dept-card">
+                        <img src="${dept.image}" alt="${dept.name}" class="dept-image" onerror="this.src='https://via.placeholder.com/300x200?text=${encodeURIComponent(dept.name)}'">
+                        <div class="dept-name">${dept.name}</div>
+                    </div>
+                </a>
+            `;
+        } else {
+            return `
+                <div class="dept-card" onclick="showDepartmentDetail(${dept.id})">
+                    <img src="${dept.image}" alt="${dept.name}" class="dept-image" onerror="this.src='https://via.placeholder.com/300x200?text=${encodeURIComponent(dept.name)}'">
+                    <div class="dept-name">${dept.name}</div>
+                </div>
+            `;
+        }
+    }).join('');
 
     console.log(`Affichage de ${departmentsData.length} départements`);
+    console.log('Départements chargés:', departmentsData.map(d => ({ name: d.name, url: d.url })));
 }
 
 // Carousel Navigation

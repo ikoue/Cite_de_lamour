@@ -17,7 +17,7 @@
                 </div>
                 <nav class="nav">
                     <a href="index.html" class="nav-link">Accueil</a>
-                    <a href="commencer-ici.html" class="nav-link">Commencer ici</a>
+                    <a href="se-joindre.html" class="nav-link">Se joindre à nous</a>
                     <a href="#menu" class="nav-link menu-toggle" id="menuToggle">
                         Menu <i class="fas fa-bars"></i>
                     </a>
@@ -66,7 +66,7 @@
     <!-- Notre histoire Section -->
     <section class="histoire-section">
         <div class="container">
-            <p class="commencer-ici-label">commencerici</p>
+            <p class="commencer-ici-label">commencer ici</p>
             <h2 class="section-title-left">Notre histoire</h2>
             
             <!-- Section 1: Les débuts -->
@@ -78,7 +78,7 @@
                     <h3>Les débuts : une vision née du cœur de Dieu</h3>
                     <p>
                         L'Église Cité de l'Amour est née en septembre 2023, fruit d'une œuvre initiée par le Saint-Esprit 
-                        au travers d'un couple qu'Il a choisi depuis le Cameroun, le pasteur Cyrille Béal et son épouse Inès Béal.
+                        au travers d'un couple qu'Il a choisi depuis le Cameroun, le pasteur Cyrille Beal et son épouse Inès Beal.
                     </p>
                     <p>
                         Après leur immigration au Québec en 2021, ils furent conduits par le Saint-Esprit à s'établir dans 
@@ -203,20 +203,25 @@
     <!-- Pasteur Principal Section -->
     <section class="pasteur-section">
         <div class="container">
-            <div class="pasteur-content">
-                <div class="pasteur-image-wrapper">
-                    <img src="cyrille.jpeg" alt="Pasteur Principal">
-                    <div class="pasteur-info-overlay">
-                        <h2 class="pasteur-title">PASTEUR PRINCIPAL</h2>
-                        <h3 class="pasteur-name">CYRILLE BÉAL</h3>
-                        <p class="pasteur-description">
-                            Cyrille est un diacre et docteur remarquable, un homme rassurant et un guide 
-                            compatissant pour notre communauté. Sa passion pour la Parole de Dieu et son 
-                            dévouement à servir les autres inspirent chacun de nous à grandir dans notre foi 
-                            et à vivre selon les principes de l'amour et de la compassion.
-                        </p>
-                        <a href="#" class="pasteur-link">EN SAVOIR PLUS</a>
-                    </div>
+            <div class="pasteur-card">
+                <div class="pasteur-image-side">
+                    <img src="cyrille beal.jpeg" alt="Cyrille Beal - Pasteur Principal">
+                </div>
+                <div class="pasteur-text-side">
+                    <h2 class="pasteur-name-large">CYRILLE BEAL</h2>
+                    <p class="pasteur-bio">
+                        Marié à Inès depuis 2017, Cyrille Beal est le père de Zoé, Éden et Nathan. 
+                        C'est un homme de foi avec une passion profonde pour Dieu et pour les autres.
+                    </p>
+                    <p class="pasteur-bio">
+                        Architecte en cybersécurité de profession, il s'est engagé dans l'évangélisation 
+                        depuis son adolescence. Avec son épouse, il a fondé la Cité de l'Amour, une église 
+                        dédiée à la transformation des vies par l'amour du Christ.
+                    </p>
+                    <p class="pasteur-bio">
+                        Aujourd'hui, il œuvre dans la formation de disciples, l'accompagnement des familles 
+                        et aspire à voir le Royaume de Dieu se manifester dans notre société.
+                    </p>
                 </div>
             </div>
         </div>
@@ -256,54 +261,87 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer_top">
+            <!-- Header avec logo et titre -->
+            <div class="footer-header">
                 <div class="footer-logo">
                     <img src="logo.png" alt="Cité de l'amour Logo" class="logo-image">
-                    <p class="footer-logo-text">Cité de l'amour <br><span>La où l'amour transforme des vies</span></p>
-                </div> 
-                <div class="footer-links">
+                </div>
+                <h2 class="footer-title">CITÉ DE L'AMOUR</h2>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <!-- Contenu principal -->
+            <div class="footer-main">
+                <!-- Section gauche - Restons connectés -->
+                <div class="footer-newsletter">
+                    <h3 class="footer-section-title">RESTONS CONNECTÉS</h3>
+                </div>
+
+                <!-- Colonnes de liens -->
+                <div class="footer-links-grid">
                     <div class="footer-column">
-                        <h3>Découvrir</h3>
-                        <a href="commencer-ici.html">> Commencer ici</a>
-                        <a href="#vision">> Notre vision</a>
+                        <h3>L'ÉGLISE</h3>
+                        <a href="commencer-ici.html">Commencer ici</a>
+                        <a href="index.html#vision">Notre vision</a>
+                        <a href="index.html#evenements">Nos événements</a>
+                        <a href="index.html#programs">Nos programmes</a>
                     </div>
                     <div class="footer-column">
-                        <h3>Vivre l'église</h3>
-                        <a href="#evenements">> Nos programmes</a>
-                        <a href="#departements">> Nos départements</a>
+                        <h3>DÉPARTEMENTS</h3>
+                        <a href="departement-jeunes-adultes.html">Jeunes adultes</a>
+                        <a href="departement-hommes.html">Hommes</a>
+                        <a href="departement-femmes.html">Femmes</a>
+                        <a href="departement-ados.html">Ados</a>
+                        <a href="departement-juniors.html">Juniors</a>
+                        <a href="departement-chorale.html">Chorale</a>
+                        <a href="departement-intercession.html">Intercession</a>
+                        <a href="departement-evangelisation.html">Évangélisation</a>
+                        <a href="departement-medias.html">Médias</a>
                     </div>
                     <div class="footer-column">
-                        <h3>S'impliquer</h3>
-                        <a href="#soutenir" onclick="alert('Page de soutien à venir...'); return false;">> Nous soutenir</a>
-                        <a href="#contact" onclick="document.querySelector('.btn-contact').click(); return false;">> Nous contacter</a>
+                        <h3>S'IMPLIQUER</h3>
+                        <a href="se-joindre.html">Se joindre à nous</a>
+                        <a href="se-joindre.html#don">Faire un don</a>
                     </div>
                 </div>
             </div>
-            <div class="footer-social-section">
-                <p class="social-text">Suivez-nous sur les réseaux sociaux</p>
-                <div class="footer-social">
-                    <a href="https://www.youtube.com/@lacitedelamour?si=c95knlQON0_hjLZd" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="https://www.instagram.com/citedelamour?igsh=MTJ5eHZlYWY4YWcxaw==" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.facebook.com/share/1KYkeJiemi/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@citedelamour?_r=1&_t=ZS-92ZyAVWSCTR" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TikTok">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                </div>   
-            </div>
-            <div class="footer-bottom">
-                <p class="footer-brand">Cité de l'Amour – Là où l'amour transforme des vies</p>
-                <p class="footer-copyright">&copy; 2025 - Cité de l'Amour | Tous droits réservés</p>
+
+            <!-- Adresse -->
+            <div class="footer-address-section">
                 <div class="footer-address">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span>332 avenue saint-sacrement, Québec, QC, gG1N 3Y2</span>
-                    <span>332 avenue saint-sacrement, Québec, QC, gG1N 3Y2</span>
-                    <span>332 avenue saint-sacrement, Québec, QC, gG1N 3Y2</span>
+                    <span>332 avenue saint-sacrement<br>Québec, QC, G1N 3Y2</span>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <!-- Slogan -->
+            <div class="footer-slogan-section">
+                <p class="footer-slogan" data-text="Cité de l'Amour – Là où l'amour transforme des vies">Cité de l'Amour – Là où l'amour transforme des vies</p>
+            </div>
+
+            <!-- Footer bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p class="footer-copyright">&copy; 2025 CITÉ DE L'AMOUR</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <div class="footer-social">
+                        <a href="https://www.youtube.com/@lacitedelamour?si=c95knlQON0_hjLZd" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/citedelamour?igsh=MTJ5eHZlYWY4YWcxaw==" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/1KYkeJiemi/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@citedelamour?_r=1&_t=ZS-92ZyAVWSCTR" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
