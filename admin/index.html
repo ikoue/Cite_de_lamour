@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Cité de l'amour</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin-styles.css?v=2.1">
+</head>
+<body class="admin-body">
+    <!-- Login Screen -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-container">
+            <div class="login-header">
+                <div class="admin-logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <h1>Administration</h1>
+                    <p>Cité de l'amour</p>
+                </div>
+            </div>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="username">Nom d'utilisateur</label>
+                    <input type="text" id="username" name="username" required autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn-login">
+                    <i class="fas fa-sign-in-alt"></i> Se connecter
+                </button>
+                <div class="login-error" id="loginError"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div class="admin-dashboard" id="adminDashboard" style="display: none;">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <div class="admin-logo-small">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Admin</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#images" class="nav-item active" data-section="images">
+                    <i class="fas fa-images"></i>
+                    <span>Gestion des Images</span>
+                </a>
+                <a href="#events" class="nav-item" data-section="events">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Événements</span>
+                </a>
+                <a href="#departments" class="nav-item" data-section="departments">
+                    <i class="fas fa-users"></i>
+                    <span>Départements</span>
+                </a>
+                <a href="#programs" class="nav-item" data-section="programs">
+                    <i class="fas fa-list"></i>
+                    <span>Programmes</span>
+                </a>
+                <a href="../index.html" class="nav-item" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>Voir le site</span>
+                </a>
+                <a href="GUIDE-SAUVEGARDE.md" class="nav-item" target="_blank">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Guide de sauvegarde</span>
+                </a>
+                <a href="#" class="nav-item" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Déconnexion</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Server Warning Banner -->
+            <div id="globalServerWarning" class="server-warning-banner" style="display: none; margin-bottom: 1rem; padding: 1rem; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px; margin: 0 1rem 1rem 1rem;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Serveur local requis :</strong> Pour que les données se chargent correctement, vous devez démarrer un serveur local. 
+                <a href="../README-SERVEUR.md" target="_blank" style="color: #856404; text-decoration: underline; margin-left: 0.5rem;">Voir les instructions</a>
+                ou double-cliquez sur <code style="background: rgba(0,0,0,0.1); padding: 0.2rem 0.4rem; border-radius: 3px;">demarrer-serveur.bat</code>
+            </div>
+            
+            <header class="admin-header">
+                <h2 id="pageTitle">Gestion des Images</h2>
+                <div class="admin-user">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="currentUser">Administrateur</span>
+                </div>
+            </header>
+
+            <!-- Images Management Section -->
+            <section class="admin-section active" id="imagesSection">
+                <div class="section-card">
+                    <h3>Images de Fond</h3>
+                    
+                    <div class="image-manager-item">
+                        <div class="image-preview-box">
+                            <img src="" alt="Hero" class="image-preview-large" id="heroPreviewLarge">
+                            <div class="upload-buttons">
+                                <label for="heroFileInput" class="btn-upload">
+                                    <i class="fas fa-upload"></i> Importer une image
+                                </label>
+                                <input type="file" id="heroFileInput" accept="image/*" style="display: none;" 
+                                       onchange="handleImageUpload(this, 'heroUrlInput', 'heroPreviewLarge')">
+                                <button class="btn-preview" onclick="updatePreview('heroPreviewLarge', 'heroUrlInput')">
+                                    <i class="fas fa-sync"></i> Prévisualiser URL
+                                </button>
+                            </div>
+                        </div>
+                        <div class="image-manager-form">
+                            <label>Image Hero (Page d'accueil)</label>
+                            <input type="text" id="heroUrlInput" placeholder="URL de l'image ou base64" 
+                                   onchange="updatePreview('heroPreviewLarge', 'heroUrlInput')">
+                            <small>Importez une image depuis votre appareil ou entrez une URL</small>
+                        </div>
+                    </div>
+
+                    <div class="image-manager-item">
+                        <div class="image-preview-box">
+                            <img src="" alt="Page Hero" class="image-preview-large" id="pageHeroPreviewLarge">
+                            <div class="upload-buttons">
+                                <label for="pageHeroFileInput" class="btn-upload">
+                                    <i class="fas fa-upload"></i> Importer une image
+                                </label>
+                                <input type="file" id="pageHeroFileInput" accept="image/*" style="display: none;" 
+                                       onchange="handleImageUpload(this, 'pageHeroUrlInput', 'pageHeroPreviewLarge')">
+                                <button class="btn-preview" onclick="updatePreview('pageHeroPreviewLarge', 'pageHeroUrlInput')">
+                                    <i class="fas fa-sync"></i> Prévisualiser URL
+                                </button>
+                            </div>
+                        </div>
+                        <div class="image-manager-form">
+                            <label>Image Page Hero (Autres pages)</label>
+                            <input type="text" id="pageHeroUrlInput" placeholder="URL de l'image ou base64"
+                                   onchange="updatePreview('pageHeroPreviewLarge', 'pageHeroUrlInput')">
+                            <small>Importez une image depuis votre appareil ou entrez une URL</small>
+                        </div>
+                    </div>
+
+                    <div class="image-manager-item">
+                        <div class="image-preview-box">
+                            <img src="" alt="Join Hero" class="image-preview-large" id="joinHeroPreviewLarge">
+                            <div class="upload-buttons">
+                                <label for="joinHeroFileInput" class="btn-upload">
+                                    <i class="fas fa-upload"></i> Importer une image
+                                </label>
+                                <input type="file" id="joinHeroFileInput" accept="image/*" style="display: none;" 
+                                       onchange="handleImageUpload(this, 'joinHeroUrlInput', 'joinHeroPreviewLarge')">
+                                <button class="btn-preview" onclick="updatePreview('joinHeroPreviewLarge', 'joinHeroUrlInput')">
+                                    <i class="fas fa-sync"></i> Prévisualiser URL
+                                </button>
+                            </div>
+                        </div>
+                        <div class="image-manager-form">
+                            <label>Image Join Hero (Page Se joindre)</label>
+                            <input type="text" id="joinHeroUrlInput" placeholder="URL de l'image ou base64"
+                                   onchange="updatePreview('joinHeroPreviewLarge', 'joinHeroUrlInput')">
+                            <small>Importez une image depuis votre appareil ou entrez une URL</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <div class="card-header">
+                        <h3>Images des Événements</h3>
+                        <button class="btn-add-item" onclick="showAddForm('event')">
+                            <i class="fas fa-plus"></i> Ajouter une image
+                        </button>
+                    </div>
+
+                    <div class="add-form" id="addEventForm" style="display: none;">
+                        <div class="form-grid">
+                            <div>
+                                <label>Choisir un événement</label>
+                                <select id="newEventSelect" onchange="updateEventPreview()">
+                                    <option value="">-- Sélectionner un événement --</option>
+                                </select>
+                                <small id="eventInfo" style="display: none; color: #666; margin-top: 0.5rem; font-style: italic;"></small>
+                            </div>
+                            <div>
+                                <label>Image de l'événement</label>
+                                <div class="upload-container">
+                                    <label for="newEventFileInput" class="btn-upload-small">
+                                        <i class="fas fa-upload"></i> Importer
+                                    </label>
+                                    <input type="file" id="newEventFileInput" accept="image/*" style="display: none;" 
+                                           onchange="handleImageUpload(this, 'newEventUrl', 'newEventPreview')">
+                                    <input type="text" id="newEventUrl" placeholder="URL ou base64" style="flex: 1;">
+                                </div>
+                                <img id="newEventPreview" class="upload-preview" style="display: none; max-width: 200px; margin-top: 0.5rem; border-radius: 5px;">
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button class="btn-primary" onclick="addEventImage()">Ajouter</button>
+                            <button class="btn-secondary" onclick="hideAddForm('event')">Annuler</button>
+                        </div>
+                    </div>
+
+                    <div id="eventsImagesContainer" class="images-grid">
+                        <!-- Events images will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <div class="card-header">
+                        <h3>Images des Départements</h3>
+                        <button class="btn-add-item" onclick="showAddForm('department')">
+                            <i class="fas fa-plus"></i> Ajouter une image
+                        </button>
+                    </div>
+
+                    <div class="add-form" id="addDepartmentForm" style="display: none;">
+                        <div class="form-grid">
+                            <div>
+                                <label>Choisir un département</label>
+                                <select id="newDeptSelect" onchange="updateDeptPreview()">
+                                    <option value="">-- Sélectionner un département --</option>
+                                </select>
+                                <small id="deptInfo" style="display: none; color: #666; margin-top: 0.5rem; font-style: italic;"></small>
+                            </div>
+                            <div>
+                                <label>Image du département</label>
+                                <div class="upload-container">
+                                    <label for="newDeptFileInput" class="btn-upload-small">
+                                        <i class="fas fa-upload"></i> Importer
+                                    </label>
+                                    <input type="file" id="newDeptFileInput" accept="image/*" style="display: none;" 
+                                           onchange="handleImageUpload(this, 'newDeptUrl', 'newDeptPreview')">
+                                    <input type="text" id="newDeptUrl" placeholder="URL ou base64" style="flex: 1;">
+                                </div>
+                                <img id="newDeptPreview" class="upload-preview" style="display: none; max-width: 200px; margin-top: 0.5rem; border-radius: 5px;">
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button class="btn-primary" onclick="addDepartmentImage()">Ajouter</button>
+                            <button class="btn-secondary" onclick="hideAddForm('department')">Annuler</button>
+                        </div>
+                    </div>
+
+                    <div id="departmentsImagesContainer" class="images-grid">
+                        <!-- Departments images will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="save-section">
+                    <button class="btn-save-all" onclick="saveAllImages()">
+                        <i class="fas fa-save"></i> Enregistrer toutes les modifications
+                    </button>
+                </div>
+            </section>
+
+            <!-- Events Management Section -->
+            <section class="admin-section" id="eventsSection" style="display: none;">
+                <div class="section-card">
+                    <div class="card-header">
+                        <h3>Gestion des Événements</h3>
+                        <button class="btn-add-item" onclick="showAddEventForm()">
+                            <i class="fas fa-plus"></i> Ajouter un événement
+                        </button>
+                    </div>
+
+                    <!-- Add/Edit Event Form -->
+                    <div class="add-form" id="eventForm" style="display: none;">
+                        <h4 id="eventFormTitle">Ajouter un événement</h4>
+                        <div class="form-grid">
+                            <div>
+                                <label>Nom de l'événement *</label>
+                                <input type="text" id="eventName" placeholder="Ex: Culte de célébration" required>
+                            </div>
+                            <div>
+                                <label>Date (jour du mois) *</label>
+                                <input type="number" id="eventDate" placeholder="Ex: 25" min="1" max="31" required>
+                            </div>
+                            <div>
+                                <label>Heure *</label>
+                                <input type="text" id="eventTime" placeholder="Ex: 19h00" required>
+                            </div>
+                            <div>
+                                <label>URL de l'image</label>
+                                <div class="upload-container">
+                                    <label for="eventImageFileInput" class="btn-upload-small">
+                                        <i class="fas fa-upload"></i> Importer
+                                    </label>
+                                    <input type="file" id="eventImageFileInput" accept="image/*" style="display: none;" 
+                                           onchange="handleImageUpload(this, 'eventImageUrl', 'eventImagePreview')">
+                                    <input type="text" id="eventImageUrl" placeholder="URL ou base64" style="flex: 1;">
+                                </div>
+                                <img id="eventImagePreview" class="upload-preview" style="display: none; max-width: 200px; margin-top: 0.5rem; border-radius: 5px;">
+                            </div>
+                        </div>
+                        <div>
+                            <label>Description *</label>
+                            <textarea id="eventDescription" rows="3" placeholder="Description de l'événement..." required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button class="btn-primary" onclick="saveEvent()">Enregistrer</button>
+                            <button class="btn-secondary" onclick="cancelEventForm()">Annuler</button>
+                        </div>
+                    </div>
+
+                    <div id="eventsListContainer" class="items-list">
+                        <!-- Events will be loaded here -->
+                    </div>
+
+                    <div class="save-section">
+                        <button class="btn-save-all" onclick="saveEventsData()">
+                            <i class="fas fa-save"></i> Télécharger events.json
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Departments Management Section -->
+            <section class="admin-section" id="departmentsSection" style="display: none;">
+                <div class="section-card">
+                    <div class="card-header">
+                        <h3>Gestion des Départements</h3>
+                        <button class="btn-add-item" onclick="showAddDepartmentForm()">
+                            <i class="fas fa-plus"></i> Ajouter un département
+                        </button>
+                    </div>
+                    
+                    <div id="departmentsLoadStatus" class="load-status" style="display: none; margin-bottom: 1rem; padding: 1rem; border-left: 4px solid #ffc107; border-radius: 4px;">
+                        <span id="departmentsLoadStatusText"></span>
+                        <button onclick="reloadDepartmentsData()" style="margin-left: 1rem; padding: 0.25rem 0.5rem; background: rgba(255,255,255,0.3); border: 1px solid currentColor; border-radius: 4px; cursor: pointer; font-size: 0.85rem;">
+                            Recharger
+                        </button>
+                        <button onclick="forcePopulateDropdowns()" style="margin-left: 0.5rem; padding: 0.25rem 0.5rem; background: rgba(255,255,255,0.3); border: 1px solid currentColor; border-radius: 4px; cursor: pointer; font-size: 0.85rem;">
+                            Forcer le dropdown
+                        </button>
+                        <button onclick="clearLocalStorageBackup('departments')" style="margin-left: 0.5rem; padding: 0.25rem 0.5rem; background: rgba(255,255,255,0.3); border: 1px solid currentColor; border-radius: 4px; cursor: pointer; font-size: 0.85rem;">
+                            Vider le cache
+                        </button>
+                    </div>
+
+                    <!-- Add/Edit Department Form -->
+                    <div class="add-form" id="departmentForm" style="display: none;">
+                        <h4 id="departmentFormTitle">Ajouter un département</h4>
+                        
+                        <!-- Informations de base -->
+                        <div class="form-section">
+                            <h5 style="margin-bottom: 1rem; color: var(--color-secondary);">Informations de base</h5>
+                            <div class="form-grid">
+                                <div>
+                                    <label>Nom du département *</label>
+                                    <input type="text" id="departmentName" placeholder="Ex: Hommes" required>
+                                </div>
+                                <div>
+                                    <label>URL de l'image principale</label>
+                                    <div class="upload-container">
+                                        <label for="departmentImageFileInput" class="btn-upload-small">
+                                            <i class="fas fa-upload"></i> Importer
+                                        </label>
+                                        <input type="file" id="departmentImageFileInput" accept="image/*" style="display: none;" 
+                                               onchange="handleImageUpload(this, 'departmentImageUrl', 'departmentImagePreview')">
+                                        <input type="text" id="departmentImageUrl" placeholder="URL ou base64" style="flex: 1;">
+                                    </div>
+                                    <img id="departmentImagePreview" class="upload-preview" style="display: none; max-width: 200px; margin-top: 0.5rem; border-radius: 5px;">
+                                </div>
+                            </div>
+                            <div>
+                                <label>Description *</label>
+                                <textarea id="departmentDescription" rows="3" placeholder="Description générale du département..." required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Responsables -->
+                        <div class="form-section" style="margin-top: 2rem;">
+                            <h5 style="margin-bottom: 1rem; color: var(--color-secondary);">Responsables</h5>
+                            <div>
+                                <label>Description des responsables</label>
+                                <textarea id="departmentLeadersDescription" rows="2" placeholder="Ex: Les responsables du département accompagnent les membres avec écoute et sagesse..."></textarea>
+                            </div>
+                            <div class="form-grid" style="margin-top: 1rem;">
+                                <div>
+                                    <label>Responsable 1 - Nom</label>
+                                    <input type="text" id="departmentLeader1Name" placeholder="Nom du responsable">
+                                </div>
+                                <div>
+                                    <label>Responsable 1 - Rôle</label>
+                                    <input type="text" id="departmentLeader1Role" placeholder="Ex: Pasteur, Coordinateur">
+                                </div>
+                                <div>
+                                    <label>Responsable 1 - Image</label>
+                                    <input type="text" id="departmentLeader1Image" placeholder="URL de l'image">
+                                </div>
+                            </div>
+                            <div class="form-grid" style="margin-top: 1rem;">
+                                <div>
+                                    <label>Responsable 2 - Nom</label>
+                                    <input type="text" id="departmentLeader2Name" placeholder="Nom du responsable">
+                                </div>
+                                <div>
+                                    <label>Responsable 2 - Rôle</label>
+                                    <input type="text" id="departmentLeader2Role" placeholder="Ex: Pasteur, Coordinateur">
+                                </div>
+                                <div>
+                                    <label>Responsable 2 - Image</label>
+                                    <input type="text" id="departmentLeader2Image" placeholder="URL de l'image">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vision -->
+                        <div class="form-section" style="margin-top: 2rem;">
+                            <h5 style="margin-bottom: 1rem; color: var(--color-secondary);">Notre vision</h5>
+                            <div>
+                                <label>Texte de la vision *</label>
+                                <textarea id="departmentVision" rows="3" placeholder="Ex: Former des membres enracinés dans la foi..." required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Éligibilité -->
+                        <div class="form-section" style="margin-top: 2rem;">
+                            <h5 style="margin-bottom: 1rem; color: var(--color-secondary);">Qui peut rejoindre ce département ?</h5>
+                            <div>
+                                <label>Critères d'éligibilité (un par ligne) *</label>
+                                <textarea id="departmentEligibility" rows="4" placeholder="Exemple:&#10;Membres de l'église&#10;Personnes désireuses de grandir spirituellement&#10;Âge minimum: 18 ans" required></textarea>
+                                <small style="color: #666; display: block; margin-top: 0.5rem;">Entrez un critère par ligne. Chaque ligne deviendra un élément de la liste.</small>
+                            </div>
+                        </div>
+
+                        <!-- Activités -->
+                        <div class="form-section" style="margin-top: 2rem;">
+                            <h5 style="margin-bottom: 1rem; color: var(--color-secondary);">Activités</h5>
+                            <div id="departmentActivitiesContainer">
+                                <!-- Les activités seront ajoutées dynamiquement ici -->
+                            </div>
+                            <button type="button" class="btn-secondary" onclick="addActivityField()" style="margin-top: 1rem;">
+                                <i class="fas fa-plus"></i> Ajouter une activité
+                            </button>
+                        </div>
+
+                        <div class="form-actions" style="margin-top: 2rem;">
+                            <button class="btn-primary" onclick="saveDepartment()">Enregistrer</button>
+                            <button class="btn-secondary" onclick="cancelDepartmentForm()">Annuler</button>
+                        </div>
+                    </div>
+
+                    <div id="departmentsListContainer" class="items-list">
+                        <!-- Departments will be loaded here -->
+                    </div>
+
+                    <div class="save-section">
+                        <button class="btn-save-all" onclick="saveDepartmentsData()">
+                            <i class="fas fa-save"></i> Télécharger departments.json
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Programs Management Section -->
+            <section class="admin-section" id="programsSection" style="display: none;">
+                <div class="section-card">
+                    <div class="card-header">
+                        <h3>Gestion des Programmes</h3>
+                        <button class="btn-add-item" onclick="showAddProgramForm()">
+                            <i class="fas fa-plus"></i> Ajouter un programme
+                        </button>
+                    </div>
+
+                    <!-- Add/Edit Program Form -->
+                    <div class="add-form" id="programForm" style="display: none;">
+                        <h4 id="programFormTitle">Ajouter un programme</h4>
+                        <div class="form-grid">
+                            <div>
+                                <label>Nom du programme *</label>
+                                <input type="text" id="programName" placeholder="Ex: Culte de célébration" required>
+                            </div>
+                            <div>
+                                <label>Jour de la semaine *</label>
+                                <input type="text" id="programDay" placeholder="Ex: Dimanche, Mercredi (1 sur 2)" required>
+                                <small style="color: #666; margin-top: 0.25rem; display: block;">Exemples: Dimanche, Mardi, Mercredi (1 sur 2)</small>
+                            </div>
+                            <div>
+                                <label>Heure *</label>
+                                <input type="text" id="programTime" placeholder="Ex: 10h00" required>
+                            </div>
+                            <div>
+                                <label>Icône (FontAwesome) *</label>
+                                <input type="text" id="programIcon" placeholder="Ex: church, users, home" required>
+                                <small style="color: #666; margin-top: 0.25rem; display: block;">Exemples: church, users, home, child, pray, user-friends</small>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button class="btn-primary" onclick="saveProgram()">Enregistrer</button>
+                            <button class="btn-secondary" onclick="cancelProgramForm()">Annuler</button>
+                        </div>
+                    </div>
+
+                    <div id="programsListContainer" class="items-list">
+                        <!-- Programs will be loaded here -->
+                    </div>
+
+                    <div class="save-section">
+                        <button class="btn-save-all" onclick="saveProgramsData()">
+                            <i class="fas fa-save"></i> Télécharger programs.json
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="admin.js?v=2.2"></script>
+</body>
+</html>
+

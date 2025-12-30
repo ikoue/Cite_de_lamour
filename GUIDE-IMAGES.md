@@ -147,3 +147,4 @@ Si vous avez des difficultés à modifier les images, vérifiez :
 4. Que vous utilisez un serveur local (pas file://)
 
 
+

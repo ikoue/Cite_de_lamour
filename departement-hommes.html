@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="page-hommes">
     <!-- Header -->
-    <header class="header department-header">
+    <header class="header department-header department-header-transparent">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
@@ -18,6 +18,7 @@
                 <nav class="nav">
                     <a href="index.html" class="nav-link">Accueil</a>
                     <a href="commencer-ici.html" class="nav-link">Commencer ici</a>
+                    <a href="se-joindre.html" class="nav-link">Se joindre à nous</a>
                     <a href="#menu" class="nav-link menu-toggle" id="menuToggle">
                         Menu <i class="fas fa-bars"></i>
                     </a>
@@ -39,6 +40,9 @@
                 </a></li>
                 <li><a href="departement-femmes.html" class="dropdown-menu-link">
                     Femmes
+                </a></li>
+                <li><a href="departement-medias.html" class="dropdown-menu-link">
+                    Médias
                 </a></li>
                 <li><a href="departement-ados.html" class="dropdown-menu-link">
                     Ados
@@ -65,16 +69,37 @@
     <!-- Hero Section -->
     <section class="department-hero">
         <div class="container">
-            <div class="department-hero-content">
-                <div class="department-hero-text">
-                    <h1 class="department-hero-title">Hommes</h1>
-                    <p class="department-hero-description">
-                        Le département des hommes offre un espace de fraternité, d'encouragement et de croissance 
-                        spirituelle aligné sur les valeurs chrétiennes de la Cité de l'Amour.
+            <div class="section-presentation">
+                <div class="section-text-content">
+                    <div class="section-label">DÉPARTEMENT</div>
+                    <h1 class="section-title-large section-title-hero">HOMMES</h1>
+                    <p class="section-description">
+                        Ce département a pour vocation de former des hommes complets et totalement accomplis : des hommes engagés dans la société, des pères présents et responsables dans leur foyer, et des hommes spirituels enracinés dans la Parole de Dieu.
                     </p>
                 </div>
-                <div class="department-hero-image">
+                <div class="section-image-wrapper">
                     <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Département Hommes">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="department-main">
+        <div class="container">
+            <div class="section-presentation">
+                <div class="section-text-content">
+                    <div class="section-label">NOTRE VOCATION</div>
+                    <h2 class="section-title-large">NOTRE VOCATION</h2>
+                    <p class="section-description">
+                        Ce département a pour vocation de former des hommes complets et totalement accomplis : des hommes engagés dans la société, des pères présents et responsables dans leur foyer, et des hommes spirituels enracinés dans la Parole de Dieu.
+                    </p>
+                    <p class="section-description">
+                        À travers des temps d'exhortation, de méditation et d'enseignement pratique, le département accompagne chaque homme afin qu'il puisse vivre pleinement son appel, avec maturité, sagesse et impact.
+                    </p>
+                </div>
+                <div class="section-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Formation des hommes">
                 </div>
             </div>
         </div>
@@ -83,25 +108,17 @@
     <!-- Les responsables Section -->
     <section class="department-leaders">
         <div class="container">
-            <h2 class="department-section-title">Les responsables</h2>
-            <div class="leaders-grid">
-                <div class="leader-card">
-                    <div class="leader-image">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Marc Dubois">
-                    </div>
-                    <div class="leader-info">
-                        <h3 class="leader-name">Marc Dubois</h3>
-                        <p class="leader-role">Responsable</p>
-                    </div>
+            <div class="leader-presentation">
+                <div class="leader-text-content">
+                    <div class="leader-label">RESPONSABLE</div>
+                    <h2 class="leader-name-large">
+                        FRÈRE DIMITRI
+                        <span class="leader-name-decorative">FRÈRE DIMITRI</span>
+                    </h2>
+                    <p class="leader-role">Chef du Département des Hommes, un époux selon le Christ</p>
                 </div>
-                <div class="leader-card">
-                    <div class="leader-image">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Thomas Martin">
-                    </div>
-                    <div class="leader-info">
-                        <h3 class="leader-name">Thomas Martin</h3>
-                        <p class="leader-role">Coordonnateur</p>
-                    </div>
+                <div class="leader-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Frère Dimitri">
                 </div>
             </div>
         </div>
@@ -110,24 +127,38 @@
     <!-- Notre vision Section -->
     <section class="department-vision">
         <div class="container">
-            <div class="vision-content">
-                <div class="vision-text-block">
-                    <h2 class="department-section-title">Notre vision</h2>
-                    <p class="vision-text">
-                        Construire une communauté d'hommes forts dans la foi, unis par la fraternité et engagés 
-                        à servir Dieu et leur prochain avec intégrité et courage.
+            <div class="section-presentation section-presentation-reverse">
+                <div class="section-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Notre vision">
+                </div>
+                <div class="section-text-content">
+                    <div class="section-label">NOTRE VISION</div>
+                    <h2 class="section-title-large">NOTRE VISION</h2>
+                    <p class="section-description">
+                        Former des hommes forts dans la foi, équilibrés dans leur vie personnelle et familiale, et engagés à influencer positivement leur environnement par des valeurs chrétiennes solides telles que l'intégrité, la responsabilité, l'amour et le service.
                     </p>
                 </div>
-                <div class="vision-eligibility">
-                    <div class="eligibility-icon">
-                        <i class="fas fa-heart"></i>
-                        <i class="fas fa-cross"></i>
-                    </div>
-                    <h3 class="eligibility-title">Qui peut rejoindre ce département ?</h3>
-                    <ul class="eligibility-list">
-                        <li><i class="fas fa-check eligibility-check"></i> Être un homme</li>
-                        <li><i class="fas fa-check eligibility-check"></i> Adultes 18 ans et plus</li>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qui peut rejoindre Section -->
+    <section class="department-eligibility">
+        <div class="container">
+            <div class="section-presentation">
+                <div class="section-text-content">
+                    <div class="section-label">ÉLIGIBILITÉ</div>
+                    <h2 class="section-title-large">QUI PEUT REJOINDRE CE DÉPARTEMENT ?</h2>
+                    <ul class="eligibility-list-simple">
+                        <li>Être un homme</li>
+                        <li>Avoir 25 ans et plus</li>
+                        <li>Être père de famille ou futur père</li>
+                        <li>Être membre ou sympathisant de l'église</li>
+                        <li>Désirer grandir spirituellement et personnellement</li>
                     </ul>
+                </div>
+                <div class="section-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Éligibilité">
                 </div>
             </div>
         </div>
@@ -136,34 +167,48 @@
     <!-- Nos activités Section -->
     <section class="department-activities">
         <div class="container">
-            <h2 class="department-section-title">Nos activités</h2>
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-image">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Rencontres fraternelles">
+            <!-- Activité 1: Rencontres fraternelles -->
+            <div class="activity-block">
+                <div class="activity-content">
+                    <div class="activity-text">
+                        <h2 class="activity-title">RENCONTRES FRATERNELLES</h2>
+                        <p class="activity-description">
+                            Rencontres organisées un mercredi sur deux, axées sur l'exhortation, la méditation de la Parole de Dieu, la prière et le partage, afin de s'encourager mutuellement dans la foi.
+                        </p>
                     </div>
-                    <h3 class="activity-title">Rencontres fraternelles</h3>
-                    <p class="activity-description">
-                        Temps de partage, de prière et d'étude biblique pour grandir ensemble dans la foi.
-                    </p>
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rencontres fraternelles">
+                    </div>
                 </div>
-                <div class="activity-card">
+            </div>
+
+            <!-- Activité 2: Retraite annuelle -->
+            <div class="activity-block activity-block-reverse">
+                <div class="activity-content">
                     <div class="activity-image">
-                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Événements pour hommes">
+                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Retraite annuelle">
                     </div>
-                    <h3 class="activity-title">Événements pour hommes</h3>
-                    <p class="activity-description">
-                        Retraites, conférences et activités pour renforcer les liens et la foi.
-                    </p>
+                    <div class="activity-text">
+                        <h2 class="activity-title">RETRAITE ANNUELLE</h2>
+                        <p class="activity-description">
+                            Une retraite spirituelle une fois par an, dédiée au ressourcement, à la communion fraternelle et à l'approfondissement de la relation avec Dieu.
+                        </p>
+                    </div>
                 </div>
-                <div class="activity-card">
-                    <div class="activity-image">
-                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Service communautaire">
+            </div>
+
+            <!-- Activité 3: Ateliers et conférences -->
+            <div class="activity-block">
+                <div class="activity-content">
+                    <div class="activity-text">
+                        <h2 class="activity-title">ATELIERS ET CONFÉRENCES THÉMATIQUES</h2>
+                        <p class="activity-description">
+                            Des ateliers et conférences autour de sujets concrets et essentiels à la vie de l'homme chrétien : l'emploi et la vie professionnelle, la paternité, être un bon époux, l'entrepreneuriat, le leadership et la responsabilité.
+                        </p>
                     </div>
-                    <h3 class="activity-title">Service communautaire</h3>
-                    <p class="activity-description">
-                        Actions concrètes pour servir notre communauté et témoigner de l'amour de Christ.
-                    </p>
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ateliers et conférences">
+                    </div>
                 </div>
             </div>
         </div>
@@ -172,14 +217,25 @@
     <!-- Rejoindre Section -->
     <section class="department-join">
         <div class="container">
-            <h2 class="department-section-title">Rejoindre ce département</h2>
-            <div class="join-buttons">
-                <button class="btn-join btn-contact-dept">
-                    Nous contacter
-                </button>
-                <button class="btn-join btn-register-dept">
-                    S'inscrire / Rejoindre
-                </button>
+            <div class="section-presentation section-presentation-reverse">
+                <div class="section-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rejoindre">
+                </div>
+                <div class="section-text-content">
+                    <div class="section-label">REJOINDRE</div>
+                    <h2 class="section-title-large">REJOINDRE CE DÉPARTEMENT</h2>
+                    <p class="section-description">
+                        Si vous désirez devenir un homme accompli, un père engagé et un disciple enraciné dans la foi, le département des hommes est fait pour vous.
+                    </p>
+                    <div class="join-buttons">
+                        <button class="btn-join btn-contact-dept" onclick="window.location.href='se-joindre.html#contact'">
+                            <i class="fas fa-envelope"></i> Nous contacter
+                        </button>
+                        <button class="btn-join btn-register-dept" onclick="window.location.href='se-joindre.html'">
+                            <i class="fas fa-user-plus"></i> S'inscrire / Rejoindre
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -187,28 +243,10 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-top">
+            <div class="footer_top">
                 <div class="footer-logo">
-                    <div class="logo footer-logo-content">
-                        <div class="logo-curves">
-                            <svg class="curve-upper" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M 50 50 Q 25 25 0 0" stroke="currentColor" stroke-width="3" fill="none"/>
-                            </svg>
-                            <svg class="curve-lower" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M 0 50 Q 25 25 50 0" stroke="currentColor" stroke-width="3" fill="none"/>
-                            </svg>
-                        </div>
-                        <div class="logo-main">
-                            <div class="logo-text-wrapper">
-                                <span class="logo-cite">Ci<span class="logo-cross">✝</span>é</span>
-                                <span class="logo-amour">de l'amour</span>
-                            </div>
-                            <div class="logo-book">
-                                <i class="fas fa-book-open"></i>
-                            </div>
-                        </div>
-                        <div class="logo-tagline footer-tagline">Là où l'amour transforme des vies</div>
-                    </div>
+                    <img src="logo.png" alt="Cité de l'amour Logo" class="logo-image">
+                    <p class="footer-logo-text">Cité de l'amour <br><span>La où l'amour transforme des vies</span></p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
@@ -257,5 +295,163 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Animations au scroll - Intersection Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observer les sections avec animations
+            document.querySelectorAll('.section-presentation, .leader-presentation, .activity-item, .eligibility-list-simple li').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+
+        // Script amélioré pour header transparent adaptatif - Page des hommes uniquement
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('.department-header-transparent');
+            if (!header) return;
+
+            // Configuration des sections avec leurs types de fond
+            const sectionTypes = new Map();
+            document.querySelectorAll('section').forEach(section => {
+                const computedStyle = window.getComputedStyle(section);
+                const bg = computedStyle.backgroundColor;
+                const bgImage = computedStyle.backgroundImage;
+                
+                // Détecter le type de fond
+                if (bgImage && bgImage !== 'none') {
+                    sectionTypes.set(section, 'image');
+                } else {
+                    const rgbMatch = bg.match(/\d+/g);
+                    if (rgbMatch && rgbMatch.length >= 3) {
+                        const r = parseInt(rgbMatch[0]);
+                        const g = parseInt(rgbMatch[1]);
+                        const b = parseInt(rgbMatch[2]);
+                        
+                        // Fond bleu-violet harmonisé (4a5d8f) - entre bleu et bordeaux
+                        if ((r >= 70 && g >= 90 && b >= 140) || 
+                            (r >= 74 && g >= 93 && b >= 143) ||
+                            (r >= 65 && g >= 85 && b >= 135)) {
+                            sectionTypes.set(section, 'blue');
+                        }
+                        // Fond bleu foncé (secondary)
+                        else if (b > r + 30 && b > g + 30 && r < 60) {
+                            sectionTypes.set(section, 'blue');
+                        }
+                        // Fond blanc ou très clair
+                        else if (r >= 250 && g >= 250 && b >= 250) {
+                            sectionTypes.set(section, 'white');
+                        }
+                        // Fond gris clair
+                        else if (r >= 240 && g >= 240 && b >= 240) {
+                            sectionTypes.set(section, 'white');
+                        }
+                        // Fond rose (f5e6f0, f0d9e6) - détection améliorée
+                        else if ((r >= 240 && g >= 220 && b >= 230) || 
+                            (r >= 230 && g >= 210 && b >= 220)) {
+                            sectionTypes.set(section, 'pink');
+                        }
+                        // Par défaut - bleu pour page des hommes
+                        else {
+                            sectionTypes.set(section, 'blue');
+                        }
+                    }
+                }
+            });
+
+            // Fonction optimisée pour détecter la section sous le header
+            function updateHeaderBackground() {
+                const headerRect = header.getBoundingClientRect();
+                const headerCenter = headerRect.top + headerRect.height / 2;
+                
+                let closestSection = null;
+                let minDistance = Infinity;
+                
+                // Trouver la section la plus proche du centre du header
+                sectionTypes.forEach((type, section) => {
+                    const sectionRect = section.getBoundingClientRect();
+                    
+                    // Si la section est visible et proche du header
+                    if (sectionRect.top <= headerCenter + 100 && sectionRect.bottom >= headerRect.top - 50) {
+                        const distance = Math.abs(sectionRect.top - headerCenter);
+                        if (distance < minDistance) {
+                            minDistance = distance;
+                            closestSection = section;
+                        }
+                    }
+                });
+
+                if (closestSection) {
+                    const sectionType = sectionTypes.get(closestSection);
+                    
+                    // Retirer toutes les classes
+                    header.classList.remove('on-blue', 'on-white', 'on-pink');
+                    
+                    // Ajouter la classe appropriée avec transition fluide
+                    if (sectionType === 'blue') {
+                        header.classList.add('on-blue');
+                    } else if (sectionType === 'white') {
+                        header.classList.add('on-white');
+                    } else if (sectionType === 'pink') {
+                        header.classList.add('on-pink');
+                    } else {
+                        header.classList.add('on-blue'); // Par défaut pour page des hommes
+                    }
+                } else {
+                    // Si aucune section trouvée, utiliser le type par défaut (bleu pour page des hommes)
+                    header.classList.remove('on-blue', 'on-white', 'on-pink');
+                    header.classList.add('on-blue');
+                }
+            }
+
+            // Optimisation du scroll avec throttling amélioré
+            let lastScrollTop = 0;
+            let ticking = false;
+            
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // Ne mettre à jour que si le scroll est significatif (performance)
+                if (Math.abs(scrollTop - lastScrollTop) > 10 || !ticking) {
+                    if (!ticking) {
+                        window.requestAnimationFrame(() => {
+                            updateHeaderBackground();
+                            lastScrollTop = scrollTop;
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                }
+            }, { passive: true });
+
+            // Mise à jour initiale
+            updateHeaderBackground();
+            
+            // Mise à jour lors du redimensionnement avec debounce
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    updateHeaderBackground();
+                }, 150);
+            });
+
+            // Mise à jour périodique pour s'assurer de la synchronisation
+            setInterval(updateHeaderBackground, 500);
+        });
+    </script>
 </body>
 </html>

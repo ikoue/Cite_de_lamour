@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Serveur - Cité de l'amour</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-result {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid;
+        }
+        .success {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            border-color: #dc3545;
+            color: #721c24;
+        }
+        .info {
+            background: #d1ecf1;
+            border-color: #0c5460;
+            color: #0c5460;
+        }
+        code {
+            background: rgba(0,0,0,0.1);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test du Serveur Local</h1>
+    <div id="results"></div>
+
+    <script>
+        const resultsDiv = document.getElementById('results');
+        
+        function addResult(type, title, message) {
+            const div = document.createElement('div');
+            div.className = `test-result ${type}`;
+            div.innerHTML = `<strong>${title}</strong><br>${message}`;
+            resultsDiv.appendChild(div);
+        }
+
+        async function testServer() {
+            addResult('info', '🔄 Test en cours...', 'Vérification de la connexion au serveur...');
+
+            // Test 1: Vérifier le protocole
+            if (window.location.protocol === 'file:') {
+                addResult('error', '❌ Problème détecté', 
+                    'Vous accédez au site via <code>file://</code>. Vous devez utiliser un serveur local.<br>' +
+                    'URL actuelle: <code>' + window.location.href + '</code><br>' +
+                    'URL attendue: <code>http://localhost:8000/TEST-SERVEUR.html</code>');
+                return;
+            }
+
+            addResult('success', '✅ Protocole correct', 
+                'Vous utilisez <code>' + window.location.protocol + '</code> - Parfait !');
+
+            // Test 2: Charger departments.json
+            try {
+                addResult('info', '📡 Test de chargement...', 
+                    'Tentative de chargement de <code>data/departments.json</code>...');
+                
+                const response = await fetch('data/departments.json');
+                
+                if (!response.ok) {
+                    addResult('error', '❌ Erreur HTTP', 
+                        `Le serveur a répondu avec le code ${response.status}. Vérifiez que le serveur est bien démarré.`);
+                    return;
+                }
+
+                const data = await response.json();
+                
+                if (Array.isArray(data)) {
+                    addResult('success', '✅ Fichier JSON chargé', 
+                        `Le fichier contient ${data.length} département(s).<br>` +
+                        `Départements: ${data.map(d => d.name).join(', ')}`);
+                } else {
+                    addResult('error', '❌ Format invalide', 
+                        'Le fichier JSON n\'est pas un tableau.');
+                }
+
+            } catch (error) {
+                addResult('error', '❌ Erreur de chargement', 
+                    `Impossible de charger le fichier JSON.<br>` +
+                    `Erreur: ${error.message}<br><br>` +
+                    `<strong>Solutions:</strong><br>` +
+                    `1. Vérifiez que le serveur est démarré (python -m http.server 8000)<br>` +
+                    `2. Assurez-vous d'accéder au site via http://localhost:8000<br>` +
+                    `3. Vérifiez que le fichier data/departments.json existe`);
+            }
+        }
+
+        // Lancer le test au chargement
+        testServer();
+    </script>
+</body>
+</html>
+
+
+

@@ -14,11 +14,13 @@ cd /d "%~dp0"
 echo Répertoire actuel:
 cd
 echo.
-echo Vérification du fichier data/departments.json...
+echo Vérification des fichiers JSON...
 if exist "data\departments.json" (
-    echo ✅ Fichier trouvé !
+    echo ✅ Fichier data\departments.json trouvé !
+) else if exist "departments.json" (
+    echo ✅ Fichier departments.json trouvé à la racine !
 ) else (
-    echo ❌ Fichier non trouvé ! Vérifiez que vous êtes dans le bon répertoire.
+    echo ❌ Fichier departments.json non trouvé ! Vérifiez que vous êtes dans le bon répertoire.
     pause
     exit
 )

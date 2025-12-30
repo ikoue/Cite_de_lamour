@@ -12,8 +12,14 @@ echo Répertoire actuel: %CD%
 echo.
 
 REM Vérifier que nous sommes dans le bon dossier
-if not exist "data\departments.json" (
-    echo ❌ ERREUR: Le fichier data\departments.json n'existe pas !
+if exist "data\departments.json" (
+    set JSON_PATH=data\departments.json
+    echo ✅ Fichier trouvé dans data\departments.json
+) else if exist "departments.json" (
+    set JSON_PATH=departments.json
+    echo ✅ Fichier trouvé à la racine: departments.json
+) else (
+    echo ❌ ERREUR: Le fichier departments.json n'existe pas !
     echo.
     echo Vous n'êtes pas dans le bon répertoire.
     echo Le serveur doit être démarré depuis le dossier cite-amour
@@ -33,7 +39,7 @@ if not exist "admin\index.html" (
 )
 
 echo ✅ Vérifications OK !
-echo    - Fichier data\departments.json trouvé
+echo    - Fichier %JSON_PATH% trouvé
 echo    - Fichier admin\index.html trouvé
 echo.
 echo ========================================
@@ -53,5 +59,6 @@ echo.
 python -m http.server 8000
 
 pause
+
 
 

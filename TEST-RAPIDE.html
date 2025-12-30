@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Rapide - Serveur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .success { border-left: 4px solid #28a745; }
+        .error { border-left: 4px solid #dc3545; }
+        .info { border-left: 4px solid #0c5460; }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button:hover { background: #0056b3; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test Rapide du Serveur</h1>
+    
+    <div class="test-box info">
+        <h3>📋 Instructions</h3>
+        <ol>
+            <li>Assurez-vous que le serveur est démarré (fenêtre terminal ouverte)</li>
+            <li>Cliquez sur le bouton "Tester" ci-dessous</li>
+            <li>Regardez le résultat</li>
+        </ol>
+    </div>
+
+    <div class="test-box">
+        <h3>Test du Fichier JSON</h3>
+        <button onclick="testJSON()">🔍 Tester departments.json</button>
+        <div id="jsonResult" class="result" style="display: none;"></div>
+    </div>
+
+    <div class="test-box">
+        <h3>Liens Utiles</h3>
+        <p><a href="data/departments.json" target="_blank">📄 Voir departments.json</a></p>
+        <p><a href="admin/" target="_blank">⚙️ Interface Admin</a></p>
+        <p><a href="index.html" target="_blank">🏠 Page d'accueil</a></p>
+    </div>
+
+    <script>
+        async function testJSON() {
+            const resultDiv = document.getElementById('jsonResult');
+            resultDiv.style.display = 'block';
+            resultDiv.className = 'result info';
+            resultDiv.innerHTML = '⏳ Test en cours...';
+
+            try {
+                const response = await fetch('data/departments.json');
+                
+                if (!response.ok) {
+                    resultDiv.className = 'result error';
+                    resultDiv.innerHTML = `
+                        ❌ <strong>Erreur ${response.status}</strong><br>
+                        Le fichier n'a pas été trouvé.<br><br>
+                        <strong>Solutions :</strong><br>
+                        1. Vérifiez que le serveur est démarré depuis le dossier <code>cite-amour</code><br>
+                        2. Double-cliquez sur <code>demarrer-serveur.bat</code><br>
+                        3. Laissez la fenêtre du serveur ouverte<br>
+                        4. Rechargez cette page
+                    `;
+                    return;
+                }
+
+                const data = await response.json();
+                
+                if (Array.isArray(data) && data.length > 0) {
+                    resultDiv.className = 'result success';
+                    resultDiv.innerHTML = `
+                        ✅ <strong>SUCCÈS !</strong><br>
+                        Le fichier a été trouvé et chargé correctement.<br>
+                        <strong>Nombre de départements :</strong> ${data.length}<br><br>
+                        <strong>Départements :</strong><br>
+                        ${data.map(d => `• ${d.name}`).join('<br>')}
+                    `;
+                } else {
+                    resultDiv.className = 'result error';
+                    resultDiv.innerHTML = '⚠️ Le fichier est vide ou invalide.';
+                }
+
+            } catch (error) {
+                resultDiv.className = 'result error';
+                resultDiv.innerHTML = `
+                    ❌ <strong>Erreur de connexion</strong><br>
+                    ${error.message}<br><br>
+                    <strong>Le serveur n'est probablement pas démarré.</strong><br><br>
+                    <strong>Pour démarrer le serveur :</strong><br>
+                    1. Ouvrez le dossier <code>cite-amour</code><br>
+                    2. Double-cliquez sur <code>demarrer-serveur.bat</code><br>
+                    3. Laissez la fenêtre ouverte<br>
+                    4. Rechargez cette page
+                `;
+            }
+        }
+
+        // Test automatique au chargement
+        window.addEventListener('load', () => {
+            setTimeout(testJSON, 500);
+        });
+    </script>
+</body>
+</html>
+
+
+
