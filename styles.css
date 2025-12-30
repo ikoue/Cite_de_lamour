@@ -4012,6 +4012,17 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-weight: 400;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     animation: fadeInUp 0.8s ease-out 0.4s both;
+    margin-bottom: 1.5rem;
+}
+
+.leader-description {
+    font-size: 1.05rem;
+    color: #1a1a1a;
+    line-height: 1.8;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+    margin-top: 1.5rem;
 }
 
 .page-hommes .leader-role {
