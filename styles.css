@@ -3186,6 +3186,28 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 
 .page-juniors .department-main {
     background: #ffffff;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.page-juniors .department-main .container {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.page-juniors .department-main .section-presentation {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.page-juniors .department-main .section-text-content {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.page-juniors .department-main .section-description {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 .page-juniors .department-leaders {
@@ -3698,8 +3720,8 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     transition: transform 0.6s ease;
 }
 
-/* Image de l'ordinateur entièrement visible dans la section Rejoindre */
-.page-ados .department-join .section-image-wrapper img {
+/* Image de l'ordinateur entièrement visible dans la section Rejoindre sur toutes les pages */
+.department-join .section-image-wrapper img {
     object-fit: contain;
     object-position: center;
 }
