@@ -1,6 +1,5 @@
 /* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=BBH+Bartle&family=BBH+Hegarty&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=BBH+Bartle&family=BBH+Hegarty&family=Cal+Sans&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=BBH+Bartle&family=BBH+Hegarty&family=Cal+Sans&family=Corinthia:wght@400;700&family=Ephesis&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Reset and Base Styles */
 * {
@@ -2661,16 +2660,6 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     }
 }
 
-.section-label {
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 3px;
-    color: #1a1a1a;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    animation: fadeInUp 0.6s ease-out;
-}
 
 .page-hommes .section-label {
     color: #000000;
@@ -3484,14 +3473,19 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 
 /* Styles pour page du groupe pastoral - Marron harmonisé */
 .page-pastoral .department-hero {
-    background: var(--color-brown-pastoral);
+    background: var(--color-brown);
 }
 
 .page-pastoral .department-hero .section-label {
-    color: #ffffff;
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 150px;
+    color: #b5acac;
+    opacity: 0.5;
 }
 
 .page-pastoral .department-hero .section-title-hero {
+    font-family:"Cal Sans", sans-serif ;
     color: #ffffff;
     font-size: 7.5rem;
 }
@@ -3521,14 +3515,17 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .page-pastoral .department-activities {
-    background: var(--color-brown-pastoral);
+    background: var(--color-brown);
 }
 
 .page-pastoral .section-title-large {
-    color: #8B0000;
+    font-family: "BBH Hegarty", sans-serif;
+    font-size: xxx-large;
+    color: var(--color-brown);
 }
 
 .page-pastoral .section-description {
+    font-family: "Montserrat", sans-serif;
     color: #1a1a1a;
 }
 
@@ -3541,10 +3538,15 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .page-pastoral .leader-name-large {
-    color: #8B0000;
+    font-family: "BBH Hegarty", sans-serif;
+    font-weight: 100;
+    font-size: xxx-large;
+    color: var(--color-brown);
 }
 
 .page-pastoral .leader-role {
+    font-family: "Montserrat", sans-serif;
+    font-weight: normal;
     color: #1a1a1a;
 }
 
@@ -3561,8 +3563,9 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .page-pastoral .btn-contact-dept {
-    background: var(--color-brown-pastoral);
-    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    background: wheat;
+    color: #8B4513;
     border: none;
 }
 
@@ -4126,23 +4129,6 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #8B0000;
 }
 
-.leader-name-decorative {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 5.5rem;
-    font-weight: 300;
-    color: rgba(180, 180, 180, 0.3);
-    font-style: italic;
-    font-family: 'Brush Script MT', 'Lucida Handwriting', cursive, serif;
-    letter-spacing: -1px;
-    line-height: 0.95;
-    z-index: 1;
-    pointer-events: none;
-    transform: translate(12px, 18px);
-    white-space: nowrap;
-    animation: fadeInUp 0.8s ease-out 0.3s both;
-}
 
 .leader-role {
     font-size: 1rem;
@@ -4169,10 +4155,9 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .leader-image-wrapper {
-    width: 100%;
+    width: 110%;
     height: 520px;
     overflow: hidden;
-    border-radius: 0 20px 20px 0;
     background: #f0f0f0;
 }
 
@@ -8523,5 +8508,139 @@ body {
         transform: translateY(0);
     }
 }
+
+/* Département groupe pastoral */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=BBH+Bartle&family=BBH+Hegarty&family=Cal+Sans&family=Corinthia:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.leader-presentation {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  width: 100%;
+}
+
+/* Grille responsive des pasteurs */
+.pasteurs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem; /* Réduit de 5rem à 3rem pour un espacement plus équilibré */
+  width: 100%;
+}
+
+/* Conteneur image + overlay */
+.pasteurs .leader-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer; /* Indique l'interactivité */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre légère */
+  transition: box-shadow 0.3s ease; /* Transition pour l'ombre */
+}
+
+.pasteurs .leader-image-wrapper:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+}
+
+/* Image */
+.pasteurs .leader-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3/4; /* Maintient un ratio cohérent */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.pasteurs .leader-image-wrapper:hover img {
+  transform: scale(1.05); /* Légère animation de l'image au survol */
+}
+
+/* TITRE visible en permanence */
+.pasteurs .leader-image-wrapper .leader-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  margin: 0; /* Supprime les marges par défaut */
+  color: #ffffff;
+  line-height: 1;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700; /* 800 n'existe pas dans votre import Google Fonts */
+  font-size: clamp(1.25rem, 3vw, 1.75rem); /* Taille responsive */
+  text-align: left;
+  z-index: 3;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); /* Dégradé plus élégant */
+  pointer-events: none; /* Évite les interférences avec les clics */
+  /* Animation */
+  transform: translateY(0);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Courbe d'animation améliorée */
+}
+
+/* TEXTE caché au départ */
+.pasteurs .leader-image-wrapper .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(0.875rem, 2vw, 1rem); /* Taille responsive */
+  line-height: 1.6; /* Améliore la lisibilité */
+  text-align: left;
+  z-index: 2;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.5)); /* Dégradé pour meilleure lisibilité */
+  pointer-events: none;
+  /* Caché en bas */
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* AU SURVOL : les deux montent ENSEMBLE */
+.pasteurs .leader-image-wrapper:hover .leader-title {
+  transform: translateY(100%); /* Calcul dynamique basé sur la hauteur de l'overlay */
+}
+
+.pasteurs .leader-image-wrapper:hover .overlay {
+  transform: translateY(0);
+}
+
+/*Activités du département*/
+.activity-block .activity-content .activity-text .activity-title {
+  font-size: 1.8rem;
+  color: wheat;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  font-family: 'Oswald', sans-serif;
+}
+
+.activity-block .activity-content .activity-text .activity-description {
+  font-size: 1rem;
+  color: white;
+  font-weight: 400;
+  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Responsive : ajustements pour petits écrans */
+@media (max-width: 768px) {
+  .pasteurs {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+  
+  .pasteurs .leader-image-wrapper .leader-title {
+    padding: 0.75rem;
+  }
+  
+  .pasteurs .leader-image-wrapper .overlay {
+    padding: 0.75rem;
+    padding-top: 2.5rem;
+  }
+}
+
 
 
