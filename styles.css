@@ -4176,12 +4176,20 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     background: #f0f0f0;
 }
 
+.page-hommes .leader-image-wrapper {
+    height: 650px;
+}
+
 .leader-image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     display: block;
+}
+
+.page-hommes .leader-image-wrapper img {
+    object-fit: contain;
 }
 
 /* Styles pour compatibilité avec autres pages */
