@@ -3731,10 +3731,29 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     opacity: 0.5;
 }
 
+.page-pastoral .department-main .section-label {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 95px;
+    color: #b5acac;
+    opacity: 0.7;
+}
+
+.page-pastoral .department-leaders .section-label {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 120px;
+    color: #b5acac;
+    opacity: 0.7;
+}
+
 .page-pastoral .department-hero .section-title-hero {
-    font-family:"Cal Sans", sans-serif ;
+    margin-top: -100px;
+    font-family: "Cal Sans", sans-serif;
+    font-style: normal;
     color: #ffffff;
-    font-size: 7.5rem;
+    font-size: 6rem;
+    z-index: 2;
 }
 
 .page-pastoral .department-hero .section-description {
@@ -3766,9 +3785,11 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .page-pastoral .section-title-large {
-    font-family: "BBH Hegarty", sans-serif;
-    font-size: xxx-large;
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 900;
+    font-size: 80px;
     color: var(--color-brown);
+    margin-top: -150px;
 }
 
 .page-pastoral .section-description {
@@ -3785,10 +3806,11 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .page-pastoral .leader-name-large {
-    font-family: "BBH Hegarty", sans-serif;
-    font-weight: 100;
-    font-size: xxx-large;
     color: var(--color-brown);
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 900;
+    font-size: 90px;
+    margin-top: -90px;
 }
 
 .page-pastoral .leader-role {
@@ -3938,7 +3960,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-family: "Cal Sans", sans-serif;
     font-weight: 900;
     font-size: 80px;
-    margin-top: -170px;
+    margin-top: -110px;
 }
 
 .page-evangelisation .department-join .section-title-large {
@@ -3950,6 +3972,12 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .page-evangelisation .department-main .section-description {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: #1a1a1a;
+}
+
+.page-evangelisation .department-vision .section-description {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     color: #1a1a1a;
@@ -3983,7 +4011,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 
 .page-evangelisation .leader-role {
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     color: #1a1a1a;
 }
 
