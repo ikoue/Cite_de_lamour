@@ -70,7 +70,7 @@
                 <div class="join-hero-text">
                     <h1 class="join-hero-title">Rejoignez notre communauté</h1>
                     <p class="join-hero-subtitle">
-                        À la Cité de l'amour, nous vous accueillons avec un cœur ouvert. 
+                        À la Cité de l'amour, nous vous accueillons avec un cœur ouvert.
                         Découvrez nos services et accompagnements pour votre chemin spirituel.
                     </p>
                     <div class="join-hero-features">
@@ -90,10 +90,21 @@
                 </div>
                 <div class="join-hero-image">
                     <div class="hero-image-wrapper">
-                        <img id="joinHeroImage" src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Communauté">
+                        <img id="joinHeroImage" src="lessdebuts2.jpg" alt="Communauté">
                     </div>
                 </div>
             </div>
+            <div class="join-hero-cta" style="margin-top: 22px; position: relative; z-index: 50;">
+  <a href="./rejoindre-departement.html"
+     class="btn-submit"
+     style="display:inline-flex; gap:10px; align-items:center; text-decoration:none; position:relative; z-index:50;">
+    <span>Rejoindre un département</span>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+</div>
+
+</div>
+
         </div>
     </section>
 
@@ -101,8 +112,8 @@
     <main class="join-main">
         <div class="container">
             <!-- Title Section -->
-            <section class="join-title-section">
-                <div class="section-header">
+            <section class="join-title-section reveal">
+                <div class="section-header reveal">
                     <span class="section-badge">Nos services</span>
                     <h2 class="join-main-title">Accompagnements et services</h2>
                     <p class="join-subtitle">
@@ -112,9 +123,9 @@
             </section>
 
             <!-- Services Cards -->
-            <section class="services-section">
+            <section class="services-section reveal">
                 <!-- Service 1: Baptême -->
-                <div class="service-card-modern">
+                <div class="service-card-modern reveal">
                     <div class="service-icon-wrapper">
                         <div class="service-icon">
                             <i class="fas fa-water"></i>
@@ -126,7 +137,7 @@
                     <div class="service-content-modern">
                         <h2 class="service-title-modern">Baptême</h2>
                         <p class="service-description-modern">
-                            Recevez le baptême pour marquer votre engagement envers Christ et être 
+                            Recevez le baptême pour marquer votre engagement envers Christ et être
                             accueilli dans la communauté chrétienne.
                         </p>
                         <a href="#contact" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
@@ -134,7 +145,7 @@
                 </div>
 
                 <!-- Service 2: Mariage -->
-                <div class="service-card-modern">
+                <div class="service-card-modern reveal">
                     <div class="service-icon-wrapper">
                         <div class="service-icon service-icon-blue">
                             <i class="fas fa-heart"></i>
@@ -146,7 +157,7 @@
                     <div class="service-content-modern">
                         <h2 class="service-title-modern">Mariage et Préparation Matrimoniale</h2>
                         <p class="service-description-modern">
-                            Préparez-vous à un mariage chrétien solide. Nous vous accompagnons pour 
+                            Préparez-vous à un mariage chrétien solide. Nous vous accompagnons pour
                             édifier un foyer centré sur l'amour de Dieu.
                         </p>
                         <a href="#contact" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
@@ -154,19 +165,19 @@
                 </div>
 
                 <!-- Service 3: Soutien Spirituel -->
-                <div class="service-card-modern">
+                <div class="service-card-modern reveal">
                     <div class="service-icon-wrapper">
                         <div class="service-icon">
                             <i class="fas fa-hands-praying"></i>
                         </div>
                     </div>
                     <div class="service-image-modern">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Soutien Spirituel">
+                        <img src="visites pastorales.jpg" alt="Soutien Spirituel">
                     </div>
                     <div class="service-content-modern">
                         <h2 class="service-title-modern">Soutien Spirituel</h2>
                         <p class="service-description-modern">
-                            Recevez du soutien spirituel et de la prière. Nos pasteurs et conseillers 
+                            Recevez du soutien spirituel et de la prière. Nos pasteurs et conseillers
                             sont là pour vous accompagner dans les moments difficiles.
                         </p>
                         <a href="#contact" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
@@ -175,65 +186,74 @@
             </section>
 
             <!-- Contact Section -->
-            <section class="contact-form-section" id="contact">
-                <div class="contact-header">
+            <section class="contact-form-section reveal" id="contact">
+                <div class="contact-header reveal">
                     <span class="section-badge">Contact</span>
                     <h2 class="contact-form-title">Contactez-nous</h2>
                     <p class="contact-form-description">
-                        Nous sommes là pour vous aider dans votre chemin spirituel et personnel. 
+                        Nous sommes là pour vous aider dans votre chemin spirituel et personnel.
                         Remplissez le formulaire ci-dessous et nous vous contacterons rapidement.
                     </p>
                 </div>
+
                 <div class="form-wrapper">
-                    <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label for="fullName" class="form-label">Nom complet *</label>
-                        <input 
-                            type="text" 
-                            id="fullName" 
-                            name="fullName" 
-                            class="form-input" 
-                            placeholder="Votre nom complet"
-                            required
-                        >
-                    </div>
-                    <div class="form-group">
-                        <label for="phone" class="form-label">Téléphone *</label>
-                        <input 
-                            type="tel" 
-                            id="phone" 
-                            name="phone" 
-                            class="form-input" 
-                            placeholder="Votre numéro de téléphone"
-                            required
-                        >
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                            class="form-input" 
-                            placeholder="Votre adresse email"
-                        >
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea 
-                            id="message" 
-                            name="message" 
-                            class="form-textarea" 
-                            rows="5"
-                            placeholder="Comment l'église peut vous servir ?"
-                        ></textarea>
-                    </div>
+                    <form class="contact-form reveal" id="contactForm">
+                        <div class="form-group">
+                            <label for="fullName" class="form-label">Nom complet *</label>
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                class="form-input"
+                                placeholder="Votre nom complet"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Téléphone *</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                class="form-input"
+                                placeholder="Votre numéro de téléphone"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="form-input"
+                                placeholder="Votre adresse email"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                class="form-textarea"
+                                rows="5"
+                                placeholder="Comment l'église peut vous servir ?"
+                            ></textarea>
+                        </div>
+
+                        <!-- ✅ Ajout: message succès/erreur du formulaire -->
+                        <div id="formStatus" class="form-status" aria-live="polite"></div>
+
                         <button type="submit" class="btn-submit">
                             <span>Envoyer le message</span>
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </form>
-                    <div class="contact-info-card">
+
+                    <div class="contact-info-card reveal">
                         <h3 class="contact-info-title">Informations de contact</h3>
                         <div class="contact-info-item">
                             <i class="fas fa-phone"></i>
@@ -312,7 +332,7 @@
                     <div class="footer-column">
                         <h3>S'IMPLIQUER</h3>
                         <a href="se-joindre.html">Se joindre à nous</a>
-                        <a href="faire_un_don.html">Faire un don</a>
+                        <a href="se-joindre.html#don">Faire un don</a>
                     </div>
                 </div>
             </div>
@@ -360,5 +380,4 @@
     <script src="script.js"></script>
     <script src="se-joindre.js"></script>
 </body>
-</html>
-
+</html> 

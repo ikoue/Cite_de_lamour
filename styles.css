@@ -9168,3 +9168,14 @@ body {
     animation: none;
   }
 }
+.join-hero-cta a {
+  pointer-events: auto;
+}
+
+.dropdown-menu {
+  pointer-events: none;
+}
+
+.dropdown-menu.active {
+  pointer-events: auto;
+}

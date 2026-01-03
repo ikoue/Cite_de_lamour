@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rejoindre un département - Cité de l'amour</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body class="page-join">
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <img src="logo.png" alt="Cité de l'amour Logo" class="logo-image" />
+        </div>
+
+        <nav class="nav">
+          <a href="index.html" class="nav-link">Accueil</a>
+          <a href="commencer-ici.html" class="nav-link">Commencer ici</a>
+          <a href="se-joindre.html" class="nav-link">Se joindre à nous</a>
+          <a href="#menu" class="nav-link menu-toggle" id="menuToggle">
+            Menu <i class="fas fa-chevron-down"></i>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dropdown Menu -->
+  <div class="dropdown-menu" id="dropdownMenu">
+    <div class="dropdown-menu-content">
+      <h3 class="dropdown-menu-title">= Menu =</h3>
+      <ul class="dropdown-menu-list">
+        <li><a href="departement-jeunes-adultes.html" class="dropdown-menu-link">Jeunes adultes</a></li>
+        <li><a href="departement-hommes.html" class="dropdown-menu-link">Hommes</a></li>
+        <li><a href="departement-femmes.html" class="dropdown-menu-link">Femmes</a></li>
+        <li><a href="departement-ados.html" class="dropdown-menu-link">Ados</a></li>
+        <li><a href="departement-juniors.html" class="dropdown-menu-link">Juniors</a></li>
+        <li><a href="departement-chorale.html" class="dropdown-menu-link">Chorale</a></li>
+        <li><a href="departement-intercession.html" class="dropdown-menu-link">Intercession</a></li>
+        <li><a href="departement-groupe-pastoral.html" class="dropdown-menu-link">Groupe pastoral</a></li>
+        <li><a href="departement-evangelisation.html" class="dropdown-menu-link">Évangélisation</a></li>
+        <li><a href="departement-medias.html" class="dropdown-menu-link">Médias</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main class="join-main">
+    <div class="container">
+      <section class="contact-form-section reveal" style="margin-top: 40px;">
+        <div class="contact-header reveal">
+          <span class="section-badge">Départements</span>
+          <h2 class="contact-form-title">Rejoindre un département</h2>
+          <p class="contact-form-description">
+            Remplis ce formulaire et nous te contacterons rapidement.
+          </p>
+        </div>
+
+        <div class="form-wrapper">
+          <form class="contact-form reveal" id="joinDeptForm">
+            <div class="form-group">
+              <label for="prenom" class="form-label">Prénom *</label>
+              <input type="text" id="prenom" name="prenom" class="form-input" placeholder="Votre prénom" required />
+            </div>
+
+            <div class="form-group">
+              <label for="nom" class="form-label">Nom *</label>
+              <input type="text" id="nom" name="nom" class="form-input" placeholder="Votre nom" required />
+            </div>
+
+            <div class="form-group">
+              <label for="telephone" class="form-label">Téléphone *</label>
+              <input type="tel" id="telephone" name="telephone" class="form-input" placeholder="Votre numéro" required />
+            </div>
+
+            <div class="form-group">
+              <label for="courriel" class="form-label">Courriel *</label>
+              <input type="email" id="courriel" name="courriel" class="form-input" placeholder="Votre email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="departement" class="form-label">Département à rejoindre *</label>
+              <select id="departement" name="departement" class="form-input" required>
+                <option value="" selected disabled>Choisir un département</option>
+                <option value="Jeunes adultes">Jeunes adultes</option>
+                <option value="Hommes">Hommes</option>
+                <option value="Femmes">Femmes</option>
+                <option value="Ados">Ados</option>
+                <option value="Juniors">Juniors</option>
+                <option value="Chorale">Chorale</option>
+                <option value="Intercession">Intercession</option>
+                <option value="Groupe pastoral">Groupe pastoral</option>
+                <option value="Évangélisation">Évangélisation</option>
+                <option value="Médias">Médias</option>
+              </select>
+            </div>
+
+            <div id="joinDeptStatus" class="form-status" aria-live="polite"></div>
+
+            <button type="submit" class="btn-submit">
+              <span>Envoyer la demande</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+
+            <div style="margin-top: 14px;">
+              <a href="se-joindre.html" class="nav-link" style="display:inline-block;">
+                <i class="fas fa-arrow-left"></i> Retour à Se joindre à nous
+              </a>
+            </div>
+          </form>
+
+          <div class="contact-info-card reveal">
+            <h3 class="contact-info-title">Pourquoi rejoindre un département ?</h3>
+            <p style="margin-top:10px;">
+              Pour servir, grandir, rencontrer d’autres personnes et participer activement à la vie de l’église.
+            </p>
+            <div style="margin-top:16px;">
+              <div class="contact-info-item">
+                <i class="fas fa-users"></i>
+                <div>
+                  <strong>Intégration</strong>
+                  <p>Fais partie d’une équipe</p>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <i class="fas fa-hands-praying"></i>
+                <div>
+                  <strong>Service</strong>
+                  <p>Développe tes dons</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="rejoindre-departement.js"></script>
+</body>
+</html>
