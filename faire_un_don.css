@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=BBH+Bartle&family=BBH+Hegarty&family=Cal+Sans&family=Corinthia:wght@400;700&family=Ephesis&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Style pour le fond animé */
+body {
+    background: linear-gradient(-45deg, #6c0803, #940000, #3e0477, #8b1106);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Style pour le titre "Formulaire de dons" */
+.don {
+    text-align: center;
+    font-family: "Cal Sans", sans-serif;
+    font-size: 80px;
+    color: wheat;
+    text-transform: uppercase;
+    margin-top: 100px;
+}
+
+/* Style pour le formulaire de dons */
+.formulaire {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 1000px;
+    width: 80rem;
+}
+
+
+.message {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "montserrat", sans-serif;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-weight: 450;
+    font-family: "Montserrat", sans-serif;
+}
+/* Style pour les titres et paragraphes */
+p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+    color: wheat;
+    text-align: center;
+}
+.texte p{
+    font-family: "Corinthia", sans-serif;
+    font-size: 5rem;
+    margin-bottom: -80px;
+    opacity: 0.4;
+}
+
+/* Style pour les boutons */
+.bouton {
+    background-color: #6c0803;
+    margin-left: 170px;
+    color: wheat;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+
+}
+.bouton:hover {
+    background-color: #39048e;
+}
+
+/* Amélioration des inputs */
+.formulaire input[type="text"],
+.formulaire input[type="email"],
+.formulaire input[type="number"],
+.formulaire textarea.message {
+    width: 80%;
+    padding: 1rem 1.25rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fafafa;
+    color: #2c3e50;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+.formulaire input[type="text"]:focus,
+.formulaire input[type="email"]:focus,
+.formulaire input[type="number"]:focus,
+.formulaire textarea.message:focus {
+    outline: none;
+    border-color: #a00656;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(139, 47, 95, 0.1);
+    transform: translateY(-2px);
+}
+
+.formulaire input::placeholder,
+.formulaire textarea.message::placeholder {
+    color: #95a5a6;
+    font-style: italic;
+}

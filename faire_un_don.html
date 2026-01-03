@@ -6,10 +6,11 @@
     <title>Faire un don-Cité de l'amour</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="faire_un_don.css">
 </head>
 <body class="faire-don">
     <!-- Header -->
-    <header class="header department-header department-header-transparent">
+    <header class="header">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
@@ -26,16 +27,55 @@
             </div>
         </div>
     </header>
+
+    <!-- Main Content -->
+
+  <h2 class="don">Formulaire de dons <i class="fa-solid fa-hands-praying"></i></h2>
+  <div class="texte"><p>Merci de votre générosité, elle contribue grandement à la réalisation de notre mission.</p></div>
+  <p>Merci de votre générosité, elle contribue grandement à la réalisation de notre mission.</p>
+  <br><br><br>
+
+  <form class="formulaire">
+
+    <br>
+
+    <label>
+      <i class="fas fa-user"></i> Nom* :
+      <br><input type="text" name="nom" placeholder="Votre nom de famille" required>
+    </label>
+
+    <br><br>
     
+    <label>
+      <i class="fas fa-user"></i> Prénom* :
+      <br><input type="text" name="prenom" placeholder="Votre prénom" required>
+    </label>
 
+    <br><br>
+    <label>
+      <i class="fas fa-envelope"></i> Email* :
+      <br><input type="email" name="email" placeholder="votre.email@exemple.com" required>
+    </label>
 
+    <br><br>
 
+    <label type="text">
+        <i class="fas fa-dollar-sign"></i> Montant du don :
+        <br><input type="number" name="don" placeholder="0.00" required>
+    </label>
+    
+    <br><br>
 
+    <label>
+      Si vous avez des questions ou des commentaires, veuillez les écrire ci-dessous :
+      <br><textarea name="message" class="message" placeholder="Écrivez votre message ici..."></textarea>
+    </label>
 
+    <br><br>
+    <button type="submit" class="bouton">Faire un don <i class="fa-solid fa-hands-praying"></i></button>
+  </form>
 
-
-
-
+  <br><br><br><br><br><br>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
