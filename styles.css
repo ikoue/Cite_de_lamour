@@ -2660,6 +2660,16 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     }
 }
 
+.section-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    animation: fadeInUp 0.6s ease-out;
+}
 
 .page-hommes .section-label {
     color: #000000;
@@ -3728,6 +3738,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-weight: 400;
     font-size: 150px;
     color: #b5acac;
+    text-transform: none;
     opacity: 0.5;
 }
 
@@ -3736,6 +3747,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-weight: 400;
     font-size: 95px;
     color: #b5acac;
+    text-transform: none;
     opacity: 0.7;
 }
 
@@ -3744,11 +3756,12 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-weight: 400;
     font-size: 120px;
     color: #b5acac;
+    text-transform: none;
     opacity: 0.7;
 }
 
 .page-pastoral .department-hero .section-title-hero {
-    margin-top: -100px;
+    margin-bottom: -200px;
     font-family: "Cal Sans", sans-serif;
     font-style: normal;
     color: #ffffff;
@@ -3758,6 +3771,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 
 .page-pastoral .department-hero .section-description {
     color: #ffffff;
+    font-family: "Montserrat", sans-serif;
 }
 
 .page-pastoral .department-main {
@@ -3790,11 +3804,6 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-size: 80px;
     color: var(--color-brown);
     margin-top: -150px;
-}
-
-.page-pastoral .section-description {
-    font-family: "Montserrat", sans-serif;
-    color: #1a1a1a;
 }
 
 .page-pastoral .section-description strong {
@@ -3864,16 +3873,19 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-size: 7.5rem;
     opacity: 0.5;
     font-family: "Corinthia", cursive;
+    text-transform: none;
     font-style: italic;
     color: #ffffff;
 }
 
 .page-evangelisation .department-main .section-label {
-    font-size: 8rem;
+    font-size: 7rem;
     opacity: 0.5;
     font-family: "Corinthia", cursive;
     font-style: italic;
+    text-transform: none;
     color: #531a1a;
+    margin-bottom: 0;
 }
 
 .page-evangelisation .department-vision .section-label {
@@ -3881,6 +3893,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     opacity: 0.5;
     font-family: "Corinthia", cursive;
     font-style: italic;
+    text-transform: none;
     color: #531a1a;
 }
 
@@ -3888,6 +3901,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-size: 8rem;
     opacity: 0.5;
     font-family: "Corinthia", cursive;
+    text-transform: none;
     font-style: italic;
     color: #531a1a;
 }
@@ -4062,6 +4076,14 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .section-image-wrapper {
+    overflow: hidden;
+    border-radius: 0 20px 20px 0;
+    background: #f0f0f0;
+    animation: fadeInRight 0.8s ease-out 0.3s both;
+    transition: transform 0.3s ease;
+}
+
+.page-pastoral .section-image-wrapper {
     width: 110%;
     height: 620px;
     overflow: hidden;
@@ -4183,6 +4205,8 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     background: linear-gradient(135deg, #e3e8f5 0%, #d1d9f0 100%);
     padding: 5rem 0;
 }
+
+/* Styles spécifiques pour la page Hommes - Bleu harmonisé */
 
 .page-hommes .department-hero {
     background: var(--color-blue-hommes); /* #5a7fb8 - harmonisé avec bleu */
@@ -4494,6 +4518,23 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #8B0000;
 }
 
+.leader-name-decorative {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 5.5rem;
+    font-weight: 300;
+    color: rgba(180, 180, 180, 0.3);
+    font-style: italic;
+    font-family: 'Brush Script MT', 'Lucida Handwriting', cursive, serif;
+    letter-spacing: -1px;
+    line-height: 0.95;
+    z-index: 1;
+    pointer-events: none;
+    transform: translate(12px, 18px);
+    white-space: nowrap;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
 
 .leader-role {
     font-size: 1rem;
