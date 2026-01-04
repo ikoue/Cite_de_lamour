@@ -2660,86 +2660,265 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     }
 }
 
-.page-hommes .section-label {
-    color: #000000;
+/* =========================================================
+   Styles pour page des hommes
+========================================================= */
+
+.page-hommes .department-hero {
+    background: #8B0000;
+    padding: 10rem 0 6rem;
+    position: relative;
+    overflow: hidden;
 }
 
-.section-title-large {
-    font-size: 4rem;
-    font-weight: 700;
-    color: #000000;
-    letter-spacing: -0.5px;
-    line-height: 1;
-    margin: 0 0 2rem 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    animation: fadeInUp 0.8s ease-out 0.2s both;
-}
-
-.page-hommes .section-title-large {
-    color: #8B0000;
-}
-
-.section-title-hero {
-    font-size: 5.5rem;
-    animation: fadeInUp 0.8s ease-out 0.1s both;
-}
-
-.page-hommes .section-title-hero {
-    font-size: 7.5rem;
-}
-
-.section-hero-center {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-}
+/* =========================================================
+   HERO
+========================================================= */
 
 .page-hommes .department-hero .section-label {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 150px;
     color: #ffffff;
+    opacity: 0.5;
 }
 
 .page-hommes .department-hero .section-title-hero {
+    margin-top: -100px;
+    font-family: "Cal Sans", sans-serif;
+    font-style: normal;
+    font-size: 7rem;
     color: #ffffff;
+    z-index: 2;
 }
 
 .page-hommes .department-hero .section-description {
+    font-family: "Montserrat", sans-serif;
+    color: #ffffff;
+    max-width: 720px;
+}
+
+/* =========================================================
+   Sections générales
+========================================================= */
+
+.page-hommes .department-main,
+.page-hommes .department-leaders,
+.page-hommes .department-vision,
+.page-hommes .department-eligibility,
+.page-hommes .department-join {
+    background: #ffffff;
+}
+
+.page-hommes .department-activities {
+    background: #8B0000;
+}
+
+/* =========================================================
+   Labels manuscrits
+========================================================= */
+
+.page-hommes .department-main .section-label,
+.page-hommes .department-vision .section-label,
+.page-hommes .department-eligibility .section-label,
+.page-hommes .department-join .section-label {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 95px;
+    color: #4593e7;
+    opacity: 0.4;
+}
+
+/* =========================================================
+   Titres & textes
+========================================================= */
+
+.page-hommes .section-title-large {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 900;
+    font-size: 80px;
+    color: #8B0000;
+    margin-top: -95px !important;
+}
+
+.page-hommes .department-main .section-description,
+.page-hommes .department-vision .section-description,
+.page-hommes .department-join .section-description {
+    font-family: "Montserrat", sans-serif;
+    color: #000000;
+    max-width: 700px;
+}
+
+.page-hommes .section-description strong {
+    color: #8B0000;
+}
+
+/* =========================================================
+   Leaders – CORRIGÉ
+========================================================= */
+
+.page-hommes .department-leaders {
+    padding: 6rem 2rem;
+}
+
+.page-hommes .department-leaders .leader-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.page-hommes .department-leaders .leader-text {
+    max-width: 600px;
+    flex: 1 1 500px;
+    text-align: left;
+}
+
+.page-hommes .department-leaders .leader-image-wrapper {
+    flex: 1 1 500px;
+    max-width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-hommes .department-leaders .leader-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.page-hommes .leader-label {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 95px;
+    color: #52bdef;
+    opacity: 0.4;
+}
+
+.page-hommes .leader-name-large {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 900;
+    font-size: 90px;
+    color: #8B0000;
+    margin-top: -90px;
+}
+
+.page-hommes .leader-role {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: var(--color-blue-hommes);
+}
+
+
+/* =========================================================
+   Éligibilité
+========================================================= */
+
+.page-hommes .eligibility-list-simple {
+    margin-top: 2rem;
+}
+
+.page-hommes .eligibility-list-simple li {
+    font-family: "Montserrat", sans-serif;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.page-hommes .eligibility-list-simple li::before {
+    color: #8B0000;
+}
+
+.page-hommes .eligibility-list-simple li:hover {
+    color: #8B0000;
+}
+
+/* =========================================================
+   Bouton
+========================================================= */
+
+.page-hommes .btn-contact-dept {
+    font-family: "Montserrat", sans-serif;
+    background: #8B0000;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.page-hommes .btn-contact-dept:hover {
+    background: #600516;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+}
+
+/* =========================================================
+   Activités
+========================================================= */
+
+.page-hommes .activity-title {
+    font-family: "Cal Sans", sans-serif;
     color: #ffffff;
 }
 
-/* Styles pour page des femmes - Rose */
-.page-femmes .department-hero {
-    background: var(--color-pink-femmes); /* #a67a8f - harmonisé avec bordeaux */
+.page-hommes .activity-description {
+    font-family: "Montserrat", sans-serif;
+    color: #ffffff;
 }
+
+
+/* =========================================================
+   Styles pour page des femmes – Rose harmonisé
+========================================================= */
+
+.page-femmes .department-hero {
+    background: var(--color-pink-femmes);
+    padding: 10rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .page-femmes .department-hero .section-label {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 150px;
     color: #ffffff;
+    opacity: 0.5;
 }
 
 .page-femmes .department-hero .section-title-hero {
-    color: #ffffff;
+    margin-top: -100px;
+    font-family: "Cal Sans", sans-serif;
     font-size: 7.5rem;
+    color: #ffffff;
+    z-index: 2;
 }
 
 .page-femmes .department-hero .section-description {
+    font-family: "Montserrat", sans-serif;
     color: #ffffff;
+    max-width: 720px;
 }
 
-.page-femmes .department-main {
-    background: #ffffff;
-}
+/* =========================================================
+   Sections générales
+========================================================= */
 
-.page-femmes .department-leaders {
-    background: #ffffff;
-}
-
-.page-femmes .department-vision {
-    background: #ffffff;
-}
-
-.page-femmes .department-eligibility {
-    background: #ffffff;
-}
-
+.page-femmes .department-main,
+.page-femmes .department-leaders,
+.page-femmes .department-vision,
+.page-femmes .department-eligibility,
 .page-femmes .department-join {
     background: #ffffff;
 }
@@ -2748,32 +2927,155 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     background: var(--color-pink-femmes);
 }
 
-.page-femmes .section-title-large {
+/* =========================================================
+   Labels manuscrits
+========================================================= */
+
+.page-femmes .department-main .section-label,
+.page-femmes .department-vision .section-label,
+.page-femmes .department-eligibility .section-label,
+.page-femmes .department-join .section-label {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 95px;
+    color: #8B0000;
+    opacity: 0.7;
+}
+
+/* =========================================================
+   Titres
+========================================================= */
+
+.page-femmes .department-main .section-title-large,
+.page-femmes .department-leaders .section-title-large {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 700;
+    font-size: 80px;
+    margin-top: -150px ;
     color: #8B0000;
 }
 
+.page-femmes .department-vision .section-title-large,
+.page-femmes .department-eligibility .section-title-large {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 700;
+    font-size: 70px;
+    margin-top: -150px;
+    color: #8B0000;
+}
+
+.page-femmes .department-join .section-title-large {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    color: #8B0000;
+}
+
+/* =========================================================
+   Textes
+========================================================= */
+
 .page-femmes .section-description {
+    font-family: "Montserrat", sans-serif;
     color: #1a1a1a;
+    max-width: 700px;
 }
 
 .page-femmes .section-description strong {
     color: #8B0000;
 }
 
+/* =========================================================
+   Images de section
+========================================================= */
+
+.page-femmes .section-image-wrapper {
+    width: 110%;
+    height: 620px;
+    overflow: hidden;
+    border-radius: 0 20px 20px 0;
+    background: #f0f0f0;
+    animation: fadeInRight 0.8s ease-out 0.3s both;
+    transition: transform 0.3s ease;
+}
+
+.page-femmes .section-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================================
+   Leaders – CORRIGÉ
+========================================================= */
+
+.page-femmes .department-leaders {
+    padding: 6rem 2rem;
+}
+
+.page-femmes .department-leaders .leader-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.page-femmes .department-leaders .leader-text {
+    max-width: 600px;
+    flex: 1 1 500px;
+    text-align: left;
+}
+
+.page-femmes .department-leaders .leader-image-wrapper {
+    flex: 1 1 500px;
+    max-width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-femmes .department-leaders .leader-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
 .page-femmes .leader-label {
-    color: #000000;
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 95px;
+    color: #8B0000;
+    opacity: 0.7;
 }
 
 .page-femmes .leader-name-large {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 900;
+    font-size: 90px;
     color: #8B0000;
+    margin-top: -90px;
 }
 
 .page-femmes .leader-role {
-    color: #1a1a1a;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: var(--color-pink-femmes);
 }
 
+/* =========================================================
+   Éligibilité
+========================================================= */
+
 .page-femmes .eligibility-list-simple li {
+    font-family: "Montserrat", sans-serif;
     color: #1a1a1a;
+    margin-bottom: 1rem;
 }
 
 .page-femmes .eligibility-list-simple li::before {
@@ -2784,10 +3086,18 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #8B0000;
 }
 
+/* =========================================================
+   Bouton
+========================================================= */
+
 .page-femmes .btn-contact-dept {
+    font-family: "Montserrat", sans-serif;
     background: var(--color-pink-femmes);
     color: #ffffff;
-    border-color: var(--color-pink-femmes);
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
 }
 
 .page-femmes .btn-contact-dept:hover {
@@ -2796,13 +3106,24 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
 }
 
+/* =========================================================
+   Activités
+========================================================= */
+
 .page-femmes .activity-title {
+    font-family: "Cal Sans", sans-serif;
     color: #ffffff;
 }
 
 .page-femmes .activity-description {
+    font-family: "Montserrat", sans-serif;
     color: #ffffff;
 }
+
+/* =========================================================
+   Styles pour page des jeunes adultes – Dégradé bleu-bordeaux
+========================================================= */
+
 
 /* Styles pour page des jeunes adultes - Dégradé bleu-bordeaux */
 .page-jeunes-adultes .department-hero {
@@ -3031,77 +3352,99 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 .page-medias .activity-description {
     color: #ffffff;
 }
-
-/* Styles pour page des ados - Orange-bordeaux harmonisé */
+/* =========================================================
+   PAGE ADOS — HERO
+========================================================= */
 .page-ados .department-hero {
-    background: var(--color-orange-ados);
+    background: rgb(180, 120, 10);
 }
 
 .page-ados .department-hero .section-label {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 100px;
     color: #ffffff;
+    opacity: 0.5;
 }
 
 .page-ados .department-hero .section-title-hero {
+    margin-top: -100px;
+    font-family: "Cal Sans", sans-serif;
+    font-size: 6rem;
     color: #ffffff;
-    font-size: 7.5rem;
+    z-index: 2;
 }
 
 .page-ados .department-hero .section-description {
+    font-family: "Montserrat", sans-serif;
     color: #ffffff;
 }
 
-.page-ados .department-main {
-    background: #ffffff;
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-.page-ados .department-main .container {
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-.page-ados .department-main .section-presentation {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-
-.page-ados .department-main .section-text-content {
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-.page-ados .department-main .section-description {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-
+/* =========================================================
+   STRUCTURE DES SECTIONS
+========================================================= */
+.page-ados .department-main,
+.page-ados .department-vision,
+.page-ados .department-eligibility,
+.page-ados .department-join,
 .page-ados .department-leaders {
     background: #ffffff;
 }
 
-.page-ados .department-vision {
-    background: #ffffff;
+/* =========================================================
+   MAIN — DISPOSITION HORIZONTALE (CORRECTION)
+========================================================= */
+.page-ados .department-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;
 }
 
-.page-ados .department-eligibility {
-    background: #ffffff;
+/* Chaque bloc = une colonne */
+.page-ados .department-main > * {
+    flex: 1;
 }
 
-.page-ados .department-join {
-    background: #ffffff;
+/* Nettoyage des espacements parasites */
+.page-ados .department-main,
+.page-ados .department-main .container,
+.page-ados .department-main .section-presentation,
+.page-ados .department-main .section-text-content {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
-.page-ados .department-activities {
-    background: var(--color-orange-ados);
+/* =========================================================
+   LABELS DE SECTION
+========================================================= */
+.page-ados .department-main .section-label,
+.page-ados .department-vision .section-label,
+.page-ados .department-eligibility .section-label,
+.page-ados .department-join .section-label {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 95px;
+    color: rgb(180, 120, 10);
+    opacity: 0.5;
 }
 
-
+/* =========================================================
+   TITRES DE SECTION
+========================================================= */
 .page-ados .section-title-large {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 700;
     color: #8B0000;
+    margin-top: -90px !important;
+    font-size: 70px;
 }
 
+/* =========================================================
+   TEXTE
+========================================================= */
 .page-ados .section-description {
+    font-family: "Montserrat", sans-serif;
     color: #1a1a1a;
 }
 
@@ -3109,18 +3452,42 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #8B0000;
 }
 
+/* =========================================================
+   LEADERS
+========================================================= */
 .page-ados .leader-label {
-    color: #000000;
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 85px;
+    color: rgb(180, 120, 10);
+    opacity: 0.5;
 }
 
 .page-ados .leader-name-large {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 900;
+    font-size: 90px;
     color: #8B0000;
+    margin-top: -90px;
 }
 
 .page-ados .leader-role {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
     color: #1a1a1a;
 }
 
+.page-ados .department-leaders .leader-image-wrapper {
+    width: 80%;
+    height: 600px;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* =========================================================
+   ELIGIBILITÉ
+========================================================= */
 .page-ados .eligibility-list-simple li {
     color: #1a1a1a;
 }
@@ -3133,6 +3500,9 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #8B0000;
 }
 
+/* =========================================================
+   BOUTON
+========================================================= */
 .page-ados .btn-contact-dept {
     background: var(--color-orange-ados);
     color: #ffffff;
@@ -3145,18 +3515,33 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
 }
 
-.page-ados .activity-title {
-    color: #ffffff;
+/* =========================================================
+   ACTIVITÉS
+========================================================= */
+.page-ados .department-activities {
+    background: rgb(180, 120, 10);
 }
 
+.page-ados .activity-title,
 .page-ados .activity-description {
     color: #ffffff;
 }
 
-/* Styles pour page des juniors - Jaune-terre harmonisé */
+
+/* =========================================================
+   Styles pour page des juniors - Jaune / Terre
+========================================================= */
+
 .page-juniors .department-hero {
-    background: var(--color-yellow-juniors);
+    background: rgb(168, 138, 6);
+    padding: 10rem 0 6rem;
+    position: relative;
+    overflow: hidden;
 }
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .page-juniors .department-hero .section-text-content .section-label {
     font-family: "Ephesis", cursive;
@@ -3166,120 +3551,112 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     opacity: 0.5;
 }
 
-.page-juniors .department-hero .video{
-    
-}
 .page-juniors .department-hero .section-title-hero {
     margin-top: -100px;
     font-family: "Cal Sans", sans-serif;
     font-style: normal;
+    font-size: 8rem;
     color: #ffffff;
-    font-size: 6rem;
     z-index: 2;
 }
 
 .page-juniors .department-hero .section-description {
+    font-family: "Montserrat", sans-serif;
     color: #ffffff;
-    font-family: "Montserrat", sans-serif;
+    max-width: 720px;
 }
 
-.page-juniors .department-main {
-    background: #ffffff;
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-}
+/* =========================================================
+   Sections générales
+========================================================= */
 
-.page-juniors .department-main .container {
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-.page-juniors .department-main .section-presentation {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-
-.page-juniors .department-main .section-text-content {
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-.page-juniors .department-main .section-description {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    color: #1a1a1a;
-}
-
-.page-juniors .department-main .section-label{
-    font-family: "Ephesis", cursive;
-    font-weight: 400;
-    font-size: 95px;
-    color: #b5acac;
-    text-transform: none;
-    opacity: 0.7;
-}
-
-.page-juniors .department-vision .section-label{
-    font-family: "Ephesis", cursive;
-    font-weight: 400;
-    font-size: 95px;
-    color: #b5acac;
-    text-transform: none;
-    opacity: 0.7;
-}
-
-.page-juniors .department-vision .section-description {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    color: #1a1a1a;
-}
-
-.page-juniors .department-leaders {
-    background: #ffffff;
-}
-
-.page-juniors .department-vision {
-    background: #ffffff;
-}
-
-.page-juniors .department-eligibility {
-    background: #ffffff;
-}
-
+.page-juniors .department-main,
+.page-juniors .department-leaders,
+.page-juniors .department-vision,
+.page-juniors .department-eligibility,
 .page-juniors .department-join {
     background: #ffffff;
 }
 
 .page-juniors .department-activities {
-    background: var(--color-yellow-juniors);
+    background: rgb(168, 138, 6);
 }
+
+/* =========================================================
+   MAIN / VISION
+========================================================= */
+
+.page-juniors .department-main {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.page-juniors .department-main .container,
+.page-juniors .department-main .section-presentation,
+.page-juniors .department-main .section-text-content,
+.page-juniors .department-main .section-description {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.page-juniors .department-main .section-description,
+.page-juniors .department-vision .section-description {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: #1a1a1a;
+    max-width: 700px;
+}
+
+/* =========================================================
+   Labels manuscrits
+========================================================= */
+
+.page-juniors .department-main .section-label,
+.page-juniors .department-vision .section-label,
+.page-juniors .department-eligibility .section-label,
+.page-juniors .department-join .section-label {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 95px;
+    color: rgb(168, 138, 6);
+    text-transform: none;
+    opacity: 0.5;
+}
+
+/* =========================================================
+   Titres
+========================================================= */
 
 .page-juniors .section-title-large {
     font-family: "Cal Sans", sans-serif;
-    font-weight: 900;
-    font-size: 80px;
-    color: var(--color-yellow-juniors);
+    color: rgb(107, 4, 4);
+    margin-top: -90px !important;
+    font-size: 4.5rem;
 }
 
+.page-juniors .department-hero .section-title-large {
+    font-family: "Cal Sans", sans-serif;
+    color: white;
+    margin-top: -130px !important;
+}
+
+/* =========================================================
+   Leaders
+========================================================= */
 
 .page-juniors .leader-label {
     font-family: "Ephesis", cursive;
     font-weight: 400;
     font-size: 120px;
-    color: rgb(97, 4, 4);
-    text-transform: none;
+    color: rgb(168, 138, 6);
     opacity: 0.5;
 }
 
 .page-juniors .leader-name-large {
-    color: var(--color-yellow-juniors);
     font-family: "Cal Sans", sans-serif;
     font-weight: 900;
     font-size: 60px;
+    color: rgb(97, 4, 4);
     margin-top: -90px;
 }
 
@@ -3289,17 +3666,31 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #1a1a1a;
 }
 
-.page-juniors .department-eligibility .section-label{
-    font-family: "Ephesis", cursive;
-    font-weight: 400;
-    font-size: 95px;
-    color: #b5acac;
-    text-transform: none;
-    opacity: 0.7;
+.page-juniors .department-leaders .leader-image-wrapper {
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.page-juniors .department-leaders .leader-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================================
+   Éligibilité
+========================================================= */
+
+.page-juniors .eligibility-list-simple {
+    margin-top: 2rem;
 }
 
 .page-juniors .eligibility-list-simple li {
+    font-family: "Montserrat", sans-serif;
     color: #1a1a1a;
+    margin-bottom: 1rem;
 }
 
 .page-juniors .eligibility-list-simple li::before {
@@ -3310,10 +3701,18 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #8B0000;
 }
 
+/* =========================================================
+   Bouton
+========================================================= */
+
 .page-juniors .btn-contact-dept {
+    font-family: "Montserrat", sans-serif;
     background: var(--color-yellow-juniors);
     color: #ffffff;
     border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
 }
 
 .page-juniors .btn-contact-dept:hover {
@@ -3322,13 +3721,20 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
 }
 
+/* =========================================================
+   Activités
+========================================================= */
+
 .page-juniors .activity-title {
+    font-family: "Cal Sans", sans-serif;
     color: #ffffff;
 }
 
 .page-juniors .activity-description {
+    font-family: "Montserrat", sans-serif;
     color: #ffffff;
 }
+
 
 /* Styles pour page de la chorale - Or harmonisé */
 .page-chorale .department-hero {
@@ -3773,10 +4179,20 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     margin: 0 !important;
 }
 
-/* Styles pour page du groupe pastoral - Marron harmonisé */
+/* =========================================================
+   Styles pour page du groupe pastoral - Marron harmonisé
+========================================================= */
+
 .page-pastoral .department-hero {
     background: var(--color-brown);
+    padding: 10rem 0 6rem;
+    position: relative;
+    overflow: hidden;
 }
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .page-pastoral .department-hero .section-label {
     font-family: "Ephesis", cursive;
@@ -3785,6 +4201,42 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #b5acac;
     opacity: 0.5;
 }
+
+.page-pastoral .department-hero .section-title-hero {
+    margin-top: -100px;
+    font-family: "Cal Sans", sans-serif;
+    font-style: normal;
+    font-size: 6rem;
+    line-height: 8rem;
+    color: #ffffff;
+    z-index: 2;
+}
+
+.page-pastoral .department-hero .section-description {
+    font-family: "Montserrat", sans-serif;
+    color: #ffffff;
+    max-width: 720px;
+}
+
+/* =========================================================
+   Sections générales
+========================================================= */
+
+.page-pastoral .department-main,
+.page-pastoral .department-leaders,
+.page-pastoral .department-vision,
+.page-pastoral .department-eligibility,
+.page-pastoral .department-join {
+    background: #ffffff;
+}
+
+.page-pastoral .department-activities {
+    background: var(--color-brown);
+}
+
+/* =========================================================
+   Labels manuscrits
+========================================================= */
 
 .page-pastoral .department-main .section-label {
     font-family: "Ephesis", cursive;
@@ -3802,80 +4254,80 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     opacity: 0.7;
 }
 
-.page-pastoral .department-hero .section-title-hero {
-    margin-top: -100px;
-    font-family: "Cal Sans", sans-serif;
-    font-style: normal;
-    color: #ffffff;
-    font-size: 6rem;
-    z-index: 2;
-}
-
-.page-pastoral .department-hero .section-description {
-    color: #ffffff;
-}
-
-.page-pastoral .department-main {
-    background: #ffffff;
-}
-
-.page-pastoral .department-leaders {
-    background: #ffffff;
-}
-
-.page-pastoral .department-vision {
-    background: #ffffff;
-}
-
-.page-pastoral .department-eligibility {
-    background: #ffffff;
-}
-
-.page-pastoral .department-join {
-    background: #ffffff;
-}
-
-.page-pastoral .department-activities {
-    background: var(--color-brown);
-}
+/* =========================================================
+   Titres & textes
+========================================================= */
 
 .page-pastoral .section-title-large {
     font-family: "Cal Sans", sans-serif;
     font-weight: 900;
     font-size: 80px;
     color: var(--color-brown);
-    margin-top: -150px;
+    margin-top: -80px;
+    line-height: 4.5rem;
 }
 
 .page-pastoral .section-description {
     font-family: "Montserrat", sans-serif;
     color: #1a1a1a;
+    max-width: 700px;
 }
 
 .page-pastoral .section-description strong {
     color: #8B0000;
 }
 
+/* =========================================================
+   Leaders
+========================================================= */
+
 .page-pastoral .leader-label {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 120px;
     color: #000000;
+    opacity: 0.5;
 }
 
 .page-pastoral .leader-name-large {
-    color: var(--color-brown);
     font-family: "Cal Sans", sans-serif;
     font-weight: 900;
     font-size: 90px;
+    color: var(--color-brown);
     margin-top: -90px;
 }
 
 .page-pastoral .leader-role {
     font-family: "Montserrat", sans-serif;
-    font-weight: normal;
+    font-weight: 400;
     color: #1a1a1a;
 }
 
+.page-pastoral .department-leaders .leader-image-wrapper {
+    width: 100%;
+    height: 560px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.page-pastoral .department-leaders .leader-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================================
+   Éligibilité
+========================================================= */
+
+.page-pastoral .eligibility-list-simple {
+    margin-top: 2rem;
+}
+
 .page-pastoral .eligibility-list-simple li {
+    font-family: "Montserrat", sans-serif;
     color: #1a1a1a;
+    margin-bottom: 1rem;
 }
 
 .page-pastoral .eligibility-list-simple li::before {
@@ -3886,11 +4338,18 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #8B0000;
 }
 
+/* =========================================================
+   Bouton (style pastoral conservé)
+========================================================= */
+
 .page-pastoral .btn-contact-dept {
-    font-family: 'Oswald', sans-serif;
+    font-family: "Oswald", sans-serif;
     background: wheat;
     color: #8B4513;
     border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
 }
 
 .page-pastoral .btn-contact-dept:hover {
@@ -3899,21 +4358,35 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
 }
 
+/* =========================================================
+   Activités
+========================================================= */
+
 .page-pastoral .activity-title {
+    font-family: "Cal Sans", sans-serif;
     color: #ffffff;
 }
 
 .page-pastoral .activity-description {
+    font-family: "Montserrat", sans-serif;
     color: #ffffff;
 }
 
-/* Styles pour page de l'évangélisation - Turquoise harmonisé */
+
+/* =========================================================
+   Styles pour page de l'évangélisation - Turquoise harmonisé
+========================================================= */
+
 .page-evangelisation .department-hero {
     position: relative;
     background: rgb(96, 5, 22);
-    padding: 4rem 0;
+    padding: 10rem 0 6rem;
     overflow: hidden;
 }
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .page-evangelisation .section-image-wrapper {
     width: 110%;
@@ -3926,81 +4399,38 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .page-evangelisation .department-hero .section-label {
+    font-family: "Corinthia", cursive;
     font-size: 7.5rem;
-    opacity: 0.5;
-    font-family: "Corinthia", cursive;
-    text-transform: none;
     font-style: italic;
+    text-transform: none;
     color: #ffffff;
-}
-
-.page-evangelisation .department-main .section-label {
-    font-size: 7rem;
     opacity: 0.5;
-    font-family: "Corinthia", cursive;
-    font-style: italic;
-    text-transform: none;
-    color: #531a1a;
-    margin-bottom: 0;
-}
-
-.page-evangelisation .department-vision .section-label {
-    font-size: 8rem;
-    opacity: 0.5;
-    font-family: "Corinthia", cursive;
-    font-style: italic;
-    text-transform: none;
-    color: #531a1a;
-}
-
-.page-evangelisation .department-eligibility .section-label {
-    font-size: 8rem;
-    opacity: 0.5;
-    font-family: "Corinthia", cursive;
-    text-transform: none;
-    font-style: italic;
-    color: #531a1a;
-}
-
-.page-evangelisation .department-join .section-label {
-    font-size: 8rem;
-    opacity: 0.5;
-    font-family: "Corinthia", cursive;
-    font-style: italic;
-    color: #531a1a;
 }
 
 .page-evangelisation .department-hero .section-title-hero {
     margin-top: -90px;
     font-family: "Cal Sans", sans-serif;
     font-style: normal;
-    color: #ffffff;
     font-size: 4.95rem;
+    color: #ffffff;
     z-index: 2;
 }
 
 .page-evangelisation .department-hero .section-description {
-    font-size: 20px;
     font-family: "Montserrat", sans-serif;
+    font-size: 20px;
     color: #ffffff;
+    max-width: 720px;
 }
 
-.page-evangelisation .department-main {
-    background: #ffffff;
-}
+/* =========================================================
+   Sections générales
+========================================================= */
 
-.page-evangelisation .department-leaders {
-    background: #ffffff;
-}
-
-.page-evangelisation .department-vision {
-    background: #ffffff;
-}
-
-.page-evangelisation .department-eligibility {
-    background: #ffffff;
-}
-
+.page-evangelisation .department-main,
+.page-evangelisation .department-leaders,
+.page-evangelisation .department-vision,
+.page-evangelisation .department-eligibility,
 .page-evangelisation .department-join {
     background: #ffffff;
 }
@@ -4009,73 +4439,93 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     background: rgb(96, 5, 22);
 }
 
-.page-evangelisation .department-main .section-title-large {
-    color: var(--color-brown);
-    font-family: "Cal Sans", sans-serif;
-    font-weight: 900;
-    font-size: 90px;
-    margin-top: -170px;
+/* =========================================================
+   Labels manuscrits
+========================================================= */
+
+.page-evangelisation .department-main .section-label,
+.page-evangelisation .department-vision .section-label,
+.page-evangelisation .department-eligibility .section-label,
+.page-evangelisation .department-join .section-label {
+    font-family: "Corinthia", cursive;
+    font-style: italic;
+    text-transform: none;
+    color: #531a1a;
+    opacity: 0.5;
 }
 
+.page-evangelisation .department-main .section-label {
+    font-size: 7.8rem;
+}
+
+.page-evangelisation .department-vision .section-label,
+.page-evangelisation .department-eligibility .section-label,
+.page-evangelisation .department-join .section-label {
+    font-size: 8rem;
+}
+
+/* =========================================================
+   Titres & textes
+========================================================= */
+
+.page-evangelisation .department-main .section-title-large,
 .page-evangelisation .department-vision .section-title-large {
-    color: var(--color-brown);
     font-family: "Cal Sans", sans-serif;
     font-weight: 900;
     font-size: 90px;
+    color: var(--color-brown);
     margin-top: -170px;
+    line-height: 4.8rem;
 }
 
 .page-evangelisation .department-eligibility .section-title-large {
-    color: var(--color-brown);
     font-family: "Cal Sans", sans-serif;
     font-weight: 900;
     font-size: 80px;
+    color: var(--color-brown);
+    line-height: 4.8rem;
     margin-top: -110px;
 }
 
 .page-evangelisation .department-join .section-title-large {
-    color: var(--color-brown);
     font-family: "Cal Sans", sans-serif;
     font-weight: 800;
     font-size: 90px;
+    color: var(--color-brown);
+    line-height: 5rem;
     margin-top: -100px;
 }
 
-.page-evangelisation .department-main .section-description {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    color: #1a1a1a;
-}
-
-.page-evangelisation .department-vision .section-description {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    color: #1a1a1a;
-}
-
+.page-evangelisation .department-main .section-description,
+.page-evangelisation .department-vision .section-description,
 .page-evangelisation .department-join .section-description {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     color: #1a1a1a;
+    max-width: 700px;
 }
 
 .page-evangelisation .section-description strong {
     color: #8B0000;
 }
 
+/* =========================================================
+   Leaders
+========================================================= */
+
 .page-evangelisation .department-leaders .leader-label {
-    font-size: 8rem;
-    opacity: 0.5;
     font-family: "Corinthia", cursive;
     font-style: italic;
+    font-size: 8rem;
     color: #531a1a;
+    opacity: 0.5;
 }
 
 .page-evangelisation .leader-name-large {
-    color: var(--color-brown);
     font-family: "Cal Sans", sans-serif;
     font-weight: 900;
     font-size: 90px;
+    color: var(--color-brown);
     margin-top: -125px;
 }
 
@@ -4085,8 +4535,31 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #1a1a1a;
 }
 
+.page-evangelisation .department-leaders .leader-image-wrapper {
+    width: 100%;
+    height: 560px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.page-evangelisation .department-leaders .leader-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================================
+   Éligibilité
+========================================================= */
+
+.page-evangelisation .eligibility-list-simple {
+    margin-top: 2rem;
+}
+
 .page-evangelisation .eligibility-list-simple li {
+    font-family: "Montserrat", sans-serif;
     color: #1a1a1a;
+    margin-bottom: 1rem;
 }
 
 .page-evangelisation .eligibility-list-simple li::before {
@@ -4097,10 +4570,18 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #8B0000;
 }
 
+/* =========================================================
+   Bouton
+========================================================= */
+
 .page-evangelisation .btn-contact-dept {
+    font-family: "Montserrat", sans-serif;
     background: var(--color-teal-evangelisation);
     color: #ffffff;
     border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
 }
 
 .page-evangelisation .btn-contact-dept:hover {
@@ -4109,18 +4590,21 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
 }
 
+/* =========================================================
+   Activités
+========================================================= */
+
 .page-evangelisation .activity-title {
+    font-family: "Cal Sans", sans-serif;
     color: #ffffff;
 }
 
 .page-evangelisation .activity-description {
+    font-family: "Montserrat", sans-serif;
     color: #ffffff;
 }
 
 
-.page-hommes .section-description {
-    color: #1a1a1a;
-}
 
 .section-image-wrapper {
     overflow: hidden;
@@ -4553,10 +5037,6 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     animation: fadeInUp 0.6s ease-out;
 }
 
-.page-hommes .leader-label {
-    color: #000000;
-}
-
 .leader-name-large {
     font-size: 5.5rem;
     font-weight: 700;
@@ -4572,6 +5052,10 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 
 .page-hommes .leader-name-large {
     color: #8B0000;
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 900;
+    font-size: 90px;
+    margin-top: -90px;
 }
 
 .leader-name-decorative {
@@ -4620,12 +5104,14 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #1a1a1a;
     line-height: 1.8;
     font-weight: 400;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: "Montserrat", sans-serif;
     animation: fadeInUp 0.8s ease-out 0.5s both;
     margin-top: 1.5rem;
 }
 
 .page-hommes .leader-role {
+    font-family: "Montserrat";
+    font-weight: 400;
     color: #1a1a1a;
 }
 
@@ -4645,8 +5131,13 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     align-items: center;
 }
 
-.page-hommes .leader-image-wrapper {
-    height: 650px;
+.page-hommes .department-leaders .leader-image-wrapper {
+    width: 80%;
+    height: 600px;
+    overflow: hidden;
+    background: #ffffff;
+    border-radius: 12px;
+    align-items: center;
 }
 
 .leader-image-wrapper img {
@@ -4959,7 +5450,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 
 .activity-image {
     width: 100%;
-    height: 400px;
+    height: 600px;
     border-radius: 15px;
     overflow: hidden;
     animation: fadeInRight 0.8s ease-out 0.3s both;
