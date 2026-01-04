@@ -2660,17 +2660,6 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     }
 }
 
-.section-label {
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 3px;
-    color: #1a1a1a;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    animation: fadeInUp 0.6s ease-out;
-}
-
 .page-hommes .section-label {
     color: #000000;
 }
@@ -2679,7 +2668,6 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-size: 4rem;
     font-weight: 700;
     color: #000000;
-    text-transform: uppercase;
     letter-spacing: -0.5px;
     line-height: 1;
     margin: 0 0 2rem 0;
@@ -3170,17 +3158,29 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     background: var(--color-yellow-juniors);
 }
 
-.page-juniors .department-hero .section-label {
-    color: #ffffff;
+.page-juniors .department-hero .section-text-content .section-label {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 150px;
+    color: #b5acac;
+    opacity: 0.5;
 }
 
+.page-juniors .department-hero .video{
+    
+}
 .page-juniors .department-hero .section-title-hero {
+    margin-top: -100px;
+    font-family: "Cal Sans", sans-serif;
+    font-style: normal;
     color: #ffffff;
-    font-size: 7.5rem;
+    font-size: 6rem;
+    z-index: 2;
 }
 
 .page-juniors .department-hero .section-description {
     color: #ffffff;
+    font-family: "Montserrat", sans-serif;
 }
 
 .page-juniors .department-main {
@@ -3207,6 +3207,35 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 .page-juniors .department-main .section-description {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: #1a1a1a;
+}
+
+.page-juniors .department-main .section-label{
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 95px;
+    color: #b5acac;
+    text-transform: none;
+    opacity: 0.7;
+}
+
+.page-juniors .department-vision .section-label{
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 95px;
+    color: #b5acac;
+    text-transform: none;
+    opacity: 0.7;
+}
+
+.page-juniors .department-vision .section-description {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: #1a1a1a;
 }
 
 .page-juniors .department-leaders {
@@ -3230,27 +3259,43 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .page-juniors .section-title-large {
-    color: #8B0000;
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 900;
+    font-size: 80px;
+    color: var(--color-yellow-juniors);
 }
 
-.page-juniors .section-description {
-    color: #1a1a1a;
-}
-
-.page-juniors .section-description strong {
-    color: #8B0000;
-}
 
 .page-juniors .leader-label {
-    color: #000000;
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 120px;
+    color: rgb(97, 4, 4);
+    text-transform: none;
+    opacity: 0.5;
 }
 
 .page-juniors .leader-name-large {
-    color: #8B0000;
+    color: var(--color-yellow-juniors);
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    margin-top: -90px;
 }
 
 .page-juniors .leader-role {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
     color: #1a1a1a;
+}
+
+.page-juniors .department-eligibility .section-label{
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 95px;
+    color: #b5acac;
+    text-transform: none;
+    opacity: 0.7;
 }
 
 .page-juniors .eligibility-list-simple li {
@@ -3738,7 +3783,6 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-weight: 400;
     font-size: 150px;
     color: #b5acac;
-    text-transform: none;
     opacity: 0.5;
 }
 
@@ -3747,7 +3791,6 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-weight: 400;
     font-size: 95px;
     color: #b5acac;
-    text-transform: none;
     opacity: 0.7;
 }
 
@@ -3756,12 +3799,11 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-weight: 400;
     font-size: 120px;
     color: #b5acac;
-    text-transform: none;
     opacity: 0.7;
 }
 
 .page-pastoral .department-hero .section-title-hero {
-    margin-bottom: -200px;
+    margin-top: -100px;
     font-family: "Cal Sans", sans-serif;
     font-style: normal;
     color: #ffffff;
@@ -3771,7 +3813,6 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 
 .page-pastoral .department-hero .section-description {
     color: #ffffff;
-    font-family: "Montserrat", sans-serif;
 }
 
 .page-pastoral .department-main {
@@ -3804,6 +3845,11 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-size: 80px;
     color: var(--color-brown);
     margin-top: -150px;
+}
+
+.page-pastoral .section-description {
+    font-family: "Montserrat", sans-serif;
+    color: #1a1a1a;
 }
 
 .page-pastoral .section-description strong {
@@ -3867,6 +3913,16 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     background: rgb(96, 5, 22);
     padding: 4rem 0;
     overflow: hidden;
+}
+
+.page-evangelisation .section-image-wrapper {
+    width: 110%;
+    height: 620px;
+    overflow: hidden;
+    border-radius: 0 20px 20px 0;
+    background: #f0f0f0;
+    animation: fadeInRight 0.8s ease-out 0.3s both;
+    transition: transform 0.3s ease;
 }
 
 .page-evangelisation .department-hero .section-label {
@@ -4061,15 +4117,6 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #ffffff;
 }
 
-.section-description {
-    font-size: 1rem;
-    color: #4a4a4a;
-    line-height: 1.7;
-    font-weight: 400;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    margin-bottom: 1.5rem;
-    animation: fadeInUp 0.8s ease-out 0.4s both;
-}
 
 .page-hommes .section-description {
     color: #1a1a1a;
@@ -4482,6 +4529,16 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     padding: 0 2rem;
 }
 
+.page-juniors .leader-presentation {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
 .leader-text-content {
     position: relative;
 }
@@ -4504,7 +4561,6 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-size: 5.5rem;
     font-weight: 700;
     color: #000000;
-    text-transform: uppercase;
     letter-spacing: -1px;
     line-height: 0.95;
     margin: 0 0 2rem 0;
@@ -4522,18 +4578,31 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     position: absolute;
     top: 0;
     left: 0;
-    font-size: 5.5rem;
+    font-size: 5rem;
+    text-transform: none;
     font-weight: 300;
-    color: rgba(180, 180, 180, 0.3);
-    font-style: italic;
-    font-family: 'Brush Script MT', 'Lucida Handwriting', cursive, serif;
+    color: rgb(107, 4, 4);
+    font-family: "Corinthia";
     letter-spacing: -1px;
     line-height: 0.95;
-    z-index: 1;
     pointer-events: none;
     transform: translate(12px, 18px);
     white-space: nowrap;
     animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.page-juniors .leader-name-decorative {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 5.5rem;
+    text-transform: none;
+    font-weight: 300;
+    color: rgba(107, 4, 4, 0.332);
+    font-family: "Corinthia";
+    letter-spacing: -1px;
+    line-height: 0.95;
+    pointer-events: none;
 }
 
 .leader-role {
@@ -4565,6 +4634,15 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     height: 520px;
     overflow: hidden;
     background: #f0f0f0;
+}
+
+.page-juniors .department-leaders .leader-image-wrapper {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    background: #f0f0f0;
+    border-radius: 12px;
+    align-items: center;
 }
 
 .page-hommes .leader-image-wrapper {
