@@ -2687,7 +2687,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     margin-top: -100px;
     font-family: "Cal Sans", sans-serif;
     font-style: normal;
-    font-size: 7rem;
+    font-size: 7.5rem;
     color: #ffffff;
     z-index: 2;
 }
@@ -2738,14 +2738,17 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-weight: 900;
     font-size: 80px;
     color: #8B0000;
-    margin-top: -95px !important;
+    line-height: 1;
+    margin-top: -65px !important;
 }
 
 .page-hommes .department-main .section-description,
 .page-hommes .department-vision .section-description,
-.page-hommes .department-join .section-description {
+.page-hommes .department-join .section-description,
+.page-hommes .department-eligibility .section-description {
     font-family: "Montserrat", sans-serif;
     color: #000000;
+    font-size: large;
     max-width: 700px;
 }
 
@@ -2754,22 +2757,26 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 /* =========================================================
-   Leaders – CORRIGÉ
+   Leaders
 ========================================================= */
 
 .page-hommes .department-leaders {
     padding: 6rem 2rem;
 }
 
-.page-hommes .department-leaders .leader-section {
-    display: flex;
+.page-hommes .department-leaders .leader-presentation {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
     align-items: center;
-    justify-content: center;
-    gap: 4rem;
-    flex-wrap: wrap;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.page-hommes .department-leaders .leader-text {
+.page-hommes .department-leaders .leader-text-content {
     max-width: 600px;
     flex: 1 1 500px;
     text-align: left;
@@ -2777,8 +2784,8 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 
 .page-hommes .department-leaders .leader-image-wrapper {
     flex: 1 1 500px;
-    max-width: 600px;
-    height: 600px;
+    max-width: 900px;
+    height: 900px;
     overflow: hidden;
     background: #ffffff;
     border-radius: 12px;
@@ -2788,8 +2795,8 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .page-hommes .department-leaders .leader-image-wrapper img {
-    width: 100%;
-    height: 100%;
+    width: 150%;
+    height: 120%;
     object-fit: cover;
     border-radius: 12px;
 }
@@ -2947,24 +2954,18 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 ========================================================= */
 
 .page-femmes .department-main .section-title-large,
-.page-femmes .department-leaders .section-title-large {
-    font-family: "Cal Sans", sans-serif;
-    font-weight: 700;
-    font-size: 80px;
-    margin-top: -150px ;
-    color: #8B0000;
-}
-
+.page-femmes .department-join .section-title-large,
 .page-femmes .department-vision .section-title-large,
 .page-femmes .department-eligibility .section-title-large {
     font-family: "Cal Sans", sans-serif;
     font-weight: 700;
-    font-size: 70px;
-    margin-top: -150px;
+    font-size: 80px;
+    line-height: 1;
+    margin-top: -65px !important;
     color: #8B0000;
 }
 
-.page-femmes .department-join .section-title-large {
+.page-femmes .department-leaders .section-title-large {
     font-family: "Cal Sans", sans-serif;
     font-weight: 700;
     font-size: 50px;
@@ -2978,6 +2979,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 .page-femmes .section-description {
     font-family: "Montserrat", sans-serif;
     color: #1a1a1a;
+    font-size: large;
     max-width: 700px;
 }
 
@@ -3255,72 +3257,147 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #ffffff;
 }
 
-/* Styles pour page des médias - Violet/Indigo */
+/* =========================================================
+   PAGE MÉDIAS — HERO
+========================================================= */
 .page-medias .department-hero {
     background: var(--color-purple-medias);
 }
 
 .page-medias .department-hero .section-label {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 150px;
     color: #ffffff;
+    opacity: 0.5;
 }
 
 .page-medias .department-hero .section-title-hero {
+    margin-top: -130px;
+    font-family: "Cal Sans", sans-serif;
+    font-size: 8rem;
     color: #ffffff;
-    font-size: 7.5rem;
+    z-index: 2;
 }
 
 .page-medias .department-hero .section-description {
+    font-family: "Montserrat", sans-serif;
+    font-size: large;
     color: #ffffff;
+    max-width: 720px;
 }
 
-.page-medias .department-main {
-    background: #ffffff;
-}
-
+/* =========================================================
+   STRUCTURE DES SECTIONS
+========================================================= */
+.page-medias .department-main,
+.page-medias .department-vision,
+.page-medias .department-eligibility,
+.page-medias .department-join,
 .page-medias .department-leaders {
     background: #ffffff;
 }
 
-.page-medias .department-vision {
-    background: #ffffff;
+/* =========================================================
+   LABELS DE SECTION
+========================================================= */
+.page-medias .department-main .section-label,
+.page-medias .department-vision .section-label,
+.page-medias .department-eligibility .section-label,
+.page-medias .department-join .section-label,
+.page-medias .department-leaders .section-label {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 100px;
+    color: var(--color-purple-medias);
+    opacity: 0.5;
 }
 
-.page-medias .department-eligibility {
-    background: #ffffff;
-}
-
-.page-medias .department-join {
-    background: #ffffff;
-}
-
-.page-medias .department-activities {
-    background: var(--color-purple-medias);
-}
-
+/* =========================================================
+   TITRES DE SECTION
+========================================================= */
 .page-medias .section-title-large {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 900;
+    font-size: 70px;
     color: #8B0000;
+    line-height: 1;
+    margin-top: -65px;
 }
 
+/* =========================================================
+   TEXTE
+========================================================= */
 .page-medias .section-description {
+    font-family: "Montserrat", sans-serif;
+    font-size: large;
     color: #1a1a1a;
+    max-width: 700px;
 }
 
 .page-medias .section-description strong {
     color: #8B0000;
 }
 
+/* =========================================================
+   LEADERS
+========================================================= */
+.page-medias .department-leaders .leader-presentation{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.page-medias .department-leaders .leader-text-content {
+    max-width: 600px;
+    flex: 1 1 500px;
+    text-align: left;
+}
+
+.page-medias .department-leaders .leader-image-wrapper {
+    flex: 1 1 500px;
+    max-width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .page-medias .leader-label {
-    color: #000000;
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 95px;
+    color: var(--color-purple-medias);
+    opacity: 0.7;
 }
 
 .page-medias .leader-name-large {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 900;
+    font-size: 90px;
     color: #8B0000;
+    margin-top: -90px;
 }
 
 .page-medias .leader-role {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: large;
     color: #1a1a1a;
 }
 
+/* =========================================================
+   ÉLIGIBILITÉ
+========================================================= */
 .page-medias .eligibility-list-simple li {
     color: #1a1a1a;
 }
@@ -3333,6 +3410,9 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #8B0000;
 }
 
+/* =========================================================
+   BOUTON
+========================================================= */
 .page-medias .btn-contact-dept {
     background: var(--color-purple-medias);
     color: #ffffff;
@@ -3345,13 +3425,18 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
 }
 
-.page-medias .activity-title {
-    color: #ffffff;
+/* =========================================================
+   ACTIVITÉS
+========================================================= */
+.page-medias .department-activities {
+    background: var(--color-purple-medias);
 }
 
+.page-medias .activity-title,
 .page-medias .activity-description {
     color: #ffffff;
 }
+
 /* =========================================================
    PAGE ADOS — HERO
 ========================================================= */
@@ -3477,12 +3562,43 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #1a1a1a;
 }
 
+.page-ados .department-leaders .leader-presentation {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.page-ados .department-leaders .leader-text-content {
+    max-width: 600px;
+    flex: 1 1 500px;
+    text-align: left;
+}
+
 .page-ados .department-leaders .leader-image-wrapper {
-    width: 80%;
-    height: 600px;
+    flex: 1 1 500px;
+    max-width: 900px;
+    height: 700px;
+    overflow: hidden;
     background: #ffffff;
     border-radius: 12px;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInRight 0.8s ease-out 0.3s both;
+    transition: transform 0.3s ease;
+}
+
+.page-ados .department-leaders .leader-image-wrapper img {
+    width: 150%;
+    height: 120%;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 /* =========================================================
@@ -3735,75 +3851,232 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #ffffff;
 }
 
+/* =========================================================
+   Styles pour page de la chorale 
+========================================================= */
 
-/* Styles pour page de la chorale - Or harmonisé */
 .page-chorale .department-hero {
-    background: var(--color-gold-chorale);
+    position: relative;
+    background: rgb(96, 5, 22);
+    padding: 10rem 0 6rem;
+    overflow: hidden;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.page-chorale .section-image-wrapper {
+    width: 110%;
+    height: 620px;
+    overflow: hidden;
+    border-radius: 0 20px 20px 0;
+    background: #f0f0f0;
+    animation: fadeInRight 0.8s ease-out 0.3s both;
+    transition: transform 0.3s ease;
+}
+
+.page-chorale .department-hero .section-image-wrapper {
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    border-radius: 0 20px 20px 0;
+    background: #f0f0f0;
+    animation: fadeInRight 0.8s ease-out 0.3s both;
+    transition: transform 0.3s ease;
 }
 
 .page-chorale .department-hero .section-label {
+    font-family: "Corinthia", cursive;
+    font-size: 9.5rem;
+    font-style: italic;
+    text-transform: none;
     color: #ffffff;
+    opacity: 0.5;
 }
 
 .page-chorale .department-hero .section-title-hero {
+    margin-top: -100px;
+    font-family: "Cal Sans", sans-serif;
+    font-style: normal;
+    font-size: 5rem;
+    line-height: 1;
     color: #ffffff;
-    font-size: 7.5rem;
+    z-index: 2;
 }
 
 .page-chorale .department-hero .section-description {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
     color: #ffffff;
+    max-width: 600px;
 }
 
-.page-chorale .department-main {
-    background: #ffffff;
-}
+/* =========================================================
+   Sections générales
+========================================================= */
 
-.page-chorale .department-leaders {
-    background: #ffffff;
-}
-
-.page-chorale .department-vision {
-    background: #ffffff;
-}
-
-.page-chorale .department-eligibility {
-    background: #ffffff;
-}
-
+.page-chorale .department-main,
+.page-chorale .department-leaders,
+.page-chorale .department-vision,
+.page-chorale .department-eligibility,
 .page-chorale .department-join {
     background: #ffffff;
 }
 
 .page-chorale .department-activities {
-    background: var(--color-gold-chorale);
+    background: rgb(96, 5, 22);
 }
 
-.page-chorale .section-title-large {
-    color: #8B0000;
+/* =========================================================
+   Labels manuscrits
+========================================================= */
+
+.page-chorale .department-main .section-label,
+.page-chorale .department-vision .section-label,
+.page-chorale .department-eligibility .section-label,
+.page-chorale .department-join .section-label {
+    font-family: "Corinthia", cursive;
+    font-style: italic;
+    text-transform: none;
+    color: #531a1a;
+    opacity: 0.5;
 }
 
-.page-chorale .section-description {
+.page-chorale .department-main .section-label {
+    font-size: 8rem;
+}
+
+.page-chorale .department-vision .section-label,
+.page-chorale .department-eligibility .section-label,
+.page-chorale .department-join .section-label {
+    font-size: 8rem;
+}
+
+/* =========================================================
+   Titres & textes
+========================================================= */
+
+.page-chorale .department-main .section-title-large,
+.page-chorale .department-vision .section-title-large {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 900;
+    font-size: 90px;
+    color: rgb(96, 5, 22);
+    line-height: 1;
+    margin-top: -100px !important;
+}
+
+.page-chorale .department-eligibility .section-title-large {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 1;
+    color: rgb(96, 5, 22);
+    margin-top: -100px !important;
+}
+
+.page-chorale .department-join .section-title-large {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 800;
+    font-size: 90px;
+    color: rgb(96, 5, 22);
+    line-height: 5rem;
+    line-height: 1;
+    margin-top: -90px !important;
+}
+
+.page-chorale .department-main .section-description,
+.page-chorale .department-vision .section-description,
+.page-chorale .department-join .section-description {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
     color: #1a1a1a;
+    font-size: large;
+    max-width: 700px;
 }
 
 .page-chorale .section-description strong {
     color: #8B0000;
 }
 
-.page-chorale .leader-label {
-    color: #000000;
+/* =========================================================
+   Leaders
+========================================================= */
+
+.page-chorale .department-leaders .leader-label {
+    font-family: "Corinthia", cursive;
+    font-style: italic;
+    font-size: 8rem;
+    color: #531a1a;
+    opacity: 0.5;
 }
 
 .page-chorale .leader-name-large {
-    color: #8B0000;
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 900;
+    font-size: 90px;
+    color: rgb(96, 5, 22);
+    margin-top: -125px;
 }
 
 .page-chorale .leader-role {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
     color: #1a1a1a;
 }
 
+.page-chorale .department-leaders .leader-presentation {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.page-chorale .department-leaders .leader-text-content {
+    max-width: 600px;
+    flex: 1 1 500px;
+    text-align: left;
+}
+
+.page-chorale .department-leaders .leader-image-wrapper {
+    flex: 1 1 500px;
+    max-width: 900px;
+    height: 700px;
+    overflow: hidden;
+    background: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInRight 0.8s ease-out 0.3s both;
+    transition: transform 0.3s ease;
+}
+
+.page-chorale .department-leaders .leader-image-wrapper img {
+    width: 150%;
+    height: 120%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* =========================================================
+   Éligibilité
+========================================================= */
+
+.page-chorale .eligibility-list-simple {
+    margin-top: 2rem;
+}
+
 .page-chorale .eligibility-list-simple li {
+    font-family: "Montserrat", sans-serif;
     color: #1a1a1a;
+    margin-bottom: 1rem;
 }
 
 .page-chorale .eligibility-list-simple li::before {
@@ -3814,10 +4087,18 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #8B0000;
 }
 
+/* =========================================================
+   Bouton
+========================================================= */
+
 .page-chorale .btn-contact-dept {
-    background: var(--color-gold-chorale);
+    font-family: "Montserrat", sans-serif;
+    background: rgb(96, 5, 22);
     color: #ffffff;
     border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
 }
 
 .page-chorale .btn-contact-dept:hover {
@@ -3826,44 +4107,67 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
 }
 
-.page-chorale .activity-title {
-    color: #ffffff;
+
+/* =========================================================
+   ACTIVITÉS
+========================================================= */
+.page-chorale .department-activities {
+    background: rgb(96, 5, 22);
 }
 
+.page-chorale .activity-title,
 .page-chorale .activity-description {
     color: #ffffff;
 }
 
-/* Styles modernes pour les images d'activités de la chorale */
+/* =========================================================
+   IMAGES D’ACTIVITÉS — STYLE MODERNE
+========================================================= */
 .page-chorale .activity-image {
-    border-radius: 25px !important;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1) !important;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-    padding: 8px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+    padding: 8px;
+    border-radius: 25px;
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 100%
+    );
+
+    border: 3px solid rgba(255, 255, 255, 0.3);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.2),
+        0 5px 15px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-chorale .activity-image::before {
-    content: '';
+    content: "";
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
+    inset: -2px;
+
     border-radius: 25px;
-    z-index: -1;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.1)
+    );
+
     opacity: 0;
+    z-index: -1;
     transition: opacity 0.4s ease;
 }
 
 .page-chorale .activity-image:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 10px 25px rgba(0, 0, 0, 0.15) !important;
     border-color: rgba(255, 255, 255, 0.5);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.3),
+        0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .page-chorale .activity-image:hover::before {
@@ -3871,12 +4175,14 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .page-chorale .activity-image img {
-    border-radius: 20px !important;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    object-position: center center;
     display: block;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 20px;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -3884,300 +4190,341 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     transform: scale(1.05);
 }
 
-/* Styles pour page de l'intercession - Indigo harmonisé */
+/* =========================================================
+   PAGE INTERCESSION – INDIGO HARMONISÉ
+========================================================= */
+
+/* =========================================================
+   HERO – STRUCTURE COMPLÈTE
+========================================================= */
+
 .page-intercession .department-hero {
-    background: var(--color-indigo-intercession);
+    position: relative;
+    padding: 10rem 0 6rem;
+    overflow: hidden;
 }
 
 .page-intercession .department-hero .section-label {
-    color: #ffffff;
+    font-family: "Corinthia", cursive;
+    font-style: italic;
+    text-transform: none;
+    font-size: 8.5rem;
+    opacity: 0.5;
 }
 
 .page-intercession .department-hero .section-title-hero {
-    color: #ffffff;
-    font-size: 7.5rem;
+    font-family: "Cal Sans", sans-serif;
+    color: #ec9397;
+    font-size: 7rem;
+    margin-top: -130px;
+    z-index: 2;
 }
 
 .page-intercession .department-hero .section-description {
-    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    font-size: 20px;
+    max-width: 720px;
 }
 
-.page-intercession .department-main {
+/* =========================================================
+   LABELS MANUSCRITS (SECTIONS INTERNES)
+========================================================= */
+
+.page-intercession .department-main .section-label,
+.page-intercession .department-vision .section-label,
+.page-intercession .department-eligibility .section-label,
+.page-intercession .department-join .section-label {
+    font-family: "Corinthia", cursive;
+    font-style: italic;
+    text-transform: none;
+    opacity: 0.5;
+}
+
+.page-intercession .department-vision .section-label,
+.page-intercession .department-eligibility .section-label,
+.page-intercession .department-join .section-label,
+.page-intercession .department-main .section-label {
+    font-size: 8rem;
+}
+
+/* =========================================================
+   TITRES PRINCIPAUX
+========================================================= */
+
+.page-intercession .department-main .section-title-large,
+.page-intercession .department-vision .section-title-large,
+.page-intercession .department-join .section-title-large,
+.page-intercession .department-eligibility .section-title-large {
+    font-family: "Cal Sans", sans-serif;
+    color: #ec9397;
+    font-weight: 900;
+    font-size: 80px;
+    margin-top: -100px !important;
+    line-height: 5rem;
+}
+
+/* =========================================================
+   TEXTES
+========================================================= */
+
+.page-intercession .department-main .section-description,
+.page-intercession .department-join .section-description {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: large;
+    max-width: 700px;
+}
+
+.page-intercession .department-vision .section-description{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: large;
+    max-width: 700px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* =========================================================
+   ACTIVITÉS — IMAGES (HÉRITÉES DE CHORALE)
+========================================================= */
+
+.page-intercession .department-eligibility .section-image-wrapper,
+.page-intercession .department-main .section-image-wrapper{
+    flex: 1 1 800px;
+    max-width: 1200px;
+    height: 600px;
+    overflow: hidden;
     background: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInRight 0.8s ease-out 0.3s both;
+    transition: transform 0.3s ease;
 }
 
-.page-intercession .department-leaders {
+.page-intercession .department-hero .section-image-wrapper {
+    flex: 1 1 800px;
+    max-width: 1200px;
+    height: 600px;
+    width: 500px;
+    overflow: hidden;
     background: #ffffff;
-    padding: 3rem 0 !important;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInRight 0.8s ease-out 0.3s both;
+    transition: transform 0.3s ease;
 }
 
-.page-intercession .department-vision {
+.page-intercession .department-vision .section-image-wrapper {
+    flex: 1 1 800px;
+    max-width: 1200px;
+    width: 500px;
+    height: 1150px;
+    overflow: hidden;
     background: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInRight 0.8s ease-out 0.3s both;
+    transition: transform 0.3s ease;
 }
 
-.page-intercession .department-eligibility {
-    background: #ffffff;
+.page-intercession .activity-image {
+    border-radius: 25px !important;
+    overflow: hidden;
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.2),
+        0 5px 15px rgba(0, 0, 0, 0.1) !important;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 100%
+    );
+    padding: 8px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.page-intercession .department-join {
-    background: #ffffff;
+.page-intercession .activity-image::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.1)
+    );
+    border-radius: 25px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
 }
 
-.page-intercession .department-activities {
-    background: var(--color-indigo-intercession);
+.page-intercession .activity-image:hover {
+    transform: translateY(-8px) scale(1.02);
 }
 
-.page-intercession .section-title-large {
-    color: #8B0000;
+.page-intercession .activity-image:hover::before {
+    opacity: 1;
 }
 
-.page-intercession .section-description {
-    color: #1a1a1a;
+.page-intercession .activity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 20px !important;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.page-intercession .section-description strong {
-    color: #8B0000;
+.page-intercession .activity-image:hover img {
+    transform: scale(1.05);
 }
 
-.page-intercession .leader-label {
-    color: #000000;
+/* =========================================================
+   PROTECTION DES POST-IT (PRIORITÉ MAX)
+========================================================= */
+
+.page-intercession .activity-content .activity-image {
+    all: unset;
 }
 
-.page-intercession .leader-name-large {
-    color: #8B0000;
-}
 
-.page-intercession .leader-role {
-    color: #1a1a1a;
-}
+/* =========================================================
+   POST-IT – BLOCS & ANIMATIONS (INCHANGÉS)
+========================================================= */
 
-.page-intercession .eligibility-list-simple li {
-    color: #1a1a1a;
-}
-
-.page-intercession .eligibility-list-simple li::before {
-    color: #8B0000;
-}
-
-.page-intercession .eligibility-list-simple li:hover {
-    color: #8B0000;
-}
-
-.page-intercession .btn-contact-dept {
-    background: var(--color-indigo-intercession);
-    color: #ffffff;
-    border: none;
-}
-
-.page-intercession .btn-contact-dept:hover {
-    background: #8B0000;
-    color: #ffffff;
-    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
-}
-
-.page-intercession .activity-title {
-    color: #ffffff;
-}
-
-.page-intercession .activity-description {
-    color: #ffffff;
-}
-
-/* Style post-it collé pour les activités de l'intercession */
+/* Bloc */
 .page-intercession .activity-block {
-    margin-bottom: 0 !important;
+    margin: 0 !important;
     padding: 0 !important;
     border-bottom: none !important;
     perspective: 1000px;
-    animation: postItAppear 0.8s ease-out forwards;
     opacity: 0;
+    animation: postItAppear 0.8s ease-out forwards;
 }
 
-.page-intercession .activity-block:nth-child(1) {
-    animation-delay: 0.1s;
-}
+.page-intercession .activity-block:nth-child(1) { animation-delay: 0.1s; }
+.page-intercession .activity-block:nth-child(2) { animation-delay: 0.3s; }
+.page-intercession .activity-block:nth-child(3) { animation-delay: 0.5s; }
 
-.page-intercession .activity-block:nth-child(2) {
-    animation-delay: 0.3s;
-}
-
-.page-intercession .activity-block:nth-child(3) {
-    animation-delay: 0.5s;
-}
-
+/* Apparition */
 @keyframes postItAppear {
-    0% {
-        opacity: 0;
-        transform: translateY(-50px) rotate(-10deg) scale(0.8);
-    }
-    50% {
-        opacity: 0.8;
-        transform: translateY(10px) rotate(2deg) scale(1.05);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) rotate(0deg) scale(1);
-    }
+    0%   { opacity: 0; transform: translateY(-50px) rotate(-10deg) scale(0.8); }
+    50%  { opacity: 0.8; transform: translateY(10px) rotate(2deg) scale(1.05); }
+    100% { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
 }
 
+/* Contenu post-it */
 .page-intercession .activity-content {
-    background: #d6d9f0 !important; /* Bleu plus foncé basé sur #1a237e */
+    background: #d6d9f0 !important;
     padding: 3rem 2.5rem !important;
-    border-radius: 5px !important;
-    box-shadow: 
-        0 6px 12px rgba(0, 0, 0, 0.15),
-        0 2px 4px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
-    transform: rotate(-2deg) translateX(-10px);
-    transition: all 0.3s ease;
-    position: relative;
     max-width: 600px !important;
-    margin: 0 auto 1.5rem auto !important;
+    margin: 0 auto 1.5rem !important;
+    border-radius: 5px !important;
+    position: relative;
+    transform: rotate(-2deg) translateX(-10px);
     border: 2px solid rgba(26, 35, 126, 0.1) !important;
     border-top: 3px solid rgba(26, 35, 126, 0.2) !important;
-    animation: postItSettle 0.6s ease-out 0.4s forwards;
+    box-shadow:
+        0 6px 12px rgba(0,0,0,.15),
+        0 2px 4px rgba(0,0,0,.1),
+        inset 0 1px 0 rgba(255,255,255,.3) !important;
+    animation: postItSettle 0.6s ease-out forwards;
 }
 
-.page-intercession .activity-block:nth-child(1) .activity-content {
-    animation-delay: 0.5s;
-}
-
-.page-intercession .activity-block:nth-child(2) .activity-content {
-    animation-delay: 0.7s;
-}
-
-.page-intercession .activity-block:nth-child(3) .activity-content {
-    animation-delay: 0.9s;
-}
-
+/* Settling générique */
 @keyframes postItSettle {
-    0% {
-        transform: rotate(-2deg) translateX(-10px) scale(1.1);
-    }
-    100% {
-        transform: rotate(-2deg) translateX(-10px) scale(1);
-    }
+    0%   { transform: rotate(-2deg) translateX(-10px) scale(1.1); }
+    100% { transform: rotate(-2deg) translateX(-10px) scale(1); }
 }
 
+/* ---------- VARIATIONS POST-IT ---------- */
 .page-intercession .activity-block:nth-child(1) .activity-content {
-    background: #d1d6ed !important; /* Bleu plus foncé basé sur #1a237e */
+    background: #d1d6ed !important;
     transform: rotate(-2.5deg) translateX(-15px) translateY(5px);
     animation: postItSettle1 0.6s ease-out 0.5s forwards;
 }
 
 @keyframes postItSettle1 {
-    0% {
-        transform: rotate(-5deg) translateX(-20px) translateY(10px) scale(1.1);
-    }
-    100% {
-        transform: rotate(-2.5deg) translateX(-15px) translateY(5px) scale(1);
-    }
+    0%   { transform: rotate(-5deg) translateX(-20px) translateY(10px) scale(1.1); }
+    100% { transform: rotate(-2.5deg) translateX(-15px) translateY(5px) scale(1); }
 }
 
 .page-intercession .activity-block:nth-child(2) .activity-content {
-    background: #f5d6d6 !important; /* Bordeaux plus foncé basé sur #8B0000 */
+    background: #f5d6d6 !important;
     transform: rotate(2.2deg) translateX(12px) translateY(-3px);
-    border: 2px solid rgba(139, 0, 0, 0.1) !important;
-    border-top: 3px solid rgba(139, 0, 0, 0.2) !important;
+    border-color: rgba(139,0,0,.1) !important;
+    border-top-color: rgba(139,0,0,.2) !important;
     animation: postItSettle2 0.6s ease-out 0.7s forwards;
 }
 
 @keyframes postItSettle2 {
-    0% {
-        transform: rotate(5deg) translateX(20px) translateY(-10px) scale(1.1);
-    }
-    100% {
-        transform: rotate(2.2deg) translateX(12px) translateY(-3px) scale(1);
-    }
+    0%   { transform: rotate(5deg) translateX(20px) translateY(-10px) scale(1.1); }
+    100% { transform: rotate(2.2deg) translateX(12px) translateY(-3px) scale(1); }
 }
 
 .page-intercession .activity-block:nth-child(3) .activity-content {
-    background: #d6d9f0 !important; /* Bleu plus foncé basé sur #1a237e */
-    transform: rotate(-1.8deg) translateX(-8px) translateY(4px);
     animation: postItSettle3 0.6s ease-out 0.9s forwards;
 }
 
 @keyframes postItSettle3 {
-    0% {
-        transform: rotate(-4deg) translateX(-15px) translateY(8px) scale(1.1);
-    }
-    100% {
-        transform: rotate(-1.8deg) translateX(-8px) translateY(4px) scale(1);
-    }
+    0%   { transform: rotate(-4deg) translateX(-15px) translateY(8px) scale(1.1); }
+    100% { transform: rotate(-1.8deg) translateX(-8px) translateY(4px) scale(1); }
 }
 
-/* Punaises qui clouent les post-it */
+/* ---------- PUNAISES ---------- */
 .page-intercession .activity-content::before {
     content: '';
     position: absolute;
     top: 15px;
     left: 50%;
-    transform: translateX(-50%) scale(0);
     width: 12px;
     height: 12px;
-    background: radial-gradient(circle, #8B0000 0%, #6B0000 50%, #4B0000 100%);
+    transform: translateX(-50%) scale(0);
     border-radius: 50%;
-    box-shadow: 
-        0 2px 4px rgba(0, 0, 0, 0.3),
-        inset 0 1px 2px rgba(255, 255, 255, 0.2),
-        0 0 0 2px rgba(139, 0, 0, 0.1);
-    z-index: 10;
+    background: radial-gradient(circle, #8B0000 0%, #4B0000 100%);
+    box-shadow: 0 2px 4px rgba(0,0,0,.3);
     animation: pinAppear 0.3s ease-out 1s forwards;
+    z-index: 10;
 }
 
 @keyframes pinAppear {
-    0% {
-        transform: translateX(-50%) scale(0) rotate(0deg);
-    }
-    50% {
-        transform: translateX(-50%) scale(1.3) rotate(180deg);
-    }
-    100% {
-        transform: translateX(-50%) scale(1) rotate(360deg);
-    }
+    0%   { transform: translateX(-50%) scale(0); }
+    50%  { transform: translateX(-50%) scale(1.3) rotate(180deg); }
+    100% { transform: translateX(-50%) scale(1) rotate(360deg); }
 }
 
-.page-intercession .activity-content::after {
-    content: '';
-    position: absolute;
-    top: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 16px;
-    height: 16px;
-    background: radial-gradient(circle, rgba(139, 0, 0, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-    z-index: 9;
-}
-
+/* ---------- HOVER ---------- */
 .page-intercession .activity-content:hover {
-    transform: rotate(0deg) translateY(-5px) translateX(0) !important;
-    box-shadow: 
-        0 10px 20px rgba(0, 0, 0, 0.2),
-        0 4px 8px rgba(0, 0, 0, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    transform: rotate(0) translateY(-5px) !important;
 }
 
+/* ---------- TEXTE ---------- */
 .page-intercession .activity-text {
-    text-align: left !important;
-    max-width: 100% !important;
     margin: 0 !important;
 }
 
 .page-intercession .activity-title {
-    color: #333 !important;
-    font-size: 1.8rem !important;
-    margin-bottom: 1rem !important;
-    font-weight: 700;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-family: "Cal Sans", sans-serif;
+    line-height: 1;
+    color: #332d2d !important;
+    font-size: 2.5rem !important;
+    font-weight: 900;
 }
 
 .page-intercession .activity-description {
+    font-family: "Montserrat";
+    font-size: 18px;
     color: #555 !important;
-    font-size: 1rem !important;
     line-height: 1.6;
-    margin: 0 !important;
 }
+
 
 /* =========================================================
    Styles pour page du groupe pastoral - Marron harmonisé
@@ -4398,6 +4745,16 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     transition: transform 0.3s ease;
 }
 
+.page-evangelisation .department-hero .section-image-wrapper {
+    width: 150%;
+    height: 620px;
+    overflow: hidden;
+    border-radius: 0 20px 20px 0;
+    background: #f0f0f0;
+    animation: fadeInRight 0.8s ease-out 0.3s both;
+    transition: transform 0.3s ease;
+}
+
 .page-evangelisation .department-hero .section-label {
     font-family: "Corinthia", cursive;
     font-size: 7.5rem;
@@ -4408,10 +4765,10 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .page-evangelisation .department-hero .section-title-hero {
-    margin-top: -90px;
+    margin-top: -100px;
     font-family: "Cal Sans", sans-serif;
     font-style: normal;
-    font-size: 4.95rem;
+    font-size: 5.6rem;
     color: #ffffff;
     z-index: 2;
 }
@@ -4473,7 +4830,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-family: "Cal Sans", sans-serif;
     font-weight: 900;
     font-size: 90px;
-    color: var(--color-brown);
+    color: rgb(96, 5, 22);
     margin-top: -170px;
     line-height: 4.8rem;
 }
@@ -4482,7 +4839,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-family: "Cal Sans", sans-serif;
     font-weight: 900;
     font-size: 80px;
-    color: var(--color-brown);
+    color: rgb(96, 5, 22);
     line-height: 4.8rem;
     margin-top: -110px;
 }
@@ -4491,7 +4848,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-family: "Cal Sans", sans-serif;
     font-weight: 800;
     font-size: 90px;
-    color: var(--color-brown);
+    color: rgb(96, 5, 22);
     line-height: 5rem;
     margin-top: -100px;
 }
@@ -4525,7 +4882,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-family: "Cal Sans", sans-serif;
     font-weight: 900;
     font-size: 90px;
-    color: var(--color-brown);
+    color: rgb(96, 5, 22);
     margin-top: -125px;
 }
 
@@ -4604,9 +4961,29 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #ffffff;
 }
 
-
+/*section-image-wrapper*/
 
 .section-image-wrapper {
+    overflow: hidden;
+    border-radius: 0 20px 20px 0;
+    background: #f0f0f0;
+    animation: fadeInRight 0.8s ease-out 0.3s both;
+    transition: transform 0.3s ease;
+}
+
+.page-medias .department-hero .section-image-wrapper {
+    width: 150%;
+    height: 620px;
+    overflow: hidden;
+    border-radius: 0 20px 20px 0;
+    background: #f0f0f0;
+    animation: fadeInRight 0.8s ease-out 0.3s both;
+    transition: transform 0.3s ease;
+}
+
+.page-medias .section-image-wrapper {
+    width: 100%;
+    height: 620px;
     overflow: hidden;
     border-radius: 0 20px 20px 0;
     background: #f0f0f0;
@@ -5244,6 +5621,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .eligibility-list-simple {
+    font-family: "Montserrat";
     list-style: none;
     padding: 0;
     margin: 0;
@@ -8848,7 +9226,6 @@ body {
 /* Department Join Section */
 .department-join {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #f5e6f0 0%, #f0d9e6 100%);
 }
 
 .join-buttons {
