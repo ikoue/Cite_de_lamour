@@ -458,24 +458,42 @@ function setupEventListeners() {
     // Dropdown menu toggle
     const menuToggle = document.getElementById('menuToggle');
     const dropdownMenu = document.getElementById('dropdownMenu');
+    const menuClose = document.getElementById('menuClose');
+    
+    function openMenu() {
+        dropdownMenu.classList.add('active');
+        document.body.classList.add('menu-open');
+    }
+    
+    function closeMenu() {
+        dropdownMenu.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
     
     if (menuToggle && dropdownMenu) {
         menuToggle.addEventListener('click', (e) => {
             e.preventDefault();
-            dropdownMenu.classList.toggle('active');
+            openMenu();
         });
 
-        // Close menu when clicking outside
+        // Close menu when clicking on close button
+        if (menuClose) {
+            menuClose.addEventListener('click', () => {
+                closeMenu();
+            });
+        }
+
+        // Close menu when clicking outside (on overlay)
         dropdownMenu.addEventListener('click', (e) => {
             if (e.target === dropdownMenu) {
-                dropdownMenu.classList.remove('active');
+                closeMenu();
             }
         });
 
         // Close menu on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && dropdownMenu.classList.contains('active')) {
-                dropdownMenu.classList.remove('active');
+                closeMenu();
             }
         });
     }

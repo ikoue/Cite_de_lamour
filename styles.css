@@ -2142,37 +2142,107 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 2000;
     display: none;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(5px);
+    align-items: stretch;
+    justify-content: flex-end;
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .dropdown-menu.active {
     display: flex;
+    opacity: 1;
 }
 
 .dropdown-menu-content {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 2rem;
-    min-width: 300px;
-    max-width: 400px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    animation: slideDown 0.3s ease-out;
+    background: rgba(139, 0, 0, 0.75);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    max-width: 600px;
+    height: 100vh;
+    padding: 0;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu.active .dropdown-menu-content {
+    transform: translateX(0);
+}
+
+.dropdown-menu-header {
+    background: transparent;
+    padding: 2rem 2rem 1.5rem;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .dropdown-menu-title {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--color-secondary);
-    text-align: center;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.dropdown-menu-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.dropdown-menu-body {
+    padding: 3rem 2rem;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-content: start;
+    min-height: 0;
+}
+
+.dropdown-menu-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-menu-section-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid rgba(138, 43, 226, 0.2);
+    padding-bottom: 0;
+    border-bottom: none;
+    line-height: 1.2;
 }
 
 .dropdown-menu-list {
@@ -2182,34 +2252,102 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .dropdown-menu-list li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
 }
 
 .dropdown-menu-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    color: var(--color-dark);
+    display: block;
+    padding: 0.5rem 0;
+    color: #ffffff;
     text-decoration: none;
-    border-radius: 8px;
-    transition: all 0.3s;
-    font-size: 1.1rem;
+    transition: color 0.2s ease;
+    font-size: 0.95rem;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.6;
 }
 
 .dropdown-menu-link:hover {
-    background: rgba(138, 43, 226, 0.1);
-    color: var(--color-primary);
-    transform: translateX(5px);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .dropdown-menu-link i {
-    color: var(--color-primary);
-    font-size: 0.9rem;
+    display: none;
 }
 
-.dropdown-menu-link:hover {
-    background: rgba(255, 107, 157, 0.15);
+.dropdown-menu-footer {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+.dropdown-menu-footer-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.dropdown-menu-footer-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-family: "Montserrat", sans-serif;
+    transition: color 0.3s ease;
+}
+
+.dropdown-menu-footer-link:hover {
+    color: #ffffff;
+}
+
+.dropdown-menu-social {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.dropdown-menu-social a {
+    color: #FFD700;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+}
+
+.dropdown-menu-social a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Empêcher le scroll du body quand le menu est ouvert */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .dropdown-menu-content {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .dropdown-menu-body {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .dropdown-menu-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 /* Mobile Menu */
@@ -2661,6 +2799,306 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 /* =========================================================
+   Style inspiré de l'image pour la section HERO
+   Fond violet foncé + Label script gris clair + Titre blanc gras
+========================================================= */
+
+/* Style global pour le hero section de tous les départements */
+body[class*="page-"] .department-hero {
+    background: #583a7a !important;
+    padding: 10rem 0 6rem !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Exception pour la page juniors - utilise la couleur harmonisée */
+.page-juniors .department-hero {
+    background: var(--color-yellow-juniors) !important;
+}
+
+/* Container pour le label et le titre avec positionnement relatif */
+body[class*="page-"] .department-hero .section-text-content {
+    position: relative !important;
+}
+
+/* Label "Département" avec le même style que "Notre vision" - positionné derrière le titre avec effet d'ombre */
+body[class*="page-"] .department-hero .section-label {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 22px !important;
+    color: #c0c0c0 !important;
+    text-transform: uppercase !important;
+    opacity: 1 !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+    letter-spacing: 2px !important;
+    display: block !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 1 !important;
+    line-height: 1 !important;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+    width: 100% !important;
+    text-shadow: 2px 2px 0 rgba(60, 60, 60, 0.3) !important;
+}
+
+/* Titre du département en blanc, gras, grande police sans-serif, devant le label avec effet d'ombre */
+body[class*="page-"] .department-hero .section-title-hero {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 100px !important;
+    color: #FFFFFF !important;
+    text-transform: uppercase !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    line-height: 1 !important;
+    letter-spacing: 2px !important;
+    position: relative !important;
+    z-index: 2 !important;
+    background-color: transparent !important;
+    background: transparent !important;
+    text-shadow: 3px 3px 0 rgba(80, 80, 80, 0.4) !important;
+}
+
+/* Sous-titre du département (ex: "LES PSALMISTES DU SEIGNEUR") */
+body[class*="page-"] .department-hero .section-subtitle-hero {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 42px !important;
+    color: #FFFFFF !important;
+    text-transform: uppercase !important;
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 3px !important;
+    position: relative !important;
+    z-index: 2 !important;
+    background-color: transparent !important;
+    background: transparent !important;
+    text-shadow: 2px 2px 0 rgba(60, 60, 60, 0.3) !important;
+}
+
+/* Titre du département en blanc, gras, grande police sans-serif, devant le label */
+body[class*="page-"] .department-hero .section-title-hero {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 100px !important;
+    color: #FFFFFF !important;
+    text-transform: uppercase !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    line-height: 1 !important;
+    letter-spacing: 2px !important;
+    position: relative !important;
+    z-index: 2 !important;
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Description en blanc */
+body[class*="page-"] .department-hero .section-description {
+    color: #FFFFFF !important;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+/* Responsive pour le hero */
+@media (max-width: 1024px) {
+    body[class*="page-"] .department-hero .section-label {
+        font-size: 22px !important;
+        margin-bottom: 12px !important;
+        text-shadow: 2px 2px 0 rgba(60, 60, 60, 0.3) !important;
+    }
+    
+    body[class*="page-"] .department-hero .section-title-hero {
+        font-size: 80px !important;
+        margin-top: 0 !important;
+        line-height: 1 !important;
+        text-shadow: 3px 3px 0 rgba(80, 80, 80, 0.4) !important;
+    }
+    
+    body[class*="page-"] .department-hero .section-subtitle-hero {
+        font-size: 36px !important;
+        margin-top: 8px !important;
+        letter-spacing: 2px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body[class*="page-"] .department-hero .section-label {
+        font-size: 18px !important;
+        margin-bottom: 10px !important;
+        text-shadow: 2px 2px 0 rgba(60, 60, 60, 0.3) !important;
+    }
+    
+    body[class*="page-"] .department-hero .section-title-hero {
+        font-size: 60px !important;
+        margin-top: 0 !important;
+        letter-spacing: 1px !important;
+        line-height: 1 !important;
+        text-shadow: 2px 2px 0 rgba(80, 80, 80, 0.4) !important;
+    }
+    
+    body[class*="page-"] .department-hero .section-subtitle-hero {
+        font-size: 28px !important;
+        margin-top: 6px !important;
+        letter-spacing: 2px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body[class*="page-"] .department-hero {
+        padding: 8rem 0 4rem !important;
+    }
+    
+    body[class*="page-"] .department-hero .section-label {
+        font-size: 16px !important;
+        margin-bottom: 8px !important;
+        text-shadow: 1px 1px 0 rgba(60, 60, 60, 0.3) !important;
+    }
+    
+    body[class*="page-"] .department-hero .section-title-hero {
+        font-size: 45px !important;
+        margin-top: 0 !important;
+        letter-spacing: 1px !important;
+        line-height: 1 !important;
+        text-shadow: 2px 2px 0 rgba(80, 80, 80, 0.4) !important;
+    }
+    
+    body[class*="page-"] .department-hero .section-subtitle-hero {
+        font-size: 24px !important;
+        margin-top: 5px !important;
+        letter-spacing: 1px !important;
+    }
+}
+
+/* =========================================================
+   Style inspiré de l'image pour les titres des sections
+   Label gris foncé + Titre rouge avec effet d'ombre
+========================================================= */
+
+/* Style pour les labels (petit texte gris foncé) - Appliqué à toutes les pages SAUF hero */
+body[class*="page-"] .department-main .section-label,
+body[class*="page-"] .department-vision .section-label,
+body[class*="page-"] .department-eligibility .section-label,
+body[class*="page-"] .department-leaders .leader-label,
+.department-main .section-label,
+.department-vision .section-label,
+.department-eligibility .section-label,
+.department-join .section-label,
+.department-leaders .leader-label {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 22px !important;
+    color: #4a4a4a !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 0.5rem !important;
+    opacity: 1 !important;
+}
+
+/* Style pour les titres principaux (grand texte rouge avec effet d'ombre) - Appliqué à toutes les pages */
+body[class*="page-"] .department-main .section-title-large,
+body[class*="page-"] .department-vision .section-title-large,
+body[class*="page-"] .department-eligibility .section-title-large,
+body[class*="page-"] .department-leaders .leader-name-large,
+.department-main .section-title-large,
+.department-vision .section-title-large,
+.department-eligibility .section-title-large,
+.department-join .section-title-large,
+.department-leaders .leader-name-large {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 85px !important;
+    color: #8B0000 !important;
+    line-height: 1 !important;
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+    position: relative !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    display: inline-block !important;
+    text-shadow: 4px 4px 0 rgba(150, 150, 150, 0.3) !important;
+}
+
+/* Responsive pour les titres */
+@media (max-width: 1024px) {
+    body[class*="page-"] .department-main .section-title-large,
+    body[class*="page-"] .department-vision .section-title-large,
+    body[class*="page-"] .department-eligibility .section-title-large,
+    body[class*="page-"] .department-leaders .leader-name-large,
+    .department-main .section-title-large,
+    .department-vision .section-title-large,
+    .department-eligibility .section-title-large,
+    .department-join .section-title-large,
+    .department-leaders .leader-name-large {
+        font-size: 70px !important;
+        text-shadow: 3px 3px 0 rgba(150, 150, 150, 0.3) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body[class*="page-"] .department-main .section-label,
+    body[class*="page-"] .department-vision .section-label,
+    body[class*="page-"] .department-eligibility .section-label,
+    body[class*="page-"] .department-leaders .leader-label,
+    .department-main .section-label,
+    .department-vision .section-label,
+    .department-eligibility .section-label,
+    .department-join .section-label,
+    .department-leaders .leader-label {
+        font-size: 18px !important;
+    }
+    
+    body[class*="page-"] .department-main .section-title-large,
+    body[class*="page-"] .department-vision .section-title-large,
+    body[class*="page-"] .department-eligibility .section-title-large,
+    body[class*="page-"] .department-leaders .leader-name-large,
+    .department-main .section-title-large,
+    .department-vision .section-title-large,
+    .department-eligibility .section-title-large,
+    .department-join .section-title-large,
+    .department-leaders .leader-name-large {
+        font-size: 55px !important;
+        text-shadow: 3px 3px 0 rgba(150, 150, 150, 0.3) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body[class*="page-"] .department-main .section-label,
+    body[class*="page-"] .department-vision .section-label,
+    body[class*="page-"] .department-eligibility .section-label,
+    body[class*="page-"] .department-leaders .leader-label,
+    .department-main .section-label,
+    .department-vision .section-label,
+    .department-eligibility .section-label,
+    .department-join .section-label,
+    .department-leaders .leader-label {
+        font-size: 16px !important;
+    }
+    
+    body[class*="page-"] .department-main .section-title-large,
+    body[class*="page-"] .department-vision .section-title-large,
+    body[class*="page-"] .department-eligibility .section-title-large,
+    body[class*="page-"] .department-leaders .leader-name-large,
+    .department-main .section-title-large,
+    .department-vision .section-title-large,
+    .department-eligibility .section-title-large,
+    .department-join .section-title-large,
+    .department-leaders .leader-name-large {
+        font-size: 42px !important;
+        text-shadow: 2px 2px 0 rgba(150, 150, 150, 0.3) !important;
+    }
+}
+
+/* =========================================================
    Styles pour page des hommes
 ========================================================= */
 
@@ -2942,11 +3380,13 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 .page-femmes .department-vision .section-label,
 .page-femmes .department-eligibility .section-label,
 .page-femmes .department-join .section-label {
-    font-family: "Ephesis", cursive;
-    font-weight: 400;
-    font-size: 95px;
-    color: #8B0000;
-    opacity: 0.7;
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 22px !important;
+    color: #000000 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    opacity: 1 !important;
 }
 
 /* =========================================================
@@ -2957,12 +3397,20 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 .page-femmes .department-join .section-title-large,
 .page-femmes .department-vision .section-title-large,
 .page-femmes .department-eligibility .section-title-large {
-    font-family: "Cal Sans", sans-serif;
-    font-weight: 700;
-    font-size: 80px;
-    line-height: 1;
-    margin-top: -65px !important;
-    color: #8B0000;
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 85px !important;
+    line-height: 1 !important;
+    margin-top: 0 !important;
+    color: #8B0000 !important;
+    text-transform: uppercase !important;
+}
+
+.page-femmes .department-join .section-description {
+    font-family: "Montserrat", sans-serif !important;
+    color: #000000 !important;
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
 }
 
 .page-femmes .department-leaders .section-title-large {
@@ -3094,18 +3542,18 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 
 .page-femmes .btn-contact-dept {
     font-family: "Montserrat", sans-serif;
-    background: var(--color-pink-femmes);
-    color: #ffffff;
-    border: none;
+    background: #583a7a !important;
+    color: #ffffff !important;
+    border: none !important;
     padding: 1rem 2.5rem;
-    border-radius: 50px;
+    border-radius: 10px !important;
     transition: all 0.3s ease;
 }
 
 .page-femmes .btn-contact-dept:hover {
-    background: #8B0000;
-    color: #ffffff;
-    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+    background: #4a2d6a !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 20px rgba(88, 58, 122, 0.4);
 }
 
 /* =========================================================
@@ -3505,13 +3953,24 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 ========================================================= */
 .page-ados .department-main .section-label,
 .page-ados .department-vision .section-label,
-.page-ados .department-eligibility .section-label,
-.page-ados .department-join .section-label {
+.page-ados .department-eligibility .section-label {
     font-family: "Ephesis", cursive;
     font-weight: 400;
     font-size: 95px;
     color: rgb(180, 120, 10);
     opacity: 0.5;
+}
+
+/* Fix pour la section Rejoindre - label normal */
+.page-ados .department-join .section-label {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    color: #555555 !important;
+    opacity: 1 !important;
+    margin-bottom: 0.75rem !important;
 }
 
 /* =========================================================
@@ -3523,6 +3982,34 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     color: #8B0000;
     margin-top: -90px !important;
     font-size: 70px;
+}
+
+/* Exclure la section Rejoindre de la marge négative */
+.page-ados .department-join .section-title-large {
+    margin-top: 0 !important;
+}
+
+/* Fix pour la section Rejoindre - titre sans marge négative et z-index correct */
+.page-ados .department-join .section-title-large {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 72px !important;
+    color: #8B0000 !important;
+    text-transform: uppercase !important;
+    line-height: 1.05 !important;
+    margin: 0 0 1rem 0 !important;
+    margin-top: 0 !important;
+    text-align: left !important;
+    text-shadow: 4px 4px 0 rgba(150, 150, 150, 0.3) !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* S'assurer que le label ne crée pas de chevauchement */
+.page-ados .department-join .section-label {
+    position: relative !important;
+    z-index: 1 !important;
+    opacity: 1 !important;
 }
 
 /* =========================================================
@@ -3649,7 +4136,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 ========================================================= */
 
 .page-juniors .department-hero {
-    background: rgb(168, 138, 6);
+    background: var(--color-yellow-juniors) !important;
     padding: 10rem 0 6rem;
     position: relative;
     overflow: hidden;
@@ -3695,7 +4182,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .page-juniors .department-activities {
-    background: rgb(168, 138, 6);
+    background: var(--color-yellow-juniors);
 }
 
 /* =========================================================
@@ -3734,7 +4221,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-family: "Ephesis", cursive;
     font-weight: 400;
     font-size: 95px;
-    color: rgb(168, 138, 6);
+    color: var(--color-yellow-juniors);
     text-transform: none;
     opacity: 0.5;
 }
@@ -3764,7 +4251,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-family: "Ephesis", cursive;
     font-weight: 400;
     font-size: 120px;
-    color: rgb(168, 138, 6);
+    color: var(--color-yellow-juniors);
     opacity: 0.5;
 }
 
@@ -4223,8 +4710,10 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 .page-intercession .department-hero .section-description {
     font-family: "Montserrat", sans-serif;
     color: black;
-    font-size: 20px;
-    max-width: 720px;
+    font-size: 26px !important;
+    line-height: 1.9 !important;
+    font-weight: 400 !important;
+    max-width: 900px;
 }
 
 /* =========================================================
@@ -4235,10 +4724,13 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 .page-intercession .department-vision .section-label,
 .page-intercession .department-eligibility .section-label,
 .page-intercession .department-join .section-label {
-    font-family: "Corinthia", cursive;
-    font-style: italic;
-    text-transform: none;
-    opacity: 0.5;
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 22px !important;
+    color: #000000 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    opacity: 1 !important;
 }
 
 .page-intercession .department-vision .section-label,
@@ -4254,7 +4746,6 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 
 .page-intercession .department-main .section-title-large,
 .page-intercession .department-vision .section-title-large,
-.page-intercession .department-join .section-title-large,
 .page-intercession .department-eligibility .section-title-large {
     font-family: "Cal Sans", sans-serif;
     color: #ec9397;
@@ -4264,25 +4755,70 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     line-height: 5rem;
 }
 
+.page-intercession .department-join .section-title-large {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 85px !important;
+    color: #8B0000 !important;
+    text-transform: uppercase !important;
+    margin-top: 0 !important;
+    line-height: 1 !important;
+}
+
 /* =========================================================
    TEXTES
 ========================================================= */
 
-.page-intercession .department-main .section-description,
+.page-intercession .department-join {
+    background: #ffffff !important;
+}
+
+
 .page-intercession .department-join .section-description {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    font-size: large;
-    max-width: 700px;
+    font-size: 26px !important;
+    line-height: 1.9 !important;
+    max-width: 900px;
+    color: #000000 !important;
+}
+
+.page-intercession .btn-contact-dept {
+    background: #4a5568 !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+.page-intercession .btn-contact-dept:hover {
+    background: #2d3748 !important;
+    color: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+    .page-intercession .department-join .section-presentation {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .page-intercession .department-join .section-image-wrapper {
+        order: -1;
+    }
 }
 
 .page-intercession .department-vision .section-description{
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    font-size: large;
-    max-width: 700px;
-    line-height: 1.8;
-    font-size: 1.1rem;
+    font-size: 26px !important;
+    max-width: 900px;
+    line-height: 2 !important;
+}
+
+/* Listes d'éligibilité pour la page intercession */
+.page-intercession .eligibility-list-simple li {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 26px !important;
+    line-height: 1.9 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 1.5rem !important;
 }
 
 /* =========================================================
@@ -4512,15 +5048,16 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 
 .page-intercession .activity-title {
     font-family: "Cal Sans", sans-serif;
-    line-height: 1;
+    line-height: 1.3 !important;
     color: #332d2d !important;
-    font-size: 2.5rem !important;
-    font-weight: 900;
+    font-size: 42px !important;
+    font-weight: 900 !important;
 }
 
 .page-intercession .activity-description {
     font-family: "Montserrat";
-    font-size: 18px;
+    font-size: 26px !important;
+    line-height: 1.9 !important;
     color: #555 !important;
     line-height: 1.6;
 }
@@ -5904,6 +6441,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     background: #ffffff;
 }
 
+
 .page-hommes .department-join {
     background: #ffffff;
 }
@@ -5913,6 +6451,12 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     gap: 1.5rem;
     margin-top: 2rem;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.join-buttons-vertical {
+    flex-direction: column !important;
+    align-items: stretch !important;
 }
 
 .btn-join {
@@ -5923,12 +6467,14 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     cursor: pointer;
     transition: all 0.3s;
     border: 2px solid transparent;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
 }
 
 .btn-contact-dept {
-    background: linear-gradient(135deg, #f5e6f0 0%, #f0d9e6 100%);
-    color: var(--color-primary);
-    border-color: var(--color-primary);
+    background: #583a7a !important;
+    color: #ffffff !important;
+    border: none !important;
     transition: all 0.3s ease;
     animation: fadeInUp 0.6s ease-out 0.4s both;
 }
@@ -5940,10 +6486,10 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .btn-contact-dept:hover {
-    background: var(--color-primary);
-    color: var(--color-white);
+    background: #4a2d6a !important;
+    color: #ffffff !important;
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.25);
+    box-shadow: 0 8px 20px rgba(88, 58, 122, 0.4);
 }
 
 .page-hommes .btn-contact-dept:hover {
@@ -8523,37 +9069,107 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 2000;
     display: none;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(5px);
+    align-items: stretch;
+    justify-content: flex-end;
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .dropdown-menu.active {
     display: flex;
+    opacity: 1;
 }
 
 .dropdown-menu-content {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 2rem;
-    min-width: 300px;
-    max-width: 400px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    animation: slideDown 0.3s ease-out;
+    background: rgba(139, 0, 0, 0.75);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    max-width: 600px;
+    height: 100vh;
+    padding: 0;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu.active .dropdown-menu-content {
+    transform: translateX(0);
+}
+
+.dropdown-menu-header {
+    background: transparent;
+    padding: 2rem 2rem 1.5rem;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .dropdown-menu-title {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--color-secondary);
-    text-align: center;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.dropdown-menu-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.dropdown-menu-body {
+    padding: 3rem 2rem;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-content: start;
+    min-height: 0;
+}
+
+.dropdown-menu-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-menu-section-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid rgba(138, 43, 226, 0.2);
+    padding-bottom: 0;
+    border-bottom: none;
+    line-height: 1.2;
 }
 
 .dropdown-menu-list {
@@ -8563,34 +9179,102 @@ body {
 }
 
 .dropdown-menu-list li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
 }
 
 .dropdown-menu-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    color: var(--color-dark);
+    display: block;
+    padding: 0.5rem 0;
+    color: #ffffff;
     text-decoration: none;
-    border-radius: 8px;
-    transition: all 0.3s;
-    font-size: 1.1rem;
+    transition: color 0.2s ease;
+    font-size: 0.95rem;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.6;
 }
 
 .dropdown-menu-link:hover {
-    background: rgba(138, 43, 226, 0.1);
-    color: var(--color-primary);
-    transform: translateX(5px);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .dropdown-menu-link i {
-    color: var(--color-primary);
-    font-size: 0.9rem;
+    display: none;
 }
 
-.dropdown-menu-link:hover {
-    background: rgba(255, 107, 157, 0.15);
+.dropdown-menu-footer {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+.dropdown-menu-footer-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.dropdown-menu-footer-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-family: "Montserrat", sans-serif;
+    transition: color 0.3s ease;
+}
+
+.dropdown-menu-footer-link:hover {
+    color: #ffffff;
+}
+
+.dropdown-menu-social {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.dropdown-menu-social a {
+    color: #FFD700;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+}
+
+.dropdown-menu-social a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Empêcher le scroll du body quand le menu est ouvert */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .dropdown-menu-content {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .dropdown-menu-body {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .dropdown-menu-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 /* Mobile Menu */
@@ -10155,6 +10839,59 @@ body {
     animation: none;
   }
 }
+
+/* =========================================================
+   FIX GLOBAL - SECTION "REJOINDRE CE DÉPARTEMENT"
+   Force les styles corrects sur TOUTES les pages de départements
+   ========================================================= */
+
+/* Label "Rejoindre" - Force les styles corrects pour toutes les pages */
+body[class*="page-"] .department-join .section-label,
+.page-hommes .department-join .section-label,
+.page-femmes .department-join .section-label,
+.page-medias .department-join .section-label,
+.page-ados .department-join .section-label,
+.page-juniors .department-join .section-label,
+.page-chorale .department-join .section-label,
+.page-intercession .department-join .section-label,
+.page-evangelisation .department-join .section-label,
+.page-jeunes-adultes .department-join .section-label {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    color: #555555 !important;
+    margin-bottom: 0.75rem !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Titre "REJOINDRE CE DÉPARTEMENT" - Force les styles corrects pour toutes les pages */
+body[class*="page-"] .department-join .section-title-large,
+.page-hommes .department-join .section-title-large,
+.page-femmes .department-join .section-title-large,
+.page-medias .department-join .section-title-large,
+.page-ados .department-join .section-title-large,
+.page-juniors .department-join .section-title-large,
+.page-chorale .department-join .section-title-large,
+.page-intercession .department-join .section-title-large,
+.page-evangelisation .department-join .section-title-large,
+.page-jeunes-adultes .department-join .section-title-large {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 72px !important;
+    color: #8B0000 !important;
+    text-transform: uppercase !important;
+    line-height: 1.05 !important;
+    margin: 0 0 1rem 0 !important;
+    margin-top: 0 !important;
+    text-align: left !important;
+    text-shadow: 4px 4px 0 rgba(150, 150, 150, 0.3) !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
 .join-hero-cta a {
   pointer-events: auto;
 }
@@ -10166,3 +10903,280 @@ body {
 .dropdown-menu.active {
   pointer-events: auto;
 }
+
+/* =========================================================
+   BLOC UNIQUE – SECTION "REJOINDRE CE DÉPARTEMENT"
+   (pour toutes les pages de départements)
+   ========================================================= */
+
+/* Section globale */
+.department-join {
+    padding: 4rem 0;
+    background: #ffffff;
+}
+
+/* Mise en page : image à gauche, texte à droite */
+.department-join .section-presentation {
+    display: grid;
+    grid-template-columns: minmax(0, 430px) minmax(0, 1fr); /* 430px pour la carte, le reste pour le texte */
+    gap: 3rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* === CADRE GRIS DE L’IMAGE (comme ton idéal) === */
+.department-join .section-image-wrapper {
+    background: #efefef;                 /* gris clair */
+    padding: 40px 28px;                  /* espace intérieur */
+
+    border-top-left-radius: 48px;
+    border-bottom-left-radius: 48px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 540px;
+    min-height: 460px;                   /* 👉 hauteur du cadre (augmente si tu veux encore plus haut) */
+}
+
+/* Image dans le cadre */
+.department-join .section-image-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Colonne texte à droite */
+.department-join .section-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Petit label "REJOINDRE" - RÈGLE GLOBALE POUR TOUTES LES PAGES */
+.department-join .section-label {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    color: #555555 !important;
+    margin-bottom: 0.75rem !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Gros titre rouge "REJOINDRE CE DÉPARTEMENT" - RÈGLE GLOBALE POUR TOUTES LES PAGES */
+.department-join .section-title-large {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 72px !important;
+    color: #8B0000 !important;
+    text-transform: uppercase !important;
+    line-height: 1.05 !important;
+    margin: 0 0 1rem 0 !important;
+    margin-top: 0 !important;
+    text-align: left !important;
+    text-shadow: 4px 4px 0 rgba(150, 150, 150, 0.3) !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* Texte descriptif */
+.department-join .section-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 650px;
+    color: #333333;
+    margin: 0;
+    text-align: left;
+}
+
+/* === BOUTONS – centrés sous le titre, l’un sous l’autre === */
+.department-join .join-buttons {
+    display: flex;
+    flex-direction: column;          /* empilés */
+    align-items: center;             /* centrés horizontalement */
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 420px;                /* largeur “bloc” des boutons */
+}
+
+/* Style commun des boutons */
+.department-join .btn-join {
+    width: 100%;                     /* même largeur pour les deux */
+    padding: 0.9rem 2.4rem;
+    border-radius: 16px;             /* rectangle à coins arrondis */
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+
+    font-size: 0.95rem;
+    transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+/* NOUS CONTACTER – un peu plus discret */
+.department-join .btn-contact-dept {
+    background: #4a5568;
+    color: #ffffff;
+    font-size: 0.9rem;                /* texte légèrement plus petit */
+}
+
+/* S’INSCRIRE / REJOINDRE – plus mis en avant */
+.department-join .btn-register-dept {
+    background: #8B0000;
+    color: #ffffff;
+    font-size: 1rem;                  /* un peu plus grand */
+}
+
+/* Effet hover commun */
+.department-join .btn-join:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* ==========================
+   VERSION MOBILE
+   ========================== */
+@media (max-width: 900px) {
+    .department-join .section-presentation {
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+    }
+
+    .department-join .section-text-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .department-join .section-title-large {
+        text-align: center;
+    }
+
+    .department-join .section-description {
+        text-align: left;
+    }
+
+    .department-join .join-buttons {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .department-join .btn-join {
+        width: 100%;
+    }
+}
+
+/* ----------------------------------------
+   FIX REJOINDRE CE DÉPARTEMENT
+   - Taille du titre
+   - Espacement
+   - Boutons centrés
+---------------------------------------- */
+
+/* Espacement correct du label REJOINDRE */
+.department-join .section-label {
+    margin-bottom: 1.4rem;
+    position: static;
+}
+
+/* Titre un peu plus petit, plus propre, plus de chevauchement */
+.department-join .section-title-large {
+    font-size: 64px;        /* au lieu de 72 */
+    line-height: 1.05;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    position: static;
+}
+
+/* Colonne texte : on laisse le texte aligné à gauche,
+   mais on pourra centrer les boutons à l’intérieur */
+.department-join .section-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Boutons centrés sous le texte, l’un sous l’autre */
+.department-join .join-buttons {
+    align-self: center;          /* centre le bloc de boutons sous le titre */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.8rem;
+    width: auto;
+}
+
+/* Boutons rectangulaires, coins arrondis, largeur auto */
+.department-join .btn-join {
+    width: auto;                 /* largeur = contenu */
+    min-width: 260px;            /* petite base pour garder la forme */
+    padding: 0.9rem 2.4rem;
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+/* "Nous contacter" légèrement plus petit */
+.department-join .btn-contact-dept {
+    font-size: 0.9rem;
+}
+
+/* "S'inscrire / Rejoindre" un peu plus gros, mis en avant */
+.department-join .btn-register-dept {
+    font-size: 1rem;
+}
+
+/* =========================================
+   FIX HERO "REJOINDRE CE DÉPARTEMENT"
+   (le gros titre en haut de la page)
+   ========================================= */
+
+/* Le petit mot REJOINDRE au-dessus du titre */
+.department-hero .section-label {
+    position: static !important;
+    margin-bottom: 0.9rem !important;
+    font-size: 0.9rem !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+}
+
+/* Le gros titre rouge : un peu plus petit, sans chevauchement */
+.department-hero .section-title-large,
+.department-hero .section-title-hero {
+    font-size: 64px !important;        /* tu peux descendre à 60 si tu veux encore plus compact */
+    line-height: 1.05 !important;
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+    position: static !important;
+}
+
+/* Paragraphe sous le titre : garde un peu d'air */
+.department-hero .section-description {
+    margin-top: 0.5rem !important;
+}
+
+
