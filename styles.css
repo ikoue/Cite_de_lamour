@@ -3138,6 +3138,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-family: "Montserrat", sans-serif;
     color: #ffffff;
     max-width: 720px;
+    text-align: justify;
 }
 
 /* =========================================================
@@ -3192,6 +3193,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     color: #000000;
     font-size: large;
     max-width: 700px;
+    text-align: justify;
 }
 
 .page-hommes .section-description strong {
@@ -3320,6 +3322,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-hommes .activity-description {
     font-family: "Montserrat", sans-serif;
     color: #ffffff;
+    text-align: justify;
 }
 
 
@@ -3358,6 +3361,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-family: "Montserrat", sans-serif;
     color: #ffffff;
     max-width: 720px;
+    text-align: justify;
 }
 
 /* =========================================================
@@ -3433,6 +3437,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     color: #1a1a1a;
     font-size: large;
     max-width: 700px;
+    text-align: justify;
 }
 
 .page-femmes .section-description strong {
@@ -3572,6 +3577,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-femmes .activity-description {
     font-family: "Montserrat", sans-serif;
     color: #ffffff;
+    text-align: justify;
 }
 
 /* =========================================================
@@ -3603,6 +3609,75 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-jeunes-adultes .department-leaders {
     background: #ffffff;
+    padding: 5rem 0;
+}
+
+.page-jeunes-adultes .department-leaders .leader-presentation {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.page-jeunes-adultes .department-leaders .leader-text-content {
+    max-width: 600px;
+    text-align: left;
+}
+
+.page-jeunes-adultes .department-leaders .leader-image-wrapper {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.page-jeunes-adultes .department-leaders .leader-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+    display: block;
+}
+
+/* Responsive pour la section des responsables des jeunes adultes */
+@media (max-width: 968px) {
+    .page-jeunes-adultes .department-leaders .leader-presentation {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 0 1rem;
+    }
+
+    .page-jeunes-adultes .leader-name-large {
+        font-size: 3rem;
+    }
+
+    .page-jeunes-adultes .leader-name-decorative {
+        font-size: 3.5rem;
+    }
+
+    .page-jeunes-adultes .department-leaders .leader-image-wrapper {
+        height: 400px;
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-jeunes-adultes .leader-name-large {
+        font-size: 2.5rem;
+    }
+
+    .page-jeunes-adultes .leader-name-decorative {
+        font-size: 3rem;
+    }
+
+    .page-jeunes-adultes .department-leaders .section-description {
+        font-size: 1rem;
+    }
 }
 
 .page-jeunes-adultes .department-vision {
@@ -3627,6 +3702,40 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-jeunes-adultes .section-description {
     color: #1a1a1a;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.page-jeunes-adultes .department-vision .section-description {
+    font-size: 1.5rem;
+    line-height: 1.9;
+}
+
+.page-jeunes-adultes .department-main .section-description {
+    font-size: 1.4rem;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+.page-jeunes-adultes .department-main .section-image-wrapper {
+    background: transparent !important;
+    overflow: visible !important;
+}
+
+.page-jeunes-adultes .activity-image {
+    height: 450px !important;
+    min-height: 450px;
+    aspect-ratio: 16/9;
+}
+
+.page-jeunes-adultes .activity-image img {
+    object-fit: cover;
+    object-position: center 30% !important;
+}
+
+.page-jeunes-adultes .leader-image-wrapper img {
+    object-position: center 30% !important;
 }
 
 .page-jeunes-adultes .section-description strong {
@@ -3634,15 +3743,55 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-jeunes-adultes .leader-label {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
     color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
 }
 
 .page-jeunes-adultes .leader-name-large {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 4.5rem;
     color: #8B0000;
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.page-jeunes-adultes .leader-name-decorative {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 5.5rem;
+    font-weight: 900;
+    color: rgba(150, 150, 150, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: -1;
+    font-family: "Montserrat", sans-serif;
 }
 
 .page-jeunes-adultes .leader-role {
-    color: #1a1a1a;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #000000;
+    margin-bottom: 1.5rem;
+}
+
+.page-jeunes-adultes .department-leaders .section-description {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.05rem;
+    color: #000000;
+    line-height: 1.8;
+    margin-bottom: 1rem;
 }
 
 .page-jeunes-adultes .eligibility-list-simple li {
@@ -3675,6 +3824,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-jeunes-adultes .activity-description {
     color: #ffffff;
+    text-align: justify;
 }
 
 .activity-sublist {
@@ -3737,6 +3887,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-size: large;
     color: #ffffff;
     max-width: 720px;
+    text-align: justify;
 }
 
 /* =========================================================
@@ -3785,6 +3936,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-size: large;
     color: #1a1a1a;
     max-width: 700px;
+    text-align: justify;
 }
 
 .page-medias .section-description strong {
@@ -3887,6 +4039,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-medias .activity-title,
 .page-medias .activity-description {
     color: #ffffff;
+    text-align: justify;
 }
 
 /* =========================================================
@@ -3915,6 +4068,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-ados .department-hero .section-description {
     font-family: "Montserrat", sans-serif;
     color: #ffffff;
+    text-align: justify;
 }
 
 /* =========================================================
@@ -4022,6 +4176,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-ados .section-description {
     font-family: "Montserrat", sans-serif;
     color: #1a1a1a;
+    text-align: justify;
 }
 
 .page-ados .section-description strong {
@@ -4132,6 +4287,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-ados .activity-title,
 .page-ados .activity-description {
     color: #ffffff;
+    text-align: justify;
 }
 
 
@@ -4171,6 +4327,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-family: "Montserrat", sans-serif;
     color: #ffffff;
     max-width: 720px;
+    text-align: justify;
 }
 
 /* =========================================================
@@ -4212,6 +4369,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-weight: 400;
     color: #1a1a1a;
     max-width: 700px;
+    text-align: justify;
 }
 
 /* =========================================================
@@ -4340,6 +4498,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-juniors .activity-description {
     font-family: "Montserrat", sans-serif;
     color: #ffffff;
+    text-align: justify;
 }
 
 /* =========================================================
@@ -4401,6 +4560,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-size: 20px;
     color: #ffffff;
     max-width: 600px;
+    text-align: justify;
 }
 
 /* =========================================================
@@ -4485,6 +4645,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     color: #1a1a1a;
     font-size: large;
     max-width: 700px;
+    text-align: justify;
 }
 
 .page-chorale .section-description strong {
@@ -4609,6 +4770,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-chorale .activity-title,
 .page-chorale .activity-description {
     color: #ffffff;
+    text-align: justify;
 }
 
 /* =========================================================
@@ -4713,11 +4875,12 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-intercession .department-hero .section-description {
     font-family: "Montserrat", sans-serif;
-    color: black;
-    font-size: 26px !important;
-    line-height: 1.9 !important;
+    color: #000000 !important;
+    font-size: 1.2rem !important;
+    line-height: 1.8 !important;
     font-weight: 400 !important;
     max-width: 900px;
+    text-align: justify !important;
 }
 
 /* =========================================================
@@ -4756,7 +4919,12 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-weight: 900;
     font-size: 80px;
     margin-top: -100px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     line-height: 5rem;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
 }
 
 .page-intercession .department-join .section-title-large {
@@ -4777,14 +4945,23 @@ body[class*="page-"] .department-leaders .leader-name-large,
     background: #ffffff !important;
 }
 
+.page-intercession .department-vision {
+    background: #ffffff !important;
+}
+
+.page-intercession .department-main {
+    padding: 10rem 0 6rem !important;
+}
+
 
 .page-intercession .department-join .section-description {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    font-size: 26px !important;
-    line-height: 1.9 !important;
+    font-size: 1.2rem !important;
+    line-height: 1.8 !important;
     max-width: 900px;
     color: #000000 !important;
+    text-align: justify !important;
 }
 
 .page-intercession .btn-contact-dept {
@@ -4811,9 +4988,29 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-intercession .department-vision .section-description{
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    font-size: 26px !important;
+    font-size: 1.2rem !important;
     max-width: 900px;
-    line-height: 2 !important;
+    line-height: 1.8 !important;
+    color: #000000 !important;
+    text-align: justify !important;
+}
+
+.page-intercession .department-main .section-description {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem !important;
+    line-height: 1.8 !important;
+    color: #000000 !important;
+    text-align: justify !important;
+}
+
+.page-intercession .department-eligibility .section-description {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem !important;
+    line-height: 1.8 !important;
+    color: #000000 !important;
+    text-align: justify !important;
 }
 
 /* Listes d'éligibilité pour la page intercession */
@@ -4964,7 +5161,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-intercession .activity-content {
     background: #d6d9f0 !important;
     padding: 3rem 2.5rem !important;
-    max-width: 600px !important;
+    max-width: 900px !important;
     margin: 0 auto 1.5rem !important;
     border-radius: 5px !important;
     position: relative;
@@ -5104,6 +5301,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-family: "Montserrat", sans-serif;
     color: #ffffff;
     max-width: 720px;
+    text-align: justify;
 }
 
 /* =========================================================
@@ -5135,11 +5333,23 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-pastoral .department-leaders .section-label {
-    font-family: "Ephesis", cursive;
-    font-weight: 400;
-    font-size: 120px;
-    color: #b5acac;
-    opacity: 0.7;
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 22px !important;
+    color: #4a4a4a !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    opacity: 1 !important;
+}
+
+.page-pastoral .activity-image {
+    height: 650px !important;
+    min-height: 650px;
+}
+
+.page-pastoral .activity-image img {
+    object-fit: cover;
+    object-position: center 30% !important;
 }
 
 /* =========================================================
@@ -5159,6 +5369,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-family: "Montserrat", sans-serif;
     color: #1a1a1a;
     max-width: 700px;
+    text-align: justify;
 }
 
 .page-pastoral .section-description strong {
@@ -5258,6 +5469,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-pastoral .activity-description {
     font-family: "Montserrat", sans-serif;
     color: #ffffff;
+    text-align: justify;
 }
 
 
@@ -5316,9 +5528,11 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-evangelisation .department-hero .section-description {
     font-family: "Montserrat", sans-serif;
-    font-size: 20px;
+    font-size: 1.3rem;
     color: #ffffff;
     max-width: 720px;
+    text-align: justify;
+    line-height: 1.8;
 }
 
 /* =========================================================
@@ -5399,8 +5613,11 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-evangelisation .department-join .section-description {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
+    font-size: 1.25rem;
     color: #1a1a1a;
     max-width: 700px;
+    text-align: justify;
+    line-height: 1.8;
 }
 
 .page-evangelisation .section-description strong {
@@ -5412,38 +5629,89 @@ body[class*="page-"] .department-leaders .leader-name-large,
 ========================================================= */
 
 .page-evangelisation .department-leaders .leader-label {
-    font-family: "Corinthia", cursive;
-    font-style: italic;
-    font-size: 8rem;
-    color: #531a1a;
-    opacity: 0.5;
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 22px !important;
+    color: #000000 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    opacity: 1 !important;
+    margin-bottom: 1rem;
 }
 
-.page-evangelisation .leader-name-large {
+.page-evangelisation .department-leaders .leader-name-large {
     font-family: "Cal Sans", sans-serif;
     font-weight: 900;
     font-size: 90px;
-    color: rgb(96, 5, 22);
-    margin-top: -125px;
+    color: #8B0000;
+    margin-top: -90px;
+    position: relative;
+    z-index: 1;
 }
 
-.page-evangelisation .leader-role {
+.page-evangelisation .department-leaders .leader-name-large::before {
+    content: "MICHÈLE KOUME";
+    position: absolute;
+    font-size: 90px;
+    font-weight: 900;
+    color: rgba(139, 0, 0, 0.2);
+    transform: translate(8px, 12px);
+    z-index: 0;
+    font-family: "Cal Sans", sans-serif;
+}
+
+.page-evangelisation .department-leaders .leader-role {
     font-family: "Montserrat", sans-serif;
-    font-weight: 400;
+    font-weight: bold;
+    color: rgb(96, 5, 22);
+    margin-bottom: 1rem;
+}
+
+.page-evangelisation .department-leaders .section-description {
+    font-family: "Montserrat", sans-serif;
     color: #1a1a1a;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    max-width: 700px;
+    text-align: justify;
+}
+
+.page-evangelisation .department-leaders {
+    padding: 6rem 2rem;
+}
+
+.page-evangelisation .department-leaders .leader-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.page-evangelisation .department-leaders .leader-text {
+    max-width: 600px;
+    flex: 1 1 500px;
+    text-align: left;
 }
 
 .page-evangelisation .department-leaders .leader-image-wrapper {
-    width: 100%;
-    height: 560px;
+    flex: 1 1 500px;
+    max-width: 600px;
+    height: 600px;
     overflow: hidden;
-    border-radius: 20px;
+    background: #ffffff;
+    border-radius: 8px 12px 12px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .page-evangelisation .department-leaders .leader-image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 8px 12px 12px 8px;
+    object-position: center 30%;
 }
 
 /* =========================================================
@@ -5499,7 +5767,24 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-evangelisation .activity-description {
     font-family: "Montserrat", sans-serif;
+    font-size: 1.15rem;
     color: #ffffff;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.page-evangelisation .activity-image {
+    height: 450px !important;
+    min-height: 450px;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.page-evangelisation .activity-image img {
+    object-fit: cover;
+    object-position: center 30% !important;
+    width: 100%;
+    height: 100%;
 }
 
 /*section-image-wrapper*/
