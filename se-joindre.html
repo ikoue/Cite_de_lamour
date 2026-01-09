@@ -86,45 +86,34 @@
     <!-- Hero Section -->
     <section class="join-hero">
         <div class="container">
-            <div class="join-hero-content">
-                <div class="join-hero-text">
-                    <h1 class="join-hero-title">Rejoignez notre communauté</h1>
-                    <p class="join-hero-subtitle">
-                        À la Cité de l'amour, nous vous accueillons avec un cœur ouvert.
-                        Découvrez nos services et accompagnements pour votre chemin spirituel.
-                    </p>
-                    <div class="join-hero-features">
-                        <div class="hero-feature">
-                            <i class="fas fa-heart"></i>
-                            <span>Accueil chaleureux</span>
+            <div class="join-hero-layout">
+                <!-- Images Grid à gauche -->
+                <div class="join-hero-left-section">
+                    <p class="se-joindre-label">se joindre a nous</p>
+                    <div class="join-hero-images-grid">
+                        <div class="join-hero-image-item join-hero-image-top">
+                            <img src="sejoindreanous1.jpg" alt="Communauté">
                         </div>
-                        <div class="hero-feature">
-                            <i class="fas fa-hands-praying"></i>
-                            <span>Accompagnement spirituel</span>
+                        <div class="join-hero-image-item join-hero-image-middle-1">
+                            <img src="sejoindreanous2.jpg" alt="Communauté">
                         </div>
-                        <div class="hero-feature">
-                            <i class="fas fa-users"></i>
-                            <span>Communauté bienveillante</span>
+                        <div class="join-hero-image-item join-hero-image-middle-2">
+                            <img src="sejoindreanous3.jpg" alt="Communauté">
+                        </div>
+                        <div class="join-hero-image-item join-hero-image-bottom">
+                            <img src="sejoindreanous4.jpg" alt="Communauté">
                         </div>
                     </div>
                 </div>
-                <div class="join-hero-image">
-                    <div class="hero-image-wrapper">
-                        <img id="joinHeroImage" src="lessdebuts2.jpg" alt="Communauté">
-                    </div>
+                
+                <!-- Texte à droite -->
+                <div class="join-hero-text-content">
+                    <h2 class="section-title-left">la ou l'amour transfirme des vies</h2>
+                    <p class="join-hero-description">
+                        Nous sommes une église qui partage l'amour du Christ par la prédication de l'Évangile, la fraternité, la charité et le service des autres.
+                    </p>
                 </div>
             </div>
-            <div class="join-hero-cta" style="margin-top: 22px; position: relative; z-index: 50;">
-  <a href="./rejoindre-departement.html"
-     class="btn-submit"
-     style="display:inline-flex; gap:10px; align-items:center; text-decoration:none; position:relative; z-index:50;">
-    <span>Rejoindre un département</span>
-    <i class="fas fa-arrow-right"></i>
-  </a>
-</div>
-
-</div>
-
         </div>
     </section>
 
@@ -134,92 +123,172 @@
             <!-- Title Section -->
             <section class="join-title-section reveal">
                 <div class="section-header reveal">
-                    <span class="section-badge">Nos services</span>
-                    <h2 class="join-main-title">Accompagnements et services</h2>
+                    <h2 class="join-main-title" style="color: #7BA68A; font-size: 3.2rem;">Accompagnements & Services</h2>
                     <p class="join-subtitle">
-                        Nous offrons divers accompagnements pour vous aider dans votre chemin spirituel et de vie.
+                        Nous sommes là pour t'accompagner dans les étapes importantes de ta vie chrétienne.
                     </p>
                 </div>
             </section>
 
             <!-- Services Cards -->
             <section class="services-section reveal">
-                <!-- Service 1: Baptême -->
-                <div class="service-card-modern reveal">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon">
-                            <i class="fas fa-water"></i>
-                        </div>
-                    </div>
-                    <div class="service-image-modern">
-                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Baptême">
-                    </div>
-                    <div class="service-content-modern">
-                        <h2 class="service-title-modern">Baptême</h2>
-                        <p class="service-description-modern">
-                            Recevez le baptême pour marquer votre engagement envers Christ et être
-                            accueilli dans la communauté chrétienne.
+                <div class="services-grid-modern" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0;">
+                    <!-- Service 1: Baptême -->
+                    <div class="service-card-gradient reveal" style="background: rgba(139, 0, 0, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 12px; padding: 2.5rem; min-height: 400px; display: flex; flex-direction: column; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);">
+                        <h2 class="service-title-gradient" style="font-size: 2.5rem; font-weight: 900; color: #ffffff; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px; font-family: 'Montserrat', sans-serif;">Baptême</h2>
+                        <p class="service-description-gradient" style="color: #ffffff; font-size: 1rem; line-height: 1.8; flex-grow: 1; font-family: 'Montserrat', sans-serif;">
+                            Se faire baptiser, c'est répondre à l'appel de Jésus. C'est plonger pour mourir à l'ancienne vie, et remonter pour vivre dans la sienne. C'est sceller publiquement l'amour, la foi et l'espérance qui nous unissent à Christ.
                         </p>
-                        <a href="#contact" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                        <div class="bible-quote-gradient" style="margin-top: 1.5rem; padding: 1.2rem; background: rgba(255, 255, 255, 0.1); border-left: 4px solid #ffffff; border-radius: 8px;">
+                            <p style="font-style: italic; margin: 0.5rem 0; color: #ffffff; font-size: 0.95rem; line-height: 1.6;">« Nous avons été ensevelis avec lui par le baptême en sa mort, afin que, comme Christ est ressuscité… nous marchions aussi en nouveauté de vie. »</p>
+                            <span style="display: block; text-align: right; margin-top: 0.8rem; font-weight: 600; color: #ffffff; font-size: 0.85rem;">Romains 6 : 4</span>
+                        </div>
+                        <p class="service-description-gradient" style="color: #ffffff; font-size: 1rem; line-height: 1.8; margin-top: 1.5rem; font-family: 'Montserrat', sans-serif;">
+                            Nous accompagnons chaque personne par un parcours avant le baptême, et par un suivi après, pour qu'elle puisse grandir dans la vie nouvelle que Dieu donne.
+                        </p>
+                    </div>
+
+                    <!-- Service 2: Préparation au Mariage -->
+                    <div class="service-card-gradient reveal" style="background: rgba(139, 0, 0, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 12px; padding: 2.5rem; min-height: 400px; display: flex; flex-direction: column; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);">
+                        <h2 class="service-title-gradient" style="font-size: 2.5rem; font-weight: 900; color: #ffffff; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px; font-family: 'Montserrat', sans-serif;">Préparation au Mariage</h2>
+                        <p class="service-description-gradient" style="color: #ffffff; font-size: 1rem; line-height: 1.8; margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif;">
+                            Le mariage n'est pas qu'un engagement humain, mais une alliance devant Dieu. Nous aidons les couples à discerner, à se préparer et à s'engager pour bâtir un foyer qui reflète l'amour de Christ.
+                        </p>
+                        <div class="bible-quote-gradient" style="margin: 0.5rem 0 1.5rem 0; padding: 1.2rem; background: rgba(255, 255, 255, 0.1); border-left: 4px solid #ffffff; border-radius: 8px;">
+                            <p style="font-style: italic; margin: 0.5rem 0; color: #ffffff; font-size: 0.95rem; line-height: 1.6;">« Bâtissez votre maison sur le roc. »</p>
+                            <span style="display: block; text-align: right; margin-top: 0.8rem; font-weight: 600; color: #ffffff; font-size: 0.85rem;">Matthieu 7 : 24</span>
+                        </div>
+                        <p class="service-description-gradient" style="color: #ffffff; font-size: 1rem; line-height: 1.8; font-family: 'Montserrat', sans-serif;">
+                            À l'image de Christ et de son Église, le mariage est appelé à être une alliance fidèle, sacrificielle et remplie de grâce.
+                        </p>
+                    </div>
+
+                    <!-- Service 3: Soutien Spirituel -->
+                    <div class="service-card-gradient reveal" style="background: rgba(139, 0, 0, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 12px; padding: 2.5rem; min-height: 400px; display: flex; flex-direction: column; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);">
+                        <h2 class="service-title-gradient" style="font-size: 2.5rem; font-weight: 900; color: #ffffff; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px; font-family: 'Montserrat', sans-serif;">Soutien Spirituel</h2>
+                        <p class="service-description-gradient" style="color: #ffffff; font-size: 1rem; line-height: 1.8; margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif;">
+                            Par la prière et l'écoute, nous accompagnons ceux qui traversent des défis, des doutes ou des saisons difficiles.
+                        </p>
+                        <div class="bible-quote-gradient" style="margin: 0.5rem 0 1.5rem 0; padding: 1.2rem; background: rgba(255, 255, 255, 0.1); border-left: 4px solid #ffffff; border-radius: 8px;">
+                            <p style="font-style: italic; margin: 0.5rem 0; color: #ffffff; font-size: 0.95rem; line-height: 1.6;">« Portez les fardeaux les uns des autres »</p>
+                            <span style="display: block; text-align: right; margin-top: 0.8rem; font-weight: 600; color: #ffffff; font-size: 0.85rem;">Galates 6 : 2</span>
+                        </div>
+                        <p class="service-description-gradient" style="color: #ffffff; font-size: 1rem; line-height: 1.8; font-family: 'Montserrat', sans-serif;">
+                            Nos pasteurs et conseillers marchent avec vous pour vous aider à discerner, à grandir et à rester fermes dans votre marche avec Dieu.
+                        </p>
                     </div>
                 </div>
-
-                <!-- Service 2: Mariage -->
-                <div class="service-card-modern reveal">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon service-icon-blue">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                    </div>
-                    <div class="service-image-modern">
-                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mariage">
-                    </div>
-                    <div class="service-content-modern">
-                        <h2 class="service-title-modern">Mariage et Préparation Matrimoniale</h2>
-                        <p class="service-description-modern">
-                            Préparez-vous à un mariage chrétien solide. Nous vous accompagnons pour
-                            édifier un foyer centré sur l'amour de Dieu.
-                        </p>
-                        <a href="#contact" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service 3: Soutien Spirituel -->
-                <div class="service-card-modern reveal">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon">
-                            <i class="fas fa-hands-praying"></i>
-                        </div>
-                    </div>
-                    <div class="service-image-modern">
-                        <img src="visites pastorales.jpg" alt="Soutien Spirituel">
-                    </div>
-                    <div class="service-content-modern">
-                        <h2 class="service-title-modern">Soutien Spirituel</h2>
-                        <p class="service-description-modern">
-                            Recevez du soutien spirituel et de la prière. Nos pasteurs et conseillers
-                            sont là pour vous accompagner dans les moments difficiles.
-                        </p>
-                        <a href="#contact" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                
+                <!-- CTA Global -->
+                <div class="services-cta reveal">
+                    <a href="#contact" class="services-cta-button">nous contacter</a>
                 </div>
             </section>
+        </div>
 
+        <!-- Section Rejoindre un Département -->
+        <section class="join-department-section reveal" style="background: #7BA68A; padding: 5rem 0; margin: 4rem 0; width: 100%;">
+            <div class="container" style="padding: 0 20px; max-width: 1200px; margin: 0 auto;">
+                    <div class="section-header reveal" style="text-align: center; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                        <h2 class="join-main-title" style="color: #8B0000; font-size: 3.2rem; margin-bottom: 1.5rem; font-weight: bold;">Aimer Dieu par son service</h2>
+                        <p class="join-subtitle" style="color: #000000; font-size: 1.2rem; line-height: 1.7; margin-bottom: 0.5rem;">
+                            Être membre, c'est aussi servir.
+                        </p>
+                        <div class="bible-quote-gradient" style="margin: 0.5rem auto 1.5rem auto; padding: 1.2rem; background: rgba(139, 0, 0, 0.1); border-left: 4px solid #8B0000; border-radius: 8px; max-width: 600px;">
+                            <p style="font-style: italic; margin: 0.5rem 0; color: #000000; font-size: 1rem; line-height: 1.6;">« Chacun a reçu un don, qu'il le mette au service des autres. »</p>
+                            <span style="display: block; text-align: right; margin-top: 0.8rem; font-weight: 600; color: #8B0000; font-size: 0.9rem;">1 Pierre 4 : 10</span>
+                        </div>
+                    </div>
+
+                    <div class="form-wrapper" style="max-width: 600px; margin: 0 auto; display: block; text-align: center;">
+                        <form class="contact-form reveal" id="joinDeptForm" style="margin: 0 auto;">
+                            <div class="form-group" style="position: relative;">
+                                <label for="prenom" class="form-label" style="text-align: left;">Prénom *</label>
+                                <input type="text" id="prenom" name="prenom" class="form-input" placeholder="Votre prénom" required />
+                            </div>
+
+                            <div class="form-group" style="position: relative;">
+                                <label for="nom" class="form-label" style="text-align: left;">Nom *</label>
+                                <input type="text" id="nom" name="nom" class="form-input" placeholder="Votre nom" required />
+                            </div>
+
+                            <div class="form-group" style="position: relative;">
+                                <label for="telephone" class="form-label" style="text-align: left;">Téléphone *</label>
+                                <input type="tel" id="telephone" name="telephone" class="form-input" placeholder="Votre numéro" required />
+                            </div>
+
+                            <div class="form-group" style="position: relative;">
+                                <label for="courriel" class="form-label" style="text-align: left;">Courriel *</label>
+                                <input type="email" id="courriel" name="courriel" class="form-input" placeholder="Votre email" required />
+                            </div>
+
+                            <div class="form-group" style="position: relative;">
+                                <label for="departement" class="form-label" style="text-align: left;">Département à rejoindre *</label>
+                                <select id="departement" name="departement" class="form-input" required>
+                                    <option value="" selected disabled>Choisir un département</option>
+                                    <option value="Jeunes adultes">Jeunes adultes</option>
+                                    <option value="Hommes">Hommes</option>
+                                    <option value="Femmes">Femmes</option>
+                                    <option value="Ados">Ados</option>
+                                    <option value="Juniors">Juniors</option>
+                                    <option value="Chorale">Chorale</option>
+                                    <option value="Intercession">Intercession</option>
+                                    <option value="Groupe pastoral">Groupe pastoral</option>
+                                    <option value="Évangélisation">Évangélisation</option>
+                                    <option value="Médias">Médias</option>
+                                </select>
+                            </div>
+
+                            <div id="joinDeptStatus" class="form-status" aria-live="polite"></div>
+
+                            <button type="submit" class="btn-submit">
+                                <span>Envoyer la demande</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                        <p class="join-subtitle" style="color: #000000; font-size: 1.2rem; line-height: 1.7;">
+                            Partage tes dons, ton temps et ton cœur en rejoignant un département et en participant à la mission de l'Église.
+                        </p>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Section Faire un Don -->
+        <section class="donation-section reveal" style="background: #7BA68A; padding: 5rem 0; margin: 4rem 0; width: 100%;">
+            <div class="container" style="padding: 0 20px; max-width: 1200px; margin: 0 auto;">
+                    <div class="section-header reveal" style="text-align: center; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                        <h2 class="join-main-title" style="color: #8B0000; font-size: 3.2rem; margin-bottom: 1.5rem; font-weight: bold;">Faire un don</h2>
+                        <p class="join-subtitle" style="color: #000000; font-size: 1.2rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                            Dieu bâtit Son Église, et nous voulons être fidèles à cette mission.
+                        </p>
+                        <p class="join-subtitle" style="color: #000000; font-size: 1.2rem; line-height: 1.7; margin-bottom: 2rem;">
+                            Votre don contribue à soutenir l'enseignement, la formation, le service et l'accueil de toutes les générations, dont de nombreux étudiants et nouveaux croyants.
+                        </p>
+                        <a href="faire_un_don.html" class="btn-donation" style="display: inline-block; background: #8B0000; color: #ffffff; padding: 1rem 2.5rem; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: all 0.3s ease; font-family: 'Montserrat', sans-serif;">
+                            Faire un don
+                        </a>
+                    </div>
+                </div>
+        </section>
+
+        <div class="container">
             <!-- Contact Section -->
             <section class="contact-form-section reveal" id="contact">
                 <div class="contact-header reveal">
-                    <span class="section-badge">Contact</span>
-                    <h2 class="contact-form-title">Contactez-nous</h2>
+                    <h2 class="contact-form-title" style="color: #7BA68A; font-size: 3.2rem;">Contactez-nous</h2>
                     <p class="contact-form-description">
-                        Nous sommes là pour vous aider dans votre chemin spirituel et personnel.
-                        Remplissez le formulaire ci-dessous et nous vous contacterons rapidement.
+                        Que vous ayez une question, un besoin de prière ou un désir d'échanger, nous sommes là pour vous.
+                        Remplissez le formulaire ci-dessous et nous vous contacterons dans les meilleurs délais.
                     </p>
                 </div>
 
                 <div class="form-wrapper">
                     <form class="contact-form reveal" id="contactForm">
-                        <div class="form-group">
-                            <label for="fullName" class="form-label">Nom complet *</label>
+                        <div class="form-group" style="position: relative;">
+                            <label for="fullName" class="form-label" style="text-align: left;">Nom complet *</label>
                             <input
                                 type="text"
                                 id="fullName"
@@ -230,8 +299,8 @@
                             >
                         </div>
 
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Téléphone *</label>
+                        <div class="form-group" style="position: relative;">
+                            <label for="phone" class="form-label" style="text-align: left;">Téléphone *</label>
                             <input
                                 type="tel"
                                 id="phone"
@@ -242,8 +311,8 @@
                             >
                         </div>
 
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
+                        <div class="form-group" style="position: relative;">
+                            <label for="email" class="form-label" style="text-align: left;">Email</label>
                             <input
                                 type="email"
                                 id="email"
@@ -253,8 +322,8 @@
                             >
                         </div>
 
-                        <div class="form-group">
-                            <label for="message" class="form-label">Message</label>
+                        <div class="form-group" style="position: relative;">
+                            <label for="message" class="form-label" style="text-align: left;">Message</label>
                             <textarea
                                 id="message"
                                 name="message"
@@ -273,8 +342,8 @@
                         </button>
                     </form>
 
-                    <div class="contact-info-card reveal">
-                        <h3 class="contact-info-title">Informations de contact</h3>
+                    <div class="contact-info-card reveal" style="background: rgba(139, 0, 0, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15);">
+                        <h3 class="contact-info-title" style="color: #000000; font-size: 1.8rem; font-weight: bold;">Informations de contact</h3>
                         <div class="contact-info-item">
                             <i class="fas fa-phone"></i>
                             <div>
@@ -297,10 +366,8 @@
                             </div>
                         </div>
                         <div class="contact-hours">
-                            <h4>Heures d'ouverture</h4>
-                            <p>Lundi - Vendredi: 9h00 - 17h00</p>
-                            <p>Samedi: 10h00 - 14h00</p>
-                            <p>Dimanche: Sur rendez-vous</p>
+                            <h4>Heures de rendez-vous</h4>
+                            <p>Mardi et jeudi de 12h à 18h</p>
                         </div>
                     </div>
                 </div>
@@ -399,5 +466,8 @@
 
     <script src="script.js"></script>
     <script src="se-joindre.js"></script>
+    <script src="rejoindre-departement.js"></script>
 </body>
+</html> 
+</html> 
 </html> 

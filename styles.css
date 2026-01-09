@@ -1935,10 +1935,14 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .section-title-left {
-    font-size: 2.5rem;
-    color: var(--color-secondary);
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    margin-top: 5rem !important;
     margin-bottom: 2rem;
-    text-align: left;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .histoire-content {
@@ -6738,22 +6742,150 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 /* Join Hero Section */
 .join-hero {
-    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
-    padding: 6rem 0;
-    color: var(--color-white);
+    background: #7BA68A; /* Vert du logo (rgb(123, 166, 138)) */
+    padding: 5rem 0;
+    color: #333333;
     position: relative;
     overflow: hidden;
 }
 
-.join-hero::before {
-    content: '';
+/* Nouveaux styles pour la page Se joindre à nous */
+.join-hero-layout {
+    display: grid !important;
+    grid-template-columns: 0.4fr 1.6fr !important;
+    gap: 0.5rem !important;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+}
+
+.join-hero-left-section {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    max-width: 100%;
+    margin-right: -2rem !important;
+}
+
+.join-hero-left-section .se-joindre-label {
+    margin-bottom: 1rem;
+    white-space: nowrap;
+}
+
+.join-hero-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 15rem !important;
+    margin-left: 8rem !important;
+    margin-right: 0 !important;
+    text-align: center;
+}
+
+.join-hero-title-bottom {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+    margin: 0;
+    margin-top: auto;
+    text-align: right;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.join-hero-main-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #8B0000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    margin: 0 0 2rem 0;
+    text-shadow: 4px 4px 0 rgba(150, 150, 150, 0.3);
+}
+
+.join-hero-description {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color: #000000;
+    margin: 4rem auto 0 auto !important;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    max-width: 550px;
+    writing-mode: horizontal-tb;
+    text-align: center;
+}
+
+.join-hero-images-grid {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 900px;
+    z-index: 1;
+    overflow: visible;
+}
+
+.join-hero-image-item {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-    opacity: 0.3;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease, z-index 0.4s ease;
+    width: 300px;
+    height: 380px;
+}
+
+.join-hero-image-top {
+    top: 0px !important;
+    left: 0px !important;
+    z-index: 2;
+    transform: rotate(-4deg);
+    width: 320px;
+    height: 400px;
+}
+
+.join-hero-image-middle-1 {
+    top: 80px !important;
+    left: 40px !important;
+    z-index: 4;
+    transform: rotate(5deg);
+    width: 420px;
+    height: 520px;
+}
+
+.join-hero-image-middle-2 {
+    top: 200px !important;
+    left: -180px !important;
+    z-index: 3;
+    transform: rotate(-3deg);
+    width: 320px;
+    height: 400px;
+}
+
+.join-hero-image-bottom {
+    top: 500px !important;
+    left: 20px !important;
+    z-index: 1;
+    transform: rotate(4deg);
+    width: 300px;
+    height: 380px;
+}
+
+.join-hero-image-item:hover {
+    transform: scale(1.08) rotate(0deg) translateY(-5px);
+    z-index: 10;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+}
+
+.join-hero-image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .join-hero-content {
@@ -6874,7 +7006,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .join-main-title {
     font-size: 2.8rem;
-    color: var(--color-secondary);
+    color: #7BA68A;
     font-weight: bold;
     margin-bottom: 1.5rem;
 }
@@ -6887,10 +7019,11 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 /* Services Section */
 .services-section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    margin-bottom: 6rem;
+    position: relative;
+    min-height: 650px;
+    margin-bottom: 8rem;
+    overflow: visible;
+    padding: 2rem 0;
 }
 
 .service-card-modern {
@@ -6901,14 +7034,40 @@ body[class*="page-"] .department-leaders .leader-name-large,
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: absolute;
     border: 2px solid transparent;
+    width: 350px;
+}
+
+.service-card-modern:nth-child(1) {
+    top: 120px;
+    left: 0;
+    z-index: 2;
+    transform: rotate(-4deg);
+    width: 350px;
+}
+
+.service-card-modern:nth-child(2) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    z-index: 4;
+    width: 420px;
+}
+
+.service-card-modern:nth-child(3) {
+    top: 140px;
+    right: 0;
+    z-index: 1;
+    transform: rotate(5deg);
+    width: 350px;
 }
 
 .service-card-modern:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) rotate(0deg) scale(1.05);
     box-shadow: 0 15px 40px rgba(139, 0, 0, 0.15);
     border-color: var(--color-primary);
+    z-index: 10 !important;
 }
 
 .service-icon-wrapper {
@@ -7004,6 +7163,34 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-size: 0.9rem;
 }
 
+/* Services CTA Global */
+.services-cta {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 3rem;
+}
+
+.services-cta-button {
+    display: inline-block;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.2);
+}
+
+.services-cta-button:hover {
+    background: #a00000;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(139, 0, 0, 0.3);
+}
+
 /* Contact Form Section */
 .contact-form-section {
     margin: 6rem 0;
@@ -7037,9 +7224,10 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .contact-form {
-    background: var(--color-white);
+    background: rgba(139, 0, 0, 0.1);
     padding: 3rem;
-    border-radius: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #8B0000;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -7188,22 +7376,47 @@ body[class*="page-"] .department-leaders .leader-name-large,
         padding: 0 1rem;
     }
 
-    .join-hero-content {
+    .join-hero-layout {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
 
-    .join-hero-title {
-        font-size: 2.5rem;
+    .join-hero-text-content {
+        padding-left: 0;
+        order: -1;
     }
 
-    .join-hero-subtitle {
+    .join-hero-main-title {
+        font-size: 3rem;
+    }
+
+    .join-hero-description {
         font-size: 1.1rem;
     }
 
-    .join-hero-features {
-        flex-direction: column;
-        gap: 1rem;
+    .join-hero-images-grid {
+        height: auto;
+        min-height: 400px;
+        padding-bottom: 200px;
+    }
+
+    .join-hero-image-item {
+        position: relative !important;
+        width: 100% !important;
+        height: 250px !important;
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+        transform: none !important;
+    }
+
+    .join-hero-image-top,
+    .join-hero-image-middle-1,
+    .join-hero-image-middle-2,
+    .join-hero-image-bottom {
+        top: auto !important;
+        right: auto !important;
+        position: relative !important;
+        transform: none !important;
     }
 
     .hero-image-wrapper {
@@ -7211,8 +7424,36 @@ body[class*="page-"] .department-leaders .leader-name-large,
     }
 
     .services-section {
+        height: auto;
+        display: grid;
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .service-card-modern {
+        position: relative !important;
+        width: 100% !important;
+        transform: none !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+    }
+
+    .service-card-modern:nth-child(1),
+    .service-card-modern:nth-child(2),
+    .service-card-modern:nth-child(3) {
+        transform: none !important;
+        width: 100% !important;
+    }
+
+    .services-cta {
+        margin-top: 3rem;
+        padding-top: 2rem;
+    }
+
+    .services-cta-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
     }
 
     .form-wrapper {
@@ -8604,11 +8845,29 @@ body {
     text-transform: lowercase;
 }
 
-.section-title-left {
-    font-size: 2.5rem;
-    color: var(--color-secondary);
-    margin-bottom: 2rem;
+.se-joindre-label {
+    font-size: 1.1rem;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-transform: lowercase;
     text-align: left;
+    display: block;
+}
+
+.join-hero-text-content .se-joindre-label {
+    margin-bottom: 0.5rem;
+}
+
+.section-title-left {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    margin-top: 5rem !important;
+    margin-bottom: 2rem;
+    text-align: center;
+    white-space: nowrap;
 }
 
 /* Styles pour les items d'histoire avec alternance gauche/droite */
@@ -10017,22 +10276,150 @@ body.menu-open {
 
 /* Join Hero Section */
 .join-hero {
-    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
-    padding: 6rem 0;
-    color: var(--color-white);
+    background: #7BA68A; /* Vert du logo (rgb(123, 166, 138)) */
+    padding: 5rem 0;
+    color: #333333;
     position: relative;
     overflow: hidden;
 }
 
-.join-hero::before {
-    content: '';
+/* Nouveaux styles pour la page Se joindre à nous */
+.join-hero-layout {
+    display: grid !important;
+    grid-template-columns: 0.4fr 1.6fr !important;
+    gap: 0.5rem !important;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+}
+
+.join-hero-left-section {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    max-width: 100%;
+    margin-right: -2rem !important;
+}
+
+.join-hero-left-section .se-joindre-label {
+    margin-bottom: 1rem;
+    white-space: nowrap;
+}
+
+.join-hero-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 15rem !important;
+    margin-left: 8rem !important;
+    margin-right: 0 !important;
+    text-align: center;
+}
+
+.join-hero-title-bottom {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+    margin: 0;
+    margin-top: auto;
+    text-align: right;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.join-hero-main-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #8B0000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    margin: 0 0 2rem 0;
+    text-shadow: 4px 4px 0 rgba(150, 150, 150, 0.3);
+}
+
+.join-hero-description {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color: #000000;
+    margin: 4rem auto 0 auto !important;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    max-width: 550px;
+    writing-mode: horizontal-tb;
+    text-align: center;
+}
+
+.join-hero-images-grid {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 900px;
+    z-index: 1;
+    overflow: visible;
+}
+
+.join-hero-image-item {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-    opacity: 0.3;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease, z-index 0.4s ease;
+    width: 300px;
+    height: 380px;
+}
+
+.join-hero-image-top {
+    top: 0px !important;
+    left: 0px !important;
+    z-index: 2;
+    transform: rotate(-4deg);
+    width: 320px;
+    height: 400px;
+}
+
+.join-hero-image-middle-1 {
+    top: 80px !important;
+    left: 40px !important;
+    z-index: 4;
+    transform: rotate(5deg);
+    width: 420px;
+    height: 520px;
+}
+
+.join-hero-image-middle-2 {
+    top: 200px !important;
+    left: -180px !important;
+    z-index: 3;
+    transform: rotate(-3deg);
+    width: 320px;
+    height: 400px;
+}
+
+.join-hero-image-bottom {
+    top: 500px !important;
+    left: 20px !important;
+    z-index: 1;
+    transform: rotate(4deg);
+    width: 300px;
+    height: 380px;
+}
+
+.join-hero-image-item:hover {
+    transform: scale(1.08) rotate(0deg) translateY(-5px);
+    z-index: 10;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+}
+
+.join-hero-image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .join-hero-content {
@@ -10153,7 +10540,7 @@ body.menu-open {
 
 .join-main-title {
     font-size: 2.8rem;
-    color: var(--color-secondary);
+    color: #7BA68A;
     font-weight: bold;
     margin-bottom: 1.5rem;
 }
@@ -10166,10 +10553,11 @@ body.menu-open {
 
 /* Services Section */
 .services-section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    margin-bottom: 6rem;
+    position: relative;
+    min-height: 650px;
+    margin-bottom: 8rem;
+    overflow: visible;
+    padding: 2rem 0;
 }
 
 .service-card-modern {
@@ -10180,14 +10568,40 @@ body.menu-open {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: absolute;
     border: 2px solid transparent;
+    width: 350px;
+}
+
+.service-card-modern:nth-child(1) {
+    top: 120px;
+    left: 0;
+    z-index: 2;
+    transform: rotate(-4deg);
+    width: 350px;
+}
+
+.service-card-modern:nth-child(2) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    z-index: 4;
+    width: 420px;
+}
+
+.service-card-modern:nth-child(3) {
+    top: 140px;
+    right: 0;
+    z-index: 1;
+    transform: rotate(5deg);
+    width: 350px;
 }
 
 .service-card-modern:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) rotate(0deg) scale(1.05);
     box-shadow: 0 15px 40px rgba(139, 0, 0, 0.15);
     border-color: var(--color-primary);
+    z-index: 10 !important;
 }
 
 .service-icon-wrapper {
@@ -10283,6 +10697,34 @@ body.menu-open {
     font-size: 0.9rem;
 }
 
+/* Services CTA Global */
+.services-cta {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 3rem;
+}
+
+.services-cta-button {
+    display: inline-block;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.2);
+}
+
+.services-cta-button:hover {
+    background: #a00000;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(139, 0, 0, 0.3);
+}
+
 /* Contact Form Section */
 .contact-form-section {
     margin: 6rem 0;
@@ -10316,9 +10758,10 @@ body.menu-open {
 }
 
 .contact-form {
-    background: var(--color-white);
+    background: rgba(139, 0, 0, 0.1);
     padding: 3rem;
-    border-radius: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #8B0000;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -10467,22 +10910,47 @@ body.menu-open {
         padding: 0 1rem;
     }
 
-    .join-hero-content {
+    .join-hero-layout {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
 
-    .join-hero-title {
-        font-size: 2.5rem;
+    .join-hero-text-content {
+        padding-left: 0;
+        order: -1;
     }
 
-    .join-hero-subtitle {
+    .join-hero-main-title {
+        font-size: 3rem;
+    }
+
+    .join-hero-description {
         font-size: 1.1rem;
     }
 
-    .join-hero-features {
-        flex-direction: column;
-        gap: 1rem;
+    .join-hero-images-grid {
+        height: auto;
+        min-height: 400px;
+        padding-bottom: 200px;
+    }
+
+    .join-hero-image-item {
+        position: relative !important;
+        width: 100% !important;
+        height: 250px !important;
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+        transform: none !important;
+    }
+
+    .join-hero-image-top,
+    .join-hero-image-middle-1,
+    .join-hero-image-middle-2,
+    .join-hero-image-bottom {
+        top: auto !important;
+        right: auto !important;
+        position: relative !important;
+        transform: none !important;
     }
 
     .hero-image-wrapper {
@@ -10490,8 +10958,36 @@ body.menu-open {
     }
 
     .services-section {
+        height: auto;
+        display: grid;
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .service-card-modern {
+        position: relative !important;
+        width: 100% !important;
+        transform: none !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+    }
+
+    .service-card-modern:nth-child(1),
+    .service-card-modern:nth-child(2),
+    .service-card-modern:nth-child(3) {
+        transform: none !important;
+        width: 100% !important;
+    }
+
+    .services-cta {
+        margin-top: 3rem;
+        padding-top: 2rem;
+    }
+
+    .services-cta-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
     }
 
     .form-wrapper {
@@ -11177,6 +11673,195 @@ body[class*="page-"] .department-join .section-title-large,
 /* Paragraphe sous le titre : garde un peu d'air */
 .department-hero .section-description {
     margin-top: 0.5rem !important;
+}
+
+/* Styles pour la grille de services moderne */
+.services-grid-modern {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.service-card-gradient {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card-gradient:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Styles pour le bouton de don */
+.btn-donation:hover {
+    background: #a00000 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
+}
+
+/* ===== Améliorations des formulaires ===== */
+.contact-form {
+    background: rgba(139, 0, 0, 0.1);
+    padding: 3rem;
+    border-radius: 8px;
+    border-left: 4px solid #8B0000;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.contact-form:hover {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+}
+
+.form-group {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 900;
+    font-family: "Montserrat", sans-serif;
+    color: #000000;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.form-group:focus-within .form-label {
+    color: var(--color-primary);
+}
+
+.form-input,
+.form-textarea,
+select.form-input {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.95);
+    color: #2c3e50;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form-input:hover,
+.form-textarea:hover,
+select.form-input:hover {
+    border-color: #d0d7de;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+select.form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.1), 0 4px 12px rgba(139, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #adb5bd;
+    font-style: italic;
+}
+
+/* Style pour le select - police seulement */
+select.form-input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Bouton de soumission amélioré */
+.btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #a00000 100%);
+    color: var(--color-white);
+    border: none;
+    padding: 1.25rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-submit:hover::before {
+    left: 100%;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.4);
+    background: linear-gradient(135deg, #a00000 0%, var(--color-primary) 100%);
+}
+
+.btn-submit:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+}
+
+.btn-submit i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-submit:hover i {
+    transform: translateX(5px);
+}
+
+/* Animation pour les champs remplis */
+.form-input:not(:placeholder-shown),
+.form-textarea:not(:placeholder-shown) {
+    border-color: #28a745;
+    background: #f8fff9;
+}
+
+.form-input:not(:placeholder-shown):focus,
+.form-textarea:not(:placeholder-shown):focus {
+    border-color: var(--color-primary);
+    background: #ffffff;
+}
+
+/* Responsive pour la grille de services */
+@media (max-width: 968px) {
+    .services-grid-modern {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    .service-card-gradient {
+        min-height: auto !important;
+        padding: 2rem !important;
+    }
 }
 
 
