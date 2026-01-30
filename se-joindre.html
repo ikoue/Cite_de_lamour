@@ -18,7 +18,6 @@
                 <nav class="nav">
                     <a href="index.html" class="nav-link">Accueil</a>
                     <a href="commencer-ici.html" class="nav-link">Commencer ici</a>
-                    <a href="se-joindre.html" class="nav-link">Se joindre à nous</a>
                     <a href="#menu" class="nav-link menu-toggle" id="menuToggle">
                         Menu <i class="fas fa-chevron-down"></i>
                     </a>
@@ -108,7 +107,7 @@
                 
                 <!-- Texte à droite -->
                 <div class="join-hero-text-content">
-                    <h2 class="section-title-left">la ou l'amour transfirme des vies</h2>
+                    <h2 class="section-title-left">là où l'amour transforme des vies</h2>
                     <p class="join-hero-description">
                         Nous sommes une église qui partage l'amour du Christ par la prédication de l'Évangile, la fraternité, la charité et le service des autres.
                     </p>
@@ -187,7 +186,7 @@
         </div>
 
         <!-- Section Rejoindre un Département -->
-        <section class="join-department-section reveal" style="background: #7BA68A; padding: 5rem 0; margin: 4rem 0; width: 100%;">
+        <section id="rejoindre-departement" class="join-department-section reveal" style="background: #7BA68A; padding: 5rem 0; margin: 4rem 0; width: 100%;">
             <div class="container" style="padding: 0 20px; max-width: 1200px; margin: 0 auto;">
                     <div class="section-header reveal" style="text-align: center; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
                         <h2 class="join-main-title" style="color: #8B0000; font-size: 3.2rem; margin-bottom: 1.5rem; font-weight: bold;">Aimer Dieu par son service</h2>
@@ -214,13 +213,16 @@
 
                             <div class="form-group" style="position: relative;">
                                 <label for="telephone" class="form-label" style="text-align: left;">Téléphone *</label>
-                                <input type="tel" id="telephone" name="telephone" class="form-input" placeholder="Votre numéro" required />
+                                <input type="tel" id="telephone" name="telephone" class="form-input" placeholder="Votre numéro" />
+                                <small class="form-error" id="telephoneError" style="display: none; color: #d32f2f; font-size: 0.85rem; margin-top: 0.25rem;"></small>
                             </div>
 
                             <div class="form-group" style="position: relative;">
                                 <label for="courriel" class="form-label" style="text-align: left;">Courriel *</label>
-                                <input type="email" id="courriel" name="courriel" class="form-input" placeholder="Votre email" required />
+                                <input type="email" id="courriel" name="courriel" class="form-input" placeholder="Votre email" />
+                                <small class="form-error" id="courrielError" style="display: none; color: #d32f2f; font-size: 0.85rem; margin-top: 0.25rem;"></small>
                             </div>
+                            <p style="font-size: 0.85rem; color: #666; margin-top: -0.5rem; margin-bottom: 1rem; text-align: left;">* Au moins un des deux champs (Téléphone ou Courriel) doit être rempli</p>
 
                             <div class="form-group" style="position: relative;">
                                 <label for="departement" class="form-label" style="text-align: left;">Département à rejoindre *</label>
@@ -307,12 +309,12 @@
                                 name="phone"
                                 class="form-input"
                                 placeholder="Votre numéro de téléphone"
-                                required
                             >
+                            <small class="form-error" id="phoneError" style="display: none; color: #d32f2f; font-size: 0.85rem; margin-top: 0.25rem;"></small>
                         </div>
 
                         <div class="form-group" style="position: relative;">
-                            <label for="email" class="form-label" style="text-align: left;">Email</label>
+                            <label for="email" class="form-label" style="text-align: left;">Email *</label>
                             <input
                                 type="email"
                                 id="email"
@@ -320,7 +322,9 @@
                                 class="form-input"
                                 placeholder="Votre adresse email"
                             >
+                            <small class="form-error" id="emailError" style="display: none; color: #d32f2f; font-size: 0.85rem; margin-top: 0.25rem;"></small>
                         </div>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: -0.5rem; margin-bottom: 1rem; text-align: left;">* Au moins un des deux champs (Téléphone ou Email) doit être rempli</p>
 
                         <div class="form-group" style="position: relative;">
                             <label for="message" class="form-label" style="text-align: left;">Message</label>

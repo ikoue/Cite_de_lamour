@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   respond(false, 'Méthode non autorisée.');
 }
 
-$to = "philippeiffot@gmail.com";
+$to = "kururugis3@gmail.com";
 
 // Récupération + nettoyage
 $fullName = trim($_POST['fullName'] ?? '');
@@ -21,12 +21,26 @@ $phone    = trim($_POST['phone'] ?? '');
 $email    = trim($_POST['email'] ?? '');
 $message  = trim($_POST['message'] ?? '');
 
-if ($fullName === '' || $phone === '') {
-  respond(false, 'Veuillez remplir les champs obligatoires (*) : Nom complet et Téléphone.');
+if ($fullName === '') {
+  respond(false, 'Veuillez remplir le champ obligatoire : Nom complet.');
 }
 
+// Au moins un des deux (téléphone ou email) doit être rempli
+if ($phone === '' && $email === '') {
+  respond(false, 'Veuillez remplir au moins un des champs : Téléphone ou Email.');
+}
+
+// Validation du format du téléphone si rempli
+if ($phone !== '') {
+  $cleanedPhone = preg_replace('/[\s\-\(\)]/', '', $phone);
+  if (!preg_match('/^1?\d{10}$/', $cleanedPhone)) {
+    respond(false, 'Format de téléphone invalide.');
+  }
+}
+
+// Validation du format de l'email si rempli
 if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-  respond(false, 'Adresse email invalide.');
+  respond(false, 'Format d\'email invalide.');
 }
 
 // Sujet + contenu

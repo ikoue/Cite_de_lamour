@@ -1,0 +1,11 @@
+# Redirection de index.html vers index.php
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^index\.html$ index.php [L,R=301]
+</IfModule>
+
+# Configuration pour XAMPP
+DirectoryIndex index.php index.html
+

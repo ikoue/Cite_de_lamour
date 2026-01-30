@@ -1,81 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Faire un don-Cité de l'amour</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="faire_un_don.css">
-</head>
-<body class="faire-don">
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="logo.png" alt="Cité de l'amour Logo" class="logo-image">
-                </div>
-                <nav class="nav">
-                    <a href="index.html" class="nav-link">Accueil</a>
-                    <a href="commencer-ici.html" class="nav-link">Commencer ici</a>
-                    <a href="se-joindre.html" class="nav-link">Se joindre à nous</a>
-                    <a href="#menu" class="nav-link menu-toggle" id="menuToggle">
-                        Menu <i class="fas fa-bars"></i>
-                    </a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-
-  <h2 class="don">Formulaire de dons <i class="fa-solid fa-hands-praying"></i></h2>
-  <div class="texte"><p>Merci de votre générosité, elle contribue grandement à la réalisation de notre mission.</p></div>
-  <p>Merci de votre générosité, elle contribue grandement à la réalisation de notre mission.</p>
-  <br><br><br>
-
-  <form class="formulaire">
-
-    <br>
-
-    <label>
-      <i class="fas fa-user"></i> Nom* :
-      <br><br><input type="text" name="nom" placeholder="Votre nom de famille" required>
-    </label>
-
-    <br><br>
-    
-    <label>
-      <i class="fas fa-user"></i> Prénom* :
-      <br><br><input type="text" name="prenom" placeholder="Votre prénom" required>
-    </label>
-
-    <br><br>
-    <label>
-      <i class="fas fa-envelope"></i> Email* :
-      <br><br><input type="email" name="email" placeholder="votre.email@exemple.com" required>
-    </label>
-
-    <br><br>
-
-    <label type="text">
-        <i class="fas fa-dollar-sign"></i> Montant du don :
-        <br><br><input type="number" name="don" placeholder="0.00" required>
-    </label>
-    
-    <br><br>
-
-    <label>
-      Si vous avez des questions ou des commentaires, veuillez les écrire ci-dessous :
-      <br><br><textarea name="message" class="message" placeholder="Écrivez votre message ici..."></textarea>
-    </label>
-
-    <br><br>
-    <button type="submit" class="bouton">Faire un don <i class="fa-solid fa-hands-praying"></i></button>
-  </form>
-
-  <br><br><br><br><br><br>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -101,9 +23,9 @@
                     <div class="footer-column">
                         <h3>L'ÉGLISE</h3>
                         <a href="commencer-ici.html">Commencer ici</a>
-                        <a href="index.html#vision">Notre vision</a>
-                        <a href="index.html#evenements">Nos événements</a>
-                        <a href="index.html#programs">Nos programmes</a>
+                        <a href="index.php#vision">Notre vision</a>
+                        <a href="index.php#evenements">Nos événements</a>
+                        <a href="index.php#programs">Nos programmes</a>
                     </div>
                     <div class="footer-column">
                         <h3>DÉPARTEMENTS</h3>
@@ -165,5 +87,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="script.js?v=<?= time() ?>"></script>
 </body>
 </html>
+

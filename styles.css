@@ -35,16 +35,6 @@
     --color-teal-evangelisation: #5a6b8f; /* Bleu-violet entre bleu et bordeaux */
 }
 
-/* Désactiver le responsive pour la page media uniquement */
-body.page-medias {
-    min-width: 1200px;
-    overflow-x: auto;
-}
-
-body.page-medias * {
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -56,22 +46,6 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-@media (max-width: 1400px) {
-    .container {
-        padding: 0 40px;
-    }
-    
-    .logo {
-        margin-left: 40px;
-    }
-}
-
-@media (min-width: 780px) and (max-width: 1400px) {
-    .logo {
-        margin-left: 40px;
-    }
 }
 
 @media (max-width: 1024px) {
@@ -136,26 +110,11 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 
 @media (max-width: 1024px) {
     .header {
-        padding: 0.5rem 0 !important;
+        padding: 0.4rem 0;
     }
     
     .header-content {
-        gap: 1rem !important;
-        flex-wrap: nowrap !important;
-    }
-    
-    .nav {
-        display: flex !important;
-        flex-direction: row !important;
-        width: auto !important;
-        margin-top: 0 !important;
-        max-height: none !important;
-        overflow: visible !important;
-    }
-    
-    .logo {
-        flex: none !important;
-        min-width: auto !important;
+        gap: 0.75rem;
     }
 }
 
@@ -2457,52 +2416,58 @@ body.menu-open {
 
 @media (max-width: 1024px) {
     .nav {
-        gap: 2rem !important;
+        gap: 1.5rem;
     }
     
     .nav-link {
-        font-size: 18px !important;
+        font-size: 0.95rem;
     }
 }
 
 @media (max-width: 768px) {
-    .header {
-        padding: 0.5rem 0 !important;
+    .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        order: 2;
     }
-    
+
     .header-content {
-        flex-wrap: nowrap !important;
-        gap: 1rem !important;
+        flex-wrap: wrap;
     }
     
     .logo {
-        flex: none !important;
-        min-width: auto !important;
-    }
-    
-    .nav {
-        display: flex !important;
-        flex-direction: row !important;
-        width: auto !important;
-        margin-top: 0 !important;
-        max-height: none !important;
-        overflow: visible !important;
-        order: 0 !important;
-    }
-
-    .nav-link {
-        padding: 0 !important;
-        width: auto !important;
-        text-align: left !important;
-    }
-    
-    .menu-toggle {
-        display: inline-flex !important;
-        order: 0 !important;
+        flex: 1;
+        min-width: 200px;
     }
     
     .btn-contact {
-        order: 0 !important;
+        order: 3;
+    }
+
+    .nav {
+        order: 4;
+        width: 100%;
+        margin-top: 1rem;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        gap: 1rem;
+    }
+
+    .nav.mobile-open {
+        max-height: 300px;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-link.menu-toggle {
+        order: -1;
     }
 
     .hero-title {
@@ -3024,23 +2989,67 @@ body[class*="page-"] .department-hero .section-description {
 ========================================================= */
 
 /* Style pour les labels (petit texte gris foncé) - Appliqué à toutes les pages SAUF hero */
+/* Style uniforme pour TOUS les labels de section dans TOUS les départements */
 body[class*="page-"] .department-main .section-label,
 body[class*="page-"] .department-vision .section-label,
 body[class*="page-"] .department-eligibility .section-label,
+body[class*="page-"] .department-join .section-label,
 body[class*="page-"] .department-leaders .leader-label,
+body[class*="page-"] .department-teams .section-label,
 .department-main .section-label,
 .department-vision .section-label,
 .department-eligibility .section-label,
 .department-join .section-label,
-.department-leaders .leader-label {
+.department-leaders .leader-label,
+.department-teams .section-label,
+.page-hommes .department-main .section-label,
+.page-hommes .department-vision .section-label,
+.page-hommes .department-eligibility .section-label,
+.page-hommes .department-join .section-label,
+.page-femmes .department-main .section-label,
+.page-femmes .department-vision .section-label,
+.page-femmes .department-eligibility .section-label,
+.page-femmes .department-join .section-label,
+.page-jeunes-adultes .department-main .section-label,
+.page-jeunes-adultes .department-vision .section-label,
+.page-jeunes-adultes .department-eligibility .section-label,
+.page-jeunes-adultes .department-join .section-label,
+.page-medias .department-main .section-label,
+.page-medias .department-vision .section-label,
+.page-medias .department-eligibility .section-label,
+.page-medias .department-join .section-label,
+.page-medias .department-teams .section-label,
+.page-ados .department-main .section-label,
+.page-ados .department-vision .section-label,
+.page-ados .department-eligibility .section-label,
+.page-ados .department-join .section-label,
+.page-juniors .department-main .section-label,
+.page-juniors .department-vision .section-label,
+.page-juniors .department-eligibility .section-label,
+.page-juniors .department-join .section-label,
+.page-chorale .department-main .section-label,
+.page-chorale .department-vision .section-label,
+.page-chorale .department-eligibility .section-label,
+.page-chorale .department-join .section-label,
+.page-intercession .department-main .section-label,
+.page-intercession .department-vision .section-label,
+.page-intercession .department-eligibility .section-label,
+.page-intercession .department-join .section-label,
+.page-pastoral .department-main .section-label,
+.page-pastoral .department-leaders .section-label,
+.page-evangelisation .department-main .section-label,
+.page-evangelisation .department-vision .section-label,
+.page-evangelisation .department-eligibility .section-label,
+.page-evangelisation .department-join .section-label {
     font-family: "Montserrat", sans-serif !important;
     font-weight: 600 !important;
     font-size: 22px !important;
-    color: #4a4a4a !important;
+    color: #000000 !important;
     text-transform: uppercase !important;
     letter-spacing: 2px !important;
     margin-bottom: 0.5rem !important;
     opacity: 1 !important;
+    font-style: normal !important;
 }
 
 /* Style pour les titres principaux (grand texte rouge avec effet d'ombre) - Appliqué à toutes les pages */
@@ -3189,7 +3198,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-hommes .department-activities {
-    background: #8B0000;
+    background: #4B6070;
 }
 
 /* =========================================================
@@ -3331,7 +3340,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-hommes .btn-contact-dept {
     font-family: "Montserrat", sans-serif;
-    background: #8B0000;
+    background: #4B6070;
     color: #ffffff;
     border: none;
     padding: 1rem 2.5rem;
@@ -3340,9 +3349,9 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-hommes .btn-contact-dept:hover {
-    background: #600516;
+    background: #3a4d5a;
     color: #ffffff;
-    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(75, 96, 112, 0.3);
 }
 
 /* =========================================================
@@ -3412,7 +3421,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-femmes .department-activities {
-    background: var(--color-pink-femmes);
+    background: #4B6070;
 }
 
 /* =========================================================
@@ -3586,7 +3595,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-femmes .btn-contact-dept {
     font-family: "Montserrat", sans-serif;
-    background: #583a7a !important;
+    background: #4B6070 !important;
     color: #ffffff !important;
     border: none !important;
     padding: 1rem 2.5rem;
@@ -3595,9 +3604,9 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-femmes .btn-contact-dept:hover {
-    background: #4a2d6a !important;
+    background: #3a4d5a !important;
     color: #ffffff !important;
-    box-shadow: 0 8px 20px rgba(88, 58, 122, 0.4);
+    box-shadow: 0 8px 20px rgba(75, 96, 112, 0.4);
 }
 
 /* =========================================================
@@ -3728,7 +3737,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-jeunes-adultes .department-activities {
-    background: var(--color-jeunes-gradient);
+    background: #4B6070;
 }
 
 .page-jeunes-adultes .section-title-large {
@@ -3842,15 +3851,15 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-jeunes-adultes .btn-contact-dept {
-    background: var(--color-jeunes-gradient);
+    background: #4B6070;
     color: #ffffff;
     border: none;
 }
 
 .page-jeunes-adultes .btn-contact-dept:hover {
-    background: #8B0000;
+    background: #3a4d5a;
     color: #ffffff;
-    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(75, 96, 112, 0.3);
 }
 
 .page-jeunes-adultes .activity-title {
@@ -4223,22 +4232,22 @@ body[class*="page-"] .department-leaders .leader-name-large,
    BOUTON
 ========================================================= */
 .page-medias .btn-contact-dept {
-    background: var(--color-purple-medias);
+    background: #4B6070;
     color: #ffffff;
     border: none;
 }
 
 .page-medias .btn-contact-dept:hover {
-    background: #8B0000;
+    background: #3a4d5a;
     color: #ffffff;
-    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(75, 96, 112, 0.3);
 }
 
 /* =========================================================
    ACTIVITÉS
 ========================================================= */
 .page-medias .department-activities {
-    background: var(--color-purple-medias);
+    background: #4B6070;
 }
 
 .page-medias .activity-title,
@@ -4670,22 +4679,22 @@ body[class*="page-"] .department-leaders .leader-name-large,
    BOUTON
 ========================================================= */
 .page-ados .btn-contact-dept {
-    background: var(--color-orange-ados);
+    background: #4B6070;
     color: #ffffff;
     border: none;
 }
 
 .page-ados .btn-contact-dept:hover {
-    background: #8B0000;
+    background: #3a4d5a;
     color: #ffffff;
-    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(75, 96, 112, 0.3);
 }
 
 /* =========================================================
    ACTIVITÉS
 ========================================================= */
 .page-ados .department-activities {
-    background: rgb(180, 120, 10);
+    background: #4B6070;
 }
 
 .page-ados .activity-title,
@@ -4747,7 +4756,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-juniors .department-activities {
-    background: var(--color-yellow-juniors);
+    background: #4B6070;
 }
 
 /* =========================================================
@@ -4876,7 +4885,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-juniors .btn-contact-dept {
     font-family: "Montserrat", sans-serif;
-    background: var(--color-yellow-juniors);
+    background: #4B6070;
     color: #ffffff;
     border: none;
     padding: 1rem 2.5rem;
@@ -4885,9 +4894,9 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-juniors .btn-contact-dept:hover {
-    background: #8B0000;
+    background: #3a4d5a;
     color: #ffffff;
-    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(75, 96, 112, 0.3);
 }
 
 /* =========================================================
@@ -4943,7 +4952,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-chorale .department-hero .section-label {
     font-family: "Corinthia", cursive;
     font-size: 9.5rem;
-    font-style: italic;
+    font-style: normal;
     text-transform: none;
     color: #ffffff;
     opacity: 0.5;
@@ -4980,7 +4989,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-chorale .department-activities {
-    background: rgb(96, 5, 22);
+    background: #4B6070;
 }
 
 /* =========================================================
@@ -4992,7 +5001,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-chorale .department-eligibility .section-label,
 .page-chorale .department-join .section-label {
     font-family: "Corinthia", cursive;
-    font-style: italic;
+    font-style: normal;
     text-transform: none;
     color: #531a1a;
     opacity: 0.5;
@@ -5062,7 +5071,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-chorale .department-leaders .leader-label {
     font-family: "Corinthia", cursive;
-    font-style: italic;
+    font-style: normal;
     font-size: 8rem;
     color: #531a1a;
     opacity: 0.5;
@@ -5149,7 +5158,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-chorale .btn-contact-dept {
     font-family: "Montserrat", sans-serif;
-    background: rgb(96, 5, 22);
+    background: #4B6070;
     color: #ffffff;
     border: none;
     padding: 1rem 2.5rem;
@@ -5158,9 +5167,9 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-chorale .btn-contact-dept:hover {
-    background: #8B0000;
+    background: #3a4d5a;
     color: #ffffff;
-    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(75, 96, 112, 0.3);
 }
 
 
@@ -5168,7 +5177,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
    ACTIVITÉS
 ========================================================= */
 .page-chorale .department-activities {
-    background: rgb(96, 5, 22);
+    background: #4B6070;
 }
 
 .page-chorale .activity-title,
@@ -5263,7 +5272,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-intercession .department-hero .section-label {
     font-family: "Corinthia", cursive;
-    font-style: italic;
+    font-style: normal;
     text-transform: none;
     font-size: 8.5rem;
     opacity: 0.5;
@@ -5308,7 +5317,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-intercession .department-eligibility .section-label,
 .page-intercession .department-join .section-label,
 .page-intercession .department-main .section-label {
-    font-size: 8rem;
+    font-size: 22px !important;
 }
 
 /* =========================================================
@@ -5369,13 +5378,13 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-intercession .btn-contact-dept {
-    background: #4a5568 !important;
+    background: #4B6070 !important;
     color: #ffffff !important;
     border: none !important;
 }
 
 .page-intercession .btn-contact-dept:hover {
-    background: #2d3748 !important;
+    background: #3a4d5a !important;
     color: #ffffff !important;
 }
 
@@ -5721,7 +5730,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-pastoral .department-activities {
-    background: var(--color-brown);
+    background: #4B6070;
 }
 
 /* =========================================================
@@ -5847,8 +5856,8 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-pastoral .btn-contact-dept {
     font-family: "Oswald", sans-serif;
-    background: wheat;
-    color: #8B4513;
+    background: #4B6070;
+    color: #ffffff;
     border: none;
     padding: 1rem 2.5rem;
     border-radius: 50px;
@@ -5856,9 +5865,9 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-pastoral .btn-contact-dept:hover {
-    background: #8B0000;
+    background: #3a4d5a;
     color: #ffffff;
-    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(75, 96, 112, 0.3);
 }
 
 /* =========================================================
@@ -5915,7 +5924,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-evangelisation .department-hero .section-label {
     font-family: "Corinthia", cursive;
     font-size: 7.5rem;
-    font-style: italic;
+    font-style: normal;
     text-transform: none;
     color: #ffffff;
     opacity: 0.5;
@@ -5952,7 +5961,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-evangelisation .department-activities {
-    background: rgb(96, 5, 22);
+    background: #4B6070;
 }
 
 /* =========================================================
@@ -5964,7 +5973,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-evangelisation .department-eligibility .section-label,
 .page-evangelisation .department-join .section-label {
     font-family: "Corinthia", cursive;
-    font-style: italic;
+    font-style: normal;
     text-transform: none;
     color: #531a1a;
     opacity: 0.5;
@@ -6146,7 +6155,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-evangelisation .btn-contact-dept {
     font-family: "Montserrat", sans-serif;
-    background: var(--color-teal-evangelisation);
+    background: #4B6070;
     color: #ffffff;
     border: none;
     padding: 1rem 2.5rem;
@@ -6155,9 +6164,9 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-evangelisation .btn-contact-dept:hover {
-    background: #8B0000;
+    background: #3a4d5a;
     color: #ffffff;
-    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(75, 96, 112, 0.3);
 }
 
 /* =========================================================
@@ -6983,11 +6992,11 @@ body[class*="page-"] .department-leaders .leader-name-large,
 /* Department Activities Section */
 .department-activities {
     padding: 0;
-    background: var(--color-blue-hommes);
+    background: #4B6070;
 }
 
 .page-hommes .department-activities {
-    background: var(--color-blue-hommes);
+    background: #4B6070;
 }
 
 .activity-block {
@@ -7165,7 +7174,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .btn-contact-dept {
-    background: #583a7a !important;
+    background: #4B6070 !important;
     color: #ffffff !important;
     border: none !important;
     transition: all 0.3s ease;
@@ -7173,22 +7182,22 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-hommes .btn-contact-dept {
-    background: var(--color-blue-hommes);
+    background: #4B6070;
     color: #ffffff;
-    border-color: var(--color-blue-hommes);
+    border-color: #4B6070;
 }
 
 .btn-contact-dept:hover {
-    background: #4a2d6a !important;
+    background: #3a4d5a !important;
     color: #ffffff !important;
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(88, 58, 122, 0.4);
+    box-shadow: 0 8px 20px rgba(75, 96, 112, 0.4);
 }
 
 .page-hommes .btn-contact-dept:hover {
-    background: #8B0000;
+    background: #3a4d5a;
     color: #ffffff;
-    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(75, 96, 112, 0.3);
 }
 
 .btn-register-dept {
@@ -8336,25 +8345,26 @@ body {
     transform: translateY(-10px);
 }
 @media (max-width: 782px) {
+
     .header-content {
-        flex-direction: row !important;
-        gap: 1rem !important;
-        padding: 0 !important;
+        padding: 10px 15px;
+        flex-direction: column; /* logo au-dessus, menu en dessous */
+        gap: 10px;
     }
 
     .logo img {
-        height: 90px !important;
+        height: 90px; /* logo plus petit */
     }
 
     .nav {
-        gap: 2rem !important;
-        flex-wrap: nowrap !important;
-        justify-content: flex-start !important;
+        gap: 1rem;
+        flex-wrap: wrap; /* évite que ça déborde */
+        justify-content: center;
     }
 
     .btn-contact {
-        padding: 0.65rem 1rem !important;
-        font-size: 18px !important;
+        padding: 0.5rem 0.8rem;
+        font-size: 13px;
     }
 }
 
@@ -10285,44 +10295,35 @@ body.menu-open {
 }
 
 @media (max-width: 768px) {
-    .header {
-        padding: 0.5rem 0 !important;
+    .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
     }
-    
+
     .header-content {
-        flex-wrap: nowrap !important;
-        gap: 1rem !important;
+        flex-wrap: wrap;
     }
 
     .nav {
-        display: flex !important;
-        flex-direction: row !important;
-        width: auto !important;
-        margin-top: 0 !important;
-        max-height: none !important;
-        overflow: visible !important;
-        order: 0 !important;
-        gap: 2rem !important;
+        order: 3;
+        width: 100%;
+        margin-top: 1rem;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        gap: 1rem;
     }
 
     .nav.mobile-open {
-        max-height: none !important;
+        max-height: 300px;
     }
 
     .nav-link {
-        padding: 0 !important;
-        width: auto !important;
-        text-align: left !important;
-    }
-    
-    .logo {
-        flex: none !important;
-        min-width: auto !important;
-    }
-    
-    .menu-toggle {
-        display: inline-flex !important;
-        order: 0 !important;
+        padding: 0.5rem 0;
+        width: 100%;
+        text-align: center;
     }
 
     .hero-title {
@@ -10814,7 +10815,7 @@ body.menu-open {
 /* Department Activities Section */
 .department-activities {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #f5e6f0 0%, #f0d9e6 100%);
+    background: #4B6070;
 }
 
 .activities-grid {
@@ -12230,7 +12231,7 @@ body[class*="page-"] .department-join .section-title-large,
 
 /* NOUS CONTACTER – un peu plus discret */
 .department-join .btn-contact-dept {
-    background: #4a5568;
+    background: #4B6070;
     color: #ffffff;
     font-size: 0.9rem;                /* texte légèrement plus petit */
 }

@@ -36,13 +36,12 @@ async function loadData() {
         programsData = programs;
         departmentsData = departments;
 
-        console.log('Programs loaded:', programsData.length, programsData);
-
         // Load background images
         if (images) {
             loadBackgroundImages(images);
         }
 
+        // Render all sections (departments use image violette from departments.json)
         renderEvents();
         renderPrograms();
         renderDepartments();
@@ -83,15 +82,8 @@ function loadBackgroundImages(imagesConfig) {
         });
     }
 
-    // Update department images
-    if (imagesConfig.departments && departmentsData) {
-        departmentsData.forEach(dept => {
-            const deptImage = imagesConfig.departments.find(img => img.name === dept.name);
-            if (deptImage) {
-                dept.image = deptImage.url;
-            }
-        });
-    }
+    // Department images are now directly from departments.json (image violette avec logo)
+    // No need to update from images.json
 }
 
 // Fallback default data
@@ -395,15 +387,24 @@ function renderDepartments() {
         return;
     }
 
+    console.log('=== RENDU DES DÉPARTEMENTS ===');
+    console.log('Nombre de départements:', departmentsData.length);
+    console.log('Données des départements:', departmentsData);
+    
     grid.innerHTML = departmentsData.map(dept => {
         // Si le département a une URL, créer un lien, sinon utiliser l'ancienne méthode
         const url = dept.url || '#';
+        // Forcer l'utilisation de l'image violette avec logo pour tous les départements
+        const imageUrl = 'departementacceuil.jpeg';
+        const fallbackImage = 'departementacceuil.jpeg';
+        
+        console.log(`Rendu département "${dept.name}" avec image: ${imageUrl}`);
         
         if (url && url !== '#') {
             return `
                 <a href="${url}" class="dept-card-link">
                     <div class="dept-card">
-                        <img src="${dept.image}" alt="${dept.name}" class="dept-image" onerror="this.src='https://via.placeholder.com/300x200?text=${encodeURIComponent(dept.name)}'">
+                        <img src="${imageUrl}" alt="${dept.name}" class="dept-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
                         <div class="dept-name">${dept.name}</div>
                     </div>
                 </a>
@@ -411,15 +412,14 @@ function renderDepartments() {
         } else {
             return `
                 <div class="dept-card" onclick="showDepartmentDetail(${dept.id})">
-                    <img src="${dept.image}" alt="${dept.name}" class="dept-image" onerror="this.src='https://via.placeholder.com/300x200?text=${encodeURIComponent(dept.name)}'">
+                    <img src="${imageUrl}" alt="${dept.name}" class="dept-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
                     <div class="dept-name">${dept.name}</div>
                 </div>
             `;
         }
     }).join('');
 
-    console.log(`Affichage de ${departmentsData.length} départements`);
-    console.log('Départements chargés:', departmentsData.map(d => ({ name: d.name, url: d.url })));
+    console.log(`✓ ${departmentsData.length} départements rendus avec image: departementacceuil.jpeg`);
 }
 
 // Carousel Navigation

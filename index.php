@@ -1,137 +1,101 @@
 <?php
+$to = "kururugis3@gmail.com";
+$subject = "Test Mail XAMPP";
+$message = "Ceci est un test depuis XAMPP.";
+$headers = "From: kururugis3@gmail.com";
+
+if (mail($to, $subject, $message, $headers)) {
+    echo "Mail envoyé avec succès ✅";
+} else {
+    echo "Échec de l'envoi ❌";
+}
+?>
+
+<?php
   $pageTitle = "Accueil — Cité de l'amour";
   require __DIR__ . "/includes/header.php";
 ?>
 
-<section class="hero">
-  <div class="hero-media" role="img" aria-label="Image de couverture (placeholder)"></div>
-  <div class="hero-overlay container">
-    <h1>LÀ OÙ L’AMOUR TRANSFORME DES VIES</h1>
-    <p>là où l’amour transforme des vies</p>
-  </div>
-</section>
-
-<section class="container section">
-  <article class="card vision">
-    <div class="vision-icon" aria-hidden="true">❤</div>
-    <div>
-      <h2>Notre vision</h2>
-      <p>
-        Nous aspirons à bâtir et équiper une communauté fondée sur l’amour,
-        afin de transformer des vies et impacter le monde.
-      </p>
+<!-- Hero Section -->
+<section class="hero" id="heroSection">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="hero-title">
+            <span class="hero-title-part" data-part="1">LÀ OÙ</span>
+            <span class="hero-title-part" data-part="2">L'AMOUR TRANSFORME</span>
+            <span class="hero-title-part" data-part="3">DES VIES</span>
+        </h1>
+        <p class="hero-subtitle">Bienvenu(e) à la cité de l'amour</p>
     </div>
-  </article>
 </section>
 
-<section class="container section">
-  <div class="section-head">
-    <h2>Nos événements</h2>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="carousel">
-    <button class="carousel-btn" aria-label="Précédent">‹</button>
-
-    <div class="events-grid">
-      <?php
-
-      /*va falloir creer une boucle ici mais doit s afficher a peu pres comme ca*/
-        $events = [
-          ["day"=>"x","time"=>"x","title"=>"Nom de l’événement","desc"=>"Description de l’événement..."],
-          ["day"=>"x","time"=>"x","title"=>"Nom de l’événement","desc"=>"Description de l’événement..."],
-          ["day"=>"x","time"=>"x","title"=>"Nom de l’événement","desc"=>"Description de l’événement..."],
-        ];
-        foreach ($events as $e):
-      ?>
-      <article class="event-card">
-        <div class="event-img"></div>
-        <div class="event-body">
-          <div class="event-date">
-            <span class="badge"><?= htmlspecialchars($e["day"]) ?></span>
-            <span class="time"><?= htmlspecialchars($e["time"]) ?></span>
-          </div>
-          <h3><?= htmlspecialchars($e["title"]) ?></h3>
-          <p class="muted"><?= htmlspecialchars($e["desc"]) ?></p>
-          <a class="btn btn-secondary" href="#">Voir détail</a>
+<!-- Vision Section -->
+<section class="vision" id="vision">
+    <div class="container">
+        <h2 class="section-title">Notre vision</h2>
+        <div class="vision-content-wrapper">
+            <div class="vision-text-block">
+                <p class="vision-main-text">
+                    NOTRE VISION EST DE VOIR LE QUÉBEC TRANSFORMÉ PAR L'AMOUR DE JÉSUS-CHRIST EN PROCLAMANT AVEC PASSION L'ÉVANGILE, VIVANT UNE COMMUNION FRATERNELLE SINCÈRE ET EN SERVANT NOTRE PROCHAIN AVEC PASSION ET GÉNÉROSITÉ.
+                </p>
+                <a href="se-joindre.html" class="vision-cta-btn">
+                    <i class="fas fa-heart"></i> JOINS-TOI À NOUS
+                </a>
+            </div>
+            <div class="vision-images-grid">
+                <div class="vision-image-card image-1">
+                    <img src="visionremplacement1.jpeg" alt="Notre vision">
+                </div>
+                <div class="vision-image-card image-2">
+                    <img src="visionremplacement2.jpeg" alt="Notre vision">
+                </div>
+                <div class="vision-image-card image-3">
+                    <img src="notrevision3.jpg" alt="Notre vision">
+                </div>
+            </div>
         </div>
-      </article>
-      <?php endforeach; ?>
     </div>
-
-    <button class="carousel-btn" aria-label="Suivant">›</button>
-  </div>
-
-  <div class="center">
-    <a class="btn btn-primary btn-wide" href="#">Voir tous les événements</a>
-  </div>
 </section>
 
-<section class="container section">
-  <h2 class="center-title">Nos programmes</h2>
-  
-<div class="programs-grid">
-    <div class="program">
-      <div class="program-ico">image de culte</div>
-      <div class="program-text">
-        <strong>Culte de célébration</strong>
-        <span class="muted">Dimanche</span>
-      </div>
-    </div>
-
-    <div class="program">
-      <div class="program-ico">image jeune ou bible</div>
-      <div class="program-text">
-        <strong>Étude biblique des jeunes</strong>
-        <span class="muted">Mardi</span>
-      </div>
-    </div>
-
-    <div class="program">
-      <div class="program-ico">image_maison</div>
-      <div class="program-text">
-        <strong>Cellule de maison</strong>
-        <span class="muted">1x / semaine</span>
-      </div>
-    </div>
-
-    <div class="program">
-      <div class="program-ico">image-personne</div>
-      <div class="program-text">
-        <strong>Rencontre Hommes/Femmes</strong>
-        <span class="muted">Vendredi</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="container section">
-  <h2 class="center-title">Nos départements</h2>
-
-  <div class="carousel">
-    <button class="carousel-btn" aria-label="Précédent">‹</button>
-
-    <div class="depts-grid">
-      <?php
-        $depts = ["Jeunes Adultes","Hommes","Les Femmes","Juniors","Évangélisation"];
-        foreach ($depts as $d):
-      ?>
-      <article class="dept-card">
-        <div class="dept-img"></div>
-        <div class="dept-label">
-          <h3><?= htmlspecialchars($d) ?></h3>
-          <p class="muted">Courte description…</p>
+<!-- Events Section -->
+<section class="events" id="evenements">
+    <div class="container">
+        <h2 class="section-title">Nos événements</h2>
+        <div class="carousel-wrapper">
+            <button class="carousel-btn prev-btn" id="eventsPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel-container" id="eventsCarousel">
+                <!-- Events will be dynamically loaded here -->
+            </div>
+            <button class="carousel-btn next-btn" id="eventsNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
-      </article>
-      <?php endforeach; ?>
+        <div class="text-center">
+            <button class="btn-primary" id="viewAllEvents">Voir tous les événements</button>
+        </div>
     </div>
+</section>
 
-    <button class="carousel-btn" aria-label="Suivant">›</button>
-  </div>
+<!-- Programs Section -->
+<section class="programs" id="programs">
+    <div class="container">
+        <h2 class="section-title">Nos programmes</h2>
+        <div class="programs-grid" id="programsGrid">
+            <!-- Programs will be dynamically loaded here -->
+        </div>
+    </div>
+</section>
 
-  <div class="center">
-    <a class="btn btn-primary btn-wide" href="#">Voir tous les départements</a>
-  </div>
+<!-- Departments Section -->
+<section class="departments" id="departements">
+    <div class="container">
+        <h2 class="section-title">Nos départements</h2>
+        <div class="departments-grid" id="departmentsGrid">
+            <!-- Departments will be dynamically loaded here -->
+        </div>
+    </div>
 </section>
 
 <?php require __DIR__ . "/includes/footer.php"; ?>
