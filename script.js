@@ -86,18 +86,9 @@ function loadBackgroundImages(imagesConfig) {
     // No need to update from images.json
 }
 
-// Fallback default data
+// Fallback default data (quand les JSON ne se chargent pas)
 function loadDefaultData() {
-    eventsData = [
-        {
-            id: 1,
-            date: "25",
-            time: "19h00",
-            name: "Culte de célébration",
-            description: "Rejoignez-nous pour un temps de louange et d'adoration en communauté.",
-            image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        }
-    ];
+    eventsData = []; // Pas d'événement codé en dur ; le carousel utilisera buildDefaultChurchEvents(1)
     programsData = [
         {
             id: 1,
@@ -110,7 +101,7 @@ function loadDefaultData() {
             id: 2,
             name: "Cultes d'enseignement",
             day: "Vendredi",
-            icon: "church",
+            icon: "book-open",
             time: "de 18h30 à 20h30"
         },
         {
@@ -143,7 +134,7 @@ function loadDefaultData() {
         { id: 5, name: "Juniors", url: "departement-juniors.html", image: "departementacceuil.jpeg", description: "Programmes pour les enfants et juniors" },
         { id: 6, name: "Chorale", url: "departement-chorale.html", image: "departementacceuil.jpeg", description: "Ministère de la musique et de la louange" },
         { id: 7, name: "Intercession", url: "departement-intercession.html", image: "departementacceuil.jpeg", description: "Ministère de prière et d'intercession" },
-        { id: 8, name: "Groupe pastoral", url: "departement-groupe-pastoral.html", image: "departementacceuil.jpeg", description: "Soutien et accompagnement pastoral" },
+        { id: 8, name: "Conseil pastoral", url: "departement-groupe-pastoral.html", image: "departementacceuil.jpeg", description: "Soutien et accompagnement pastoral" },
         { id: 9, name: "Évangélisation", url: "departement-evangelisation.html", image: "departementacceuil.jpeg", description: "Partage de l'Évangile dans notre communauté" },
         { id: 10, name: "Médias", url: "departement-medias.html", image: "departementacceuil.jpeg", description: "Ministère des médias et de la communication" }
     ];
@@ -179,26 +170,95 @@ function formatDateForEvent(date) {
     return `${dayName} ${day} ${monthName} ${year}`;
 }
 
+// ================================
+// ÉVÉNEMENTS PAR DÉFAUT DE L'ÉGLISE
+// ================================
+
+// Renvoie la prochaine occurrence d'un jour donné
+// 0 = dimanche, 5 = vendredi
+function getNextWeekday(targetDay, hour, minute) {
+    const now = new Date();
+    const currentDay = now.getDay();
+
+    let daysToAdd = (targetDay - currentDay + 7) % 7;
+
+    const candidate = new Date(now);
+    candidate.setHours(hour, minute, 0, 0);
+
+    // Si c'est aujourd'hui mais l'heure est déjà passée → semaine suivante
+    if (daysToAdd === 0 && candidate <= now) {
+        daysToAdd = 7;
+    }
+
+    const next = new Date(now);
+    next.setDate(now.getDate() + daysToAdd);
+    next.setHours(hour, minute, 0, 0);
+
+    return next;
+}
+
+// Renvoie plusieurs occurrences (ex : 4 prochains dimanches)
+function getNextOccurrences(targetDay, hour, minute, count) {
+    const dates = [];
+    let d = getNextWeekday(targetDay, hour, minute);
+
+    for (let i = 0; i < count; i++) {
+        dates.push(new Date(d));
+        d.setDate(d.getDate() + 7);
+    }
+
+    return dates;
+}
+
+// Construit les événements fixes de l'église
+function buildDefaultChurchEvents(weeksAhead = 4) {
+    const sundays = getNextOccurrences(0, 9, 30, weeksAhead);
+    const fridays = getNextOccurrences(5, 19, 0, weeksAhead);
+
+    const sundayEvents = sundays.map((date, i) => ({
+        id: `culte-celebration-${i}`,
+        name: "Culte de célébration",
+        time: "9h30 à 11h45",
+        description: "Temps de louange, d'adoration et de communion fraternelle.",
+        image: null,
+        fullDate: date
+    }));
+
+    const fridayEvents = fridays.map((date, i) => ({
+        id: `culte-enseignement-${i}`,
+        name: "Culte d'enseignement",
+        time: "19h00 à 20h30",
+        description: "Enseignement biblique et croissance spirituelle.",
+        image: null,
+        fullDate: date
+    }));
+
+    return [...sundayEvents, ...fridayEvents]
+        .sort((a, b) => a.fullDate - b.fullDate);
+}
+
+// Exclut définitivement tout événement du mercredi en février
+function isWednesdayFebruaryEvent(event) {
+    if (event.fullDate) {
+        const d = event.fullDate;
+        return d.getDay() === 3 && d.getMonth() === 1;
+    }
+    const day = parseInt(event.date, 10);
+    if (isNaN(day)) return false;
+    const febWednesdays = [5, 12, 19, 26];
+    return febWednesdays.includes(day);
+}
+
 // Render Events Carousel
 function renderEvents() {
     const carousel = document.getElementById('eventsCarousel');
     if (!carousel) return;
 
-    // Create default event if no events exist
-    let eventsToRender = eventsData || [];
-    if (eventsToRender.length === 0) {
-        const nextSunday = getNextSunday();
-        eventsToRender = [{
-            id: 'default-culte',
-            name: 'Culte de célébration',
-            date: nextSunday.getDate().toString(),
-            time: '19h00',
-            description: 'Rejoignez-nous pour un temps de louange et d\'adoration en communauté.',
-            image: null,
-            isDefault: true,
-            fullDate: nextSunday
-        }];
-    }
+    // Événements affichés : ceux de l'église + éventuels events.json (sans mercredi février)
+    const defaultEvents = buildDefaultChurchEvents(1); // 1 semaine : prochain dimanche + prochain vendredi
+    const manualEvents = (eventsData && Array.isArray(eventsData)) ? eventsData : [];
+    const allEvents = [...defaultEvents, ...manualEvents];
+    const eventsToRender = allEvents.filter(e => !isWednesdayFebruaryEvent(e));
 
     // Check if we have only one event to center it
     const carouselWrapper = carousel.closest('.carousel-wrapper');
@@ -243,21 +303,16 @@ function renderEvents() {
 
     // Helper function to format time range
     function formatTimeRange(timeStr) {
-        // If time is like "19h00", convert to "de 19h00 à 20h30" format
-        if (timeStr && timeStr.includes('h')) {
-            const match = timeStr.match(/(\d+)h(\d+)?/);
-            if (match) {
-                const hour = parseInt(match[1]);
-                const minutes = match[2] ? parseInt(match[2]) : 0;
-                
-                // Calculate end time (typically 2 hours later, ending at :45)
-                let endHour = hour + 2;
-                const endMinutes = 45;
-                
-                return `de ${timeStr} à ${endHour}h${endMinutes.toString().padStart(2, '0')}`;
-            }
+        if (!timeStr) return '';
+        // Déjà une plage "X à Y" : afficher "de X à Y" sans recalculer
+        if (timeStr.includes(' à ')) {
+            return `de ${timeStr}`;
         }
-        return timeStr ? `de ${timeStr}` : '';
+        // Heure seule : afficher "de XhXX"
+        if (timeStr.includes('h')) {
+            return `de ${timeStr}`;
+        }
+        return `de ${timeStr}`;
     }
 
     carousel.innerHTML = eventsToRender.map(event => `
@@ -285,10 +340,6 @@ function renderEvents() {
                 <div class="event-overlay-gradient"></div>
             </div>
             <div class="event-info-overlay">
-                <div class="event-badge">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Événement</span>
-                </div>
                 <h3 class="event-title">${event.name}</h3>
                 <div class="event-details">
                     <div class="event-detail-item">
@@ -300,9 +351,8 @@ function renderEvents() {
                         <span class="event-time-range">${formatTimeRange(event.time)}</span>
                     </div>
                 </div>
-                <a href="#" class="event-learn-more" onclick="showEventDetail('${event.id}'); return false;">
-                    <span>En savoir plus</span>
-                    <i class="fas fa-arrow-right"></i>
+                <a href="https://www.facebook.com/share/1KYkeJiemi/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="event-learn-more">
+                    <span>Suis-nous en direct sur Facebook</span>
                 </a>
             </div>
         </div>
@@ -339,6 +389,8 @@ function renderPrograms() {
 
     const iconMap = {
         'church': 'fas fa-heart',
+        'music': 'fas fa-music',
+        'book-open': 'fas fa-book-open',
         'users': 'fas fa-users',
         'home': 'fas fa-home',
         'user-friends': 'fas fa-user-friends',
@@ -346,18 +398,19 @@ function renderPrograms() {
         'pray': 'fas fa-hands-praying'
     };
 
-    grid.innerHTML = programsData.map(program => `
-        <div class="program-item">
+    const isCelebration = (name) => /célébration|celebration/i.test(name || '');
+
+    grid.innerHTML = programsData.map(program => {
+        const celebrationClass = isCelebration(program.name) ? ' program-item-celebration' : '';
+        const iconContent = isCelebration(program.name)
+            ? `<div class="program-icon-partitions" aria-hidden="true"><span class="partitions-line">♪</span><span class="partitions-line">♫</span><span class="partitions-line">♪</span></div>`
+            : `<i class="${iconMap[program.icon] || 'fas fa-calendar'}"></i>`;
+        return `
+        <div class="program-item${celebrationClass}">
             <div class="program-icon-wrapper">
-                <div class="program-icon">
-                    <i class="${iconMap[program.icon] || 'fas fa-calendar'}"></i>
-                </div>
+                <div class="program-icon">${iconContent}</div>
             </div>
             <div class="program-content">
-                <div class="program-badge">
-                    <i class="fas fa-calendar-week"></i>
-                    <span>Programme</span>
-                </div>
                 <h3 class="program-name">${program.name}</h3>
                 <div class="program-details">
                     <div class="program-detail-item">
@@ -371,7 +424,8 @@ function renderPrograms() {
                 </div>
             </div>
         </div>
-    `).join('');
+    `;
+    }).join('');
 
     console.log(`Rendered ${programsData.length} programs`);
 }
@@ -436,15 +490,6 @@ function setupEventListeners() {
     }
 
     // Departments grid - no carousel navigation needed
-
-    // View all buttons
-    const viewAllEvents = document.getElementById('viewAllEvents');
-    if (viewAllEvents) {
-        viewAllEvents.addEventListener('click', () => {
-            alert('Affichage de tous les événements...');
-            // You can implement a modal or redirect to events page
-        });
-    }
 
     // Contact button
     const contactBtn = document.querySelector('.btn-contact');
@@ -582,27 +627,24 @@ function updateCarouselButtons(type) {
 
 // Show event detail (can be expanded to modal)
 function showEventDetail(eventId) {
-    // Check if it's the default event
-    let event;
-    if (eventId === 'default-culte' && (!eventsData || eventsData.length === 0)) {
-        const nextSunday = getNextSunday();
-        event = {
-            id: 'default-culte',
-            name: 'Culte de célébration',
-            date: nextSunday.getDate().toString(),
-            time: '19h00',
-            description: 'Rejoignez-nous pour un temps de louange et d\'adoration en communauté.',
-            fullDate: nextSunday
-        };
-    } else {
-        event = eventsData.find(e => e.id == eventId);
-    }
-    
-    if (event) {
-        const dateStr = event.fullDate ? formatDateForEvent(event.fullDate) : formatEventDate(event);
-        alert(`Détails de l'événement: ${event.name}\nDate: ${dateStr}\nHeure: ${event.time}\n\n${event.description || ''}`);
-        // You can implement a modal here
-    }
+    const defaultEvents = buildDefaultChurchEvents(1);
+    const manualEvents = (eventsData && Array.isArray(eventsData)) ? eventsData : [];
+    const allEvents = [...defaultEvents, ...manualEvents].filter(e => !isWednesdayFebruaryEvent(e));
+
+    const event = allEvents.find(e => String(e.id) === String(eventId));
+    if (!event) return;
+
+    const dateStr = event.fullDate
+        ? formatDateForEvent(event.fullDate)
+        : '';
+
+    alert(
+        `Détails de l'événement:\n\n` +
+        `${event.name}\n` +
+        `Date : ${dateStr}\n` +
+        `Heure : ${event.time}\n\n` +
+        `${event.description || ''}`
+    );
 }
 
 // Show department detail (can be expanded to modal)
