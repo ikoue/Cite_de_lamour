@@ -1,17 +1,4 @@
 <?php
-$to = "kururugis3@gmail.com";
-$subject = "Test Mail XAMPP";
-$message = "Ceci est un test depuis XAMPP.";
-$headers = "From: kururugis3@gmail.com";
-
-if (mail($to, $subject, $message, $headers)) {
-    echo "Mail envoyé avec succès ✅";
-} else {
-    echo "Échec de l'envoi ❌";
-}
-?>
-
-<?php
   $pageTitle = "Accueil — Cité de l'amour";
   require __DIR__ . "/includes/header.php";
 ?>
@@ -82,8 +69,16 @@ if (mail($to, $subject, $message, $headers)) {
 <section class="programs" id="programs">
     <div class="container">
         <h2 class="section-title">Nos programmes</h2>
-        <div class="programs-grid" id="programsGrid">
-            <!-- Programs will be dynamically loaded here -->
+        <div class="programs-carousel-wrapper">
+            <button class="programs-carousel-btn prev-btn" id="programsPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="programs-grid" id="programsGrid">
+                <!-- Programs will be dynamically loaded here -->
+            </div>
+            <button class="programs-carousel-btn next-btn" id="programsNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </div>
 </section>
@@ -91,9 +86,17 @@ if (mail($to, $subject, $message, $headers)) {
 <!-- Departments Section -->
 <section class="departments" id="departements">
     <div class="container">
-        <h2 class="section-title">Nos départements</h2>
-        <div class="departments-grid" id="departmentsGrid">
-            <!-- Departments will be dynamically loaded here -->
+        <span class="section-title">Nos départements</span>
+        <div class="departments-carousel-wrapper">
+            <button class="departments-carousel-btn prev-btn" id="departmentsPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="departments-grid" id="departmentsGrid">
+                <!-- Departments will be dynamically loaded here -->
+            </div>
+            <button class="departments-carousel-btn next-btn" id="departmentsNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </div>
 </section>

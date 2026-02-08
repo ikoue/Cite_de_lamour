@@ -1,4 +1,4 @@
-/* Google Fonts Import */
+﻿/* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=BBH+Bartle&family=BBH+Hegarty&family=Cal+Sans&family=Corinthia:wght@400;700&family=Ephesis&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Reset and Base Styles */
@@ -21,7 +21,7 @@
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.15);
     --text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Couleurs harmonisées entre le bleu (#1a237e) et le bordeaux (#8B0000) du logo */
+    /* Couleurs harmonisÃ©es entre le bleu (#1a237e) et le bordeaux (#8B0000) du logo */
     --color-blue-hommes: #4a5d8f; /* Bleu-violet entre bleu et bordeaux */
     --color-pink-femmes: #6b4a7a; /* Violet-bordeaux entre bleu et bordeaux */
     --color-jeunes-gradient: linear-gradient(135deg, #4a5d8f 0%, #6b4a7a 100%);
@@ -29,7 +29,7 @@
     --color-purple-medias: #5a4a7a; /* Violet entre bleu et bordeaux */
     --color-orange-ados: #7a4a5a; /* Violet-rouge entre bleu et bordeaux */
     --color-yellow-juniors: #6b5a7a; /* Violet-gris entre bleu et bordeaux */
-    --color-gold-chorale: #7a5a6b; /* Violet-bordeaux foncé */
+    --color-gold-chorale: #7a5a6b; /* Violet-bordeaux foncÃ© */
     --color-indigo-intercession: #4a5d7a; /* Indigo-bleu entre bleu et bordeaux */
     --color-brown-pastoral: #6b4a5a; /* Violet-bordeaux sombre */
     --color-teal-evangelisation: #5a6b8f; /* Bleu-violet entre bleu et bordeaux */
@@ -48,23 +48,8 @@ body {
     padding: 0 20px;
 }
 
-@media (max-width: 1024px) {
-    .container {
-        padding: 0 15px;
-    }
-}
 
-@media (max-width: 768px) {
-    .container {
-        padding: 0 15px;
-    }
-}
 
-@media (max-width: 480px) {
-    .container {
-        padding: 0 10px;
-    }
-}
 
 .text-center {
     text-align: center;
@@ -102,21 +87,12 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-size: 18px;
 }
 
-/* Navigation poussée à droite pour la page d'accueil */
+/* Navigation poussÃ©e Ã  droite pour la page d'accueil */
 .department-header-transparent .nav {
     margin-left: auto;
     margin-right: 0;
 }
 
-@media (max-width: 1024px) {
-    .header {
-        padding: 0.4rem 0;
-    }
-    
-    .header-content {
-        gap: 0.75rem;
-    }
-}
 
 /* Logo */
 .logo {
@@ -162,7 +138,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     min-height: auto;
 }
 
-/* Réduction de la taille des éléments dans le header transparent */
+/* RÃ©duction de la taille des Ã©lÃ©ments dans le header transparent */
 .department-header-transparent .logo-curves {
     width: 45px;
     height: 45px;
@@ -319,7 +295,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
                 0 1px 0 rgba(255, 255, 255, 0.2) inset;
 }
 
-/* Amélioration de la lisibilité du logo et navigation sur fond ultra-transparent */
+/* AmÃ©lioration de la lisibilitÃ© du logo et navigation sur fond ultra-transparent */
 .department-header-transparent .logo-cite,
 .department-header-transparent .logo-amour {
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15), 0 0 8px rgba(255, 255, 255, 0.5);
@@ -409,30 +385,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     transform: translateY(-2px);
 }
 
-@media (max-width: 782px) {
-    .btn-contact {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-    }
-}
 
-@media (max-width: 480px) {
-    .btn-contact {
-        padding: 0.5rem 1rem;
-        font-size: 0.85rem;
-    }
-    
-    .btn-contact span,
-    .btn-contact i {
-        display: none;
-    }
-    
-    .btn-contact::before {
-        content: '\f095';
-        font-family: 'Font Awesome 6 Free';
-        font-weight: 900;
-    }
-}
 
 /* Hero Section */
 .hero {
@@ -449,26 +402,8 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     padding: 0 20px;
 }
 
-@media (max-width: 1024px) {
-    .hero {
-        height: 400px;
-        padding: 0 15px;
-    }
-}
 
-@media (max-width: 768px) {
-    .hero {
-        height: 350px;
-        padding: 0 15px;
-    }
-}
 
-@media (max-width: 480px) {
-    .hero {
-        height: 300px;
-        padding: 0 10px;
-    }
-}
 
 .hero-overlay {
     position: absolute;
@@ -500,26 +435,8 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     width: 100%;
 }
 
-@media (max-width: 1024px) {
-    .hero-title {
-        font-size: 3.5rem;
-        min-height: 90px;
-    }
-}
 
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
-        min-height: 80px;
-    }
-}
 
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-        min-height: 70px;
-    }
-}
 
 .hero-title-part {
     position: absolute;
@@ -581,28 +498,8 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     letter-spacing: 2px;
 }
 
-@media (max-width: 1024px) {
-    .hero-subtitle {
-        font-size: 1.3rem;
-        letter-spacing: 1.5px;
-    }
-}
 
-@media (max-width: 768px) {
-    .hero-subtitle {
-        font-size: 1.2rem;
-        letter-spacing: 1px;
-        padding: 0 10px;
-    }
-}
 
-@media (max-width: 480px) {
-    .hero-subtitle {
-        font-size: 1rem;
-        letter-spacing: 0.5px;
-        padding: 0 15px;
-    }
-}
 
 @keyframes fadeInUp {
     from {
@@ -643,88 +540,25 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 .vision {
     padding: 6rem 0;
     background: var(--color-white);
+    position: relative;
+    overflow: hidden;
 }
 
 .vision .container {
     max-width: 100%;
-    margin: 0;
-    padding: 0 18% 0 0;
-    margin-left: -15%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
 }
 
-.vision-content-wrapper {
-    display: grid;
-    grid-template-columns: 4.5fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    margin-top: 3rem;
-    padding-left: 0;
-    width: 100%;
-    margin-left: -12%;
-    padding-right: 0;
-}
 
-@media (max-width: 1024px) {
-    .vision {
-        padding: 4rem 0;
-    }
-    
-    .vision .container {
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-    
-    .vision-content-wrapper {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        margin-left: 0;
-        padding: 0;
-    }
-    
-    .vision-images-grid {
-        height: 500px;
-    }
-}
 
-@media (max-width: 768px) {
-    .vision {
-        padding: 3rem 0;
-    }
-    
-    .vision .container {
-        padding: 0 15px;
-    }
-    
-    .vision-content-wrapper {
-        gap: 2rem;
-    }
-    
-    .vision-images-grid {
-        height: 450px;
-    }
-}
-
-@media (max-width: 480px) {
-    .vision {
-        padding: 2rem 0;
-    }
-    
-    .vision .container {
-        padding: 0 10px;
-    }
-    
-    .vision-images-grid {
-        height: 400px;
-    }
-}
 
 .vision-text-block {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     width: 100%;
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 .vision-main-text {
@@ -732,44 +566,29 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-weight: 900;
     line-height: 1.2;
     color: #000;
-    margin-bottom: 3rem;
     text-transform: uppercase;
     letter-spacing: 0px;
     width: 100%;
     word-spacing: 0.05em;
     text-align: center;
     max-width: none;
+    position: relative;
+    z-index: 11;
 }
 
-@media (max-width: 1024px) {
-    .vision-main-text {
-        font-size: 2rem;
-        margin-bottom: 2.5rem;
-    }
-}
 
-@media (max-width: 768px) {
-    .vision-main-text {
-        font-size: 1.8rem;
-        line-height: 1.6;
-        margin-bottom: 2rem;
-        padding: 0 10px;
-    }
-}
 
-@media (max-width: 480px) {
-    .vision-main-text {
-        font-size: 1.4rem;
-        line-height: 1.5;
-        margin-bottom: 1.5rem;
-        padding: 0 5px;
-    }
-}
 
 .vision-images-grid {
-    position: relative;
-    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
+    max-width: 1200px;
+    opacity: 0.4;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .vision-image-card {
@@ -782,7 +601,6 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 
 .vision-image-card img {
     width: 100%;
-    height: 100%;
     object-fit: cover;
     display: block;
 }
@@ -791,27 +609,27 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     width: 280px;
     height: 340px;
     top: 0;
-    left: 20px;
+    left: 50%;
+    transform: translateX(-100%) rotate(-4deg);
     z-index: 1;
-    transform: rotate(-4deg);
 }
 
 .vision-image-card.image-2 {
     width: 320px;
     height: 380px;
     top: 60px;
-    left: 200px;
+    left: 50%;
+    transform: translateX(-50%) rotate(3deg);
     z-index: 2;
-    transform: rotate(3deg);
 }
 
 .vision-image-card.image-3 {
     width: 280px;
     height: 340px;
     top: 180px;
-    left: 420px;
+    left: 50%;
+    transform: translateX(0%) rotate(-2deg);
     z-index: 3;
-    transform: rotate(-2deg);
 }
 
 .vision-image-card:hover {
@@ -835,6 +653,8 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    position: relative;
+    z-index: 12;
 }
 
 .vision-cta-btn:hover {
@@ -851,12 +671,6 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 .vision {
     padding: 4rem 0;
     background: var(--color-white);
-}
-
-.vision .container {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
 }
 
 /* Legacy styles - kept for compatibility but not used */
@@ -892,28 +706,8 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     text-transform: uppercase;
 }
 
-@media (max-width: 1024px) {
-    .section-title {
-        font-size: 2.5rem;
-        margin-bottom: 2.5rem;
-    }
-}
 
-@media (max-width: 768px) {
-    .section-title {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        padding: 0 15px;
-    }
-}
 
-@media (max-width: 480px) {
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-        padding: 0 10px;
-    }
-}
 
 .vision .section-title {
     max-width: 1200px;
@@ -921,6 +715,8 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     margin-right: auto;
     padding: 0 20px;
     box-sizing: border-box;
+    position: relative;
+    z-index: 10;
 }
 
 .section-title::after {
@@ -971,23 +767,8 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     background: var(--color-light-gray);
 }
 
-@media (max-width: 1024px) {
-    .events {
-        padding: 4rem 0;
-    }
-}
 
-@media (max-width: 768px) {
-    .events {
-        padding: 3rem 0;
-    }
-}
 
-@media (max-width: 480px) {
-    .events {
-        padding: 2rem 0;
-    }
-}
 
 .carousel-wrapper {
     position: relative;
@@ -1314,28 +1095,8 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     background: var(--color-white);
 }
 
-@media (max-width: 1024px) {
-    .programs {
-        padding: 4rem 0;
-    }
-    
-    .programs-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-}
 
-@media (max-width: 768px) {
-    .programs {
-        padding: 3rem 0;
-    }
-}
 
-@media (max-width: 480px) {
-    .programs {
-        padding: 2rem 0;
-    }
-}
 
 .programs-grid {
     display: grid;
@@ -1481,40 +1242,8 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     min-height: 500px;
 }
 
-@media (max-width: 1024px) {
-    .departments {
-        padding: 4rem 0;
-    }
-    
-    .departments-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-        min-height: 400px;
-    }
-}
 
-@media (max-width: 768px) {
-    .departments {
-        padding: 3rem 0;
-    }
-    
-    .departments-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-        min-height: auto;
-    }
-}
 
-@media (max-width: 480px) {
-    .departments {
-        padding: 2rem 0;
-    }
-    
-    .departments-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-}
 
 .dept-card-link {
     text-decoration: none;
@@ -2331,28 +2060,12 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     transform: scale(1.1);
 }
 
-/* Empêcher le scroll du body quand le menu est ouvert */
+/* EmpÃªcher le scroll du body quand le menu est ouvert */
 body.menu-open {
     overflow: hidden;
 }
 
 /* Responsive pour mobile */
-@media (max-width: 768px) {
-    .dropdown-menu-content {
-        max-width: 100%;
-        width: 100%;
-    }
-    
-    .dropdown-menu-body {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .dropdown-menu-footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
 
 /* Mobile Menu */
 .menu-toggle {
@@ -2360,256 +2073,9 @@ body.menu-open {
 }
 
 /* Responsive Event Cards */
-@media (max-width: 768px) {
-    .event-card-new {
-        min-width: 300px;
-        height: 450px;
-    }
-    
-    .event-title {
-        font-size: 1.6rem;
-    }
-    
-    .event-info-overlay {
-        padding: 2rem;
-    }
-    
-    .event-badge {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.8rem;
-    }
-    
-    .event-detail-item {
-        font-size: 0.9rem;
-    }
-    
-    .event-learn-more {
-        font-size: 0.9rem;
-        padding: 0.6rem 1.2rem;
-    }
 
-    .programs-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
 
-    .program-item {
-        max-width: 100%;
-    }
 
-    .program-icon {
-        font-size: 3rem;
-    }
-
-    .program-name {
-        font-size: 1.3rem;
-    }
-
-    .program-content {
-        padding: 1.25rem 1.5rem 2rem;
-    }
-
-    .program-icon-wrapper {
-        padding: 2rem 1.5rem 1.25rem;
-    }
-}
-
-@media (max-width: 1024px) {
-    .nav {
-        gap: 1.5rem;
-    }
-    
-    .nav-link {
-        font-size: 0.95rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        order: 2;
-    }
-
-    .header-content {
-        flex-wrap: wrap;
-    }
-    
-    .logo {
-        flex: 1;
-        min-width: 200px;
-    }
-    
-    .btn-contact {
-        order: 3;
-    }
-
-    .nav {
-        order: 4;
-        width: 100%;
-        margin-top: 1rem;
-        flex-direction: column;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        gap: 1rem;
-    }
-
-    .nav.mobile-open {
-        max-height: 300px;
-    }
-
-    .nav-link {
-        padding: 0.5rem 0;
-        width: 100%;
-        text-align: center;
-    }
-    
-    .nav-link.menu-toggle {
-        order: -1;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-title-line {
-        font-size: 1em;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .carousel-wrapper {
-        padding: 0 40px;
-    }
-    
-    /* Vision Section Responsive */
-    .vision-content-wrapper {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    
-    .vision-main-text {
-        font-size: 1.8rem;
-        text-align: center;
-        line-height: 1.6;
-    }
-    
-    .vision-images-grid {
-        height: 500px;
-        margin-top: 2rem;
-    }
-    
-    .vision-image-card.image-1 {
-        width: 250px;
-        height: 300px;
-        top: 0;
-        left: 5%;
-        transform: rotate(-3deg);
-    }
-    
-    .vision-image-card.image-2 {
-        width: 280px;
-        height: 330px;
-        top: 40px;
-        left: 35%;
-        transform: rotate(2deg);
-    }
-    
-    .vision-image-card.image-3 {
-        width: 240px;
-        height: 290px;
-        top: 120px;
-        left: 5%;
-        transform: rotate(-2deg);
-    }
-    
-    .vision-cta-btn {
-        font-size: 1rem;
-        padding: 1rem 2rem;
-        align-self: center;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-    }
-
-    .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
-
-    .prev-btn {
-        left: 5px;
-    }
-
-    .next-btn {
-        right: 5px;
-    }
-
-    .event-card,
-    .event-card-new,
-    .dept-card {
-        min-width: 280px;
-    }
-    
-    .event-card-new {
-        height: 400px;
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel-wrapper {
-        padding: 0 30px;
-    }
-    
-    .carousel-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 0.9rem;
-    }
-    
-    .prev-btn {
-        left: 0;
-    }
-    
-    .next-btn {
-        right: 0;
-    }
-    
-    .event-card-new {
-        min-width: 260px;
-        height: 380px;
-    }
-    
-    .event-title {
-        font-size: 1.4rem;
-    }
-    
-    .event-info-overlay {
-        padding: 1.5rem;
-    }
-
-    .footer-main {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .footer-links-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-        margin-left: 0;
-    }
-
-    @media (max-width: 768px) {
-        .footer-links-grid {
-            grid-template-columns: 1fr;
-        }
-    }
     
     .footer {
         padding: 1.5rem 0 1rem;
@@ -2692,20 +2158,6 @@ body.menu-open {
     }
 }
 
-@media (max-width: 480px) {
-    .departments-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .dept-image {
-        height: 200px;
-    }
-    
-    .dept-name {
-        padding: 1rem;
-        font-size: 1.1rem;
-    }
-}
 
 /* Department Pages */
 .department-main {
@@ -2717,7 +2169,7 @@ body.menu-open {
     background: #ffffff;
 }
 
-/* Style réutilisable pour toutes les sections */
+/* Style rÃ©utilisable pour toutes les sections */
 .section-presentation {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -2803,11 +2255,11 @@ body.menu-open {
 }
 
 /* =========================================================
-   Style inspiré de l'image pour la section HERO
-   Fond violet foncé + Label script gris clair + Titre blanc gras
+   Style inspirÃ© de l'image pour la section HERO
+   Fond violet foncÃ© + Label script gris clair + Titre blanc gras
 ========================================================= */
 
-/* Style global pour le hero section de tous les départements */
+/* Style global pour le hero section de tous les dÃ©partements */
 body[class*="page-"] .department-hero {
     background: #583a7a !important;
     padding: 10rem 0 6rem !important;
@@ -2815,7 +2267,7 @@ body[class*="page-"] .department-hero {
     overflow: hidden !important;
 }
 
-/* Exception pour la page juniors - utilise la couleur harmonisée */
+/* Exception pour la page juniors - utilise la couleur harmonisÃ©e */
 .page-juniors .department-hero {
     background: var(--color-yellow-juniors) !important;
 }
@@ -2825,7 +2277,7 @@ body[class*="page-"] .department-hero .section-text-content {
     position: relative !important;
 }
 
-/* Label "Département" avec le même style que "Notre vision" - positionné derrière le titre avec effet d'ombre */
+/* Label "DÃ©partement" avec le mÃªme style que "Notre vision" - positionnÃ© derriÃ¨re le titre avec effet d'ombre */
 body[class*="page-"] .department-hero .section-label {
     font-family: "Montserrat", sans-serif !important;
     font-weight: 600 !important;
@@ -2848,7 +2300,7 @@ body[class*="page-"] .department-hero .section-label {
     text-shadow: 2px 2px 0 rgba(60, 60, 60, 0.3) !important;
 }
 
-/* Titre du département en blanc, gras, grande police sans-serif, devant le label avec effet d'ombre */
+/* Titre du dÃ©partement en blanc, gras, grande police sans-serif, devant le label avec effet d'ombre */
 body[class*="page-"] .department-hero .section-title-hero {
     font-family: "Montserrat", sans-serif !important;
     font-weight: 900 !important;
@@ -2868,7 +2320,7 @@ body[class*="page-"] .department-hero .section-title-hero {
     text-shadow: 3px 3px 0 rgba(80, 80, 80, 0.4) !important;
 }
 
-/* Sous-titre du département (ex: "LES PSALMISTES DU SEIGNEUR") */
+/* Sous-titre du dÃ©partement (ex: "LES PSALMISTES DU SEIGNEUR") */
 body[class*="page-"] .department-hero .section-subtitle-hero {
     font-family: "Montserrat", sans-serif !important;
     font-weight: 600 !important;
@@ -2888,7 +2340,7 @@ body[class*="page-"] .department-hero .section-subtitle-hero {
     text-shadow: 2px 2px 0 rgba(60, 60, 60, 0.3) !important;
 }
 
-/* Titre du département en blanc, gras, grande police sans-serif, devant le label */
+/* Titre du dÃ©partement en blanc, gras, grande police sans-serif, devant le label */
 body[class*="page-"] .department-hero .section-title-hero {
     font-family: "Montserrat", sans-serif !important;
     font-weight: 900 !important;
@@ -2914,82 +2366,16 @@ body[class*="page-"] .department-hero .section-description {
 }
 
 /* Responsive pour le hero */
-@media (max-width: 1024px) {
-    body[class*="page-"] .department-hero .section-label {
-        font-size: 22px !important;
-        margin-bottom: 12px !important;
-        text-shadow: 2px 2px 0 rgba(60, 60, 60, 0.3) !important;
-    }
-    
-    body[class*="page-"] .department-hero .section-title-hero {
-        font-size: 80px !important;
-        margin-top: 0 !important;
-        line-height: 1 !important;
-        text-shadow: 3px 3px 0 rgba(80, 80, 80, 0.4) !important;
-    }
-    
-    body[class*="page-"] .department-hero .section-subtitle-hero {
-        font-size: 36px !important;
-        margin-top: 8px !important;
-        letter-spacing: 2px !important;
-    }
-}
 
-@media (max-width: 768px) {
-    body[class*="page-"] .department-hero .section-label {
-        font-size: 18px !important;
-        margin-bottom: 10px !important;
-        text-shadow: 2px 2px 0 rgba(60, 60, 60, 0.3) !important;
-    }
-    
-    body[class*="page-"] .department-hero .section-title-hero {
-        font-size: 60px !important;
-        margin-top: 0 !important;
-        letter-spacing: 1px !important;
-        line-height: 1 !important;
-        text-shadow: 2px 2px 0 rgba(80, 80, 80, 0.4) !important;
-    }
-    
-    body[class*="page-"] .department-hero .section-subtitle-hero {
-        font-size: 28px !important;
-        margin-top: 6px !important;
-        letter-spacing: 2px !important;
-    }
-}
 
-@media (max-width: 480px) {
-    body[class*="page-"] .department-hero {
-        padding: 8rem 0 4rem !important;
-    }
-    
-    body[class*="page-"] .department-hero .section-label {
-        font-size: 16px !important;
-        margin-bottom: 8px !important;
-        text-shadow: 1px 1px 0 rgba(60, 60, 60, 0.3) !important;
-    }
-    
-    body[class*="page-"] .department-hero .section-title-hero {
-        font-size: 45px !important;
-        margin-top: 0 !important;
-        letter-spacing: 1px !important;
-        line-height: 1 !important;
-        text-shadow: 2px 2px 0 rgba(80, 80, 80, 0.4) !important;
-    }
-    
-    body[class*="page-"] .department-hero .section-subtitle-hero {
-        font-size: 24px !important;
-        margin-top: 5px !important;
-        letter-spacing: 1px !important;
-    }
-}
 
 /* =========================================================
-   Style inspiré de l'image pour les titres des sections
-   Label gris foncé + Titre rouge avec effet d'ombre
+   Style inspirÃ© de l'image pour les titres des sections
+   Label gris foncÃ© + Titre rouge avec effet d'ombre
 ========================================================= */
 
-/* Style pour les labels (petit texte gris foncé) - Appliqué à toutes les pages SAUF hero */
-/* Style uniforme pour TOUS les labels de section dans TOUS les départements */
+/* Style pour les labels (petit texte gris foncÃ©) - AppliquÃ© Ã  toutes les pages SAUF hero */
+/* Style uniforme pour TOUS les labels de section dans TOUS les dÃ©partements */
 body[class*="page-"] .department-main .section-label,
 body[class*="page-"] .department-vision .section-label,
 body[class*="page-"] .department-eligibility .section-label,
@@ -3052,7 +2438,7 @@ body[class*="page-"] .department-teams .section-label,
     font-style: normal !important;
 }
 
-/* Style pour les titres principaux (grand texte rouge avec effet d'ombre) - Appliqué à toutes les pages */
+/* Style pour les titres principaux (grand texte rouge avec effet d'ombre) - AppliquÃ© Ã  toutes les pages */
 body[class*="page-"] .department-main .section-title-large,
 body[class*="page-"] .department-vision .section-title-large,
 body[class*="page-"] .department-eligibility .section-title-large,
@@ -3077,74 +2463,8 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* Responsive pour les titres */
-@media (max-width: 1024px) {
-    body[class*="page-"] .department-main .section-title-large,
-    body[class*="page-"] .department-vision .section-title-large,
-    body[class*="page-"] .department-eligibility .section-title-large,
-    body[class*="page-"] .department-leaders .leader-name-large,
-    .department-main .section-title-large,
-    .department-vision .section-title-large,
-    .department-eligibility .section-title-large,
-    .department-join .section-title-large,
-    .department-leaders .leader-name-large {
-        font-size: 70px !important;
-        text-shadow: 3px 3px 0 rgba(150, 150, 150, 0.3) !important;
-    }
-}
 
-@media (max-width: 768px) {
-    body[class*="page-"] .department-main .section-label,
-    body[class*="page-"] .department-vision .section-label,
-    body[class*="page-"] .department-eligibility .section-label,
-    body[class*="page-"] .department-leaders .leader-label,
-    .department-main .section-label,
-    .department-vision .section-label,
-    .department-eligibility .section-label,
-    .department-join .section-label,
-    .department-leaders .leader-label {
-        font-size: 18px !important;
-    }
-    
-    body[class*="page-"] .department-main .section-title-large,
-    body[class*="page-"] .department-vision .section-title-large,
-    body[class*="page-"] .department-eligibility .section-title-large,
-    body[class*="page-"] .department-leaders .leader-name-large,
-    .department-main .section-title-large,
-    .department-vision .section-title-large,
-    .department-eligibility .section-title-large,
-    .department-join .section-title-large,
-    .department-leaders .leader-name-large {
-        font-size: 55px !important;
-        text-shadow: 3px 3px 0 rgba(150, 150, 150, 0.3) !important;
-    }
-}
 
-@media (max-width: 480px) {
-    body[class*="page-"] .department-main .section-label,
-    body[class*="page-"] .department-vision .section-label,
-    body[class*="page-"] .department-eligibility .section-label,
-    body[class*="page-"] .department-leaders .leader-label,
-    .department-main .section-label,
-    .department-vision .section-label,
-    .department-eligibility .section-label,
-    .department-join .section-label,
-    .department-leaders .leader-label {
-        font-size: 16px !important;
-    }
-    
-    body[class*="page-"] .department-main .section-title-large,
-    body[class*="page-"] .department-vision .section-title-large,
-    body[class*="page-"] .department-eligibility .section-title-large,
-    body[class*="page-"] .department-leaders .leader-name-large,
-    .department-main .section-title-large,
-    .department-vision .section-title-large,
-    .department-eligibility .section-title-large,
-    .department-join .section-title-large,
-    .department-leaders .leader-name-large {
-        font-size: 42px !important;
-        text-shadow: 2px 2px 0 rgba(150, 150, 150, 0.3) !important;
-    }
-}
 
 /* =========================================================
    Styles pour page des hommes
@@ -3186,7 +2506,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Sections générales
+   Sections gÃ©nÃ©rales
 ========================================================= */
 
 .page-hommes .department-main,
@@ -3313,7 +2633,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 
 /* =========================================================
-   Éligibilité
+   Ã‰ligibilitÃ©
 ========================================================= */
 
 .page-hommes .eligibility-list-simple {
@@ -3355,7 +2675,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Activités
+   ActivitÃ©s
 ========================================================= */
 
 .page-hommes .activity-title {
@@ -3371,7 +2691,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 
 /* =========================================================
-   Styles pour page des femmes – Rose harmonisé
+   Styles pour page des femmes â€“ Rose harmonisÃ©
 ========================================================= */
 
 .page-femmes .department-hero {
@@ -3409,7 +2729,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Sections générales
+   Sections gÃ©nÃ©rales
 ========================================================= */
 
 .page-femmes .department-main,
@@ -3509,7 +2829,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Leaders – CORRIGÉ
+   Leaders â€“ CORRIGÃ‰
 ========================================================= */
 
 .page-femmes .department-leaders {
@@ -3572,7 +2892,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Éligibilité
+   Ã‰ligibilitÃ©
 ========================================================= */
 
 .page-femmes .eligibility-list-simple li {
@@ -3610,7 +2930,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Activités
+   ActivitÃ©s
 ========================================================= */
 
 .page-femmes .activity-title {
@@ -3625,11 +2945,11 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Styles pour page des jeunes adultes – Dégradé bleu-bordeaux
+   Styles pour page des jeunes adultes â€“ DÃ©gradÃ© bleu-bordeaux
 ========================================================= */
 
 
-/* Styles pour page des jeunes adultes - Dégradé bleu-bordeaux */
+/* Styles pour page des jeunes adultes - DÃ©gradÃ© bleu-bordeaux */
 .page-jeunes-adultes .department-hero {
     background: var(--color-jeunes-gradient);
 }
@@ -3689,40 +3009,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* Responsive pour la section des responsables des jeunes adultes */
-@media (max-width: 968px) {
-    .page-jeunes-adultes .department-leaders .leader-presentation {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding: 0 1rem;
-    }
 
-    .page-jeunes-adultes .leader-name-large {
-        font-size: 3rem;
-    }
-
-    .page-jeunes-adultes .leader-name-decorative {
-        font-size: 3.5rem;
-    }
-
-    .page-jeunes-adultes .department-leaders .leader-image-wrapper {
-        height: 400px;
-        order: -1;
-    }
-}
-
-@media (max-width: 768px) {
-    .page-jeunes-adultes .leader-name-large {
-        font-size: 2.5rem;
-    }
-
-    .page-jeunes-adultes .leader-name-decorative {
-        font-size: 3rem;
-    }
-
-    .page-jeunes-adultes .department-leaders .section-description {
-        font-size: 1rem;
-    }
-}
 
 .page-jeunes-adultes .department-vision {
     background: #ffffff;
@@ -3887,7 +3174,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .activity-sublist li::before {
-    content: "•";
+    content: "â€¢";
     position: absolute;
     left: 0;
     color: #ffffff;
@@ -3904,13 +3191,13 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   PAGE MÉDIAS — HERO
+   PAGE MÃ‰DIAS â€” HERO
 ========================================================= */
 .page-medias .department-hero {
     background: var(--color-purple-medias) !important;
 }
 
-/* S'assurer que le hero section reste aligné à gauche comme tous les autres départements */
+/* S'assurer que le hero section reste alignÃ© Ã  gauche comme tous les autres dÃ©partements */
 .page-medias .department-hero .section-presentation {
     grid-template-columns: 1.2fr 1fr !important;
     justify-items: start !important;
@@ -3921,8 +3208,8 @@ body[class*="page-"] .department-leaders .leader-name-large,
     text-align: left !important;
 }
 
-/* Le département médias utilise maintenant les styles globaux pour le label et le titre */
-/* Seul le background violet est spécifique au département */
+/* Le dÃ©partement mÃ©dias utilise maintenant les styles globaux pour le label et le titre */
+/* Seul le background violet est spÃ©cifique au dÃ©partement */
 
 /* =========================================================
    STRUCTURE DES SECTIONS
@@ -3951,7 +3238,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     opacity: 0.5;
 }
 
-/* Label "Nos équipes" avec le même style que "Responsable" - Montserrat */
+/* Label "Nos Ã©quipes" avec le mÃªme style que "Responsable" - Montserrat */
 .page-medias .department-teams .section-label {
     font-family: "Montserrat", sans-serif !important;
     font-weight: 600 !important;
@@ -3963,13 +3250,13 @@ body[class*="page-"] .department-leaders .leader-name-large,
     opacity: 1 !important;
 }
 
-/* Le titre utilise la même police que tous les autres titres */
-/* Le titre utilise exactement le même style que "NOTRE VISION" - hérite du style global */
+/* Le titre utilise la mÃªme police que tous les autres titres */
+/* Le titre utilise exactement le mÃªme style que "NOTRE VISION" - hÃ©rite du style global */
 .page-medias .department-teams .section-title-large {
     margin-top: 0 !important;
     margin-bottom: 1rem !important;
     /* Tous les autres styles (font-family, font-weight, font-size, color, text-shadow, etc.) 
-       héritent du style global .page-medias .section-title-large */
+       hÃ©ritent du style global .page-medias .section-title-large */
 }
 
 /* =========================================================
@@ -4022,7 +3309,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   SECTION RESPONSABLE – STRUCTURE UNIFORME POUR TOUS LES DÉPARTEMENTS
+   SECTION RESPONSABLE â€“ STRUCTURE UNIFORME POUR TOUS LES DÃ‰PARTEMENTS
 ========================================================= */
 .leader-section {
     padding: 4rem 0;
@@ -4039,7 +3326,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     align-items: center;
 }
 
-/* --------- TEXTE À GAUCHE --------- */
+/* --------- TEXTE Ã€ GAUCHE --------- */
 .leader-text {
     position: relative;
 }
@@ -4085,7 +3372,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     white-space: nowrap;
 }
 
-/* Nom en fond très clair derrière (effet ghost/watermark) */
+/* Nom en fond trÃ¨s clair derriÃ¨re (effet ghost/watermark) */
 .leader-name-ghost {
     font-family: "Cal Sans", sans-serif;
     font-size: 110px;
@@ -4118,7 +3405,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     max-width: 520px;
 }
 
-/* --------- PHOTO À DROITE --------- */
+/* --------- PHOTO Ã€ DROITE --------- */
 .leader-photo {
     display: flex;
     justify-content: flex-end;
@@ -4142,38 +3429,6 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* --------- VERSION MOBILE --------- */
-@media (max-width: 900px) {
-    .leader-layout {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .leader-photo {
-        justify-content: center;
-    }
-
-    .leader-name {
-        font-size: 55px;
-        white-space: nowrap;
-    }
-
-    .leader-name-ghost {
-        top: -15px;
-        font-size: 100px;
-    }
-
-    .leader-label {
-        font-size: 28px;
-    }
-
-    .leader-role {
-        font-size: 1.1rem;
-    }
-
-    .leader-bio {
-        max-width: 100%;
-    }
-}
 
 .page-medias .department-leaders .leader-text-content {
     max-width: 600px;
@@ -4207,7 +3462,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   ÉLIGIBILITÉ
+   Ã‰LIGIBILITÃ‰
 ========================================================= */
 .page-medias .eligibility-list-simple {
     text-align: left;
@@ -4244,7 +3499,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   ACTIVITÉS
+   ACTIVITÃ‰S
 ========================================================= */
 .page-medias .department-activities {
     background: #4B6070;
@@ -4284,14 +3539,14 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   ÉQUIPES MÉDIAS
+   Ã‰QUIPES MÃ‰DIAS
 ========================================================= */
 .page-medias .department-teams {
     padding: 5rem 0;
     background: #ffffff;
 }
 
-/* Section teams centrée et uniforme avec les autres sections */
+/* Section teams centrÃ©e et uniforme avec les autres sections */
 .page-medias .department-teams .section-presentation {
     grid-template-columns: 1fr;
     max-width: 900px;
@@ -4339,7 +3594,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     background: rgba(26, 35, 126, 0.2) !important;
 }
 
-/* Styles spécifiques pour la page médias - effet hover amélioré */
+/* Styles spÃ©cifiques pour la page mÃ©dias - effet hover amÃ©liorÃ© */
 .page-medias .team-card {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -4396,7 +3651,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .team-tasks li::before {
-    content: "▸";
+    content: "â–¸";
     position: absolute;
     left: 0;
     color: var(--color-purple-medias);
@@ -4410,53 +3665,11 @@ body[class*="page-"] .department-leaders .leader-name-large,
     transition: all 0.2s ease;
 }
 
-@media (max-width: 1024px) {
-    .teams-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2.5rem;
-    }
-}
 
-@media (max-width: 768px) {
-    .page-medias .department-teams {
-        padding: 3rem 0;
-    }
-    
-    .teams-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .team-card {
-        padding: 2rem;
-    }
-    
-    .team-title {
-        font-size: 1.2rem;
-    }
-}
 
-@media (max-width: 480px) {
-    
-    .team-card {
-        padding: 1.25rem;
-    }
-    
-    .team-title {
-        font-size: 1.1rem;
-    }
-    
-    .team-mission {
-        font-size: 0.95rem;
-    }
-    
-    .team-tasks li {
-        font-size: 0.9rem;
-    }
-}
 
 /* =========================================================
-   PAGE ADOS — HERO
+   PAGE ADOS â€” HERO
 ========================================================= */
 .page-ados .department-hero {
     background: rgb(180, 120, 10);
@@ -4496,7 +3709,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   MAIN — DISPOSITION HORIZONTALE (CORRECTION)
+   MAIN â€” DISPOSITION HORIZONTALE (CORRECTION)
 ========================================================= */
 .page-ados .department-main {
     display: flex;
@@ -4555,12 +3768,12 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-size: 70px;
 }
 
-/* Exclure la section Rejoindre de la marge négative */
+/* Exclure la section Rejoindre de la marge nÃ©gative */
 .page-ados .department-join .section-title-large {
     margin-top: 0 !important;
 }
 
-/* Fix pour la section Rejoindre - titre sans marge négative et z-index correct */
+/* Fix pour la section Rejoindre - titre sans marge nÃ©gative et z-index correct */
 .page-ados .department-join .section-title-large {
     font-family: "Montserrat", sans-serif !important;
     font-weight: 900 !important;
@@ -4576,7 +3789,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     z-index: 2 !important;
 }
 
-/* S'assurer que le label ne crée pas de chevauchement */
+/* S'assurer que le label ne crÃ©e pas de chevauchement */
 .page-ados .department-join .section-label {
     position: relative !important;
     z-index: 1 !important;
@@ -4661,7 +3874,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   ELIGIBILITÉ
+   ELIGIBILITÃ‰
 ========================================================= */
 .page-ados .eligibility-list-simple li {
     color: #1a1a1a;
@@ -4691,7 +3904,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   ACTIVITÉS
+   ACTIVITÃ‰S
 ========================================================= */
 .page-ados .department-activities {
     background: #4B6070;
@@ -4744,7 +3957,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Sections générales
+   Sections gÃ©nÃ©rales
 ========================================================= */
 
 .page-juniors .department-main,
@@ -4858,7 +4071,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Éligibilité
+   Ã‰ligibilitÃ©
 ========================================================= */
 
 .page-juniors .eligibility-list-simple {
@@ -4900,7 +4113,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Activités
+   ActivitÃ©s
 ========================================================= */
 
 .page-juniors .activity-title {
@@ -4977,7 +4190,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Sections générales
+   Sections gÃ©nÃ©rales
 ========================================================= */
 
 .page-chorale .department-main,
@@ -5131,7 +4344,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Éligibilité
+   Ã‰ligibilitÃ©
 ========================================================= */
 
 .page-chorale .eligibility-list-simple {
@@ -5174,7 +4387,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 
 /* =========================================================
-   ACTIVITÉS
+   ACTIVITÃ‰S
 ========================================================= */
 .page-chorale .department-activities {
     background: #4B6070;
@@ -5187,7 +4400,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   IMAGES D’ACTIVITÉS — STYLE MODERNE
+   IMAGES Dâ€™ACTIVITÃ‰S â€” STYLE MODERNE
 ========================================================= */
 .page-chorale .activity-image {
     position: relative;
@@ -5257,11 +4470,11 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   PAGE INTERCESSION – INDIGO HARMONISÉ
+   PAGE INTERCESSION â€“ INDIGO HARMONISÃ‰
 ========================================================= */
 
 /* =========================================================
-   HERO – STRUCTURE COMPLÈTE
+   HERO â€“ STRUCTURE COMPLÃˆTE
 ========================================================= */
 
 .page-intercession .department-hero {
@@ -5388,15 +4601,6 @@ body[class*="page-"] .department-leaders .leader-name-large,
     color: #ffffff !important;
 }
 
-@media (max-width: 768px) {
-    .page-intercession .department-join .section-presentation {
-        grid-template-columns: 1fr !important;
-    }
-    
-    .page-intercession .department-join .section-image-wrapper {
-        order: -1;
-    }
-}
 
 .page-intercession .department-vision .section-description{
     font-family: "Montserrat", sans-serif;
@@ -5426,7 +4630,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     text-align: justify !important;
 }
 
-/* Listes d'éligibilité pour la page intercession */
+/* Listes d'Ã©ligibilitÃ© pour la page intercession */
 .page-intercession .eligibility-list-simple li {
     font-family: "Montserrat", sans-serif !important;
     font-size: 26px !important;
@@ -5436,7 +4640,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   ACTIVITÉS — IMAGES (HÉRITÉES DE CHORALE)
+   ACTIVITÃ‰S â€” IMAGES (HÃ‰RITÃ‰ES DE CHORALE)
 ========================================================= */
 
 .page-intercession .department-eligibility .section-image-wrapper,
@@ -5537,7 +4741,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   PROTECTION DES POST-IT (PRIORITÉ MAX)
+   PROTECTION DES POST-IT (PRIORITÃ‰ MAX)
 ========================================================= */
 
 .page-intercession .activity-content .activity-image {
@@ -5546,7 +4750,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 
 /* =========================================================
-   POST-IT – BLOCS & ANIMATIONS (INCHANGÉS)
+   POST-IT â€“ BLOCS & ANIMATIONS (INCHANGÃ‰S)
 ========================================================= */
 
 /* Bloc */
@@ -5588,7 +4792,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     animation: postItSettle 0.6s ease-out forwards;
 }
 
-/* Settling générique */
+/* Settling gÃ©nÃ©rique */
 @keyframes postItSettle {
     0%   { transform: rotate(-2deg) translateX(-10px) scale(1.1); }
     100% { transform: rotate(-2deg) translateX(-10px) scale(1); }
@@ -5678,7 +4882,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 
 /* =========================================================
-   Styles pour page du groupe pastoral - Marron harmonisé
+   Styles pour page du groupe pastoral - Marron harmonisÃ©
 ========================================================= */
 
 .page-pastoral .department-hero {
@@ -5718,7 +4922,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Sections générales
+   Sections gÃ©nÃ©rales
 ========================================================= */
 
 .page-pastoral .department-main,
@@ -5829,7 +5033,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Éligibilité
+   Ã‰ligibilitÃ©
 ========================================================= */
 
 .page-pastoral .eligibility-list-simple {
@@ -5851,7 +5055,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Bouton (style pastoral conservé)
+   Bouton (style pastoral conservÃ©)
 ========================================================= */
 
 .page-pastoral .btn-contact-dept {
@@ -5871,7 +5075,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Activités
+   ActivitÃ©s
 ========================================================= */
 
 .page-pastoral .activity-title {
@@ -5887,7 +5091,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 
 /* =========================================================
-   Styles pour page de l'évangélisation - Turquoise harmonisé
+   Styles pour page de l'Ã©vangÃ©lisation - Turquoise harmonisÃ©
 ========================================================= */
 
 .page-evangelisation .department-hero {
@@ -5949,7 +5153,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Sections générales
+   Sections gÃ©nÃ©rales
 ========================================================= */
 
 .page-evangelisation .department-main,
@@ -6063,7 +5267,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-evangelisation .department-leaders .leader-name-large::before {
-    content: "MICHÈLE KOUME";
+    content: "MICHÃˆLE KOUME";
     position: absolute;
     font-size: 90px;
     font-weight: 900;
@@ -6128,7 +5332,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Éligibilité
+   Ã‰ligibilitÃ©
 ========================================================= */
 
 .page-evangelisation .eligibility-list-simple {
@@ -6170,7 +5374,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* =========================================================
-   Activités
+   ActivitÃ©s
 ========================================================= */
 
 .page-evangelisation .activity-title {
@@ -6258,7 +5462,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     transition: transform 0.6s ease;
 }
 
-/* Image de l'ordinateur entièrement visible dans la section Rejoindre sur toutes les pages */
+/* Image de l'ordinateur entiÃ¨rement visible dans la section Rejoindre sur toutes les pages */
 .department-join .section-image-wrapper img {
     object-fit: contain;
     object-position: center;
@@ -6268,7 +5472,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     transform: scale(1.05);
 }
 
-/* Styles pour compatibilité */
+/* Styles pour compatibilitÃ© */
 .department-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -6353,10 +5557,10 @@ body[class*="page-"] .department-leaders .leader-name-large,
     padding: 5rem 0;
 }
 
-/* Styles spécifiques pour la page Hommes - Bleu harmonisé */
+/* Styles spÃ©cifiques pour la page Hommes - Bleu harmonisÃ© */
 
 .page-hommes .department-hero {
-    background: var(--color-blue-hommes); /* #5a7fb8 - harmonisé avec bleu */
+    background: var(--color-blue-hommes); /* #5a7fb8 - harmonisÃ© avec bleu */
 }
 
 .department-hero-content {
@@ -6594,7 +5798,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     object-fit: cover;
 }
 
-/* Styles pour compatibilité */
+/* Styles pour compatibilitÃ© */
 
 /* Department Leaders Section */
 .department-leaders {
@@ -6768,7 +5972,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     object-fit: contain;
 }
 
-/* Styles pour compatibilité avec autres pages */
+/* Styles pour compatibilitÃ© avec autres pages */
 .leaders-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -6893,7 +6097,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .eligibility-list-simple li::before {
-    content: '✓';
+    content: 'âœ“';
     position: absolute;
     left: 0;
     color: var(--color-primary);
@@ -6909,7 +6113,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     transform: scale(1.2);
 }
 
-/* Styles pour compatibilité */
+/* Styles pour compatibilitÃ© */
 .vision-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -6917,9 +6121,6 @@ body[class*="page-"] .department-leaders .leader-name-large,
     align-items: start;
 }
 
-.vision-text-block {
-    padding-right: 2rem;
-}
 
 .vision-text {
     font-size: 1.2rem;
@@ -7090,7 +6291,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     transform: scale(1.05);
 }
 
-/* Styles pour compatibilité */
+/* Styles pour compatibilitÃ© */
 .activities-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -7223,209 +6424,8 @@ body[class*="page-"] .department-leaders .leader-name-large,
     box-shadow: 0 8px 20px rgba(139, 0, 0, 0.4);
 }
 
-@media (max-width: 768px) {
-    .department-content {
-        grid-template-columns: 1fr;
-    }
 
-    .department-title {
-        font-size: 2rem;
-    }
-
-    .department-image {
-        order: -1;
-    }
-
-    .department-hero-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0 1rem;
-    }
-
-    .department-hero-title {
-        font-size: 2.5rem;
-    }
-
-    .department-hero-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0 1rem;
-    }
-
-    .department-hero-title {
-        font-size: 2.5rem;
-    }
-
-    .department-hero-description {
-        font-size: 1rem;
-    }
-
-    .department-hero-image {
-        order: -1;
-    }
-
-    .section-presentation {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding: 0 1rem;
-    }
-
-    .section-presentation-reverse {
-        grid-template-columns: 1fr;
-    }
-
-    .section-presentation-reverse .section-text-content {
-        order: 2;
-    }
-
-    .section-presentation-reverse .section-image-wrapper {
-        order: 1;
-    }
-
-    .section-label {
-        font-size: 0.7rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .section-title-large {
-        font-size: 2.5rem;
-    }
-
-    .section-title-hero {
-        font-size: 3.5rem;
-    }
-
-    .page-hommes .section-title-hero {
-        font-size: 4.5rem;
-    }
-
-    .page-femmes .section-title-hero {
-        font-size: 4.5rem;
-    }
-
-    .page-jeunes-adultes .section-title-hero {
-        font-size: 4.5rem;
-    }
-
-    .page-medias .section-title-hero {
-        font-size: 4.5rem;
-    }
-
-    .page-ados .section-title-hero {
-        font-size: 4.5rem;
-    }
-
-    .page-juniors .section-title-hero {
-        font-size: 4.5rem;
-    }
-
-    .page-chorale .section-title-hero {
-        font-size: 4.5rem;
-    }
-
-    .page-intercession .section-title-hero {
-        font-size: 4.5rem;
-    }
-
-    .page-pastoral .section-title-hero {
-        font-size: 4.5rem;
-    }
-
-    .page-evangelisation .section-title-hero {
-        font-size: 4.5rem;
-    }
-
-    .section-description {
-        font-size: 0.95rem;
-    }
-
-    .section-image-wrapper {
-        height: 400px;
-        border-radius: 15px;
-    }
-
-    .activity-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0 1rem;
-    }
-
-    .activity-block-reverse .activity-image {
-        order: 0;
-    }
-
-    .activity-title {
-        font-size: 2rem;
-    }
-
-    .activity-description {
-        font-size: 1rem;
-    }
-
-    .activity-image {
-        height: 300px;
-    }
-
-    .section-presentation-reverse .section-image-wrapper {
-        border-radius: 15px;
-    }
-
-    .leader-presentation {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding: 0 1rem;
-    }
-
-    .leader-label {
-        font-size: 0.7rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .leader-name-large {
-        font-size: 3.5rem;
-    }
-
-    .leader-name-decorative {
-        font-size: 3.5rem;
-        transform: translate(8px, 12px);
-    }
-
-    .leader-role {
-        font-size: 0.95rem;
-    }
-
-    .leader-image-wrapper {
-        height: 400px;
-        border-radius: 15px;
-        order: -1;
-    }
-
-    .leaders-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .vision-content {
-        grid-template-columns: 1fr;
-    }
-
-    .vision-text-block {
-        padding-right: 0;
-    }
-
-    .activities-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .join-buttons {
-        flex-direction: column;
-    }
-
-    .btn-join {
-        width: 100%;
-    }
-}
-
-/* Page Se Joindre à Nous */
+/* Page Se Joindre Ã  Nous */
 .page-join {
     background: #f8f9fa;
     min-height: 100vh;
@@ -7447,7 +6447,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     overflow: hidden;
 }
 
-/* Nouveaux styles pour la page Se joindre à nous */
+/* Nouveaux styles pour la page Se joindre Ã  nous */
 .join-hero-layout {
     display: grid !important;
     grid-template-columns: 0.4fr 1.6fr !important;
@@ -8060,117 +7060,6 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 /* Responsive for Join Page */
-@media (max-width: 768px) {
-    .logo-subtitle {
-        font-size: 0.55rem;
-    }
-
-    .join-main-title {
-        font-size: 2rem;
-    }
-
-    .join-subtitle {
-        font-size: 1rem;
-        padding: 0 1rem;
-    }
-
-    .join-hero-layout {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .join-hero-text-content {
-        padding-left: 0;
-        order: -1;
-    }
-
-    .join-hero-main-title {
-        font-size: 3rem;
-    }
-
-    .join-hero-description {
-        font-size: 1.1rem;
-    }
-
-    .join-hero-images-grid {
-        height: auto;
-        min-height: 400px;
-        padding-bottom: 200px;
-    }
-
-    .join-hero-image-item {
-        position: relative !important;
-        width: 100% !important;
-        height: 250px !important;
-        max-width: 100%;
-        margin-bottom: 1.5rem;
-        transform: none !important;
-    }
-
-    .join-hero-image-top,
-    .join-hero-image-middle-1,
-    .join-hero-image-middle-2,
-    .join-hero-image-bottom {
-        top: auto !important;
-        right: auto !important;
-        position: relative !important;
-        transform: none !important;
-    }
-
-    .hero-image-wrapper {
-        order: -1;
-    }
-
-    .services-section {
-        height: auto;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .service-card-modern {
-        position: relative !important;
-        width: 100% !important;
-        transform: none !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-    }
-
-    .service-card-modern:nth-child(1),
-    .service-card-modern:nth-child(2),
-    .service-card-modern:nth-child(3) {
-        transform: none !important;
-        width: 100% !important;
-    }
-
-    .services-cta {
-        margin-top: 3rem;
-        padding-top: 2rem;
-    }
-
-    .services-cta-button {
-        padding: 1rem 2rem;
-        font-size: 1rem;
-    }
-
-    .form-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-info-card {
-        position: static;
-        order: -1;
-    }
-
-    .contact-form-title {
-        font-size: 2rem;
-    }
-
-    .join-main-title {
-        font-size: 2rem;
-    }
-}
 
 /* Form Success Message */
 .form-success-message {
@@ -8344,29 +7233,6 @@ body {
     background: #edd4d4;
     transform: translateY(-10px);
 }
-@media (max-width: 782px) {
-
-    .header-content {
-        padding: 10px 15px;
-        flex-direction: column; /* logo au-dessus, menu en dessous */
-        gap: 10px;
-    }
-
-    .logo img {
-        height: 90px; /* logo plus petit */
-    }
-
-    .nav {
-        gap: 1rem;
-        flex-wrap: wrap; /* évite que ça déborde */
-        justify-content: center;
-    }
-
-    .btn-contact {
-        padding: 0.5rem 0.8rem;
-        font-size: 13px;
-    }
-}
 
 /* Hero Section */
 .hero {
@@ -8513,50 +7379,9 @@ body {
     background: var(--color-white);
 }
 
-.vision .container {
-    max-width: 100%;
-    margin: 0;
-    padding: 0 18% 0 0;
-    margin-left: -15%;
-}
-
-.vision-content-wrapper {
-    display: grid;
-    grid-template-columns: 4.5fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    margin-top: 3rem;
-    padding-left: 0;
-    width: 100%;
-    margin-left: -12%;
-    padding-right: 0;
-}
-
-.vision-text-block {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-}
-
-.vision-main-text {
-    font-size: 2.2rem;
-    font-weight: 900;
-    line-height: 1.2;
-    color: #000;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 0px;
-    width: 100%;
-    word-spacing: 0.05em;
-    text-align: center;
-    max-width: none;
-}
-
 .vision-images-grid {
     position: relative;
-    height: 600px;
+    height: 375px;
     width: 100%;
 }
 
@@ -8579,27 +7404,27 @@ body {
     width: 280px;
     height: 340px;
     top: 0;
-    left: 20px;
+    left: 50%;
+    transform: translateX(-100%) rotate(-4deg);
     z-index: 1;
-    transform: rotate(-4deg);
 }
 
 .vision-image-card.image-2 {
     width: 320px;
     height: 380px;
     top: 60px;
-    left: 200px;
+    left: 50%;
+    transform: translateX(-50%) rotate(3deg);
     z-index: 2;
-    transform: rotate(3deg);
 }
 
 .vision-image-card.image-3 {
     width: 280px;
     height: 340px;
     top: 180px;
-    left: 420px;
+    left: 50%;
+    transform: translateX(0%) rotate(-2deg);
     z-index: 3;
-    transform: rotate(-2deg);
 }
 
 .vision-image-card:hover {
@@ -8623,6 +7448,8 @@ body {
     box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    position: relative;
+    z-index: 12;
 }
 
 .vision-cta-btn:hover {
@@ -8639,12 +7466,6 @@ body {
 .vision {
     padding: 4rem 0;
     background: var(--color-white);
-}
-
-.vision .container {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
 }
 
 /* Legacy styles - kept for compatibility but not used */
@@ -8686,6 +7507,8 @@ body {
     margin-right: auto;
     padding: 0 20px;
     box-sizing: border-box;
+    position: relative;
+    z-index: 10;
 }
 
 .section-title::after {
@@ -9707,33 +8530,6 @@ body {
 }
 
 /* Responsive pour les items d'histoire */
-@media (max-width: 768px) {
-    .histoire-item,
-    .histoire-item-left,
-    .histoire-item-right {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        align-items: stretch;
-    }
-    
-    .histoire-item-right .histoire-item-image,
-    .histoire-item-right .histoire-item-content {
-        order: 0;
-    }
-    
-    .histoire-item {
-        padding: 1.5rem;
-        margin-bottom: 2rem;
-    }
-    
-    .histoire-item-image {
-        min-height: 250px;
-    }
-    
-    .histoire-item-image img {
-        min-height: 250px;
-    }
-}
 
 /* Verset fondateur Section */
 .verset-section {
@@ -9828,31 +8624,6 @@ body {
     margin-bottom: 0;
 }
 
-@media (max-width: 968px) {
-    .pasteur-card {
-        grid-template-columns: 1fr;
-    }
-    
-    .pasteur-image-side {
-        min-height: 400px;
-        order: 1;
-    }
-    
-    .pasteur-text-side {
-        order: 2;
-        padding: 3rem 2rem;
-    }
-    
-    .pasteur-name-large {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-    }
-    
-    .pasteur-bio {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-}
 
 /* Mission Section */
 .mission-section {
@@ -10211,28 +8982,12 @@ body {
     transform: scale(1.1);
 }
 
-/* Empêcher le scroll du body quand le menu est ouvert */
+/* EmpÃªcher le scroll du body quand le menu est ouvert */
 body.menu-open {
     overflow: hidden;
 }
 
 /* Responsive pour mobile */
-@media (max-width: 768px) {
-    .dropdown-menu-content {
-        max-width: 100%;
-        width: 100%;
-    }
-    
-    .dropdown-menu-body {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .dropdown-menu-footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
 
 /* Mobile Menu */
 .menu-toggle {
@@ -10240,194 +8995,7 @@ body.menu-open {
 }
 
 /* Responsive Event Cards */
-@media (max-width: 768px) {
-    .event-card-new {
-        min-width: 300px;
-        height: 450px;
-    }
-    
-    .event-title {
-        font-size: 1.6rem;
-    }
-    
-    .event-info-overlay {
-        padding: 2rem;
-    }
-    
-    .event-badge {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.8rem;
-    }
-    
-    .event-detail-item {
-        font-size: 0.9rem;
-    }
-    
-    .event-learn-more {
-        font-size: 0.9rem;
-        padding: 0.6rem 1.2rem;
-    }
 
-    .programs-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .program-item {
-        max-width: 100%;
-    }
-
-    .program-icon {
-        font-size: 3rem;
-    }
-
-    .program-name {
-        font-size: 1.3rem;
-    }
-
-    .program-content {
-        padding: 1.25rem 1.5rem 2rem;
-    }
-
-    .program-icon-wrapper {
-        padding: 2rem 1.5rem 1.25rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .header-content {
-        flex-wrap: wrap;
-    }
-
-    .nav {
-        order: 3;
-        width: 100%;
-        margin-top: 1rem;
-        flex-direction: column;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        gap: 1rem;
-    }
-
-    .nav.mobile-open {
-        max-height: 300px;
-    }
-
-    .nav-link {
-        padding: 0.5rem 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-title-line {
-        font-size: 1em;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-    
-    /* Vision Section Responsive */
-    .vision-content-wrapper {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    
-    .vision-main-text {
-        font-size: 1.8rem;
-        text-align: center;
-        line-height: 1.6;
-    }
-    
-    .vision-images-grid {
-        height: 500px;
-        margin-top: 2rem;
-    }
-    
-    .vision-image-card.image-1 {
-        width: 250px;
-        height: 300px;
-        top: 0;
-        left: 5%;
-        transform: rotate(-3deg);
-    }
-    
-    .vision-image-card.image-2 {
-        width: 280px;
-        height: 330px;
-        top: 40px;
-        left: 35%;
-        transform: rotate(2deg);
-    }
-    
-    .vision-image-card.image-3 {
-        width: 240px;
-        height: 290px;
-        top: 120px;
-        left: 5%;
-        transform: rotate(-2deg);
-    }
-    
-    .vision-cta-btn {
-        font-size: 1rem;
-        padding: 1rem 2rem;
-        align-self: center;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-    }
-
-    .carousel-btn {
-        width: 40px;
-        height: 40px;
-    }
-
-    .prev-btn {
-        left: -15px;
-    }
-
-    .next-btn {
-        right: -15px;
-    }
-
-    .event-card,
-    .event-card-new,
-    .dept-card {
-        min-width: 280px;
-    }
-    
-    .event-card-new {
-        height: 400px;
-    }
-
-    .footer-main {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .footer-links-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-        margin-left: 0;
-    }
-
-    @media (max-width: 768px) {
-        .footer-links-grid {
-            grid-template-columns: 1fr;
-        }
-    }
 
     .logo {
         flex-direction: column;
@@ -10576,11 +9144,6 @@ body.menu-open {
     }
 }
 
-@media (max-width: 480px) {
-    .departments-grid {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* Department Pages */
 .department-main {
@@ -10740,9 +9303,6 @@ body.menu-open {
     align-items: start;
 }
 
-.vision-text-block {
-    padding-right: 2rem;
-}
 
 .vision-text {
     font-size: 1.2rem;
@@ -10909,57 +9469,8 @@ body.menu-open {
     box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
 }
 
-@media (max-width: 768px) {
-    .department-content {
-        grid-template-columns: 1fr;
-    }
 
-    .department-title {
-        font-size: 2rem;
-    }
-
-    .department-image {
-        order: -1;
-    }
-
-    .department-hero-content {
-        grid-template-columns: 1fr;
-    }
-
-    .department-hero-title {
-        font-size: 2.5rem;
-    }
-
-    .department-hero-image {
-        order: -1;
-    }
-
-    .leaders-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .vision-content {
-        grid-template-columns: 1fr;
-    }
-
-    .vision-text-block {
-        padding-right: 0;
-    }
-
-    .activities-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .join-buttons {
-        flex-direction: column;
-    }
-
-    .btn-join {
-        width: 100%;
-    }
-}
-
-/* Page Se Joindre à Nous */
+/* Page Se Joindre Ã  Nous */
 .page-join {
     background: #f8f9fa;
     min-height: 100vh;
@@ -10981,7 +9492,7 @@ body.menu-open {
     overflow: hidden;
 }
 
-/* Nouveaux styles pour la page Se joindre à nous */
+/* Nouveaux styles pour la page Se joindre Ã  nous */
 .join-hero-layout {
     display: grid !important;
     grid-template-columns: 0.4fr 1.6fr !important;
@@ -11594,117 +10105,6 @@ body.menu-open {
 }
 
 /* Responsive for Join Page */
-@media (max-width: 768px) {
-    .logo-subtitle {
-        font-size: 0.55rem;
-    }
-
-    .join-main-title {
-        font-size: 2rem;
-    }
-
-    .join-subtitle {
-        font-size: 1rem;
-        padding: 0 1rem;
-    }
-
-    .join-hero-layout {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .join-hero-text-content {
-        padding-left: 0;
-        order: -1;
-    }
-
-    .join-hero-main-title {
-        font-size: 3rem;
-    }
-
-    .join-hero-description {
-        font-size: 1.1rem;
-    }
-
-    .join-hero-images-grid {
-        height: auto;
-        min-height: 400px;
-        padding-bottom: 200px;
-    }
-
-    .join-hero-image-item {
-        position: relative !important;
-        width: 100% !important;
-        height: 250px !important;
-        max-width: 100%;
-        margin-bottom: 1.5rem;
-        transform: none !important;
-    }
-
-    .join-hero-image-top,
-    .join-hero-image-middle-1,
-    .join-hero-image-middle-2,
-    .join-hero-image-bottom {
-        top: auto !important;
-        right: auto !important;
-        position: relative !important;
-        transform: none !important;
-    }
-
-    .hero-image-wrapper {
-        order: -1;
-    }
-
-    .services-section {
-        height: auto;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .service-card-modern {
-        position: relative !important;
-        width: 100% !important;
-        transform: none !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-    }
-
-    .service-card-modern:nth-child(1),
-    .service-card-modern:nth-child(2),
-    .service-card-modern:nth-child(3) {
-        transform: none !important;
-        width: 100% !important;
-    }
-
-    .services-cta {
-        margin-top: 3rem;
-        padding-top: 2rem;
-    }
-
-    .services-cta-button {
-        padding: 1rem 2rem;
-        font-size: 1rem;
-    }
-
-    .form-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-info-card {
-        position: static;
-        order: -1;
-    }
-
-    .contact-form-title {
-        font-size: 2rem;
-    }
-
-    .join-main-title {
-        font-size: 2rem;
-    }
-}
 
 /* Form Success Message */
 .form-success-message {
@@ -11739,7 +10139,7 @@ body.menu-open {
     }
 }
 
-/* Département groupe pastoral */
+/* DÃ©partement groupe pastoral */
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=BBH+Bartle&family=BBH+Hegarty&family=Cal+Sans&family=Corinthia:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .leader-presentation {
@@ -11753,7 +10153,7 @@ body.menu-open {
 .pasteurs {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem; /* Réduit de 5rem à 3rem pour un espacement plus équilibré */
+  gap: 3rem; /* RÃ©duit de 5rem Ã  3rem pour un espacement plus Ã©quilibrÃ© */
   width: 100%;
 }
 
@@ -11762,27 +10162,27 @@ body.menu-open {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  cursor: pointer; /* Indique l'interactivité */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre légère */
+  cursor: pointer; /* Indique l'interactivitÃ© */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre lÃ©gÃ¨re */
   transition: box-shadow 0.3s ease; /* Transition pour l'ombre */
 }
 
 .pasteurs .leader-image-wrapper:hover {
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Ombre plus prononcÃ©e au survol */
 }
 
 /* Image */
 .pasteurs .leader-image-wrapper img {
   width: 100%;
   height: 100%;
-  aspect-ratio: 3/4; /* Maintient un ratio cohérent */
+  aspect-ratio: 3/4; /* Maintient un ratio cohÃ©rent */
   object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
 }
 
 .pasteurs .leader-image-wrapper:hover img {
-  transform: scale(1.05); /* Légère animation de l'image au survol */
+  transform: scale(1.05); /* LÃ©gÃ¨re animation de l'image au survol */
 }
 
 /* TITRE visible en permanence */
@@ -11792,7 +10192,7 @@ body.menu-open {
   left: 0;
   width: 100%;
   padding: 1rem;
-  margin: 0; /* Supprime les marges par défaut */
+  margin: 0; /* Supprime les marges par dÃ©faut */
   color: #ffffff;
   line-height: 1;
   font-family: 'Oswald', sans-serif;
@@ -11800,14 +10200,14 @@ body.menu-open {
   font-size: clamp(1.25rem, 3vw, 1.75rem); /* Taille responsive */
   text-align: left;
   z-index: 3;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); /* Dégradé plus élégant */
-  pointer-events: none; /* Évite les interférences avec les clics */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); /* DÃ©gradÃ© plus Ã©lÃ©gant */
+  pointer-events: none; /* Ã‰vite les interfÃ©rences avec les clics */
   /* Animation */
   transform: translateY(0);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Courbe d'animation améliorée */
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Courbe d'animation amÃ©liorÃ©e */
 }
 
-/* TEXTE caché au départ */
+/* TEXTE cachÃ© au dÃ©part */
 .pasteurs .leader-image-wrapper .overlay {
   position: absolute;
   bottom: 0;
@@ -11818,26 +10218,26 @@ body.menu-open {
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
   font-size: clamp(0.875rem, 2vw, 1rem); /* Taille responsive */
-  line-height: 1.6; /* Améliore la lisibilité */
+  line-height: 1.6; /* AmÃ©liore la lisibilitÃ© */
   text-align: left;
   z-index: 2;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.5)); /* Dégradé pour meilleure lisibilité */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.5)); /* DÃ©gradÃ© pour meilleure lisibilitÃ© */
   pointer-events: none;
-  /* Caché en bas */
+  /* CachÃ© en bas */
   transform: translateY(100%);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* AU SURVOL : les deux montent ENSEMBLE */
 .pasteurs .leader-image-wrapper:hover .leader-title {
-  transform: translateY(100%); /* Calcul dynamique basé sur la hauteur de l'overlay */
+  transform: translateY(100%); /* Calcul dynamique basÃ© sur la hauteur de l'overlay */
 }
 
 .pasteurs .leader-image-wrapper:hover .overlay {
   transform: translateY(0);
 }
 
-/*Activités du département*/
+/*ActivitÃ©s du dÃ©partement*/
 .activity-block .activity-content .activity-text .activity-title {
   font-size: 1.8rem;
   color: wheat;
@@ -11855,25 +10255,10 @@ body.menu-open {
 }
 
 
-/* Responsive : ajustements pour petits écrans */
-@media (max-width: 768px) {
-  .pasteurs {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-  }
-  
-  .pasteurs .leader-image-wrapper .leader-title {
-    padding: 0.75rem;
-  }
-  
-  .pasteurs .leader-image-wrapper .overlay {
-    padding: 0.75rem;
-    padding-top: 2.5rem;
-  }
-}
+/* Responsive : ajustements pour petits Ã©crans */
 
 
-/* page d'évangélisation */
+/* page d'Ã©vangÃ©lisation */
 
 /* Citation biblique */
 .bible-quote {
@@ -11991,7 +10376,7 @@ body.menu-open {
   50% { transform: translateY(-10px); }
 }
 
-/* ===== Status formulaire (succès/erreur) ===== */
+/* ===== Status formulaire (succÃ¨s/erreur) ===== */
 .form-status {
   margin: 14px 0;
   padding: 12px 14px;
@@ -12022,7 +10407,7 @@ body.menu-open {
   cursor: not-allowed;
 }
 
-/* Accessibilité: réduire animations */
+/* AccessibilitÃ©: rÃ©duire animations */
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
@@ -12035,8 +10420,8 @@ body.menu-open {
 }
 
 /* =========================================================
-   FIX GLOBAL - SECTION "REJOINDRE CE DÉPARTEMENT"
-   Force les styles corrects sur TOUTES les pages de départements
+   FIX GLOBAL - SECTION "REJOINDRE CE DÃ‰PARTEMENT"
+   Force les styles corrects sur TOUTES les pages de dÃ©partements
    ========================================================= */
 
 /* Label "Rejoindre" - Force les styles corrects pour toutes les pages */
@@ -12062,7 +10447,7 @@ body[class*="page-"] .department-join .section-label,
     z-index: 1 !important;
 }
 
-/* Titre "REJOINDRE CE DÉPARTEMENT" - Force les styles corrects pour toutes les pages */
+/* Titre "REJOINDRE CE DÃ‰PARTEMENT" - Force les styles corrects pour toutes les pages */
 body[class*="page-"] .department-join .section-title-large,
 .page-hommes .department-join .section-title-large,
 .page-femmes .department-join .section-title-large,
@@ -12099,8 +10484,8 @@ body[class*="page-"] .department-join .section-title-large,
 }
 
 /* =========================================================
-   BLOC UNIQUE – SECTION "REJOINDRE CE DÉPARTEMENT"
-   (pour toutes les pages de départements)
+   BLOC UNIQUE â€“ SECTION "REJOINDRE CE DÃ‰PARTEMENT"
+   (pour toutes les pages de dÃ©partements)
    ========================================================= */
 
 /* Section globale */
@@ -12109,7 +10494,7 @@ body[class*="page-"] .department-join .section-title-large,
     background: #ffffff;
 }
 
-/* Mise en page : image à gauche, texte à droite */
+/* Mise en page : image Ã  gauche, texte Ã  droite */
 .department-join .section-presentation {
     display: grid;
     grid-template-columns: minmax(0, 430px) minmax(0, 1fr); /* 430px pour la carte, le reste pour le texte */
@@ -12120,10 +10505,10 @@ body[class*="page-"] .department-join .section-title-large,
     padding: 0 2rem;
 }
 
-/* === CADRE GRIS DE L’IMAGE (comme ton idéal) === */
+/* === CADRE GRIS DE Lâ€™IMAGE (comme ton idÃ©al) === */
 .department-join .section-image-wrapper {
     background: #efefef;                 /* gris clair */
-    padding: 40px 28px;                  /* espace intérieur */
+    padding: 40px 28px;                  /* espace intÃ©rieur */
 
     border-top-left-radius: 48px;
     border-bottom-left-radius: 48px;
@@ -12138,7 +10523,7 @@ body[class*="page-"] .department-join .section-title-large,
 
     width: 100%;
     max-width: 540px;
-    min-height: 460px;                   /* 👉 hauteur du cadre (augmente si tu veux encore plus haut) */
+    min-height: 460px;                   /* ðŸ‘‰ hauteur du cadre (augmente si tu veux encore plus haut) */
 }
 
 /* Image dans le cadre */
@@ -12149,7 +10534,7 @@ body[class*="page-"] .department-join .section-title-large,
     display: block;
 }
 
-/* Colonne texte à droite */
+/* Colonne texte Ã  droite */
 .department-join .section-text-content {
     display: flex;
     flex-direction: column;
@@ -12157,7 +10542,7 @@ body[class*="page-"] .department-join .section-title-large,
     justify-content: center;
 }
 
-/* Petit label "REJOINDRE" - RÈGLE GLOBALE POUR TOUTES LES PAGES */
+/* Petit label "REJOINDRE" - RÃˆGLE GLOBALE POUR TOUTES LES PAGES */
 .department-join .section-label {
     font-family: "Montserrat", sans-serif !important;
     font-weight: 600 !important;
@@ -12171,7 +10556,7 @@ body[class*="page-"] .department-join .section-title-large,
     z-index: 1 !important;
 }
 
-/* Gros titre rouge "REJOINDRE CE DÉPARTEMENT" - RÈGLE GLOBALE POUR TOUTES LES PAGES */
+/* Gros titre rouge "REJOINDRE CE DÃ‰PARTEMENT" - RÃˆGLE GLOBALE POUR TOUTES LES PAGES */
 .department-join .section-title-large {
     font-family: "Montserrat", sans-serif !important;
     font-weight: 900 !important;
@@ -12197,22 +10582,22 @@ body[class*="page-"] .department-join .section-title-large,
     text-align: left;
 }
 
-/* === BOUTONS – centrés sous le titre, l’un sous l’autre === */
+/* === BOUTONS â€“ centrÃ©s sous le titre, lâ€™un sous lâ€™autre === */
 .department-join .join-buttons {
     display: flex;
-    flex-direction: column;          /* empilés */
-    align-items: center;             /* centrés horizontalement */
+    flex-direction: column;          /* empilÃ©s */
+    align-items: center;             /* centrÃ©s horizontalement */
     gap: 1rem;
     margin-top: 2rem;
     width: 100%;
-    max-width: 420px;                /* largeur “bloc” des boutons */
+    max-width: 420px;                /* largeur â€œblocâ€ des boutons */
 }
 
 /* Style commun des boutons */
 .department-join .btn-join {
-    width: 100%;                     /* même largeur pour les deux */
+    width: 100%;                     /* mÃªme largeur pour les deux */
     padding: 0.9rem 2.4rem;
-    border-radius: 16px;             /* rectangle à coins arrondis */
+    border-radius: 16px;             /* rectangle Ã  coins arrondis */
     border: none;
     display: inline-flex;
     align-items: center;
@@ -12229,14 +10614,14 @@ body[class*="page-"] .department-join .section-title-large,
     transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
 }
 
-/* NOUS CONTACTER – un peu plus discret */
+/* NOUS CONTACTER â€“ un peu plus discret */
 .department-join .btn-contact-dept {
     background: #4B6070;
     color: #ffffff;
-    font-size: 0.9rem;                /* texte légèrement plus petit */
+    font-size: 0.9rem;                /* texte lÃ©gÃ¨rement plus petit */
 }
 
-/* S’INSCRIRE / REJOINDRE – plus mis en avant */
+/* Sâ€™INSCRIRE / REJOINDRE â€“ plus mis en avant */
 .department-join .btn-register-dept {
     background: #8B0000;
     color: #ffffff;
@@ -12252,40 +10637,12 @@ body[class*="page-"] .department-join .section-title-large,
 /* ==========================
    VERSION MOBILE
    ========================== */
-@media (max-width: 900px) {
-    .department-join .section-presentation {
-        grid-template-columns: 1fr;
-        row-gap: 2rem;
-    }
-
-    .department-join .section-text-content {
-        align-items: center;
-        text-align: center;
-    }
-
-    .department-join .section-title-large {
-        text-align: center;
-    }
-
-    .department-join .section-description {
-        text-align: left;
-    }
-
-    .department-join .join-buttons {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .department-join .btn-join {
-        width: 100%;
-    }
-}
 
 /* ----------------------------------------
-   FIX REJOINDRE CE DÉPARTEMENT
+   FIX REJOINDRE CE DÃ‰PARTEMENT
    - Taille du titre
    - Espacement
-   - Boutons centrés
+   - Boutons centrÃ©s
 ---------------------------------------- */
 
 /* Espacement correct du label REJOINDRE */
@@ -12303,15 +10660,15 @@ body[class*="page-"] .department-join .section-title-large,
     position: static;
 }
 
-/* Colonne texte : on laisse le texte aligné à gauche,
-   mais on pourra centrer les boutons à l’intérieur */
+/* Colonne texte : on laisse le texte alignÃ© Ã  gauche,
+   mais on pourra centrer les boutons Ã  lâ€™intÃ©rieur */
 .department-join .section-text-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-/* Boutons centrés sous le texte, l’un sous l’autre */
+/* Boutons centrÃ©s sous le texte, lâ€™un sous lâ€™autre */
 .department-join .join-buttons {
     align-self: center;          /* centre le bloc de boutons sous le titre */
     display: flex;
@@ -12334,7 +10691,7 @@ body[class*="page-"] .department-join .section-title-large,
     gap: 0.6rem;
 }
 
-/* "Nous contacter" légèrement plus petit */
+/* "Nous contacter" lÃ©gÃ¨rement plus petit */
 .department-join .btn-contact-dept {
     font-size: 0.9rem;
 }
@@ -12345,7 +10702,7 @@ body[class*="page-"] .department-join .section-title-large,
 }
 
 /* =========================================
-   FIX HERO "REJOINDRE CE DÉPARTEMENT"
+   FIX HERO "REJOINDRE CE DÃ‰PARTEMENT"
    (le gros titre en haut de la page)
    ========================================= */
 
@@ -12361,7 +10718,7 @@ body[class*="page-"] .department-join .section-title-large,
 /* Le gros titre rouge : un peu plus petit, sans chevauchement */
 .department-hero .section-title-large,
 .department-hero .section-title-hero {
-    font-size: 64px !important;        /* tu peux descendre à 60 si tu veux encore plus compact */
+    font-size: 64px !important;        /* tu peux descendre Ã  60 si tu veux encore plus compact */
     line-height: 1.05 !important;
     margin-top: 0 !important;
     margin-bottom: 1rem !important;
@@ -12397,7 +10754,7 @@ body[class*="page-"] .department-join .section-title-large,
     box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
 }
 
-/* ===== Améliorations des formulaires ===== */
+/* ===== AmÃ©liorations des formulaires ===== */
 .contact-form {
     background: rgba(139, 0, 0, 0.1);
     padding: 3rem;
@@ -12477,7 +10834,7 @@ select.form-input {
     font-weight: 400;
 }
 
-/* Bouton de soumission amélioré */
+/* Bouton de soumission amÃ©liorÃ© */
 .btn-submit {
     width: 100%;
     background: linear-gradient(135deg, var(--color-primary) 0%, #a00000 100%);
@@ -12550,19 +10907,8 @@ select.form-input {
 }
 
 /* Responsive pour la grille de services */
-@media (max-width: 968px) {
-    .services-grid-modern {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-    }
 
-    .service-card-gradient {
-        min-height: auto !important;
-        padding: 2rem !important;
-    }
-}
-
-/* NOM DU RESPONSABLE – override global */
+/* NOM DU RESPONSABLE â€“ override global */
 .leader-name {
     font-family: "Cal Sans", sans-serif;
     font-size: 90px !important;
@@ -12575,13 +10921,13 @@ select.form-input {
     white-space: nowrap !important;
 }
 
-/* si le nom est un lien (au cas où) */
+/* si le nom est un lien (au cas oÃ¹) */
 .leader-name a {
     color: #b11623 !important;
     text-decoration: none !important;
 }
 
-/* grand nom en arrière-plan si tu utilises le span .leader-name-ghost */
+/* grand nom en arriÃ¨re-plan si tu utilises le span .leader-name-ghost */
 .leader-name-ghost {
     position: absolute;
     top: -1.5rem;
@@ -12594,7 +10940,7 @@ select.form-input {
     user-select: none;
     white-space: nowrap;
 }
-/* Nom du responsable — même style que NOTRE VISION */
+/* Nom du responsable â€” mÃªme style que NOTRE VISION */
 .leader-name {
     font-family: "Cal Sans", sans-serif;
     font-size: 90px;
@@ -12609,7 +10955,7 @@ select.form-input {
     white-space: nowrap;
 }
 
-/* Optionnel — le nom ghost pâle derrière */
+/* Optionnel â€" le nom ghost pÃ¢le derriÃ¨re */
 .leader-name-ghost {
     font-family: "Cal Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 5.5rem;
@@ -12625,3 +10971,235 @@ select.form-input {
     white-space: nowrap;
 }
 
+/* Media query pour footer sur écrans de moins de 426px */
+@media (max-width: 450px) {
+    
+    footer .footer-main {
+        display: block;
+    }
+
+    footer .footer-links-grid {
+        display: inline-block;
+    }
+
+    section .hero-content .hero-title {
+        font-size: 20px;
+    }
+
+    section .container .section-title {
+        font-size: 30px;
+    }
+    
+    /* Masquer les liens "Commencer ici" et "Se joindre à nous" dans le header */
+    .nav-link[href="commencer-ici.html"],
+    .nav-link[href="se-joindre.html"] {
+        display: none !important;
+    }
+    
+    /* Réduire la taille du logo à 60px */
+    .header .header-content .logo img,
+    .header .header-content .logo-image {
+        height: 90px !important;
+        width: auto;
+        padding-left: 90px;
+    }
+    
+    /* Modifier vision-text-block pour écrans < 450px */
+    .vision .vision-text-block {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        margin: 0 10px;
+    }
+}
+
+/* Carrousel pour departments sur écrans de moins de 769px */
+@media (max-width: 768px) {
+    .departments-carousel-wrapper {
+        position: relative;
+        margin: 2rem 0;
+        padding: 0 60px;
+    }
+    
+    .departments-grid {
+        display: flex;
+        gap: 1.5rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        padding: 1rem 0;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+    
+    .departments-grid::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+    
+    .departments-grid .dept-card,
+    .departments-grid .dept-card-link {
+        flex: 0 0 200px;
+        min-width: 200px;
+        max-width: 200px;
+        scroll-snap-align: center;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    /* Premier élément avec marge gauche pour centrer */
+    .departments-grid .dept-card:first-child,
+    .departments-grid .dept-card-link:first-child {
+        margin-left: calc(50% - 100px);
+    }
+    
+    /* Dernier élément avec marge droite pour centrer */
+    .departments-grid .dept-card:last-child,
+    .departments-grid .dept-card-link:last-child {
+        margin-right: calc(50% - 100px);
+    }
+    
+    .departments-carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--color-primary);
+        color: var(--color-white);
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.2rem;
+        z-index: 10;
+        transition: background 0.3s, transform 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .departments-carousel-btn:hover:not(:disabled) {
+        background: #a00000;
+        transform: translateY(-50%) scale(1.1);
+    }
+    
+    .departments-carousel-btn.prev-btn {
+        left: 5px;
+    }
+    
+    .departments-carousel-btn.next-btn {
+        right: 5px;
+    }
+    
+    .departments-carousel-btn:disabled {
+        opacity: 0.75;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+/* Sur écrans plus grands, masquer les boutons et le wrapper */
+@media (min-width: 769px) {
+    .departments-carousel-wrapper {
+        position: relative;
+    }
+    
+    .departments-carousel-btn {
+        display: none;
+    }
+}
+
+/* Carrousel pour programs sur écrans de moins de 769px */
+@media (max-width: 768px) {
+    .programs-carousel-wrapper {
+        position: relative;
+        margin: 2rem 0;
+        padding: 0 60px;
+    }
+    
+    .programs-grid {
+        display: flex;
+        gap: 1.5rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        padding: 1rem 0;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+    
+    .programs-grid::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+    
+    .programs-grid .program-item {
+        flex: 0 0 200px;
+        min-width: 200px;
+        max-width: 200px;
+        scroll-snap-align: center;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    /* Premier élément avec marge gauche pour centrer */
+    .programs-grid .program-item:first-child {
+        margin-left: calc(50% - 100px);
+    }
+    
+    /* Dernier élément avec marge droite pour centrer */
+    .programs-grid .program-item:last-child {
+        margin-right: calc(50% - 100px);
+    }
+    
+    .programs-carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--color-primary);
+        color: var(--color-white);
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.2rem;
+        z-index: 10;
+        transition: background 0.3s, transform 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .programs-carousel-btn:hover:not(:disabled) {
+        background: #a00000;
+        transform: translateY(-50%) scale(1.1);
+    }
+    
+    .programs-carousel-btn.prev-btn {
+        left: 5px;
+    }
+    
+    .programs-carousel-btn.next-btn {
+        right: 5px;
+    }
+    
+    .programs-carousel-btn:disabled {
+        opacity: 0.75;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+/* Sur écrans plus grands, masquer les boutons et le wrapper */
+@media (min-width: 769px) {
+    .programs-carousel-wrapper {
+        position: relative;
+    }
+    
+    .programs-carousel-btn {
+        display: none;
+    }
+}

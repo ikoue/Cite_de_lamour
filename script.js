@@ -6,6 +6,7 @@ let departmentsData = [];
 // Carousel State
 let currentEventsIndex = 0;
 let currentDeptsIndex = 0;
+let currentProgramsIndex = 0;
 let itemsPerView = getItemsPerView();
 
 // Initialize the application
@@ -428,6 +429,15 @@ function renderPrograms() {
     }).join('');
 
     console.log(`Rendered ${programsData.length} programs`);
+    
+    // Initialize carousel for programs on mobile
+    if (window.innerWidth < 769) {
+        currentProgramsIndex = 0;
+        setTimeout(() => {
+            updateCarouselPosition('programs');
+            updateCarouselButtons('programs');
+        }, 100);
+    }
 }
 
 // Render Departments Grid
@@ -474,6 +484,31 @@ function renderDepartments() {
     }).join('');
 
     console.log(`✓ ${departmentsData.length} départements rendus avec image: departementacceuil.jpeg`);
+    
+    // Initialize carousel for departments on mobile
+    if (window.innerWidth < 769) {
+        currentDeptsIndex = 0;
+        setTimeout(() => {
+            updateCarouselPosition('departments');
+            updateCarouselButtons('departments');
+        }, 100);
+    }
+    
+    // Update on window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            if (window.innerWidth < 769) {
+                updateCarouselButtons('departments');
+            } else {
+                const prevBtn = document.getElementById('departmentsPrev');
+                const nextBtn = document.getElementById('departmentsNext');
+                if (prevBtn) prevBtn.style.display = 'none';
+                if (nextBtn) nextBtn.style.display = 'none';
+            }
+        }, 250);
+    });
 }
 
 // Carousel Navigation
@@ -489,7 +524,27 @@ function setupEventListeners() {
         eventsNext.addEventListener('click', () => navigateCarousel('events', 1));
     }
 
-    // Departments grid - no carousel navigation needed
+    // Departments carousel
+    const departmentsPrev = document.getElementById('departmentsPrev');
+    const departmentsNext = document.getElementById('departmentsNext');
+    
+    if (departmentsPrev) {
+        departmentsPrev.addEventListener('click', () => navigateCarousel('departments', -1));
+    }
+    if (departmentsNext) {
+        departmentsNext.addEventListener('click', () => navigateCarousel('departments', 1));
+    }
+    
+    // Programs carousel
+    const programsPrev = document.getElementById('programsPrev');
+    const programsNext = document.getElementById('programsNext');
+    
+    if (programsPrev) {
+        programsPrev.addEventListener('click', () => navigateCarousel('programs', -1));
+    }
+    if (programsNext) {
+        programsNext.addEventListener('click', () => navigateCarousel('programs', 1));
+    }
 
     // Contact button
     const contactBtn = document.querySelector('.btn-contact');
@@ -553,10 +608,12 @@ function setupEventListeners() {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') {
             navigateCarousel('events', -1);
-            navigateCarousel('depts', -1);
+            navigateCarousel('departments', -1);
+            navigateCarousel('programs', -1);
         } else if (e.key === 'ArrowRight') {
             navigateCarousel('events', 1);
-            navigateCarousel('depts', 1);
+            navigateCarousel('departments', 1);
+            navigateCarousel('programs', 1);
         }
     });
 }
@@ -569,6 +626,16 @@ function navigateCarousel(type, direction) {
         const maxIndex = Math.max(0, eventsCount - itemsPerView);
         currentEventsIndex = Math.max(0, Math.min(maxIndex, currentEventsIndex + direction));
         updateCarouselPosition('events');
+    } else if (type === 'departments') {
+        const departmentsCount = (departmentsData && departmentsData.length > 0) ? departmentsData.length : 1;
+        const maxIndex = Math.max(0, departmentsCount - 1);
+        currentDeptsIndex = Math.max(0, Math.min(maxIndex, currentDeptsIndex + direction));
+        updateCarouselPosition('departments');
+    } else if (type === 'programs') {
+        const programsCount = (programsData && programsData.length > 0) ? programsData.length : 1;
+        const maxIndex = Math.max(0, programsCount - 1);
+        currentProgramsIndex = Math.max(0, Math.min(maxIndex, currentProgramsIndex + direction));
+        updateCarouselPosition('programs');
     }
 }
 
@@ -584,6 +651,62 @@ function updateCarouselPosition(type) {
         
         carousel.style.transform = `translateX(-${offset}px)`;
 
+        // Update button states
+        updateCarouselButtons(type);
+    } else if (type === 'departments') {
+        const grid = document.getElementById('departmentsGrid');
+        if (!grid) return;
+        
+        // Sur mobile (< 769px), utiliser le scroll pour centrer l'élément
+        if (window.innerWidth < 769) {
+            const cards = grid.querySelectorAll('.dept-card, .dept-card-link');
+            if (cards.length > 0 && currentDeptsIndex < cards.length) {
+                const card = cards[currentDeptsIndex];
+                const cardRect = card.getBoundingClientRect();
+                const gridRect = grid.getBoundingClientRect();
+                const cardWidth = card.offsetWidth;
+                const gap = 24; // 1.5rem = 24px
+                const containerWidth = grid.offsetWidth;
+                
+                // Calculer la position de scroll pour centrer la carte
+                const cardLeft = card.offsetLeft;
+                const scrollPosition = cardLeft - (containerWidth / 2) + (cardWidth / 2);
+                
+                grid.scrollTo({
+                    left: Math.max(0, scrollPosition),
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Update button states
+        updateCarouselButtons(type);
+    } else if (type === 'programs') {
+        const grid = document.getElementById('programsGrid');
+        if (!grid) return;
+        
+        // Sur mobile (< 769px), utiliser le scroll pour centrer l'élément
+        if (window.innerWidth < 769) {
+            const cards = grid.querySelectorAll('.program-item');
+            if (cards.length > 0 && currentProgramsIndex < cards.length) {
+                const card = cards[currentProgramsIndex];
+                const cardRect = card.getBoundingClientRect();
+                const gridRect = grid.getBoundingClientRect();
+                const cardWidth = card.offsetWidth;
+                const gap = 24; // 1.5rem = 24px
+                const containerWidth = grid.offsetWidth;
+                
+                // Calculer la position de scroll pour centrer la carte
+                const cardLeft = card.offsetLeft;
+                const scrollPosition = cardLeft - (containerWidth / 2) + (cardWidth / 2);
+                
+                grid.scrollTo({
+                    left: Math.max(0, scrollPosition),
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
         // Update button states
         updateCarouselButtons(type);
     }
@@ -621,6 +744,104 @@ function updateCarouselButtons(type) {
             nextBtn.style.display = 'flex';
             nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
             nextBtn.style.cursor = currentIndex >= maxIndex ? 'not-allowed' : 'pointer';
+        }
+    } else if (type === 'departments') {
+        // Only show buttons on mobile (< 769px)
+        if (window.innerWidth >= 769) {
+            const prevBtn = document.getElementById('departmentsPrev');
+            const nextBtn = document.getElementById('departmentsNext');
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+            return;
+        }
+        
+        const departmentsCount = (departmentsData && departmentsData.length > 0) ? departmentsData.length : 1;
+        
+        if (departmentsCount <= 1) {
+            const prevBtn = document.getElementById('departmentsPrev');
+            const nextBtn = document.getElementById('departmentsNext');
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+            return;
+        }
+
+        const currentIndex = currentDeptsIndex;
+        const maxIndex = Math.max(0, departmentsCount - 1);
+
+        const prevBtn = document.getElementById('departmentsPrev');
+        const nextBtn = document.getElementById('departmentsNext');
+
+        if (prevBtn) {
+            prevBtn.style.display = 'flex';
+            prevBtn.style.opacity = currentIndex === 0 ? '0.75' : '1';
+            prevBtn.style.cursor = currentIndex === 0 ? 'not-allowed' : 'pointer';
+            prevBtn.disabled = currentIndex === 0;
+            if (currentIndex === 0) {
+                prevBtn.style.pointerEvents = 'none';
+            } else {
+                prevBtn.style.pointerEvents = 'auto';
+            }
+        }
+
+        if (nextBtn) {
+            nextBtn.style.display = 'flex';
+            nextBtn.style.opacity = currentIndex >= maxIndex ? '0.75' : '1';
+            nextBtn.style.cursor = currentIndex >= maxIndex ? 'not-allowed' : 'pointer';
+            nextBtn.disabled = currentIndex >= maxIndex;
+            if (currentIndex >= maxIndex) {
+                nextBtn.style.pointerEvents = 'none';
+            } else {
+                nextBtn.style.pointerEvents = 'auto';
+            }
+        }
+    } else if (type === 'programs') {
+        // Only show buttons on mobile (< 769px)
+        if (window.innerWidth >= 769) {
+            const prevBtn = document.getElementById('programsPrev');
+            const nextBtn = document.getElementById('programsNext');
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+            return;
+        }
+        
+        const programsCount = (programsData && programsData.length > 0) ? programsData.length : 1;
+        
+        if (programsCount <= 1) {
+            const prevBtn = document.getElementById('programsPrev');
+            const nextBtn = document.getElementById('programsNext');
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+            return;
+        }
+
+        const currentIndex = currentProgramsIndex;
+        const maxIndex = Math.max(0, programsCount - 1);
+
+        const prevBtn = document.getElementById('programsPrev');
+        const nextBtn = document.getElementById('programsNext');
+
+        if (prevBtn) {
+            prevBtn.style.display = 'flex';
+            prevBtn.style.opacity = currentIndex === 0 ? '0.75' : '1';
+            prevBtn.style.cursor = currentIndex === 0 ? 'not-allowed' : 'pointer';
+            prevBtn.disabled = currentIndex === 0;
+            if (currentIndex === 0) {
+                prevBtn.style.pointerEvents = 'none';
+            } else {
+                prevBtn.style.pointerEvents = 'auto';
+            }
+        }
+
+        if (nextBtn) {
+            nextBtn.style.display = 'flex';
+            nextBtn.style.opacity = currentIndex >= maxIndex ? '0.75' : '1';
+            nextBtn.style.cursor = currentIndex >= maxIndex ? 'not-allowed' : 'pointer';
+            nextBtn.disabled = currentIndex >= maxIndex;
+            if (currentIndex >= maxIndex) {
+                nextBtn.style.pointerEvents = 'none';
+            } else {
+                nextBtn.style.pointerEvents = 'auto';
+            }
         }
     }
 }

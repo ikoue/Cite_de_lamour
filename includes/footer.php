@@ -60,7 +60,7 @@
 
             <!-- Slogan -->
             <div class="footer-slogan-section">
-                <p class="footer-slogan" data-text="Cité de l'Amour – Là où l'amour transforme des vies">Cité de l'Amour – Là où l'amour transforme des vies</p>
+                <p class="" data-text="Cité de l'Amour – Là où l'amour transforme des vies">Cité de l'Amour – Là où l'amour transforme des vies</p>
             </div>
 
             <!-- Footer bottom -->
