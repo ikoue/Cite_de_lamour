@@ -516,12 +516,29 @@ function setupEventListeners() {
     // Events carousel
     const eventsPrev = document.getElementById('eventsPrev');
     const eventsNext = document.getElementById('eventsNext');
+    const eventsCarousel = document.getElementById('eventsCarousel');
     
     if (eventsPrev) {
-        eventsPrev.addEventListener('click', () => navigateCarousel('events', -1));
+        eventsPrev.addEventListener('click', () => {
+            if (window.innerWidth <= 600 && eventsCarousel) {
+                const card = eventsCarousel.querySelector('.event-card-new');
+                const step = (card ? card.offsetWidth : 220) + 12;
+                eventsCarousel.scrollBy({ left: -step, behavior: 'smooth' });
+            } else {
+                navigateCarousel('events', -1);
+            }
+        });
     }
     if (eventsNext) {
-        eventsNext.addEventListener('click', () => navigateCarousel('events', 1));
+        eventsNext.addEventListener('click', () => {
+            if (window.innerWidth <= 600 && eventsCarousel) {
+                const card = eventsCarousel.querySelector('.event-card-new');
+                const step = (card ? card.offsetWidth : 220) + 12;
+                eventsCarousel.scrollBy({ left: step, behavior: 'smooth' });
+            } else {
+                navigateCarousel('events', 1);
+            }
+        });
     }
 
     // Departments carousel
@@ -544,6 +561,27 @@ function setupEventListeners() {
     }
     if (programsNext) {
         programsNext.addEventListener('click', () => navigateCarousel('programs', 1));
+    }
+
+    // Services carousel (page Se joindre à nous)
+    const servicesCarousel = document.getElementById('servicesCarousel');
+    const servicesPrev = document.getElementById('servicesCarouselPrev');
+    const servicesNext = document.getElementById('servicesCarouselNext');
+    if (servicesCarousel && servicesPrev) {
+        servicesPrev.addEventListener('click', () => {
+            const card = servicesCarousel.querySelector('.service-card-gradient');
+            const gap = 20;
+            const step = (card ? card.offsetWidth : 280) + gap;
+            servicesCarousel.scrollBy({ left: -step, behavior: 'smooth' });
+        });
+    }
+    if (servicesCarousel && servicesNext) {
+        servicesNext.addEventListener('click', () => {
+            const card = servicesCarousel.querySelector('.service-card-gradient');
+            const gap = 20;
+            const step = (card ? card.offsetWidth : 280) + gap;
+            servicesCarousel.scrollBy({ left: step, behavior: 'smooth' });
+        });
     }
 
     // Contact button
@@ -642,11 +680,17 @@ function navigateCarousel(type, direction) {
 // Update carousel position
 function updateCarouselPosition(type) {
     if (type === 'events') {
+        /* Sur mobile (≤600px), le carousel utilise overflow-x + scrollBy, pas de transform */
+        if (window.innerWidth <= 600) {
+            updateCarouselButtons(type);
+            return;
+        }
         const carousel = document.getElementById('eventsCarousel');
         if (!carousel) return;
 
-        const cardWidth = window.innerWidth < 768 ? 300 : 400;
-        const gap = 32; // 2rem = 32px
+        const firstCard = carousel.querySelector('.event-card-new');
+        const cardWidth = firstCard ? firstCard.offsetWidth : 280;
+        const gap = 20; // 1.25rem
         const offset = (cardWidth + gap) * currentEventsIndex;
         
         carousel.style.transform = `translateX(-${offset}px)`;

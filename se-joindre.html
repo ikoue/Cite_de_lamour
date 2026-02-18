@@ -39,6 +39,7 @@
                 <div class="dropdown-menu-section">
                     <h4 class="dropdown-menu-section-title">L'ÉGLISE</h4>
                     <ul class="dropdown-menu-list">
+                        <li><a href="index.html" class="dropdown-menu-link">Accueil</a></li>
                         <li><a href="commencer-ici.html" class="dropdown-menu-link">Commencer ici</a></li>
                         <li><a href="index.html#vision" class="dropdown-menu-link">Notre vision</a></li>
                         <li><a href="index.html#evenements" class="dropdown-menu-link">Nos événements</a></li>
@@ -122,7 +123,7 @@
             <!-- Title Section -->
             <section class="join-title-section reveal">
                 <div class="section-header reveal">
-                    <h2 class="join-main-title" style="color: #7BA68A; font-size: 3.2rem;">Accompagnements & Services</h2>
+                    <h2 class="join-main-title" style="color: #7BA68A; font-size: 2.2rem;">Accompagnements & Services</h2>
                     <p class="join-subtitle">
                         Nous sommes là pour t'accompagner dans les étapes importantes de ta vie chrétienne.
                     </p>
@@ -131,7 +132,11 @@
 
             <!-- Services Cards -->
             <section class="services-section reveal">
-                <div class="services-grid-modern" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0;">
+                <div class="services-carousel-wrapper">
+                    <button type="button" class="services-carousel-btn prev-btn" id="servicesCarouselPrev" aria-label="Carte précédente">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="services-grid-modern services-carousel-track" id="servicesCarousel" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0;">
                     <!-- Service 1: Baptême -->
                     <div class="service-card-gradient reveal" style="background: rgba(139, 0, 0, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 12px; padding: 2.5rem; min-height: 400px; display: flex; flex-direction: column; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);">
                         <h2 class="service-title-gradient" style="font-size: 2.5rem; font-weight: 900; color: #ffffff; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px; font-family: 'Montserrat', sans-serif;">Baptême</h2>
@@ -176,6 +181,10 @@
                             Nos pasteurs et conseillers marchent avec vous pour vous aider à discerner, à grandir et à rester fermes dans votre marche avec Dieu.
                         </p>
                     </div>
+                    </div>
+                    <button type="button" class="services-carousel-btn next-btn" id="servicesCarouselNext" aria-label="Carte suivante">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
                 
                 <!-- CTA Global -->
@@ -288,6 +297,35 @@
                 </div>
 
                 <div class="form-wrapper">
+                    <div class="contact-info-card reveal" style="background: rgba(139, 0, 0, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15);">
+                        <h3 class="contact-info-title" style="color: #000000; font-size: 1.8rem; font-weight: bold;">Informations de contact</h3>
+                        <div class="contact-info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Téléphone</strong>
+                                <p>+1 (819) 386-5582</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p>contact@citedelamour.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Adresse</strong>
+                                <p>332 Avenue Saint Sacrément <br>Québec, Qc G1N 3Y2</p>
+                            </div>
+                        </div>
+                        <div class="contact-hours">
+                            <h4>Heures de rendez-vous</h4>
+                            <p>Mardi et jeudi de 12h à 18h</p>
+                        </div>
+                    </div>
+
                     <form class="contact-form reveal" id="contactForm">
                         <div class="form-group" style="position: relative;">
                             <label for="fullName" class="form-label" style="text-align: left;">Nom complet *</label>
@@ -345,35 +383,6 @@
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </form>
-
-                    <div class="contact-info-card reveal" style="background: rgba(139, 0, 0, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15);">
-                        <h3 class="contact-info-title" style="color: #000000; font-size: 1.8rem; font-weight: bold;">Informations de contact</h3>
-                        <div class="contact-info-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <strong>Téléphone</strong>
-                                <p>+1 (819) 386-5582</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <strong>Email</strong>
-                                <p>contact@citedelamour.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Adresse</strong>
-                                <p>332 Avenue Saint Sacrément <br>Québec, Qc G1N 3Y2</p>
-                            </div>
-                        </div>
-                        <div class="contact-hours">
-                            <h4>Heures de rendez-vous</h4>
-                            <p>Mardi et jeudi de 12h à 18h</p>
-                        </div>
-                    </div>
                 </div>
             </section>
         </div>
