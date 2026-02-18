@@ -1,4 +1,4 @@
-﻿/* Google Fonts Import */
+/* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=BBH+Bartle&family=BBH+Hegarty&family=Cal+Sans&family=Corinthia:wght@400;700&family=Ephesis&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Reset and Base Styles */
@@ -3127,54 +3127,120 @@ body[class*="page-"] .department-leaders .leader-name-large,
     max-width: 520px;
 }
 
-/* --------- Responsable : photo réduite en haut à droite, bio en pleine largeur --------- */
+/* --------- Responsable : titre AVANT la photo, puis photo, puis bio (pas d’overlay sur la photo) --------- */
+.leader-section {
+    display: flex;
+    justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
 .leader-section .leader-layout {
-    display: grid;
-    grid-template-columns: 1fr 260px;
-    grid-template-rows: auto auto;
-    gap: 0 2rem;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    align-items: center;
+    text-align: center;
 }
 .leader-section .leader-text {
-    display: contents;
+    display: block;
 }
 .leader-section .leader-label {
-    grid-column: 1;
-    grid-row: 1;
+    display: block !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 1.25rem !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: #000000 !important;
+    margin: 0 0 0.5rem 0 !important;
+    padding: 0 !important;
 }
 .leader-section .leader-name {
-    grid-column: 1;
-    grid-row: 1;
+    display: block !important;
+    position: relative !important;
+    color: #8B0000 !important;
+    font-family: "Cal Sans", sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 2rem !important;
+    line-height: 1.25 !important;
+    margin: 0 0 0.5rem 0 !important;
+    padding: 0 !important;
+    text-transform: uppercase !important;
+}
+.leader-section .leader-name .leader-name-ghost {
+    display: none !important;
 }
 .leader-section .leader-role {
-    grid-column: 1;
-    grid-row: 1;
+    display: block !important;
+    color: #000000 !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 0.95rem !important;
+    margin: 0 0 0 !important;
+    padding: 0 !important;
+    font-weight: 600;
+    white-space: nowrap !important;
 }
 .leader-section .leader-photo {
-    grid-column: 2;
-    grid-row: 1;
-    align-self: start;
-    justify-self: end;
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+.leader-section .leader-photo-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    aspect-ratio: 3 / 4;
+    width: 100%;
+    max-width: 420px;
+}
+.leader-section .leader-photo-card:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.leader-section .leader-photo-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    transition: transform 0.5s ease;
+}
+.leader-section .leader-photo-card:hover img {
+    transform: scale(1.05);
 }
 .leader-section .leader-bio {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    max-width: none;
-    margin-top: 1rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    line-height: 1.6;
+    text-align: left;
+    z-index: 2;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.5));
+    pointer-events: none;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0 !important;
+    display: flex;
+    align-items: flex-end;
 }
-
-@media (max-width: 600px) {
-    .leader-section .leader-layout {
-        grid-template-columns: 1fr;
-    }
-    .leader-section .leader-photo {
-        grid-column: 1;
-        grid-row: 2;
-        justify-self: start;
-    }
-    .leader-section .leader-bio {
-        grid-row: 3;
-    }
+.leader-section .leader-photo-card:hover .leader-bio {
+    transform: translateY(0);
 }
 
 .leader-photo-card {
@@ -9406,6 +9472,40 @@ body.menu-open {
   width: 100%;
 }
 
+/* Mobile : membres du conseil pastoral alignés verticalement, les uns après les autres */
+@media (max-width: 768px) {
+  .page-pastoral .department-leaders .leader-presentation {
+    display: block;
+    padding: 0;
+  }
+  .page-pastoral .department-leaders .leader-text-content {
+    margin-bottom: 2rem;
+  }
+  .page-pastoral .department-leaders .leader-role {
+    max-width: 14em;
+    line-height: 1.4;
+    font-size: 0.95rem;
+  }
+  .page-pastoral .department-leaders .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .pasteurs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .pasteurs .leader-image-wrapper {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
 /* Conteneur image + overlay */
 .pasteurs .leader-image-wrapper {
   position: relative;
@@ -11081,9 +11181,12 @@ body[class*="page-"]:not(.page-commencer-ici):not(.page-join) .section-presentat
 body[class*="page-"] .department-leaders .leader-label {
   font-size: 1.25rem !important;
 }
-.leader-section .leader-name,
 .leader-name {
   font-size: 2.5rem !important;
+}
+/* Ne pas surcharger la carte responsable (éviter superposition des titres) */
+.leader-section .leader-layout .leader-name {
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem) !important;
 }
 .leader-section .leader-name-ghost,
 .leader-name-ghost {
