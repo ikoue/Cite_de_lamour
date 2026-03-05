@@ -255,11 +255,9 @@ function renderEvents() {
     const carousel = document.getElementById('eventsCarousel');
     if (!carousel) return;
 
-    // Événements affichés : ceux de l'église + éventuels events.json (sans mercredi février)
+    // Événements affichés : uniquement les événements par défaut (culte dimanche + culte vendredi)
     const defaultEvents = buildDefaultChurchEvents(1); // 1 semaine : prochain dimanche + prochain vendredi
-    const manualEvents = (eventsData && Array.isArray(eventsData)) ? eventsData : [];
-    const allEvents = [...defaultEvents, ...manualEvents];
-    const eventsToRender = allEvents.filter(e => !isWednesdayFebruaryEvent(e));
+    const eventsToRender = defaultEvents.filter(e => !isWednesdayFebruaryEvent(e));
 
     // Check if we have only one event to center it
     const carouselWrapper = carousel.closest('.carousel-wrapper');
