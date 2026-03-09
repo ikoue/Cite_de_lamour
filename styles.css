@@ -8,24 +8,29 @@
     box-sizing: border-box;
 }
 
-/* Couleurs et ombres uniquement dans :root (variables utilisÃ©es) */
+/* Palette Cité de l'amour – couleurs de l'église */
 :root {
     --color-primary: #8B0000;
-    --color-secondary: #1a237e;
+    --color-primary-hover: #A52A2A;
+    --color-secondary: #6B2D2D;
+    --color-gold: #DCCB10;
+    --color-accent: #8B0000;
     --color-white: #ffffff;
     --color-light-gray: #f5f5f5;
-    --color-dark: #1a237e;
+    --color-dark: #4A1515;
     --color-brown: #8B4513;
-    --color-purple: #8a2be2;
+    --color-purple: #6b2d5c;
+    --color-church-bg: #fff8f8;
+    --color-church-header: linear-gradient(135deg, #fff8f8 0%, #fce8e8 50%, #f5e0e0 100%);
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.15);
     --text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --color-blue-hommes: #4a5d8f;
-    --color-pink-femmes: #6b4a7a;
-    --color-jeunes-gradient: linear-gradient(135deg, #4a5d8f 0%, #6b4a7a 100%);
-    --color-purple-medias: #5a4a7a;
-    --color-yellow-juniors: #6b5a7a;
-    --color-teal-evangelisation: #5a6b8f;
+    --color-blue-hommes: #5c3d5c;
+    --color-pink-femmes: #6b4a6b;
+    --color-jeunes-gradient: linear-gradient(135deg, #8B0000 0%, #6B2D2D 100%);
+    --color-purple-medias: #5a3d5a;
+    --color-yellow-juniors: #6b4a4a;
+    --color-teal-evangelisation: #5a4a4a;
 }
 
 body {
@@ -96,7 +101,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .department-header {
-    background: linear-gradient(135deg, #f5e6f0 0%, #f0d9e6 100%);
+    background: var(--color-church-header);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     padding: 0.3rem 0;
 }
@@ -107,7 +112,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .department-header .nav-link:hover {
-    color: #a00000;
+    color: var(--color-primary-hover);
 }
 
 /* Header transparent - base (glassmorphism). Les .on-* ne modifient que background / box-shadow */
@@ -117,7 +122,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     top: 0;
     z-index: 1000;
     min-height: auto;
-    background: rgba(227, 232, 245, 0.4) !important;
+    background: rgba(255, 240, 240, 0.5) !important;
     backdrop-filter: blur(25px) saturate(180%) brightness(1.05);
     -webkit-backdrop-filter: blur(25px) saturate(180%) brightness(1.05);
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.04), 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 -1px 0 rgba(0, 0, 0, 0.03) inset;
@@ -195,8 +200,8 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 .department-header-transparent.on-blue {
-    background: rgba(26, 35, 126, 0.08) !important;
-    box-shadow: 0 1px 10px rgba(26, 35, 126, 0.08), 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+    background: rgba(107, 45, 45, 0.08) !important;
+    box-shadow: 0 1px 10px rgba(107, 45, 45, 0.08), 0 1px 0 rgba(255, 255, 255, 0.2) inset;
 }
 .department-header-transparent.on-green {
     background: rgba(123, 166, 138, 0.15) !important;
@@ -275,7 +280,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     padding-bottom: 10px;
     text-decoration: none;
     font-weight: 600;
-    color: #a00000;
+    color: var(--color-primary-hover);
     transition: color 0.3s;
 }
 .nav-link::before{
@@ -321,7 +326,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .btn-contact:hover {
-    background: #a00000;
+    background: var(--color-primary-hover);
     transform: translateY(-2px);
 }
 
@@ -442,7 +447,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     font-size: 2.2rem;
     font-weight: 900;
     line-height: 1.2;
-    color: #000;
+    color: #333;
     margin-bottom: 3rem;
     text-transform: uppercase;
     letter-spacing: 0px;
@@ -595,7 +600,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .vision-cta-btn:hover {
-    background: #a00000;
+    background: var(--color-primary-hover);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
 }
@@ -606,7 +611,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 
 .section-title {
     font-size: 3rem;
-    color: #000;
+    color: #333;
     margin-bottom: 3rem;
     text-align: center;
     font-weight: 800;
@@ -701,7 +706,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .carousel-btn:hover {
-    background: #a00000;
+    background: var(--color-primary-hover);
     transform: translateY(-50%) scale(1.1);
 }
 
@@ -734,7 +739,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     width: 100%;
     height: 100%;
     position: relative;
-    background: linear-gradient(135deg, #8B0000 0%, #1a237e 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -747,20 +752,28 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.85) 100%);
+    /* Assoupli pour mieux voir les affiches des cultes */
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0.25) 45%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
     z-index: 1;
     transition: opacity 0.3s;
 }
 
 .event-card-new:hover .event-overlay-gradient {
-    opacity: 0.95;
+    opacity: 0.85;
 }
 
 .event-image-bg {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* Affiche complète de l'événement (affiche non coupée) */
+    object-fit: contain;
     object-position: center;
+    background-color: var(--color-primary);
     position: absolute;
     top: 0;
     left: 0;
@@ -942,7 +955,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .program-icon-wrapper {
-    background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(26, 35, 126, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(107, 45, 45, 0.1) 100%);
     padding: 2.5rem 2rem 1.5rem;
     position: relative;
 }
@@ -1013,7 +1026,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 .program-name {
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--color-dark);
+    color: #333;
     margin: 0 0 1.25rem 0;
     line-height: 1.3;
     letter-spacing: -0.3px;
@@ -1107,14 +1120,14 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     padding: 1.5rem;
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--color-dark);
+    color: #333;
     text-align: center;
     margin-top: auto;
 }
 
 /* Footer */
 .footer {
-    background: #8B0000;
+    background: var(--color-primary);
     color: var(--color-white);
     padding: 2rem 0 1rem;
 }
@@ -1216,7 +1229,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .footer-column a:hover {
-    color: rgb(220, 203, 16);
+    color: var(--color-gold);
     transform: translateX(5px);
 }
 
@@ -1246,7 +1259,7 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
 }
 
 .footer-address i {
-    color: rgb(220, 203, 16);
+    color: var(--color-gold);
     font-size: 1rem;
 }
 
@@ -2152,7 +2165,7 @@ body[class*="page-"] .department-teams .section-label,
     font-family: "Montserrat", sans-serif !important;
     font-weight: 600 !important;
     font-size: 22px !important;
-    color: #000000 !important;
+    color: #1a1a1a !important;
     text-transform: uppercase !important;
     letter-spacing: 2px !important;
     margin-bottom: 0.5rem !important;
@@ -2276,7 +2289,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-hommes .department-join .section-description,
 .page-hommes .department-eligibility .section-description {
     font-family: "Montserrat", sans-serif;
-    color: #000000;
+    color: #333;
     font-size: large;
     max-width: 700px;
     text-align: justify;
@@ -2364,7 +2377,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-hommes .eligibility-list-simple li {
     font-family: "Montserrat", sans-serif;
-    color: #1a1a1a;
+    color: #333;
     margin-bottom: 1rem;
 }
 
@@ -2477,7 +2490,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-family: "Montserrat", sans-serif !important;
     font-weight: 600 !important;
     font-size: 22px !important;
-    color: #000000 !important;
+    color: #1a1a1a !important;
     text-transform: uppercase !important;
     letter-spacing: 2px !important;
     opacity: 1 !important;
@@ -2502,7 +2515,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-femmes .department-join .section-description {
     font-family: "Montserrat", sans-serif !important;
-    color: #000000 !important;
+    color: #1a1a1a !important;
     font-size: 1.1rem !important;
     line-height: 1.6 !important;
 }
@@ -2520,7 +2533,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-femmes .section-description {
     font-family: "Montserrat", sans-serif;
-    color: #1a1a1a;
+    color: #333;
     font-size: large;
     max-width: 700px;
     text-align: justify;
@@ -2619,7 +2632,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-femmes .eligibility-list-simple li {
     font-family: "Montserrat", sans-serif;
-    color: #1a1a1a;
+    color: #333;
     margin-bottom: 1rem;
 }
 
@@ -2754,7 +2767,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-jeunes-adultes .section-description {
-    color: #1a1a1a;
+    color: #333;
     font-size: 1.25rem;
     line-height: 1.8;
     text-align: justify;
@@ -2799,7 +2812,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     font-size: 0.75rem;
-    color: #000000;
+    color: #333;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 0.5rem;
@@ -2835,20 +2848,20 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: 1.1rem;
-    color: #000000;
+    color: #333;
     margin-bottom: 1.5rem;
 }
 
 .page-jeunes-adultes .department-leaders .section-description {
     font-family: "Montserrat", sans-serif;
     font-size: 1.05rem;
-    color: #000000;
+    color: #333;
     line-height: 1.8;
     margin-bottom: 1rem;
 }
 
 .page-jeunes-adultes .eligibility-list-simple li {
-    color: #1a1a1a;
+    color: #333;
 }
 
 .page-jeunes-adultes .eligibility-list-simple li::before {
@@ -3006,7 +3019,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-medias .section-description {
     font-family: "Montserrat", sans-serif;
     font-size: large;
-    color: #1a1a1a;
+    color: #333;
     max-width: 700px;
     text-align: justify;
 }
@@ -3060,7 +3073,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-size: 32px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #000000;
+    color: #333;
     margin-bottom: 0.75rem;
     opacity: 1;
 }
@@ -3072,7 +3085,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-size: 32px !important;
     letter-spacing: 2px !important;
     text-transform: uppercase !important;
-    color: #000000 !important;
+    color: #1a1a1a !important;
     opacity: 1 !important;
 }
 
@@ -3116,14 +3129,14 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-weight: 700;
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #000000;
+    color: #333;
 }
 
 .leader-bio {
     font-family: "Montserrat", sans-serif;
     font-size: 0.9rem;
     line-height: 1.7;
-    color: #000000;
+    color: #333;
     max-width: 520px;
 }
 
@@ -3155,7 +3168,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-size: 1.25rem !important;
     letter-spacing: 2px !important;
     text-transform: uppercase !important;
-    color: #000000 !important;
+    color: #1a1a1a !important;
     margin: 0 0 0.5rem 0 !important;
     padding: 0 !important;
 }
@@ -3176,7 +3189,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 .leader-section .leader-role {
     display: block !important;
-    color: #000000 !important;
+    color: #1a1a1a !important;
     font-family: "Montserrat", sans-serif !important;
     font-size: 0.95rem !important;
     margin: 0 0 0 !important;
@@ -3300,7 +3313,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: large;
-    color: #1a1a1a;
+    color: #333;
 }
 
 /* =========================================================
@@ -3313,7 +3326,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-medias .eligibility-list-simple li {
-    color: #1a1a1a;
+    color: #333;
     text-align: left;
 }
 
@@ -3415,14 +3428,14 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .team-card {
-    background: rgba(26, 35, 126, 0.15) !important;
+    background: rgba(107, 45, 45, 0.15) !important;
     backdrop-filter: blur(25px) saturate(180%) brightness(1.0);
     -webkit-backdrop-filter: blur(25px) saturate(180%) brightness(1.0);
-    border: 2px solid rgba(26, 35, 126, 0.2);
+    border: 2px solid rgba(107, 45, 45, 0.2);
     border-radius: 12px;
     padding: 2.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    box-shadow: 0 1px 10px rgba(26, 35, 126, 0.15), 
+    box-shadow: 0 1px 10px rgba(107, 45, 45, 0.15), 
                 0 1px 0 rgba(255, 255, 255, 0.2) inset;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out forwards;
@@ -3430,10 +3443,10 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .team-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(26, 35, 126, 0.25), 
+    box-shadow: 0 8px 24px rgba(107, 45, 45, 0.25), 
                 0 1px 0 rgba(255, 255, 255, 0.2) inset;
-    border-color: rgba(26, 35, 126, 0.4);
-    background: rgba(26, 35, 126, 0.2) !important;
+    border-color: rgba(107, 45, 45, 0.4);
+    background: rgba(107, 45, 45, 0.2) !important;
 }
 
 /* Styles spÃ©cifiques pour la page mÃ©dias - effet hover amÃ©liorÃ© */
@@ -3643,7 +3656,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 ========================================================= */
 .page-ados .section-description {
     font-family: "Montserrat", sans-serif;
-    color: #1a1a1a;
+    color: #333;
     text-align: justify;
 }
 
@@ -3673,7 +3686,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-ados .leader-role {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    color: #1a1a1a;
+    color: #333;
 }
 
 .page-ados .department-leaders .leader-presentation {
@@ -3719,7 +3732,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
    ELIGIBILITÃ‰
 ========================================================= */
 .page-ados .eligibility-list-simple li {
-    color: #1a1a1a;
+    color: #333;
 }
 
 .page-ados .eligibility-list-simple li::before {
@@ -3835,7 +3848,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-juniors .department-vision .section-description {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    color: #1a1a1a;
+    color: #333;
     max-width: 700px;
     text-align: justify;
 }
@@ -3896,7 +3909,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-juniors .leader-role {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    color: #1a1a1a;
+    color: #333;
 }
 
 .page-juniors .department-leaders .leader-image-wrapper {
@@ -3922,7 +3935,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-juniors .eligibility-list-simple li {
     font-family: "Montserrat", sans-serif;
-    color: #1a1a1a;
+    color: #333;
     margin-bottom: 1rem;
 }
 
@@ -4110,7 +4123,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-chorale .department-join .section-description {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    color: #1a1a1a;
+    color: #333;
     font-size: large;
     max-width: 700px;
     text-align: justify;
@@ -4143,7 +4156,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-chorale .leader-role {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    color: #1a1a1a;
+    color: #333;
 }
 
 .page-chorale .department-leaders .leader-presentation {
@@ -4195,7 +4208,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-chorale .eligibility-list-simple li {
     font-family: "Montserrat", sans-serif;
-    color: #1a1a1a;
+    color: #333;
     margin-bottom: 1rem;
 }
 
@@ -4343,7 +4356,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-intercession .department-hero .section-description {
     font-family: "Montserrat", sans-serif;
-    color: #000000 !important;
+    color: #1a1a1a !important;
     font-size: 1.2rem !important;
     line-height: 1.8 !important;
     font-weight: 400 !important;
@@ -4362,7 +4375,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-family: "Montserrat", sans-serif !important;
     font-weight: 600 !important;
     font-size: 22px !important;
-    color: #000000 !important;
+    color: #1a1a1a !important;
     text-transform: uppercase !important;
     letter-spacing: 2px !important;
     opacity: 1 !important;
@@ -4428,7 +4441,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-size: 1.2rem !important;
     line-height: 1.8 !important;
     max-width: 900px;
-    color: #000000 !important;
+    color: #1a1a1a !important;
     text-align: justify !important;
 }
 
@@ -4450,7 +4463,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-size: 1.2rem !important;
     max-width: 900px;
     line-height: 1.8 !important;
-    color: #000000 !important;
+    color: #1a1a1a !important;
     text-align: justify !important;
 }
 
@@ -4459,7 +4472,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-weight: 400;
     font-size: 1.2rem !important;
     line-height: 1.8 !important;
-    color: #000000 !important;
+    color: #1a1a1a !important;
     text-align: justify !important;
 }
 
@@ -4468,7 +4481,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-weight: 400;
     font-size: 1.2rem !important;
     line-height: 1.8 !important;
-    color: #000000 !important;
+    color: #1a1a1a !important;
     text-align: justify !important;
 }
 
@@ -4618,8 +4631,8 @@ body[class*="page-"] .department-leaders .leader-name-large,
     border-radius: 5px !important;
     position: relative;
     transform: rotate(-2deg) translateX(-10px);
-    border: 2px solid rgba(26, 35, 126, 0.1) !important;
-    border-top: 3px solid rgba(26, 35, 126, 0.2) !important;
+    border: 2px solid rgba(107, 45, 45, 0.1) !important;
+    border-top: 3px solid rgba(107, 45, 45, 0.2) !important;
     box-shadow:
         0 6px 12px rgba(0,0,0,.15),
         0 2px 4px rgba(0,0,0,.1),
@@ -4792,7 +4805,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-pastoral .section-description {
     font-family: "Montserrat", sans-serif;
-    color: #1a1a1a;
+    color: #333;
     max-width: 700px;
     text-align: justify;
 }
@@ -4809,7 +4822,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-family: "Ephesis", cursive;
     font-weight: 400;
     font-size: 120px;
-    color: #000000;
+    color: #333;
     opacity: 0.5;
 }
 
@@ -4824,7 +4837,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-pastoral .leader-role {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    color: #1a1a1a;
+    color: #333;
 }
 
 .page-pastoral .department-leaders .leader-image-wrapper {
@@ -4850,7 +4863,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-pastoral .eligibility-list-simple li {
     font-family: "Montserrat", sans-serif;
-    color: #1a1a1a;
+    color: #333;
     margin-bottom: 1rem;
 }
 
@@ -5039,7 +5052,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: 1.25rem;
-    color: #1a1a1a;
+    color: #333;
     max-width: 700px;
     text-align: justify;
     line-height: 1.8;
@@ -5057,7 +5070,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-family: "Montserrat", sans-serif !important;
     font-weight: 600 !important;
     font-size: 22px !important;
-    color: #000000 !important;
+    color: #1a1a1a !important;
     text-transform: uppercase !important;
     letter-spacing: 2px !important;
     opacity: 1 !important;
@@ -5094,7 +5107,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-evangelisation .department-leaders .section-description {
     font-family: "Montserrat", sans-serif;
-    color: #1a1a1a;
+    color: #333;
     font-size: 1.25rem;
     line-height: 1.8;
     max-width: 700px;
@@ -5149,7 +5162,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-evangelisation .eligibility-list-simple li {
     font-family: "Montserrat", sans-serif;
-    color: #1a1a1a;
+    color: #333;
     margin-bottom: 1rem;
 }
 
@@ -5332,7 +5345,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(139, 0, 0, 0.05) 0%, rgba(26, 35, 126, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.05) 0%, rgba(107, 45, 45, 0.05) 100%);
     z-index: 1;
     opacity: 0;
     transition: opacity 0.4s;
@@ -5389,14 +5402,14 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 3px;
-    color: #1a1a1a;
+    color: #333;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .page-hommes .hero-label {
-    color: #000000;
+    color: #333;
 }
 
 .department-hero-title {
@@ -5425,7 +5438,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-hommes .hero-subtitle {
-    color: #333333;
+    color: #333;
 }
 
 .hero-subtitle::after {
@@ -5464,7 +5477,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-hommes .hero-feature-item {
     border: 1px solid var(--color-blue-hommes);
-    color: #000000;
+    color: #333;
 }
 
 .hero-feature-item i {
@@ -5482,7 +5495,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-hommes .hero-feature-item {
-    border-color: rgba(26, 35, 126, 0.15);
+    border-color: rgba(107, 45, 45, 0.15);
 }
 
 .page-hommes .hero-feature-item i {
@@ -5491,7 +5504,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-hommes .hero-feature-item:hover {
     border-color: var(--color-secondary);
-    box-shadow: 0 8px 25px rgba(26, 35, 126, 0.15);
+    box-shadow: 0 8px 25px rgba(107, 45, 45, 0.15);
 }
 
 .page-hommes .hero-feature-item:hover i {
@@ -5525,7 +5538,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .page-hommes .hero-badge {
     background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
-    box-shadow: 0 4px 15px rgba(26, 35, 126, 0.25);
+    box-shadow: 0 4px 15px rgba(107, 45, 45, 0.25);
 }
 
 .department-hero-description {
@@ -5536,11 +5549,11 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .page-hommes .department-hero-description {
-    color: #1a1a1a;
+    color: #333;
 }
 
 .department-hero-description strong {
-    color: #000000;
+    color: #333;
     font-weight: 600;
 }
 
@@ -5614,7 +5627,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 3px;
-    color: #1a1a1a;
+    color: #333;
     margin-bottom: 2rem;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     animation: fadeInUp 0.6s ease-out;
@@ -5623,7 +5636,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .leader-name-large {
     font-size: 5.5rem;
     font-weight: 700;
-    color: #000000;
+    color: #333;
     letter-spacing: -1px;
     line-height: 0.95;
     margin: 0 0 2rem 0;
@@ -5684,7 +5697,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .leader-description {
     font-size: 1.05rem;
-    color: #1a1a1a;
+    color: #333;
     line-height: 1.8;
     font-weight: 400;
     font-family: "Montserrat", sans-serif;
@@ -5695,7 +5708,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .page-hommes .leader-role {
     font-family: "Montserrat";
     font-weight: 400;
-    color: #1a1a1a;
+    color: #333;
 }
 
 .leader-image-wrapper {
@@ -5775,7 +5788,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .leader-name {
     font-size: 1.5rem;
-    color: var(--color-dark);
+    color: #333;
     margin-bottom: 0.5rem;
     font-weight: bold;
 }
@@ -5802,7 +5815,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .leader-name {
     font-size: 1.5rem;
-    color: var(--color-dark);
+    color: #333;
     margin-bottom: 0.5rem;
     font-weight: bold;
 }
@@ -5851,7 +5864,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .eligibility-list-simple li:nth-child(5) { animation-delay: 0.5s; }
 
 .page-hommes .eligibility-list-simple li {
-    color: #1a1a1a;
+    color: #333;
 }
 
 .eligibility-list-simple li:hover {
@@ -5931,7 +5944,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .eligibility-title {
     font-size: 1.5rem;
-    color: var(--color-dark);
+    color: #333;
     margin-bottom: 1.5rem;
     font-weight: bold;
 }
@@ -6180,7 +6193,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .btn-register-dept:hover {
-    background: #a00000;
+    background: var(--color-primary-hover);
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
 }
@@ -6208,7 +6221,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .join-hero {
     background: #7BA68A; /* Vert du logo (rgb(123, 166, 138)) */
     padding: 5rem 0;
-    color: #333333;
+    color: #333;
     position: relative;
     overflow: hidden;
 }
@@ -6274,7 +6287,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     font-family: "Montserrat", sans-serif;
     font-size: 1.8rem;
     line-height: 1.8;
-    color: #000000;
+    color: #333;
     margin: 4rem auto 0 auto !important;
     font-weight: 900;
     text-transform: uppercase;
@@ -6420,7 +6433,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(26, 35, 126, 0.2) 0%, rgba(139, 0, 0, 0.2) 100%);
+    background: linear-gradient(135deg, rgba(107, 45, 45, 0.2) 0%, rgba(139, 0, 0, 0.2) 100%);
     z-index: 1;
 }
 
@@ -6556,7 +6569,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .service-icon-blue {
     background: var(--color-secondary);
-    box-shadow: 0 5px 15px rgba(26, 35, 126, 0.3);
+    box-shadow: 0 5px 15px rgba(107, 45, 45, 0.3);
 }
 
 .service-image-modern {
@@ -6650,7 +6663,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .services-cta-button:hover {
-    background: #a00000;
+    background: var(--color-primary-hover);
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(139, 0, 0, 0.3);
 }
@@ -6794,7 +6807,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .btn-submit {
     width: 100%;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #a00000 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
     color: var(--color-white);
     border: none;
     padding: 1.4rem 2rem;
@@ -6814,7 +6827,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .btn-submit:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(139, 0, 0, 0.4);
-    background: linear-gradient(135deg, #a00000 0%, var(--color-primary) 100%);
+    background: linear-gradient(135deg, var(--color-primary-hover) 0%, var(--color-primary) 100%);
 }
 
 .btn-submit:active {
@@ -6927,7 +6940,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .section-title {
     font-size: 3rem;
-    color: #000;
+    color: #333;
     margin-bottom: 3rem;
     text-align: center;
     font-weight: 800;
@@ -7015,199 +7028,6 @@ body[class*="page-"] .department-leaders .leader-name-large,
     justify-content: center;
 }
 
-.carousel-btn:hover {
-    background: #a00000;
-    transform: translateY(-50%) scale(1.1);
-}
-
-.prev-btn {
-    left: -25px;
-}
-
-.next-btn {
-    right: -25px;
-}
-
-/* New Event Card Design */
-.event-card-new {
-    min-width: 280px;
-    height: 340px;
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
-    background: var(--color-white);
-}
-
-.event-card-new:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
-}
-
-.event-image-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    background: linear-gradient(135deg, #8B0000 0%, #1a237e 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.event-overlay-gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.85) 100%);
-    z-index: 1;
-    transition: opacity 0.3s;
-}
-
-.event-card-new:hover .event-overlay-gradient {
-    opacity: 0.95;
-}
-
-.event-image-bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.event-image-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-}
-
-.event-image-placeholder svg {
-    width: 60%;
-    height: 60%;
-    opacity: 0.5;
-}
-
-.event-info-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1.25rem 1.5rem;
-    color: var(--color-white);
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.event-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    width: fit-content;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.3s;
-}
-
-.event-card-new:hover .event-badge {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.05);
-}
-
-.event-badge i {
-    font-size: 0.8rem;
-}
-
-.event-title {
-    font-size: 1.2rem;
-    font-weight: 800;
-    margin: 0;
-    color: var(--color-white);
-    line-height: 1.25;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    letter-spacing: -0.02em;
-}
-
-.event-details {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    margin-top: 0.25rem;
-}
-
-.event-detail-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.95);
-}
-
-.event-detail-item i {
-    font-size: 0.9rem;
-    color: var(--color-primary);
-    width: 16px;
-    text-align: center;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-}
-
-.event-date-full,
-.event-time-range {
-    font-weight: 500;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.event-learn-more {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--color-white);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-top: 0.35rem;
-    padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    width: fit-content;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.event-learn-more:hover {
-    background: var(--color-primary);
-    border-color: var(--color-primary);
-    transform: translateX(5px);
-    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.4);
-}
-
-.event-learn-more i {
-    transition: transform 0.3s;
-}
-
-.event-learn-more:hover i {
-    transform: translateX(3px);
-}
-
 /* Programs Section */
 .programs {
     padding: 6rem 0;
@@ -7254,7 +7074,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 }
 
 .program-icon-wrapper {
-    background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(26, 35, 126, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(107, 45, 45, 0.1) 100%);
     padding: 2.5rem 2rem 1.5rem;
     position: relative;
 }
@@ -7325,7 +7145,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 .program-name {
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--color-dark);
+    color: #333;
     margin: 0 0 1.25rem 0;
     line-height: 1.3;
     letter-spacing: -0.3px;
@@ -7416,14 +7236,14 @@ body[class*="page-"] .department-leaders .leader-name-large,
     padding: 1.5rem;
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--color-dark);
+    color: #333;
     text-align: center;
     margin-top: auto;
 }
 
 /* Footer */
 .footer {
-    background: #8B0000;
+    background: var(--color-primary);
     color: var(--color-white);
     padding: 2rem 0 1rem;
 }
@@ -7683,7 +7503,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .commencer-ici-label {
     font-size: 1.1rem;
-    color: #000000;
+    color: #333;
     font-weight: bold;
     margin-bottom: 0.5rem;
     text-transform: lowercase;
@@ -7691,7 +7511,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
 
 .se-joindre-label {
     font-size: 1.1rem;
-    color: #000000;
+    color: #333;
     font-weight: bold;
     margin-bottom: 0.5rem;
     text-transform: lowercase;
@@ -7973,7 +7793,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     gap: 2rem;
     justify-content: center;
     padding: 1rem 0;
-    margin: 2rem 0;
+  margin: 2rem 0;
     overflow-x: visible;
 }
 
@@ -8003,6 +7823,20 @@ body[class*="page-"] .department-leaders .leader-name-large,
     border-radius: 0;
     pointer-events: none;
     opacity: 0.3;
+}
+
+/* Centre explicitement les cartes Rencontrer / Grandir / Servir dans "Commencer ici" */
+.page-commencer-ici .mission-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-commencer-ici .mission-carousel {
+  width: 100%;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mission-icon {
@@ -8511,7 +8345,7 @@ body.menu-open {
 
 /* Department Hero Section */
 .department-hero {
-    background: linear-gradient(135deg, #f5e6f0 0%, #f0d9e6 100%);
+    background: var(--color-church-header);
     padding: 4rem 0;
 }
 
@@ -8552,7 +8386,7 @@ body.menu-open {
 /* Department Leaders Section */
 .department-leaders {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #f5e6f0 0%, #f0d9e6 100%);
+    background: var(--color-church-header);
 }
 
 .department-section-title {
@@ -8602,7 +8436,7 @@ body.menu-open {
 
 .leader-name {
     font-size: 1.5rem;
-    color: var(--color-dark);
+    color: #333;
     margin-bottom: 0.5rem;
     font-weight: bold;
 }
@@ -8616,7 +8450,7 @@ body.menu-open {
 /* Department Vision Section */
 .department-vision {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #f5e6f0 0%, #f0d9e6 100%);
+    background: var(--color-church-header);
 }
 
 .vision-content {
@@ -8673,7 +8507,7 @@ body.menu-open {
 
 .eligibility-title {
     font-size: 1.5rem;
-    color: var(--color-dark);
+    color: #333;
     margin-bottom: 1.5rem;
     font-weight: bold;
 }
@@ -8773,7 +8607,7 @@ body.menu-open {
 }
 
 .btn-contact-dept {
-    background: linear-gradient(135deg, #f5e6f0 0%, #f0d9e6 100%);
+    background: var(--color-church-header);
     color: var(--color-primary);
     border-color: var(--color-primary);
 }
@@ -8790,7 +8624,7 @@ body.menu-open {
 }
 
 .btn-register-dept:hover {
-    background: #a00000;
+    background: var(--color-primary-hover);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
 }
@@ -8813,7 +8647,7 @@ body.menu-open {
 .join-hero {
     background: #7BA68A; /* Vert du logo (rgb(123, 166, 138)) */
     padding: 5rem 0;
-    color: #333333;
+    color: #333;
     position: relative;
     overflow: hidden;
 }
@@ -8879,7 +8713,7 @@ body.menu-open {
     font-family: "Montserrat", sans-serif;
     font-size: 1.8rem;
     line-height: 1.8;
-    color: #000000;
+    color: #333;
     margin: 4rem auto 0 auto !important;
     font-weight: 900;
     text-transform: uppercase;
@@ -9025,7 +8859,7 @@ body.menu-open {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(26, 35, 126, 0.2) 0%, rgba(139, 0, 0, 0.2) 100%);
+    background: linear-gradient(135deg, rgba(107, 45, 45, 0.2) 0%, rgba(139, 0, 0, 0.2) 100%);
     z-index: 1;
 }
 
@@ -9161,7 +8995,7 @@ body.menu-open {
 
 .service-icon-blue {
     background: var(--color-secondary);
-    box-shadow: 0 5px 15px rgba(26, 35, 126, 0.3);
+    box-shadow: 0 5px 15px rgba(107, 45, 45, 0.3);
 }
 
 .service-image-modern {
@@ -9255,7 +9089,7 @@ body.menu-open {
 }
 
 .services-cta-button:hover {
-    background: #a00000;
+    background: var(--color-primary-hover);
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(139, 0, 0, 0.3);
 }
@@ -9399,7 +9233,7 @@ body.menu-open {
 
 .btn-submit {
     width: 100%;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #a00000 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
     color: var(--color-white);
     border: none;
     padding: 1.4rem 2rem;
@@ -9419,7 +9253,7 @@ body.menu-open {
 .btn-submit:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(139, 0, 0, 0.4);
-    background: linear-gradient(135deg, #a00000 0%, var(--color-primary) 100%);
+    background: linear-gradient(135deg, var(--color-primary-hover) 0%, var(--color-primary) 100%);
 }
 
 .btn-submit:active {
@@ -9920,7 +9754,7 @@ body[class*="page-"] .department-join .section-title-large,
     font-size: 1.05rem;
     line-height: 1.7;
     max-width: 650px;
-    color: #333333;
+    color: #333;
     margin: 0;
     text-align: left;
 }
@@ -10115,7 +9949,7 @@ body[class*="page-"] .department-join .section-title-large,
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 .services-carousel-btn:hover {
-    background: #a00000;
+    background: var(--color-primary-hover);
     transform: translateY(-50%) scale(1.08);
 }
 .services-carousel-btn.prev-btn { left: 8px; }
@@ -10123,7 +9957,7 @@ body[class*="page-"] .department-join .section-title-large,
 
 /* Styles pour le bouton de don */
 .btn-donation:hover {
-    background: #a00000 !important;
+    background: var(--color-primary-hover) !important;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
 }
@@ -10152,7 +9986,7 @@ body[class*="page-"] .department-join .section-title-large,
     font-size: 0.95rem;
     font-weight: 900;
     font-family: "Montserrat", sans-serif;
-    color: #000000;
+    color: #333;
     margin-bottom: 0.75rem;
     letter-spacing: 0.3px;
     transition: color 0.3s ease;
@@ -10211,7 +10045,7 @@ select.form-input {
 /* Bouton de soumission amÃ©liorÃ© */
 .btn-submit {
     width: 100%;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #a00000 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
     color: var(--color-white);
     border: none;
     padding: 1.25rem 2rem;
@@ -10250,7 +10084,7 @@ select.form-input {
 .btn-submit:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(139, 0, 0, 0.4);
-    background: linear-gradient(135deg, #a00000 0%, var(--color-primary) 100%);
+    background: linear-gradient(135deg, var(--color-primary-hover) 0%, var(--color-primary) 100%);
 }
 
 .btn-submit:active {
@@ -10490,7 +10324,7 @@ select.form-input {
 .event-name {
     font-size: 1.3rem;
     font-weight: bold;
-    color: var(--color-dark);
+    color: #333;
     margin-bottom: 0.5rem;
 }
 .event-description { color: #666; margin-bottom: 1rem; line-height: 1.6; }
@@ -10505,7 +10339,7 @@ select.form-input {
     width: 100%;
     transition: background 0.3s;
 }
-.btn-detail:hover { background: #a00000; }
+.btn-detail:hover { background: var(--color-primary-hover); }
 
 /* Media query pour footer sur écrans de moins de 426px */
 @media (max-width: 450px) {
@@ -10773,7 +10607,7 @@ select.form-input {
 .page-commencer-ici .pasteur-card {
   position: relative;
   background: transparent;
-  min-height: 520px;
+  min-height: 780px;
   display: block;
   overflow: hidden;
   width: 100%;
@@ -10792,7 +10626,8 @@ select.form-input {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  /* Décale légèrement vers le haut pour éviter de couper la tête */
+  object-position: center top;
   display: block;
 }
 
@@ -10803,7 +10638,7 @@ select.form-input {
   max-width: 520px;
   margin-left: auto;
   margin-right: 0;
-  min-height: 520px;
+  min-height: 780px;
   background: rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px 0 0 16px;
@@ -11116,15 +10951,15 @@ select.form-input {
   }
 }
 
-/* ===== Pages départements : retirer les images au niveau des titres (partout) ===== */
-body[class*="page-"]:not(.page-commencer-ici):not(.page-join) .section-image-wrapper {
+/* ===== Pages départements : retirer les images au niveau des titres (HÉRO uniquement) ===== */
+body[class*="page-"]:not(.page-commencer-ici):not(.page-join) .department-hero .section-image-wrapper {
   display: none !important;
 }
-body[class*="page-"]:not(.page-commencer-ici):not(.page-join) .section-presentation {
+body[class*="page-"]:not(.page-commencer-ici):not(.page-join) .department-hero .section-presentation {
   display: block !important;
   grid-template-columns: 1fr !important;
 }
-body[class*="page-"]:not(.page-commencer-ici):not(.page-join) .section-presentation .section-text-content {
+body[class*="page-"]:not(.page-commencer-ici):not(.page-join) .department-hero .section-presentation .section-text-content {
   max-width: 100% !important;
 }
 
@@ -11204,4 +11039,305 @@ body[class*="page-"] .department-leaders .section-title-large {
 }
 .page-hommes .leader-name-large {
   font-size: 2.5rem !important;
+}
+
+/* ===== Page Nouveaux convertis ===== */
+.page-nouveaux-convertis .nouveaux-convertis-main {
+  padding: 4rem 0 5rem;
+  min-height: 60vh;
+}
+.nouveaux-convertis-big-title {
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary) !important;
+  margin: 0 0 2rem 0;
+  padding: 1.25rem 2rem;
+  border: 4px solid var(--color-primary);
+  border-radius: 12px;
+  display: block !important;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nouveaux-convertis-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.nouveaux-convertis-title {
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+.nouveaux-convertis-intro {
+  font-size: 1.1rem;
+  color: var(--color-text-muted, #555);
+  max-width: 36rem;
+  margin: 0 auto;
+}
+.nouveaux-convertis-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+.nouveaux-convertis-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.nouveaux-convertis-card:hover {
+  border-color: var(--color-accent, #8b4513);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+.nouveaux-convertis-card-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(139, 69, 19, 0.1);
+  color: var(--color-accent, #8b4513);
+  border-radius: 10px;
+  font-size: 1.25rem;
+}
+.nouveaux-convertis-card-title {
+  flex: 1;
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.35;
+  text-align: left;
+}
+.nouveaux-convertis-card-arrow {
+  flex-shrink: 0;
+  color: var(--color-accent, #8b4513);
+  font-size: 1rem;
+}
+@media (max-width: 768px) {
+  .nouveaux-convertis-title { font-size: 2rem; }
+  .nouveaux-convertis-card-title { font-size: 1.05rem; }
+  .nouveaux-convertis-card { padding: 1rem 1.25rem; }
+}
+.nouveaux-convertis-visit {
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+}
+.nouveaux-convertis-visit-link {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  color: var(--color-accent, #8b4513);
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--color-accent, #8b4513);
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.nouveaux-convertis-visit-link:hover {
+  background: var(--color-accent, #8b4513);
+  color: #fff;
+}
+
+/* Pages images (Dieu t'aime, Recommencer à zéro, Assurance du salut) - sans titre */
+.page-standalone .page-images-title,
+.page-standalone .page-images-breadcrumb-current,
+.page-standalone .page-images-main h1 {
+  display: none !important;
+}
+.page-images-main { padding-top: 2rem; }
+.page-images-breadcrumb {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-muted, #555);
+}
+.page-images-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-accent, #8b4513);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+}
+.page-images-back:hover { text-decoration: underline; }
+.page-images-breadcrumb-current {
+  font-size: 0.95rem;
+  color: var(--color-text-muted, #555);
+  margin: 0 0 1rem 0;
+}
+.page-images-breadcrumb a {
+  color: var(--color-accent, #8b4513);
+  text-decoration: none;
+}
+.page-images-breadcrumb a:hover { text-decoration: underline; }
+.page-images-title {
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.page-images-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.page-images-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+@media (max-width: 768px) {
+  .page-images-title { font-size: 1.5rem; }
+  .page-images-gallery { gap: 1.5rem; }
+}
+
+/* ============================================================
+   RESPONSIVITÉ – Tous types d'appareils (mobile, tablette, desktop)
+   ============================================================ */
+
+/* Images fluides partout */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tablette et petit desktop (1024px) */
+@media (max-width: 1024px) {
+  .container { padding: 0 1.25rem; }
+  .header-content { font-size: 16px; }
+  .logo img { height: 72px; }
+  .footer-main { gap: 2rem; }
+  .footer-links-grid { gap: 1.5rem; margin-left: 2rem; }
+  .nouveaux-convertis-main { padding: 3rem 0 4rem; }
+  .nouveaux-convertis-big-title { font-size: clamp(1.75rem, 4.5vw, 3rem); padding: 1rem 1.5rem; }
+  .page-images-gallery { max-width: 100%; padding: 0 0.5rem; }
+}
+
+/* Tablette portrait / grand mobile (768px) */
+@media (max-width: 768px) {
+  .container { padding: 0 1rem; }
+  .logo img { height: 64px; }
+  .nav-link { font-size: 0.95rem; padding: 0.4rem 0.5rem; }
+  .footer-main { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+  .footer-links-grid { grid-template-columns: 1fr; margin-left: 0; gap: 1.5rem; justify-items: center; }
+  .footer-newsletter { align-items: center; }
+  .footer-address-section { text-align: center; }
+  .footer-address-section .footer-address { justify-content: center; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .nouveaux-convertis-main { padding: 2.5rem 0 3.5rem; min-height: 50vh; }
+  .nouveaux-convertis-big-title {
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+    padding: 0.9rem 1.25rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+    max-width: 95%;
+  }
+  .nouveaux-convertis-title { font-size: 1.75rem; }
+  .nouveaux-convertis-intro { font-size: 1rem; padding: 0 0.5rem; }
+  .nouveaux-convertis-links { max-width: 100%; padding: 0 0.25rem; gap: 1rem; }
+  .nouveaux-convertis-card { padding: 1rem 1.25rem; gap: 0.75rem; }
+  .nouveaux-convertis-card-icon { width: 42px; height: 42px; font-size: 1.1rem; }
+  .nouveaux-convertis-card-title { font-size: 1rem; }
+  .nouveaux-convertis-visit { margin-top: 2rem; margin-bottom: 1.5rem; }
+  .page-images-main { padding-top: 1.5rem; }
+  .page-images-breadcrumb { font-size: 0.85rem; }
+  .page-images-back { padding: 0.4rem 0; font-size: 0.9rem; }
+  .page-images-gallery { gap: 1.25rem; padding: 0 0.25rem; }
+}
+
+/* Mobile (600px) */
+@media (max-width: 600px) {
+  .container { padding: 0 0.875rem; }
+  .logo img { height: 56px; }
+  .header-content { gap: 0.5rem; }
+  .nav { flex-wrap: wrap; justify-content: flex-end; }
+  .nav-link { font-size: 0.9rem; }
+  .footer-column h3 { font-size: 0.9rem; margin-bottom: 1rem; }
+  .footer-column a { font-size: 0.85rem; }
+  .footer-slogan { font-size: 1rem; }
+  .footer-slogan-section { padding: 0.5rem 1rem; }
+  .nouveaux-convertis-big-title {
+    font-size: clamp(1.35rem, 5.5vw, 1.85rem);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.25rem;
+    border-width: 3px;
+  }
+  .nouveaux-convertis-title { font-size: 1.5rem; }
+  .nouveaux-convertis-card { padding: 0.875rem 1rem; flex-wrap: wrap; }
+  .nouveaux-convertis-card-title { font-size: 0.95rem; min-width: 0; }
+  .nouveaux-convertis-visit-link { padding: 0.5rem 1rem; font-size: 0.95rem; }
+  .page-images-gallery { gap: 1rem; }
+}
+
+/* Petit mobile (480px) */
+@media (max-width: 480px) {
+  .container { padding: 0 0.75rem; }
+  .logo img { height: 48px; }
+  .footer-title { font-size: 1.4rem; }
+  .footer-logo img { height: 48px; }
+  .nouveaux-convertis-big-title {
+    font-size: clamp(1.2rem, 6vw, 1.6rem);
+    padding: 0.6rem 0.875rem;
+    letter-spacing: 0.03em;
+    max-width: 100%;
+  }
+  .nouveaux-convertis-title { font-size: 1.35rem; }
+  .nouveaux-convertis-intro { font-size: 0.95rem; }
+  .nouveaux-convertis-card { padding: 0.75rem 0.875rem; gap: 0.6rem; }
+  .nouveaux-convertis-card-icon { width: 38px; height: 38px; font-size: 1rem; }
+  .nouveaux-convertis-card-title { font-size: 0.9rem; }
+  .page-images-back { font-size: 0.85rem; }
+  .page-images-gallery img { border-radius: 6px; }
+}
+
+/* Très petit mobile (360px et moins) */
+@media (max-width: 360px) {
+  .container { padding: 0 0.5rem; }
+  .logo img { height: 44px; }
+  .nouveaux-convertis-big-title { font-size: 1.15rem; padding: 0.5rem 0.75rem; }
+  .nouveaux-convertis-title { font-size: 1.2rem; }
+  .nouveaux-convertis-card-title { font-size: 0.85rem; }
+  body { font-size: 15px; }
+}
+
+/* ============================================================
+   Survol des événements : afficher complètement l'affiche
+   ============================================================ */
+
+/* Animation douce pour le bloc d'informations de l'événement */
+.event-info-overlay {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Au survol : cacher le dégradé et le bloc texte pour voir l'image entière */
+.event-card-new:hover .event-overlay-gradient {
+  opacity: 0 !important;
+}
+
+.event-card-new:hover .event-info-overlay {
+  opacity: 0;
+  transform: translateY(100%);
 }

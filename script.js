@@ -216,21 +216,23 @@ function buildDefaultChurchEvents(weeksAhead = 4) {
     const sundays = getNextOccurrences(0, 9, 30, weeksAhead);
     const fridays = getNextOccurrences(5, 19, 0, weeksAhead);
 
+    // Culte de célébration (dimanche) avec l'affiche dédiée
     const sundayEvents = sundays.map((date, i) => ({
         id: `culte-celebration-${i}`,
         name: "Culte de célébration",
         time: "9h30 à 11h45",
         description: "Temps de louange, d'adoration et de communion fraternelle.",
-        image: null,
+        image: "../culte de celebration.jpg",
         fullDate: date
     }));
 
+    // Culte d'enseignement (vendredi) avec l'affiche dédiée
     const fridayEvents = fridays.map((date, i) => ({
         id: `culte-enseignement-${i}`,
         name: "Culte d'enseignement",
         time: "19h00 à 20h30",
         description: "Enseignement biblique et croissance spirituelle.",
-        image: null,
+        image: "../culte d'enseignement.jpg",
         fullDate: date
     }));
 
@@ -255,11 +257,9 @@ function renderEvents() {
     const carousel = document.getElementById('eventsCarousel');
     if (!carousel) return;
 
-    // Événements affichés : ceux de l'église + éventuels events.json (sans mercredi février)
+    // Événements affichés : uniquement les événements par défaut (culte dimanche + culte vendredi)
     const defaultEvents = buildDefaultChurchEvents(1); // 1 semaine : prochain dimanche + prochain vendredi
-    const manualEvents = (eventsData && Array.isArray(eventsData)) ? eventsData : [];
-    const allEvents = [...defaultEvents, ...manualEvents];
-    const eventsToRender = allEvents.filter(e => !isWednesdayFebruaryEvent(e));
+    const eventsToRender = defaultEvents.filter(e => !isWednesdayFebruaryEvent(e));
 
     // Check if we have only one event to center it
     const carouselWrapper = carousel.closest('.carousel-wrapper');
@@ -317,7 +317,7 @@ function renderEvents() {
     }
 
     carousel.innerHTML = eventsToRender.map(event => `
-        <div class="event-card-new">
+        <div class="event-card-new"${event.image ? ` data-full-image="${event.image}"` : ''}>
             <div class="event-image-container">
                 ${event.image ? 
                     `<img src="${event.image}" alt="${event.name}" class="event-image-bg" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -358,6 +358,21 @@ function renderEvents() {
             </div>
         </div>
     `).join('');
+
+    // Rendre l'affiche cliquable : ouvre l'image dans un nouvel onglet
+    const posterCards = carousel.querySelectorAll('.event-card-new[data-full-image]');
+    posterCards.forEach(card => {
+        const imgUrl = card.getAttribute('data-full-image');
+        if (!imgUrl) return;
+        card.style.cursor = 'zoom-in';
+        card.addEventListener('click', (e) => {
+            // Laisser le bouton Facebook fonctionner normalement
+            if (e.target.closest('.event-learn-more')) {
+                return;
+            }
+            window.open(imgUrl, '_blank');
+        });
+    });
 
     // Show/hide navigation buttons based on number of events
     const prevBtn = document.getElementById('eventsPrev');
@@ -1024,4 +1039,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
 
