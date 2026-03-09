@@ -752,20 +752,28 @@ body:not(.page-hommes):not(.page-femmes):not(.page-ados):not(.page-juniors):not(
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.85) 100%);
+    /* Assoupli pour mieux voir les affiches des cultes */
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0.25) 45%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
     z-index: 1;
     transition: opacity 0.3s;
 }
 
 .event-card-new:hover .event-overlay-gradient {
-    opacity: 0.95;
+    opacity: 0.85;
 }
 
 .event-image-bg {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* Affiche complète de l'événement (affiche non coupée) */
+    object-fit: contain;
     object-position: center;
+    background-color: var(--color-primary);
     position: absolute;
     top: 0;
     left: 0;
@@ -7020,199 +7028,6 @@ body[class*="page-"] .department-leaders .leader-name-large,
     justify-content: center;
 }
 
-.carousel-btn:hover {
-    background: var(--color-primary-hover);
-    transform: translateY(-50%) scale(1.1);
-}
-
-.prev-btn {
-    left: -25px;
-}
-
-.next-btn {
-    right: -25px;
-}
-
-/* New Event Card Design */
-.event-card-new {
-    min-width: 280px;
-    height: 340px;
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
-    background: var(--color-white);
-}
-
-.event-card-new:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
-}
-
-.event-image-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.event-overlay-gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.85) 100%);
-    z-index: 1;
-    transition: opacity 0.3s;
-}
-
-.event-card-new:hover .event-overlay-gradient {
-    opacity: 0.95;
-}
-
-.event-image-bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.event-image-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-}
-
-.event-image-placeholder svg {
-    width: 60%;
-    height: 60%;
-    opacity: 0.5;
-}
-
-.event-info-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1.25rem 1.5rem;
-    color: var(--color-white);
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.event-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    width: fit-content;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.3s;
-}
-
-.event-card-new:hover .event-badge {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.05);
-}
-
-.event-badge i {
-    font-size: 0.8rem;
-}
-
-.event-title {
-    font-size: 1.2rem;
-    font-weight: 800;
-    margin: 0;
-    color: var(--color-white);
-    line-height: 1.25;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    letter-spacing: -0.02em;
-}
-
-.event-details {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    margin-top: 0.25rem;
-}
-
-.event-detail-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.95);
-}
-
-.event-detail-item i {
-    font-size: 0.9rem;
-    color: var(--color-primary);
-    width: 16px;
-    text-align: center;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-}
-
-.event-date-full,
-.event-time-range {
-    font-weight: 500;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.event-learn-more {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--color-white);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-top: 0.35rem;
-    padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    width: fit-content;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.event-learn-more:hover {
-    background: var(--color-primary);
-    border-color: var(--color-primary);
-    transform: translateX(5px);
-    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.4);
-}
-
-.event-learn-more i {
-    transition: transform 0.3s;
-}
-
-.event-learn-more:hover i {
-    transform: translateX(3px);
-}
-
 /* Programs Section */
 .programs {
     padding: 6rem 0;
@@ -7978,7 +7793,7 @@ body[class*="page-"] .department-leaders .leader-name-large,
     gap: 2rem;
     justify-content: center;
     padding: 1rem 0;
-    margin: 2rem 0;
+  margin: 2rem 0;
     overflow-x: visible;
 }
 
@@ -8008,6 +7823,20 @@ body[class*="page-"] .department-leaders .leader-name-large,
     border-radius: 0;
     pointer-events: none;
     opacity: 0.3;
+}
+
+/* Centre explicitement les cartes Rencontrer / Grandir / Servir dans "Commencer ici" */
+.page-commencer-ici .mission-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-commencer-ici .mission-carousel {
+  width: 100%;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mission-icon {
@@ -10778,7 +10607,7 @@ select.form-input {
 .page-commencer-ici .pasteur-card {
   position: relative;
   background: transparent;
-  min-height: 520px;
+  min-height: 780px;
   display: block;
   overflow: hidden;
   width: 100%;
@@ -10797,7 +10626,8 @@ select.form-input {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  /* Décale légèrement vers le haut pour éviter de couper la tête */
+  object-position: center top;
   display: block;
 }
 
@@ -10808,7 +10638,7 @@ select.form-input {
   max-width: 520px;
   margin-left: auto;
   margin-right: 0;
-  min-height: 520px;
+  min-height: 780px;
   background: rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px 0 0 16px;
@@ -11121,15 +10951,15 @@ select.form-input {
   }
 }
 
-/* ===== Pages départements : retirer les images au niveau des titres (partout) ===== */
-body[class*="page-"]:not(.page-commencer-ici):not(.page-join) .section-image-wrapper {
+/* ===== Pages départements : retirer les images au niveau des titres (HÉRO uniquement) ===== */
+body[class*="page-"]:not(.page-commencer-ici):not(.page-join) .department-hero .section-image-wrapper {
   display: none !important;
 }
-body[class*="page-"]:not(.page-commencer-ici):not(.page-join) .section-presentation {
+body[class*="page-"]:not(.page-commencer-ici):not(.page-join) .department-hero .section-presentation {
   display: block !important;
   grid-template-columns: 1fr !important;
 }
-body[class*="page-"]:not(.page-commencer-ici):not(.page-join) .section-presentation .section-text-content {
+body[class*="page-"]:not(.page-commencer-ici):not(.page-join) .department-hero .section-presentation .section-text-content {
   max-width: 100% !important;
 }
 
@@ -11491,4 +11321,23 @@ img {
   .nouveaux-convertis-title { font-size: 1.2rem; }
   .nouveaux-convertis-card-title { font-size: 0.85rem; }
   body { font-size: 15px; }
+}
+
+/* ============================================================
+   Survol des événements : afficher complètement l'affiche
+   ============================================================ */
+
+/* Animation douce pour le bloc d'informations de l'événement */
+.event-info-overlay {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Au survol : cacher le dégradé et le bloc texte pour voir l'image entière */
+.event-card-new:hover .event-overlay-gradient {
+  opacity: 0 !important;
+}
+
+.event-card-new:hover .event-info-overlay {
+  opacity: 0;
+  transform: translateY(100%);
 }

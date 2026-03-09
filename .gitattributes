@@ -1,0 +1,7 @@
+# Fins de ligne : garder LF pour le code (évite les warnings CRLF sur Windows)
+* text=auto
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+*.md text eol=lf
