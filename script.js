@@ -214,7 +214,7 @@ function getNextOccurrences(targetDay, hour, minute, count) {
 // Construit les événements fixes de l'église
 function buildDefaultChurchEvents(weeksAhead = 4) {
     const sundays = getNextOccurrences(0, 9, 30, weeksAhead);
-    const fridays = getNextOccurrences(5, 19, 0, weeksAhead);
+    const fridays = getNextOccurrences(5, 18, 30, weeksAhead);
 
     // Culte de célébration (dimanche) avec l'affiche dédiée
     const sundayEvents = sundays.map((date, i) => ({
@@ -222,7 +222,7 @@ function buildDefaultChurchEvents(weeksAhead = 4) {
         name: "Culte de célébration",
         time: "9h30 à 11h45",
         description: "Temps de louange, d'adoration et de communion fraternelle.",
-        image: "../culte de celebration.jpg",
+        image: "Culte de celebration.jpg",
         fullDate: date
     }));
 
@@ -230,14 +230,54 @@ function buildDefaultChurchEvents(weeksAhead = 4) {
     const fridayEvents = fridays.map((date, i) => ({
         id: `culte-enseignement-${i}`,
         name: "Culte d'enseignement",
-        time: "19h00 à 20h30",
+        time: "18h30 à 20h30",
         description: "Enseignement biblique et croissance spirituelle.",
-        image: "../culte d'enseignement.jpg",
+        image: "culte d'enseignement.jpg",
         fullDate: date
     }));
 
     return [...sundayEvents, ...fridayEvents]
         .sort((a, b) => a.fullDate - b.fullDate);
+}
+
+// Dimanche 24 mai 2026 — culte spécial Pentecôte (même horaire que le culte de célébration)
+const PENTECOTE_2026_DATE = new Date(2026, 4, 24, 9, 30, 0);
+
+/** Événements ponctuels à afficher en plus des cultes récurrents (tant que la date n’est pas passée). */
+function getUpcomingSpecialChurchEvents() {
+    const out = [];
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const endOfPentecostDay = new Date(PENTECOTE_2026_DATE);
+    endOfPentecostDay.setHours(23, 59, 59, 999);
+    if (today <= endOfPentecostDay) {
+        out.push({
+            id: 'culte-special-pentecote-2026',
+            name: 'Culte spécial Pentecôte',
+            time: '9h30 à 11h45',
+            description: 'Culte spécial pour la fête de la Pentecôte.',
+            image: 'SPECIAL CULTE PENTECOTE.jpg',
+            fullDate: new Date(PENTECOTE_2026_DATE)
+        });
+    }
+    return out;
+}
+
+/** Fusionne cultes récurrents + événements spéciaux ; masque le culte de célébration « normal » si un spécial tombe le même dimanche. */
+function mergeRecurringAndSpecialEvents(recurring, specials) {
+    const specialDayKeys = new Set(
+        specials.map((s) => {
+            const d = s.fullDate;
+            return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+        })
+    );
+    const filtered = recurring.filter((e) => {
+        if (e.name !== 'Culte de célébration' || !e.fullDate) return true;
+        const d = e.fullDate;
+        const key = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+        return !specialDayKeys.has(key);
+    });
+    return [...filtered, ...specials].sort((a, b) => a.fullDate - b.fullDate);
 }
 
 // Exclut définitivement tout événement du mercredi en février
@@ -257,8 +297,10 @@ function renderEvents() {
     const carousel = document.getElementById('eventsCarousel');
     if (!carousel) return;
 
-    // Événements affichés : uniquement les événements par défaut (culte dimanche + culte vendredi)
-    const defaultEvents = buildDefaultChurchEvents(1); // 1 semaine : prochain dimanche + prochain vendredi
+    // Événements affichés : culte dimanche + vendredi + événements spéciaux à venir (ex. Pentecôte)
+    const recurring = buildDefaultChurchEvents(1);
+    const specials = getUpcomingSpecialChurchEvents();
+    const defaultEvents = mergeRecurringAndSpecialEvents(recurring, specials);
     const eventsToRender = defaultEvents.filter(e => !isWednesdayFebruaryEvent(e));
 
     // Check if we have only one event to center it
@@ -907,7 +949,9 @@ function updateCarouselButtons(type) {
 
 // Show event detail (can be expanded to modal)
 function showEventDetail(eventId) {
-    const defaultEvents = buildDefaultChurchEvents(1);
+    const recurring = buildDefaultChurchEvents(1);
+    const specials = getUpcomingSpecialChurchEvents();
+    const defaultEvents = mergeRecurringAndSpecialEvents(recurring, specials);
     const manualEvents = (eventsData && Array.isArray(eventsData)) ? eventsData : [];
     const allEvents = [...defaultEvents, ...manualEvents].filter(e => !isWednesdayFebruaryEvent(e));
 

@@ -1,4 +1,4 @@
-/* Google Fonts Import */
+﻿/* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=BBH+Bartle&family=BBH+Hegarty&family=Cal+Sans&family=Corinthia:wght@400;700&family=Ephesis&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Reset and Base Styles */
@@ -1863,9 +1863,8 @@ body.menu-open {
 
 /* Responsive Event Cards */
 
+@media (max-width: 768px) {
 
-
-    
     .footer {
         padding: 1.5rem 0 1rem;
     }
@@ -8153,6 +8152,7 @@ body.menu-open {
 
 /* Responsive Event Cards */
 
+@media (max-width: 768px) {
 
     .logo {
         flex-direction: column;

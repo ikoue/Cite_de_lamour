@@ -141,16 +141,24 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import EventCard from '@/components/EventCard.vue'
-import { buildDefaultChurchEvents, isWednesdayFebruaryEvent } from '@/composables/useChurchEvents'
+import {
+  buildDefaultChurchEvents,
+  getUpcomingSpecialChurchEvents,
+  mergeRecurringAndSpecialEvents,
+  isWednesdayFebruaryEvent,
+} from '@/composables/useChurchEvents'
 
 const eventsIndex = ref(0)
 const programs = ref([])
 const departments = ref([])
 
-const defaultEvents = buildDefaultChurchEvents(1)
-const eventsToShow = computed(() =>
-  defaultEvents.filter(e => !isWednesdayFebruaryEvent(e))
-)
+const eventsToShow = computed(() => {
+  const recurring = buildDefaultChurchEvents(1)
+  const specials = getUpcomingSpecialChurchEvents()
+  return mergeRecurringAndSpecialEvents(recurring, specials).filter(
+    (e) => !isWednesdayFebruaryEvent(e),
+  )
+})
 
 const carouselStyle = computed(() => {
   if (eventsToShow.value.length <= 1 || (typeof window !== 'undefined' && window.innerWidth <= 600)) {
